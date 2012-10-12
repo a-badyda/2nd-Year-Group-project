@@ -1,2 +1,0 @@
-<jsp:useBean id="user" class="classes.UserData" scope="session"/>
-{"userName":"<%= user.getUsername() %>", "age":"<%= user.getAge() %>", "email":"<%= user.getEmail() %>","firstName":"<%= user.getFirstName() %>","lastName":"<%= user.getLastName() %>","login":"<%= user.logedin() %>"}
