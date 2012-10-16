@@ -1,0 +1,46 @@
+<HTML>
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+</head>
+<BODY>
+<FORM name="form" id="form">
+What's your user name? <INPUT TYPE=TEXT NAME=username SIZE=20><BR>
+What's your password? <INPUT TYPE=TEXT NAME=password SIZE=20><BR>
+What's your email? <INPUT TYPE=TEXT NAME=email SIZE=40><BR>
+What's your first name? <INPUT TYPE=TEXT NAME=firstName SIZE=20><BR>
+What's your last name? <INPUT TYPE=TEXT NAME=lastName SIZE=20><BR>
+What's your age? <INPUT TYPE=TEXT NAME=age SIZE=4><BR>
+<P><div id="submit" class="button extend">SEND</div>
+<a href="index.html" class="button extend">Back</a>
+</FORM>
+
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+<script>
+
+$('#submit').click(function(){
+
+	//Serialise form
+	var formData = $('#form').serialize();
+
+	//Send data
+	$.get('newuser.jsp', formData, function(response){
+
+		alert("yeap we got that all set up now, head to home");
+		window.location="index.html";
+	});
+});
+
+
+
+</script>
+
+</BODY>
+</HTML>
