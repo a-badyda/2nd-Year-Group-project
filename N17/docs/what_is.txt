@@ -1,0 +1,5 @@
+As stated in the Management Config. Document:
+"This contains documents produced by the group members. Each document
+should be in its own directory"
+So, stuff like configuration items refrences and status. 
+Optionally, the documentation? Not sure about that. 

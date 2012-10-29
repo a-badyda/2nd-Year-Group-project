@@ -1,0 +1,2 @@
+This directory is all about the external libraries that the project may need.
+As the document states this is all "language dependent"
