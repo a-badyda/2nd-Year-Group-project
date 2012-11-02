@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 
 <script type="text/javascript" src="../JavaScript/includes/jquery182.min.js"></script>
+<script type="text/javascript" src="../JavaScript/functions/validate.js"></script>
 <script type="text/javascript" src="../JavaScript/login.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		loginInit();
-	});
-</script>
-<form id="home_login">
+<form id="home_login" method="POST" action="profile.html">
     <h1>Log In</h1>
 <br/>
 <br/>
     <fieldset id="login form">
-        <input id="username" type="text" placeholder="Username" autofocus required>   
-        <input id="password" type="password" placeholder="Password" required>
+        <input id="username" type="text" placeholder="Username" autofocus required />   
+        <input id="password" type="password" placeholder="Password" required />
     </fieldset>
 
     <fieldset id="login">
-        <input type="submit" id="submit" value="Log in">
+        <input type="submit" id="submit" value="Log in" />
         <a href="">Forgot your password?</a>
     </fieldset>
 </form>

@@ -7,8 +7,10 @@ Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk	
 */
 
-function loginInit() {
-	$("#submit").click(function() {
+
+$(document).ready(function(){
+	$("#home_login").submit(function() {
+		alert("Hi");
 		return false;
 	});
-}
+});
