@@ -13,14 +13,11 @@ $(document).ready(function(){
 
 		$.post('login', { 'username' : $('#username').val(), 'password' : $('#password').val() }, function(response){
 			
-			alert(response);
-			
 			if(response == "true"){
-				
-				alert("true");
+				document.location.href="http://www.monstermashgame.co.uk/TEST/profile.html"
 			}else{
-				
-				alert("false");
+				$('#password').val('');
+				$('#error').html('Incorrect Login Details');
 			}
 			
 		});

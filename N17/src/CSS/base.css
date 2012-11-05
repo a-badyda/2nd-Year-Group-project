@@ -1,5 +1,6 @@
 /* A big file for all the base css classes that can later be called somewhere else: keeps the html cleaner */
 
+#error { display: block; color: red; }
 
 /*Typography section */
 
