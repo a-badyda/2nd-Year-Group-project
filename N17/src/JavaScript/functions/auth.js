@@ -25,7 +25,7 @@ function logoutUser(email) {
 
 //Register a new user with the system.
 function registerUser(username, email, password, password_check) {
-	$.post(USER_REGISTER, {username, email, password, password_check}, 
+	$.post(USER_REGISTER, {username: username, email: email, password: password, password_check: password_check}, 
 	function (response) {
 		//user registered.
 	});
