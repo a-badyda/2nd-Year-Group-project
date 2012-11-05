@@ -13,7 +13,16 @@ $(document).ready(function(){
 
 		$.post('login', { 'username' : $('#username').val(), 'password' : $('#password').val() }, function(response){
 			
-			alert("Done.");
+			alert(response);
+			
+			if(response == "true"){
+				
+				alert("true");
+			}else{
+				
+				alert("false");
+			}
+			
 		});
 		
 		return false;
