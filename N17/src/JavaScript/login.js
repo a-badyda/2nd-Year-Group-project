@@ -14,12 +14,7 @@ $(document).ready(function(){
 		var password = $('#home_login #password').val();
 		var $errorBox = $('#home_login .error');
 		
-		if(!validateEmail(email)) {
-			$errorBox.text("Invalid email address!");
-		} else if (!validatePassword(password)) {
-			$errorBox.text("Invalid password size!");
-		} else {
-			//send data to server
+		if (validateUserDetails($errorBox, email, password)) {
 			$.post(USER_LOGIN, {username: email, password: password}, 
 			function(response) {
 				$errorBox.text(response);
@@ -35,13 +30,7 @@ $(document).ready(function(){
 		var password_confirm = $('#home_create_user #confirm').val();
 		var $errorBox = $('#home_create_user .error');
 		
-		if(!validateEmail(email)) {
-			$errorBox.text("Invalid email address!");
-		} else if (!validatePassword(password)) {
-			$errorBox.text("Invalid password size!");
-		} else if (password != password_confirm) {
-			$errorBox.text("Passwords do not match!");
-		} else {
+		if (validateUserDetails($errorBox, email, password, password_confirm)) {
 			$.post(USER_REGISTER, {username: email, password: password}, 
 			function(response) {
 				$errorBox.text(response);
@@ -49,4 +38,20 @@ $(document).ready(function(){
 		}
 		return false;
 	});
+	
+	function validateUserDetails($errorBox, email, password, password_confirm) {
+		var result = false;
+		
+		if(!validateEmail(email)) {
+			$errorBox.text("Invalid email address!");
+		} else if (!validatePassword(password)) {
+			$errorBox.text("Invalid password size!");
+		} else if (password_confirm != undefined && password != password_confirm) {
+			$errorBox.text("Passwords do not match!");
+		} else {
+			result = true;
+		}
+		
+		return result;
+	}
 });
