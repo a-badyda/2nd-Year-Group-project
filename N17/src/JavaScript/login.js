@@ -1,7 +1,9 @@
 /*
 Login.js
 ----------------
-Handle input from the login form
+Handle input from the login form.
+Validates input for an existing user.
+Also validates details for new users.
 ----------------
 Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk	
@@ -9,6 +11,8 @@ Email:	slj11@aber.ac.uk
 
 
 $(document).ready(function(){
+
+	//Validate the existing user form and sent it to the server
 	$("#home_login").submit(function() {
 		var email = $('#home_login #username').val();
 		var password = $('#home_login #password').val();
@@ -24,6 +28,7 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	//Validate the register new user form and send it to the server
 	$("#home_create_user").submit(function() {
 		var email = $('#home_create_user #new_username').val();
 		var password = $('#home_create_user #new_password').val();
@@ -39,13 +44,16 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	//Output error messages if we have a problem with the details
+	//otherwise return true.
 	function validateUserDetails($errorBox, email, password, password_confirm) {
 		var result = false;
 		
 		if(!validateEmail(email)) {
 			$errorBox.text("Invalid email address!");
 		} else if (!validatePassword(password)) {
-			$errorBox.text("Invalid password size!");
+			$errorBox.text("Invalid password size! Password must be between " + MIN_PASSWORD_LENGTH
+			+ " and " + MAX_PASSWORD_LENGTH + ".");
 		} else if (password_confirm != undefined && password != password_confirm) {
 			$errorBox.text("Passwords do not match!");
 		} else {
