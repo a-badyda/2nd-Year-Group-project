@@ -15,10 +15,9 @@ function validateEmail(email) {
 
 //Check that the new password is valid. Including whether it's between a specified length
 function validatePassword(password) {
-	if(password.length >= MIN_PASSWORD_LENGTH || password.length <= MAX_PASSWORD_LENGTH) {
+	if(password.length >= MIN_PASSWORD_LENGTH && password.length <= MAX_PASSWORD_LENGTH) {
 		return true;
 	}
-	
 	return false;
 }
 

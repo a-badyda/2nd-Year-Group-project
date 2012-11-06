@@ -8,10 +8,13 @@ Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk
 */
 
-//constant strings for user auth.
-var USER_LOGIN 		= "";
-var USER_LOGOUT 	= "";
-var USER_REGISTER 	= "";
+//location of servlets
+var SERVLET_FOLDER = "";
+
+//address on induvidual servlets
+var USER_LOGIN 		= SERVLET_FOLDER + "loginServlet";
+var USER_LOGOUT 	= SERVLET_FOLDER + "registerServlet";
+var USER_REGISTER 	= SERVLET_FOLDER + "";
 
 //Max/min password length
 var MIN_PASSWORD_LENGTH = 8;
