@@ -1,0 +1,44 @@
+TIMESHEET!!!!
+<because Chris wanted one>
+Organized by cathegories because reasons.
+
+writing up minutes
+
+	01.11	30 MIN  //with help from Mike who wrote most info down//
+	22.10	30 MIN
+	19.10	30 MIN
+	18.10	30 MIN
+
+HTML
+	
+	week 29.10	1.00H (getting stated, look at first real html commit on github)
+	week 05.11	1.00H (second<and third> commit on github)
+
+
+
+meetings
+
+//missed the meeting on Friday 02.11//
+	01.11	1.00H  
+	22.10	1.00H
+	19.10	1.00H
+	18.10	1.00H
+//we had more meetings didn't we? Do the ones in the pub count? I don't remember when they were...//
+
+Writing Up test sheet for HTML
+
+	started, has not done anything significant yet? (SOON)
+
+Organizing/Managing Git Repository
+	a)running around and finding people on GitHub+adding them to the repo:
+	 30MIN
+	b)organizing the repo to fit the predetermined structure:
+	30MIN
+	c)teaching git and proving self to be a realy bad Git Guru: 
+	1.00H
+
+/* BUYING OuT SUPPLIES FOR MEETINGS: 30 MIN AND ABOut 9 POuNDS TOTAL*/
+//you people have no idea how difficult it was to pick something at the union shop and not look completly crazy:  //
+//"don't mind me I'm just buying 9 FREAKinG PACKS OF MAGIC STARS all at once.IswearIamnotgoingtoeatthemallbymyself" //
+
+//Do I get extra points for being funny?//
