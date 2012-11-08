@@ -1,0 +1,26 @@
+8/11/12 -- Hours Worked: 1
+Attended group project meeting.
+
+6/11/12 -- Hours Worked: 5.5
+Completed first draft of testing table.
+Began working on test table for test specification document.
+Tidying up JavaScript for user login. Ready for servlet implementation.
+Refactored login.js to cut down on code repetition.
+Updated login/register page with working JavaScript.
+
+2/11/12 -- Hours Worked: 0.5
+Modifying JavaScript to seperate it from the HTML.
+
+1/11/12 -- Hours Worked: 1
+Attended group project meeting.
+
+30/10/12 -- Hours Worked: 1.5
+Started building some of the JavaScript for the login page.
+Tidyed up JavaScript repo folder.
+
+26/10/12 -- Hours Worked: 1.5
+Made a small start on some of the JavaScript. Awaiting HTML for further development.
+Added Client side folder structure.
+
+
+
