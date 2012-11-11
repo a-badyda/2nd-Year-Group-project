@@ -1,0 +1,32 @@
+
+Group Project Timesheet
+Silhab Csoma 
+
+(Note: I included all the random time spend drawing notes and scribbles on my project book.)
+
+Week 8-14, 5 hours:
+8 Monday 	(1 hour) 	project design specification. 
+11 Thursday 	(2 hours) 	group meeting about roles/design. 
+13 Saturday 	(1 hour) 	java class design
+14 Sunday 	(1 hour) 	java class design.
+
+Week 15-21, 3 hours:
+17 Wednesday 	(1 hour) 	serverside java research.
+18 Thursday 	(2 hours) 	group meeting about design requirements.
+
+Week 22-28, 3 hours:
+24 Wednesday 	(1 hour) 	database design.
+25 Thursday 	(2 hours) 	group meeting about documentation requirements.
+
+Week 29-4, 5 hours:
+29 Monday 	(1 hour) 	database creation.
+31 Wednesday 	(1 hour) 	serverside java research.
+1 Thursday 	(2 hours) 	group meeting about testing requirements.
+4 Sunday 	(1 hour) 	test specification.
+
+Week 5-11, 5 hours 
+6 Tuesday 	(1 hours) 	class Diagram.
+8 Wednesday 	(2 hours) 	JUnit test table designs.
+11 Sunday 	(2 hour) 	GitHub practice.
+
+Total: 21 hours.
