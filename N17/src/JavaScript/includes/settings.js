@@ -12,9 +12,9 @@ Email:	slj11@aber.ac.uk
 var SERVLET_FOLDER = "";
 
 //address of induvidual servlets
-var USER_LOGIN 		= SERVLET_FOLDER + "loginServlet";
-var USER_LOGOUT 	= SERVLET_FOLDER + "logoutServlet";
-var USER_REGISTER 	= SERVLET_FOLDER + "registerServlet";
+var USER_LOGIN 		= SERVLET_FOLDER + "game";
+var USER_LOGOUT 	= SERVLET_FOLDER + "game";
+var USER_REGISTER 	= SERVLET_FOLDER + "game";
 
 //Max/min password length
 var MIN_PASSWORD_LENGTH = 8;

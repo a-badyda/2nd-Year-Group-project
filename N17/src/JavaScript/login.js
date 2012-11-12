@@ -19,7 +19,7 @@ $(document).ready(function(){
 		var $errorBox = $('#home_login .error');
 		
 		if (validateUserDetails($errorBox, email, password)) {
-			$.post(USER_LOGIN, {username: email, password: password}, 
+			$.post(USER_LOGIN, {username: email, password: password,action:'login'}, 
 			function(response) {
 				$errorBox.text(response);
 			});
@@ -36,7 +36,7 @@ $(document).ready(function(){
 		var $errorBox = $('#home_create_user .error');
 		
 		if (validateUserDetails($errorBox, email, password, password_confirm)) {
-			$.post(USER_REGISTER, {username: email, password: password}, 
+			$.post(USER_REGISTER, {username: email, password: password,action:'newuser'}, 
 			function(response) {
 				$errorBox.text(response);
 			});
