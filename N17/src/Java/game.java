@@ -68,8 +68,6 @@ public class game extends HttpServlet {
 		
 	}
 	
-	
-	
 	public void IsLoggedIn(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		HttpSession session = request.getSession(true);
