@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="CSS/bootstrap.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="CSS/base.css" media="screen" />
+
+<script type="text/javascript" src="JavaScript/includes/jquery182.min.js"></script>
+<script type="text/javascript" src="JavaScript/includes/settings.js"></script>
+<script type="text/javascript" src="JavaScript/functions/validate.js"></script>
+<script type="text/javascript" src="JavaScript/login.js"></script>
+
+<form id="home_login" method="POST" action="profile.html">
+    <h1>Log In</h1>
+<br/>
+<br/>
+    <fieldset id="login form">
+        <input id="username" name="username" type="text" placeholder="Username" autofocus required />   
+        <input id="password" name="password" type="password" placeholder="Password" required />
+        <div class="error"></div>
+    </fieldset>
+
+    <fieldset id="login">
+        <input type="submit" id="submit" value="Log in" />
+        <a href="">Forgot your password?</a>
+    </fieldset>
+</form>
+<form id="home_create_user">
+    <fieldset id="register form">
+    	<p> New to Monster Mash? Register here! </p>
+    	<input id="new_username" type="text" placeholder="New Username" required><br/>
+    	<input id="new_password" type="password" placeholder="New Password" required><br/>
+    	<input id="confirm" type="password" placeholder="Confirm Password" required><br/>
+    	 <div class="error"></div>
+    </fieldset>
+    <fieldset>
+    	<input type="submit" id="register" value="Create Account">
+    </fieldset>
+</form>
+
