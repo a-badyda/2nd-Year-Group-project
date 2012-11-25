@@ -1,14 +1,17 @@
 package root;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
+/*
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
+*/
+import java.sql.SQLException;
+import java.sql.ResultSet;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -23,37 +26,19 @@ import javax.servlet.http.Part;
 
 
 @WebServlet(name = "game", urlPatterns = {"/game"})
-public class game extends HttpServlet {
+public class GameServer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    private Connection conn;
     
-    public ArrayList<User> activeUsers;
+	Database db;
+	UserManager users;
     
-    
-    public game() {
-    	
-		// JDBC driver name and database URL
-       final String DB_URL="jdbc:mysql://localhost:3306/monsterdata";
-       //  Database credentials
-       final String USER = "root";
-       final String PASS = "Samsung2233";
-       activeUsers = new ArrayList<User>();
-       
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-	        // Open a connection
-	        conn = DriverManager.getConnection(DB_URL,USER,PASS);
-	        
-	        
-	        System.out.println("yay made a connection");
-          } catch (SQLException | ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+    public GameServer() {
+    	db = new Database();
+    	db.connect();
+    	users = new UserManager();
 				
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
@@ -90,31 +75,26 @@ public class game extends HttpServlet {
 		
 		HttpSession session = request.getSession(true);
 		
-		for (User user: activeUsers){
-			
-			if (user.username.equals(session.getAttribute("username")) && user.key.equals(session.getAttribute("key"))){
+		User user=users.fetchUser((String)session.getAttribute("username"));
+		
+		if (user!=null && user.getKey().equals(session.getAttribute("key"))){
 
-				PrintWriter out = response.getWriter();
-				response.setContentType("text/html");
-				out.print("{\"username\": \"" + user.username + "\", \"key\": \"" + user.key + "\" ,\"cash\": \""+user.cash + "\" }");
-				out.flush();
-				out.close();
-				
-				break;
-			}
+			PrintWriter out = response.getWriter();
+			response.setContentType("text/html");
+			out.print("{\"isLoggedIn\":\" true\" \"username\": \"" + user.getUsername() + "\", \"key\": \"" + user.getKey() + "\" ,\"cash\": \""+user.getCash() + "\" }");
+			out.flush();
+			out.close();
+		}else{
+			PrintWriter out = response.getWriter();
+			response.setContentType("text/html");
+			out.print("{\"isLoggedIn\": \"false\" ");
+			out.flush();
+			out.close();
 		}
+		
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -123,18 +103,9 @@ public class game extends HttpServlet {
 		case "login": LogIn(request,response);break;
 		case "logout": LogOut(request,response);break;
 		case "newuser": NewUser(request,response);break;
-			
-		
 		}
-		
-		
-		
-		
 	}
 	
-	
-	
-		
 		public void LogIn(HttpServletRequest request, HttpServletResponse response){
 			
 			String username = request.getParameter("username");
@@ -145,12 +116,10 @@ public class game extends HttpServlet {
 			
 			String query = ("SELECT * FROM user WHERE UserName='" +username+ "'");
         	
-    		Statement stmt;
 			try {
-				stmt = conn.createStatement ();
 			
 	    		ResultSet rset;
-	    		rset = stmt.executeQuery ( query );
+	    		rset = db.createQuery (query);
 	    		while (rset.next ())
 	    		{    
 	    			if(rset.getString("password").equalsIgnoreCase(password)){
@@ -164,22 +133,19 @@ public class game extends HttpServlet {
 	    				}
 	    				
 	    				User user = new User(username,password);
-	    				user.SetKey(key);
-	    				activeUsers.add(user);
-	    				user.SetCash(rset.getInt("cash")); 
+	    				user.setKey(key);
+	    				users.addUser(user);
+	    				user.setCash(rset.getInt("cash"));
+	    				
 	    				
 	    				HttpSession session = request.getSession(true);
 	    				session.setAttribute("key", key);
-	    				session.setAttribute("username", user.username);
+	    				session.setAttribute("username", user.getUsername());
 	    				
 	    				
-	    				PreparedStatement pstmt;
 	    			    query = ("UPDATE user SET 'key'='"+key+"' WHERE 'UserName'='"+username+"';");
-	 		            pstmt = conn.prepareStatement(query);
 	 		            //run the query and stor in DB
-	 		            pstmt.executeUpdate();
-	    				
-	 		            
+	 		            db.execute(query);
 	    				
 	    				break;
 	    			}
@@ -189,82 +155,124 @@ public class game extends HttpServlet {
 				e.printStackTrace();
 			}
 			
+			User user = users.fetchUser(username);
 			
-			
+			if(user != null){
+				
+				query = ("SELECT * FROM friends WHERE UserID='" +users.fetchUser(username).getId()+ "'");
+				
+				try{
+					ResultSet rset;
+					rset = db.createQuery (query);
+					
+					while (rset.next ())
+		    		{
+						User Friend = new User();
+						
+						Friend.setId(rset.getInt("friendID"));
+						
+						
+						
+						String query2 = ("SELECT * FROM user WHERE UserID='" +Friend.getId()+ "'");
+						ResultSet rset2;
+						rset2 = db.createQuery (query2);
+						
+						Friend.setUsername(rset2.getString("UserName"));
+						
+						//load in freinds monsters here
+						
+						String query3 = ("SELECT * FROM monsters WHERE ownerID='" +Friend.getId()+ "'");
+						
+						ResultSet rset3;
+						rset2 = db.createQuery (query2);
+						try {
+							while(rset2.next()){
+								
+								Monster m = new Monster();
+								m.setName(rset2.getString("name"));
+								m.setId(rset2.getInt("monsterID"));
+								m.setOwnerId(rset2.getInt("ownerID"));
+								
+								Friend.addMonster(m);
+							}
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+						
+						user.addFriends(Friend);
+		    		}
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+
+
+				//load in your monsters here
+				
+				String query2 = ("SELECT * FROM monsters WHERE ownerID='" +user.getId()+ "'");
+				
+				ResultSet rset2;
+				rset2 = db.createQuery (query2);
+				try {
+					while(rset2.next()){
+						
+						Monster m = new Monster();
+						m.setName(rset2.getString("name"));
+						m.setId(rset2.getInt("monsterID"));
+						m.setOwnerId(rset2.getInt("ownerID"));
+						user.addMonster(m);
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+				
+				
+				
+				
+			}
 			try {
 				PrintWriter out = response.getWriter();
-				
-				
+					
 				out.print("");
 				out.flush();
 				out.close();
-				
-				
-				
+		
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			
-			
-			
-			
+
 		}
+		
+		
 		
 		public void LogOut(HttpServletRequest request, HttpServletResponse response){
 			
 			
 			HttpSession session = request.getSession(true);
 			
-			User toBeRemoved = null;
-			
-			for (User user: activeUsers){
-				
-				if (user.username.equals(session.getAttribute("username"))){
-
-					toBeRemoved = user;
-					break;
-				}
-			}
-			
-			if (toBeRemoved != null){
-				activeUsers.remove(toBeRemoved);
-				
-				session.setAttribute("key", "");
-				session.setAttribute("username", "");
-				session.invalidate();
-				
-				PreparedStatement pstmt;
-			    String query = ("UPDATE user SET 'key'='' WHERE 'UserName'='"+toBeRemoved.username+"';");
-		        try {
-					pstmt = conn.prepareStatement(query);
-					//run the query and stor in DB
-					pstmt.executeUpdate();
-		        } catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			User user = users.fetchUser((String)session.getAttribute("username"));
 			
 			
+			session.setAttribute("key", "");
+			session.setAttribute("username", "");
+			session.invalidate();
+			
+		    String query = ("UPDATE user SET 'key'='' WHERE 'UserName'='"+user.getUsername()+"';");
+			db.execute(query);
 			
 			
+			users.removeUser(user);
 			
-			try {
-				PrintWriter out = response.getWriter();
-				
-				
-				out.print("");
-				out.flush();
-				out.close();
-				
-				
-				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			
 		}
 		
@@ -274,27 +282,15 @@ public class game extends HttpServlet {
 		    String password = request.getParameter("password");
 		    
 		    
-		    PreparedStatement pstmt;
 		    String query = ("INSERT INTO `user` (`UserName`, `Email`, `Password`, `Cash`) VALUES ('"+username+"', ' ', '"+password+"', '200');");
-	        try {
-				pstmt = conn.prepareStatement(query);
 				//run the query and stor in DB
-				pstmt.executeUpdate();
-	        } catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	        
+		    	db.execute(query);
 	        
 	        try {
 				PrintWriter out = response.getWriter();
-				
-				
 				out.print("");
 				out.flush();
 				out.close();
-				
-				
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
