@@ -13,6 +13,11 @@ public class Request {
 		this.setToMon(m2id);
 		this.setType(type);
 	}
+	public Request(Integer u1id, Integer u2id, RequestType type){//for request type freind
+		this.setFrom(u1id);
+		this.setTo(u2id);
+		this.setType(type);
+	}
 
 	public Integer getId() {
 		return id;

@@ -16,6 +16,7 @@ Select Battle Page
  - On Battle Click:
  	- Request new battle
  		- action: "newBattleRequest"
+		- usermonsterid: int
  		- friendid: int
  		- monsterid: int
  		
@@ -57,4 +58,13 @@ Notifications Menu
 		
 
 			
-			
+******************************************
+*	breading stuff by tux		 *
+*	not to sure were you wanted it	 *		
+******************************************
+ 	- Request new breed
+ 		- action: "newBreedRequest"
+		- usermonsterid: int
+ 		- friendid: int
+ 		- monsterid: int
+

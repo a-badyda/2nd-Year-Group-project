@@ -53,7 +53,7 @@ public class GameServer extends HttpServlet {
 		
 	}
 	
-	public void IsLoggedIn(HttpServletRequest request, HttpServletResponse response) throws IOException{
+	private void IsLoggedIn(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		HttpSession session = request.getSession(true);
 		PrintWriter out = response.getWriter();
@@ -71,7 +71,7 @@ public class GameServer extends HttpServlet {
 		out.close();
 	}
 	
-	public void GetUserData(HttpServletRequest request, HttpServletResponse response) throws IOException{
+	private void GetUserData(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		HttpSession session = request.getSession(true);
 		
@@ -103,10 +103,13 @@ public class GameServer extends HttpServlet {
 		case "login": LogIn(request,response);break;
 		case "logout": LogOut(request,response);break;
 		case "newuser": NewUser(request,response);break;
+		case "addFriend":addFriend(request,response);break;
+		case "newBattleRequest":newBattleRequest(request,response);break;
+		case "newBreedRequest":newBreedRequest(request,response);break;
 		}
 	}
 	
-		public void LogIn(HttpServletRequest request, HttpServletResponse response){
+		private void LogIn(HttpServletRequest request, HttpServletResponse response){
 			
 			String username = request.getParameter("username");
 		    String password = request.getParameter("password");
@@ -231,30 +234,12 @@ public class GameServer extends HttpServlet {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
-				
-				
-				
-				
-				
 			}
-			try {
-				PrintWriter out = response.getWriter();
-					
-				out.print("");
-				out.flush();
-				out.close();
-		
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 
 		}
 		
-		
-		
-		public void LogOut(HttpServletRequest request, HttpServletResponse response){
+		private void LogOut(HttpServletRequest request, HttpServletResponse response){
 			
 			
 			HttpSession session = request.getSession(true);
@@ -276,7 +261,7 @@ public class GameServer extends HttpServlet {
 			
 		}
 		
-		public void NewUser(HttpServletRequest request, HttpServletResponse response){
+		private void NewUser(HttpServletRequest request, HttpServletResponse response){
 			
 			String username = request.getParameter("username");
 		    String password = request.getParameter("password");
@@ -302,4 +287,66 @@ public class GameServer extends HttpServlet {
 	        
 		}
 		
+		private void addFriend(HttpServletRequest request, HttpServletResponse response){
+			
+			HttpSession session = request.getSession(true);
+			User user = users.fetchUser((String)session.getAttribute("username"));
+			int Friend;
+			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getAttribute("username")+ "'");
+			
+			try {
+				Friend = db.createQuery(query).getInt("UserID");
+				query = "INSERT INTO 'notifications' (`type`, `UserID1`, `UserID2`, `state`) VALUES ('FRIEND', '"+user.getId()+"', '"+Friend+"', 'PENDING')";
+				db.execute(query);
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		private void newBattleRequest(HttpServletRequest request, HttpServletResponse response){
+			
+			HttpSession session = request.getSession(true);
+			User user = users.fetchUser((String)session.getAttribute("username"));
+			
+			int Friend = (int)request.getAttribute("friendid");
+			int FriendMonster = (int)request.getAttribute("monsterid");
+			int userMonster = (int)request.getAttribute("usermonsterid");
+			
+			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getAttribute("username")+ "'");
+			
+			try {
+				Friend = db.createQuery(query).getInt("UserID");
+				query = "INSERT INTO `notifications` (`type`, `UserID1`, `UserID2`, `MonsterID1`, `MonsterID2`, `state`) VALUES ('BATTLE', '"+user.getId()+"', '"+Friend+"', '"+userMonster+"', '"+FriendMonster+"', 'PENDING')";
+				db.execute(query);
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		private void newBreedRequest(HttpServletRequest request, HttpServletResponse response){
+			
+			HttpSession session = request.getSession(true);
+			User user = users.fetchUser((String)session.getAttribute("username"));
+			
+			int Friend = (int)request.getAttribute("friendid");
+			int FriendMonster = (int)request.getAttribute("monsterid");
+			int userMonster = (int)request.getAttribute("usermonsterid");
+			
+			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getAttribute("username")+ "'");
+			
+			try {
+				Friend = db.createQuery(query).getInt("UserID");
+				query = "INSERT INTO `notifications` (`type`, `UserID1`, `UserID2`, `MonsterID1`, `MonsterID2`, `state`) VALUES ('BREED', '"+user.getId()+"', '"+Friend+"', '"+userMonster+"', '"+FriendMonster+"', 'PENDING')";
+				db.execute(query);
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 }
