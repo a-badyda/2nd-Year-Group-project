@@ -36,9 +36,12 @@ public class UserManager {
 		this.users.remove(user);
 	}
 	
-	public void createUser(Integer id, String username, String password){
+	public User createUser(Integer id, String key, String username, String password, Integer cash){
 		User newbie = new User(username, password);
 		newbie.setId(id);
+		newbie.setKey(key);
+		users.add(newbie);
+		return newbie;
 	}
 	
 	public Request newRequest(Integer u1id, Integer u2id, Integer m1id, Integer m2id, RequestType type){
