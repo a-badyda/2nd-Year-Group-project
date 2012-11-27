@@ -20,6 +20,24 @@ Select Battle Page
  		- friendid: int
  		- monsterid: int
  		
+Select Breed Page
+ - On Page Load: 
+ 	- Request list of users monsters
+ 		- action: "getMonsters"
+ 	- Request list of users friends
+ 		- action: "getFriends"
+ 
+ - On Friend Click: 
+ 	- Request friends monsters
+ 		- action: "getFriendsMonsters"
+ 		
+ - On Breed Click:
+	- Request new breed
+		- action: "newBreedRequest"
+		- usermonsterid: int
+		- friendid: int
+		- monsterid: int
+ 		
 Friends Page
  - On Page Load:
 	- Request list of friends
@@ -55,16 +73,4 @@ Notifications Menu
  - Decline Request Notification
  	- action: "declineRequest"
  	- id: int
-		
-
-			
-******************************************
-*	breading stuff by tux		 *
-*	not to sure were you wanted it	 *		
-******************************************
- 	- Request new breed
- 		- action: "newBreedRequest"
-		- usermonsterid: int
- 		- friendid: int
- 		- monsterid: int
 
