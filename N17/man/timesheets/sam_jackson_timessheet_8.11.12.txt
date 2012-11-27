@@ -1,3 +1,22 @@
+27/11/12 -- Hours Worked: 4
+Added JavaScript request for most of the pages within the system.
+Liased with Alex about what HTML structure need to be implmeneted.
+Formalised a high level state diagram for the system.
+Produced a document with the write up of the JSON objects being passed
+between client and server.
+
+22/11/12 -- Hours Worked: 1
+Attended group project meeting.
+
+15/11/12 -- Hours Worked: 1
+Attended group project meeting.
+
+14/11/12 -- Hours Worked: 5
+Attended coders meeting to help organise a design.
+Organised my machine for easier development
+setup account on Tux's server.
+outlined the JSON objects needed to be passed to the server.
+
 8/11/12 -- Hours Worked: 1
 Attended group project meeting.
 
