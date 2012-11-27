@@ -41,7 +41,7 @@ Select Breed Page
 Friends Page
  - On Page Load:
 	- Request list of friends
-		- action: "getFriend"
+		- action: "getFriends"
 	- Request list of pending friends
 		- action: "getPending"
 		- type: "friend"
