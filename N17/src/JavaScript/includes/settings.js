@@ -16,6 +16,8 @@ var USER_LOGIN 		= SERVLET_FOLDER + "game";
 var USER_LOGOUT 	= SERVLET_FOLDER + "game";
 var USER_REGISTER 	= SERVLET_FOLDER + "game";
 
+var SERVLET_LOCATION = SERVLET_FOLDER + "game";
+
 //Max/min password length
 var MIN_PASSWORD_LENGTH = 8;
 var MAX_PASSWORD_LENGTH = 20;
