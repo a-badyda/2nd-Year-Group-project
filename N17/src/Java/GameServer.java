@@ -1,4 +1,4 @@
-package root;
+package Java;
 
 /*
 import java.sql.Connection;
@@ -121,7 +121,7 @@ public class GameServer extends HttpServlet {
 		    String password = request.getParameter("password");
 			
 			int ID;
-			int cash;
+			int cash = 100;
 			
 			String query = ("SELECT * FROM user WHERE UserName='" +username+ "'");
         	
@@ -141,11 +141,7 @@ public class GameServer extends HttpServlet {
 	    					key += temp;
 	    				}
 	    				
-	    				User user = new User(username,password);
-	    				user.setKey(key);
-	    				users.addUser(user);
-	    				user.setCash(rset.getInt("cash"));
-	    				
+	    				User user = users.createUser(key, username, password, cash);
 	    				
 	    				HttpSession session = request.getSession(true);
 	    				session.setAttribute("key", key);

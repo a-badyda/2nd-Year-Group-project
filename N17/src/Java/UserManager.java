@@ -36,9 +36,8 @@ public class UserManager {
 		this.users.remove(user);
 	}
 	
-	public User createUser(Integer id, String key, String username, String password, Integer cash){
+	public User createUser(String key, String username, String password, Integer cash){
 		User newbie = new User(username, password);
-		newbie.setId(id);
 		newbie.setKey(key);
 		users.add(newbie);
 		return newbie;
