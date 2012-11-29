@@ -12,8 +12,8 @@ writing up minutes
 HTML
 	
 	week 29.10	1.00H (getting stated, look at first real html commit on github)
-	week 05.11	1.00H (second<and third> commit on github)
-
+	week 05.11	1.00H (second<and third> commit on GitHub)
+	week 25.11	3.00H (all the commits on 27th on GitHub -updating HTML to fit with the requests)
 
 
 meetings
@@ -25,15 +25,14 @@ meetings
 	18.10	1.00H
 //we had more meetings didn't we? Do the ones in the pub count? I don't remember when they were...//
 
-Writing Up test sheet for HTML
-
-	started, has not done anything significant yet? (SOON)
 
 Organizing/Managing Git Repository
 	a)running around and finding people on GitHub+adding them to the repo:
-	 30MIN
+	30MIN
+	
 	b)organizing the repo to fit the predetermined structure:
 	30MIN
+	
 	c)teaching git and proving self to be a realy bad Git Guru: 
 	1.00H
 

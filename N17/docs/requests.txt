@@ -1,0 +1,76 @@
+Profile page
+ - On Page Load: Request list of users monsters
+ 	- action: "getMonsters"
+ 	
+Select Battle Page
+ - On Page Load: 
+ 	- Request list of users monsters
+ 		- action: "getMonsters"
+ 	- Request list of users friends
+ 		- action: "getFriends"
+ 
+ - On Friend Click: 
+ 	- Request friends monsters
+ 		- action: "getFriendsMonsters"
+ 
+ - On Battle Click:
+ 	- Request new battle
+ 		- action: "newBattleRequest"
+		- usermonsterid: int
+ 		- friendid: int
+ 		- monsterid: int
+ 		
+Select Breed Page
+ - On Page Load: 
+ 	- Request list of users monsters
+ 		- action: "getMonsters"
+ 	- Request list of users friends
+ 		- action: "getFriends"
+ 
+ - On Friend Click: 
+ 	- Request friends monsters
+ 		- action: "getFriendsMonsters"
+ 		
+ - On Breed Click:
+	- Request new breed
+		- action: "newBreedRequest"
+		- usermonsterid: int
+		- friendid: int
+		- monsterid: int
+ 		
+Friends Page
+ - On Page Load:
+	- Request list of friends
+		- action: "getFriends"
+	- Request list of pending friends
+		- action: "getPending"
+		- type: "friend"
+		
+ - On Accept Friend Click:
+	- Accept pending friend request
+		- action: "acceptPendingFriend"
+		- friendid: int
+	
+ - On Decline Friend Click:
+	- Decline pending friend request
+		- action: "declinePendingFriend"
+		- friendid: int
+		
+ - On Add Friend Click:
+ 	- Request to add friend
+ 		- action: "addFriend"
+ 		- username: email
+ 		
+Notifications Menu
+ - On Page Load:
+ 	- Request list of all notifications
+ 		- action: "getAllNotifications"
+ 	
+ - Accept Request Notification
+ 	- action: "acceptRequest"
+ 	- id: int
+ 
+ - Decline Request Notification
+ 	- action: "declineRequest"
+ 	- id: int
+
