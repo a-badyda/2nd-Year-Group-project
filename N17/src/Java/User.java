@@ -61,6 +61,9 @@ public class User {
 		this.serverAdd=serverAdd;
 	}
 	
+	public void setMonsters(ArrayList<Monster> mons) {
+		this.monsters=mons;
+	}
 	public ArrayList<Monster> getMonsters() {
 		return monsters;
 	}
@@ -83,6 +86,15 @@ public class User {
 	public void addFriends(User friend) {
 		this.friends.add(friend);
 	}
+	
+	public void addRequest(Request req){
+		requests.add(req);
+	}
+	
+	public void removeRequest(Request req){
+		requests.remove(req);
+	}
+	
 	public ArrayList<Request> getRequests() {
 		return requests;
 	}

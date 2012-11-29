@@ -1,19 +1,33 @@
 package Java;
-
 import java.util.Date;
+
+/**
+ * Defines all monsters in the MonsterMash game, a monster can age as well as
+ * update its own battle record. Its statistics may change as it ages and battles.
+ */
 
 public class Monster {
 	
+	//Ids are for linking tables in the database and are not used elsewhere.
 	private Integer id, ownerId;
 	private String name;
-	private float health, strength, defence, aggression, fertility;
+	private MonsterStats stats;
 	private Breed breed;
-	private Status status;
+	//Cash prize is the amount a user wins when they defeat this monster.
 	private int cashPrize, wins, losses;
 	private Date birth;
 	
-	Monster(){
-		
+	/**
+	 * Creates a new monster with the given parameters.
+	 * @param name The name of the monster.
+	 * @param breed The breed type of the monster.
+	 * @param birth The birth date of the monster.
+	 */
+	Monster(String name, Breed breed, Date birth){
+		this.name=name;
+		this.breed=breed;
+		stats = new MonsterStats(breed);
+		this.birth=birth;
 	}
 	
 	public Integer getId() {
@@ -34,47 +48,20 @@ public class Monster {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public float getHealth() {
-		return health;
+
+	public void setStats(MonsterStats stats){
+		this.stats = stats;
 	}
-	public void setHealth(float health) {
-		this.health = health;
+	
+	public MonsterStats getStats(){
+		return stats;
 	}
-	public float getStrength() {
-		return strength;
-	}
-	public void setStrength(float strength) {
-		this.strength = strength;
-	}
-	public float getDefence() {
-		return defence;
-	}
-	public void setDefence(float defence) {
-		this.defence = defence;
-	}
-	public float getAggression() {
-		return aggression;
-	}
-	public void setAggression(float aggression) {
-		this.aggression = aggression;
-	}
-	public float getFertility() {
-		return fertility;
-	}
-	public void setFertility(float fertility) {
-		this.fertility = fertility;
-	}
+	
 	public Breed getBreed() {
 		return breed;
 	}
 	public void setBreed(Breed breed) {
 		this.breed = breed;
-	}
-	public Status getStatus() {
-		return status;
-	}
-	public void setStatus(Status status) {
-		this.status = status;
 	}
 	public Date getBirth() {
 		return birth;
