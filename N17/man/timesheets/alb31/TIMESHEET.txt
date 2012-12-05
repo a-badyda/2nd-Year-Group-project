@@ -14,17 +14,14 @@ HTML
 	week 29.10	1.00H (getting stated, look at first real html commit on github)
 	week 05.11	1.00H (second<and third> commit on GitHub)
 	week 25.11	3.00H (all the commits on 27th on GitHub -updating HTML to fit with the requests)
+	week 03.12	1.00H (getting the god damn pdf format to cooperate with me to fill in the change of control form. Should not have taken that long)	
+	
 
+CSS
+	week 25.11	0.30H (refreshing my css skills by reading up on classes)
 
 meetings
-
-//missed the meeting on Friday 02.11//
-	01.11	1.00H  
-	22.10	1.00H
-	19.10	1.00H
-	18.10	1.00H
-//we had more meetings didn't we? Do the ones in the pub count? I don't remember when they were...//
-
+//not indexing them, assuing that you know this already
 
 Organizing/Managing Git Repository
 	a)running around and finding people on GitHub+adding them to the repo:
@@ -36,8 +33,19 @@ Organizing/Managing Git Repository
 	c)teaching git and proving self to be a realy bad Git Guru: 
 	1.00H
 
-/* BUYING OuT SUPPLIES FOR MEETINGS: 30 MIN AND ABOut 9 POuNDS TOTAL*/
-//you people have no idea how difficult it was to pick something at the union shop and not look completly crazy:  //
-//"don't mind me I'm just buying 9 FREAKinG PACKS OF MAGIC STARS all at once.IswearIamnotgoingtoeatthemallbymyself" //
+	d)fixing Silhab's git:
+	2:00H 
 
-//Do I get extra points for being funny?//
+	e)fixing Chris's git during coder's meetings:
+	1:30H + 0.30H
+
+	f)encouraging the use of git among group members:
+	Too much time: to think about it approx 0.15H every week ;)
+ 
+	h)breaking my own git only to fix it later:
+	1:00H+ 0.30H
+
+	g)various git-related advice:
+	varies, I'd say I've spend a total of about an hour on all these.	
+
+/* BUYING OuT SUPPLIES FOR MEETINGS: 30 MIN AND ABOut 9 POuNDS TOTAL*/
