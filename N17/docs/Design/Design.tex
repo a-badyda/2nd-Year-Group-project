@@ -1,0 +1,240 @@
+\documentclass{project}
+\usepackage[pdfauthor={C. P. Marriott},pdftitle={Software Engineering Group Project, Project Plan},pdftex]{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{pdfpages}
+\hypersetup{colorlinks=false,pdfborder={0 0 0}}
+\begin{document}
+\title{Software Development Life cycle}
+\subtitle{Design Specification}
+\author{Tom Reed, Matt Whitmore, Dave Clark, Silhab Csoma, Mike Steel, Chris 'Tux' Lloyd, Alex Badyda, Sam Jackson, Chris Marriott}
+\shorttitle{Design Specification}
+\version{1.2}
+\status{draft}
+\date{2012-12-5}
+\configref{SE.QA.G17}
+\maketitle
+\tableofcontents
+\newpage
+\section{Introduction}
+\subsection{Purpose of this Document}
+This should provide everything designers, programmers and testers need to know to use the facilities
+provided by a module. It should include an outline specification for each class in the system. The specification
+should include.
+
+\subsection{Scope}
+The outline specification for each class in the system will contain, name and type of class, what classes it extends and why. Also public methods implemented by the class, parameter names and types for each method will be specified, and a short summary of the purpose of the method given.
+
+\subsection{Objectives}
+The objective of this document is to give an overview of classes in the system for the monster mash game.
+\\
+The areas covered by this plan are:
+\begin{itemize}
+	\item Java Classes names and types
+	\item Classes they extend and why
+	\item Public methods implemented by the class
+\end{itemize}
+
+\section{General Functionality}
+\subsection{Description}
+An HTTP servlet is used to access the data contained within the backend of the server as if it was almost a web page.  We will pass parameters between it and get a response. We will be working on the principle that one main servlet will perform different actions, passing through an actions variable and any data required to be processed. There are two methods of accessing this; using ‘get’ and ‘post’ requests.  The get request will pass the parameters through the URL, the post request through a hidden layer, based on the users input. JavaScript will collate the necessary data, and attach the appropriate action command before sending to the server.
+\subsection{Relationship Diagram}
+\includegraphics{relationshipDiagram.jpg}
+
+
+
+\section{Significant Data Classes}
+\subsection{Java Data Classes}
+There are four main classes within the Java designed to be implemented within the project, these are Monster, User, User-Manager, and Request.
+\subsection{User-Manager class}
+User-Manager handles the basic ability to get a user from the database and find out if they exist, as well as being able to add and remove a user from the database. This class is therefore key to having a usable log in page, as well as being absolutely necessary for a functioning registration form for new users.
+\subsection{User class}
+The User class handles more specific details appropriate to a user, including both details necessary for the user logging in, such as getting the user-name and password, as well as details necessary for the management of the user within the game, such as methods to get which monsters the user has. There will also be parts of this class that handle setting the user-name and password and other key parts of the user’s details, so this is a class key to many functions of the website; from creating a new user and logging in, to finding out what monsters and friends that user has.
+\subsection{Monster class}
+There is then the Monster class which will handle all the functionality regarding monsters that a user might own, including basic things such as who owns the monster, its stats, and what its name is, to key details that add depth to the game, such as the monster’s age, how many battles it has won, and how fertile it is.
+\subsection{Request class}
+Finally, there is the Request class, which will handle requests from other players to breed, fight, or become friends. This will handle everything to do with notifying the recipient of these requests, such as noting who the request is from, and responding to it.
+
+\subsection{Functional Requirements}
+\begin{table}[!h]
+\centering
+\begin{tabular}{|l|c|r}
+\hline
+Monster & FR3, FR4, FR10 \\ \hline
+User & FR1, FR6, FR7, FR8, F11 \\ \hline
+User-Manager & FR1, FR2, FR3, FR7 \\ \hline
+Request & FR6, FR9 \\ \hline
+\end{tabular}
+\caption{This table shows the functional of Java classes}
+\label{tab:myfirsttable}
+\end{table} 
+
+\section{Breed Class}
+The breed class is called Breed.class and is a private class.
+\subsection{Classes extended and why}
+N/A
+\subsection{Public Methods} 
+The only public method this class has is ENUM Breed and has no parameters. This is a list of set monster types that the monster will be of type. Used ENUM so can only select a type from that list.
+
+\section{Monster Class}
+The monster class is called Monster.class and is a public class.
+\subsection{Classes extended and why}
+N/A
+\subsection{Public Methods}
+Public methods are as follows:        
+public Integer getId() - This will return an ID, used for identification purposes. public void setId(Integer id) - is used to set the unique IDand takes parameter of Integer id. public Integer getOwnerId() - this will return the unique id of the owner, used for identification of owner. public void setOwnerId(Integer ownerId) - This is used to set the unique owner id and takes Integer ownerId as a parameter.
+
+public String getName() - This will return the name of the owner and monster. public void setName(String name) This will set the name for owner and monster and takes String name as a parameter.
+public float getHealth() - This will get the health of the monster. public void setHealth(float health) - This will set the health of the monster, will be done after battle. Takes float health as a parameter.
+public float getStrength() - This will return the strength of the monster. public void setStrength(float strength) - This sets the strength of the monster and takes float strength as a parameter.
+public float getDefence() - This will return the monsters defence. public void setDefence(float defence) - This will set the monsters defence and take float defence as a parameter.
+
+public float getAggression() - This will return the monsters aggression. public void setAggression(float aggression) - This will set the monsters aggression and will take float aggression as a parameter.
+public float getFertility() - This will return the monsters fertility which will be used during the breeding process. public void setFertility(float fertility) - This will set the fertility of the monster and will take float fertility as a parameter.
+public Breed getBreed() - This will return the monsters breed type. public void setBreed(Breed breed) - This will set the monsters breed type and takes Breed breed as a parameter.
+public Status getStatus() - This will get the status of the monster. public void setStatus(Status status) - This will set the status of the monster and will take Status status as a parameter.
+public int getAge() - This will return the age of the monster. public void setAge(int age) - This will set the age of the monster and will take int age as a parameter.
+
+public int getCashPrize() - This will return the cash prize from the battle. public void setCashPrize(int cashPrize) - This will set the cash prize and take int cashPrize as a parameter.
+public int getWins() - This will return the number of wins. public void setWins(int wins) - This will set the number of wins and takes int wins as a parameter.
+public int getLosses() - This will return number of losses. public void setLosses(int losses) - This will set the losses and takes int losses as a parameter.
+
+\section{MySQLDatabase Class}
+The MySQLDatabase class is called MySQLDatabase.class and is a public class.
+\subsection{Classes extended and why}
+N/A
+\subsection{Public Methods}
+
+
+\section{Request}
+The Request class is called Request.class and is a public class.
+\subsection{Classes extended and why}
+N/A
+\subsection{Public Methods}
+public User getFrom() - This will return from which is of type User. public void setFrom(User from) - This will set the User from and take User from as a parameter.
+public User getTo() - This will return to which is of type User. public void setTo(User to) - This will set the User to value and take User to as a parameter.
+public Monster getFromMon() - This will return fromMon which is of type Monster. public void setFromMon(Monster fromMon) - This will set fromMon and takes Monster fromMon as a parameter.
+public Monster getToMon() - This will return a toMon which is of type Monster. public void setToMon(Monster toMon) - This will set toMon and takes Monster toMon as a parameter.
+public RequestType getType() - This will return type which is of type request. public void setType(RequestType type) - This will set type and take RequestType type as a parameter. These will be used to determine whether it is pending, accepted and declined.
+public RequestState getState() - This will return state which is of type RequestState. public void setState(RequestState state) - This will set state which is of type RequestState and takes RequestState state as a parameter.
+
+\section{Request state}
+The request state class is called RequestState.class and is a public ENUM class.
+\subsection{Classes extended and why}
+N/A
+\subsection{Public Methods}
+The only method in this class is enum RequestState. This is used to allow 3 states to be identified of which are ACCEPTED, PENDING and DECLINED. These will be used for requests such as battle and breed.
+
+\section{UserManager}
+The user manager class is called UserManager.class and is a public class.
+\subsection{classes extended and why}
+N/A
+\subsection{Public Methods}
+public UserManager() - 
+public User fetchUser(Integer id)
+public User getUser(String name)
+public void addUser(User user)
+public void removeUser(User user)
+public void createUser(Integer id, String username, String email, String password)
+
+
+\section{User}
+The user class is called User.class and is a public class.
+\subsection{Classes extended and why}
+N/A
+\subsection{Public Methods}
+public Integer getId() - This will return id which is of type Integer. public void setId(Integer id) - This will set id and takes Integer id as a parameter.
+public String getUsername() - This will return username which is of type String. public void setUsername(String username) - This will set username and takes String username as a parameter.
+public Integer getKey() - This will return key and is of type Integer. public void setKey(Integer key) - This will set key and takes Ineger key as a parameter.
+public String getEmail() - This will return email and is of type String. public void setEmail(String email) - This will set email and takes String email as a parameter.
+public String getPassword() - This returns password and is of type String. public void setPassword(String password) - This will set the password and takes String password as a parameter.
+public Integer getCash() - This will return cash and is of type Integer. public void setCash(Integer cash) - This sets cash and takes Integer cash as a parameter.
+public String getServerAdd() - This will return serverAdd and is of type String. public void setServerAdd(String serverAdd) - This sets serverAdd and takes String serverAdd as a parameter.
+public ArrayList\textless Monster\textgreater  getMonsters() - This will return a list of monsters of type ArrayList\textless Monster\textgreater. public void setMonsters(ArrayList\textless Monster\textgreater  monsters) - This sets monsters and takes ArrayList\textless Monsters\textgreater  monsters as a parameter.
+public ArrayList\textless User\textgreater  getFriends() - This will return a list of friends of type ArrayList\textless User\textgreater. public void setFriends(ArrayList\textless User\textgreater  friends) - This sets friends and takes ArrayList\textless User\textgreater  friends as a parameter.
+public ArrayList\textless Request\textgreater  getRequests() - This will get a list of requests of type ArrayList\textless Request\textgreater. public void setRequests(ArrayList\textless Request\textgreater  requests) - This will set requests and takes ArrayList\textless Request\textgreater  requests as a parameter.
+
+
+\section{Status class}
+The Status class is called Status.java and is a public enum class.
+\subsection{Classes extended and why}
+N/A
+\subsection{Public methods}
+This class is an ENUM class and defines a set of 4 statuses that monsters can have. NORMAL, SICK, DEAD and HAPPY.
+
+
+\section{RequestType class}
+The Request type class is called RequestType.class and is a public ENUM class.
+\subsection{Classes extended and why}
+N/A
+\subsection{Public methods}
+This class is an ENUM class and defines a set of 3 types for request. BATTLE, BREED and FRIEND. 
+
+\section{Class Diagram}
+\includegraphics[scale=0.40]{MonsterMashClassesv1_1.jpg}
+
+\section{Sequence Diagrams}
+\subsection{Accept Battle}
+This sequence diagram shows a user accepting a battle request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the “doPost” method. The request then runs through the relevant classes in order to gain the information required.
+\begin{center}
+\includegraphics[scale=0.40]{SD_accept_battle.png}
+\end{center}
+
+\subsection{Accept Breed}
+This sequence diagram shows a user accepting a breed request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the “doPost” method. The request then runs through the relevant classes in order to gain the information required.
+\begin{center}
+\includegraphics[scale=0.40]{SD_accept_breed.png}
+\end{center}
+
+\subsection{Add Friend}
+This sequence diagram shows a user adding a friend. The users request is sent to the server using the “doPost” method. The request then runs through the relevant classes in order to gain the information required. A request is then sent to the corresponding user using the “addRequest” method and “User class”.
+\begin{center}
+\includegraphics[scale=0.40]{SD_accept_friend.png}
+\end{center}
+
+\subsection{Register User}
+This sequence diagram shows a user submitting their password and username to create a monstermash account. The diagram shows the users password and username being sent to the server using the “doPost” method. The request then runs through the relevant classes in order to process the users details and create the new account.
+\begin{center}
+\includegraphics[scale=0.40]{SD_register_user.png}
+\end{center}
+
+\subsection{Send Battle/Breed Request}
+This sequence diagram shows a user sending a breed or battle request to a friend. The diagram shows the users request being sent to the server using the “doPost” method. A request is then sent to the corresponding user using the “addRequest” method and “User class”.
+\begin{center}
+\includegraphics[scale=0.40]{SD_send_battle_breed_request.png}
+\end{center}
+
+\subsection{User Log In}
+This sequence diagram shows a user logging in to monstermash. The user submits their login information and it is posted to the server using the “doPost” method. The request then runs the the relevant classes, checking the login details. A response is generated if the login details are invalid or the user is logged in if they details are valid.
+\begin{center}
+\includegraphics[scale=0.40]{SD_user_login.png}
+\end{center}
+
+\section{State Diagram}
+\begin{center}
+\includegraphics[scale=0.50]{state_diagram.png}
+\end{center}
+
+
+
+\clearpage
+\addcontentsline{toc}{section}{REFERENCES}
+\begin{thebibliography}{5}
+\bibitem{} \emph{N/A}
+\end{thebibliography}
+\clearpage
+\addcontentsline{toc}{section}{DOCUMENT HISTORY}
+\section*{DOCUMENT HISTORY}
+\begin{tabular}{|l | l | l | l | l |}
+\hline
+Version & CCF No. & Date & Changes made to Document & Changed by \\
+\hline
+1.0 & N/A & 2012-10-31 & Initial creation & CPM4 \\
+\hline
+1.1 & N/A & 2012-11-2 & Added information from Mike & CPM4 \\
+\hline
+1.2 & N/A & 2012-12-5 & Updated config ref and added other documents & CPM4 \\
+\hline
+\end{tabular}
+\label{thelastpage}
+\end{document}
+
