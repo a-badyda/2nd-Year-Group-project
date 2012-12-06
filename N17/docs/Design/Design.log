@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.17)  6 DEC 2012 02:02
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.17)  6 DEC 2012 02:08
 entering extended mode
  %&-line parsing enabled.
 **Design.tex
@@ -203,8 +203,7 @@ File: pppdftex.def 2009/02/07 v0.4g Pdfpages driver for pdfTeX (AM)
 \AM@templatesizebox=\box27
 )
 Package hyperref Info: Option `colorlinks' set `false' on input line 5.
-
-No file Design.aux.
+ (./Design.aux)
 \openout1 = `Design.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -222,6 +221,7 @@ LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 Package hyperref Info: Link coloring OFF on input line 6.
+
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -232,12 +232,13 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
+ (./Design.out)
+(./Design.out)
 \@outlinefile=\write3
 \openout3 = `Design.out'.
 
 \AtBeginShipoutBox=\box28
-
-(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+ (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
 \scratchdimen=\dimen110
@@ -278,15 +279,11 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
  [0
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Design.toc [1])
 \tf@toc=\write4
 \openout4 = `Design.toc'.
 
-
-
-LaTeX Warning: Reference `thelastpage' on page 1 undefined on input line 17.
-
-[1]
+ [2]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ò in font cmr10!
@@ -299,48 +296,26 @@ Missing character: There is no ò in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
- <relationshipDiagram.jpg, id=18, 395.076pt x 296.307pt>
+
+<relationshipDiagram.jpg, id=284, 395.076pt x 296.307pt>
 File: relationshipDiagram.jpg Graphic file (type jpg)
 
-<use relationshipDiagram.jpg>
-
-LaTeX Warning: Reference `thelastpage' on page 2 undefined on input line 45.
-
-[2]
+<use relationshipDiagram.jpg> [3]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
 Underfull \vbox (badness 1077) has occurred while \output is active []
 
-
-
-LaTeX Warning: Reference `thelastpage' on page 3 undefined on input line 52.
-
-[3 <./relationshipDiagram.jpg>]
+ [4 <./relationshipDiagram.jpg>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
-
-
-LaTeX Warning: Reference `thelastpage' on page 4 undefined on input line 77.
-
-[4]
-
-LaTeX Warning: Reference `thelastpage' on page 5 undefined on input line 96.
-
-[5]
-
-LaTeX Warning: Reference `thelastpage' on page 6 undefined on input line 119.
-
-[6]
-
-LaTeX Warning: Reference `thelastpage' on page 7 undefined on input line 144.
-
-[7]
+ [5] [6] [7] [8]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 152.
 
- (/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
@@ -361,10 +336,7 @@ and takes Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Request\OML/cmm/m/i
 t/10.95 >\OT1/cmr/m/n/10.95 requests
  []
 
-
-LaTeX Warning: Reference `thelastpage' on page 8 undefined on input line 165.
-
-[8] <MonsterMashClassesv1_1.jpg, id=87, 1050.92625pt x 1348.03625pt>
+[9] <MonsterMashClassesv1_1.jpg, id=323, 1050.92625pt x 1348.03625pt>
 File: MonsterMashClassesv1_1.jpg Graphic file (type jpg)
 
 <use MonsterMashClassesv1_1.jpg>
@@ -375,11 +347,7 @@ Overfull \hbox (22.87808pt too wide) in paragraph at lines 173--174
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-LaTeX Warning: Reference `thelastpage' on page 9 undefined on input line 175.
-
-[9]
+ [10]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -389,12 +357,8 @@ Missing character: There is no ù in font cmr10!
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-LaTeX Warning: Reference `thelastpage' on page 10 undefined on input line 178.
-
-[10 <./MonsterMashClassesv1_1.jpg>]
-<SD_accept_battle.png, id=101, 1131.22626pt x 782.925pt>
+ [11 <./MonsterMashClassesv1_1.jpg>]
+<SD_accept_battle.png, id=334, 1131.22626pt x 782.925pt>
 File: SD_accept_battle.png Graphic file (type png)
 
 <use SD_accept_battle.png>
@@ -408,7 +372,7 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
-<SD_accept_breed.png, id=102, 1131.22626pt x 782.925pt>
+<SD_accept_breed.png, id=335, 1131.22626pt x 782.925pt>
 File: SD_accept_breed.png Graphic file (type png)
 
 <use SD_accept_breed.png>
@@ -419,11 +383,7 @@ Overfull \hbox (54.9975pt too wide) in paragraph at lines 185--186
 
 Underfull \vbox (badness 1675) has occurred while \output is active []
 
-
-
-LaTeX Warning: Reference `thelastpage' on page 11 undefined on input line 186.
-
-[11 <./SD_accept_battle.png (PNG copy)>]
+ [12 <./SD_accept_battle.png (PNG copy)>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -443,17 +403,13 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-<SD_accept_friend.png, id=110, 882.29625pt x 623.32875pt>
+<SD_accept_friend.png, id=342, 882.29625pt x 623.32875pt>
 File: SD_accept_friend.png Graphic file (type png)
 
 <use SD_accept_friend.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-LaTeX Warning: Reference `thelastpage' on page 12 undefined on input line 192.
-
-[12 <./SD_accept_breed.png (PNG copy)>]
+ [13 <./SD_accept_breed.png (PNG copy)>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -461,7 +417,7 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-<SD_register_user.png, id=117, 696.6025pt x 521.95pt>
+<SD_register_user.png, id=348, 696.6025pt x 521.95pt>
 File: SD_register_user.png Graphic file (type png)
 
 <use SD_register_user.png>
@@ -483,12 +439,8 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
-
-
-LaTeX Warning: Reference `thelastpage' on page 13 undefined on input line 202.
-
-[13 <./SD_accept_friend.png (PNG copy)> <./SD_register_user.png (PNG copy)>]
-<SD_send_battle_breed_request.png, id=123, 900.36375pt x 531.9875pt>
+ [14 <./SD_accept_friend.png (PNG copy)> <./SD_register_user.png (PNG copy)>]
+<SD_send_battle_breed_request.png, id=354, 900.36375pt x 531.9875pt>
 File: SD_send_battle_breed_request.png Graphic file (type png)
 
 <use SD_send_battle_breed_request.png>
@@ -499,55 +451,38 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-<SD_user_login.png, id=124, 713.66624pt x 543.02875pt>
+<SD_user_login.png, id=355, 713.66624pt x 543.02875pt>
 File: SD_user_login.png Graphic file (type png)
  <use SD_user_login.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-LaTeX Warning: Reference `thelastpage' on page 14 undefined on input line 210.
-
-[14 <./SD_send_battle_breed_request.png (PNG copy)>]
-<state_diagram.png, id=131, 871.255pt x 485.815pt>
+ [15 <./SD_send_battle_breed_request.png (PNG copy)>]
+<state_diagram.png, id=361, 871.255pt x 485.815pt>
 File: state_diagram.png Graphic file (type png)
  <use state_diagram.png>
 Overfull \hbox (38.14145pt too wide) in paragraph at lines 214--215
  [] 
  []
 
-
-LaTeX Warning: Reference `thelastpage' on page 15 undefined on input line 219.
-
-[15 <./SD_user_login.png (PNG copy)> <./state_diagram.png (PNG copy)>]
-
-LaTeX Warning: Reference `thelastpage' on page 16 undefined on input line 224.
-
-[16
+[16 <./SD_user_login.png (PNG copy)> <./state_diagram.png (PNG copy)>] [17
 
 ]
 Overfull \hbox (75.63466pt too wide) in paragraph at lines 227--239
 []
  []
 
-
-LaTeX Warning: Reference `thelastpage' on page 17 undefined on input line 239.
-
-[17
+[18
 
 ] (./Design.aux)
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5023 strings out of 493848
- 74099 string characters out of 1152822
- 144062 words of memory out of 3000000
- 8157 multiletter control sequences out of 15000+50000
+ 5084 strings out of 493848
+ 74951 string characters out of 1152822
+ 149062 words of memory out of 3000000
+ 8209 multiletter control sequences out of 15000+50000
  8243 words of font info for 29 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  38i,13n,36p,675b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -557,9 +492,9 @@ xlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts
 /type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
 cm/cmti10.pfb>
-Output written on Design.pdf (18 pages, 616686 bytes).
+Output written on Design.pdf (19 pages, 653975 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 462 words of extra memory for PDF output out of 10000 (max. 10000000)
 
