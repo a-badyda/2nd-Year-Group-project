@@ -4,49 +4,52 @@
 \BOOKMARK [2][-]{subsection.1.3}{Objectives}{section.1}
 \BOOKMARK [1][-]{section.2}{General Functionality}{}
 \BOOKMARK [2][-]{subsection.2.1}{Description}{section.2}
-\BOOKMARK [2][-]{subsection.2.2}{Relationship Diagram}{section.2}
-\BOOKMARK [1][-]{section.3}{Significant Data Classes}{}
-\BOOKMARK [2][-]{subsection.3.1}{Java Data Classes}{section.3}
-\BOOKMARK [2][-]{subsection.3.2}{User-Manager class}{section.3}
-\BOOKMARK [2][-]{subsection.3.3}{User class}{section.3}
-\BOOKMARK [2][-]{subsection.3.4}{Monster class}{section.3}
-\BOOKMARK [2][-]{subsection.3.5}{Request class}{section.3}
-\BOOKMARK [2][-]{subsection.3.6}{Functional Requirements}{section.3}
-\BOOKMARK [1][-]{section.4}{Breed Class}{}
-\BOOKMARK [2][-]{subsection.4.1}{Classes extended and why}{section.4}
-\BOOKMARK [2][-]{subsection.4.2}{Public Methods}{section.4}
-\BOOKMARK [1][-]{section.5}{Monster Class}{}
-\BOOKMARK [2][-]{subsection.5.1}{Classes extended and why}{section.5}
-\BOOKMARK [2][-]{subsection.5.2}{Public Methods}{section.5}
-\BOOKMARK [1][-]{section.6}{MySQLDatabase Class}{}
+\BOOKMARK [2][-]{subsection.2.2}{Relational Database diagram}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Relational Database diagram explanation}{section.2}
+\BOOKMARK [1][-]{section.3}{Algorithms}{}
+\BOOKMARK [1][-]{section.4}{JSON Table}{}
+\BOOKMARK [1][-]{section.5}{Significant Data Classes}{}
+\BOOKMARK [2][-]{subsection.5.1}{Java Data Classes}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{User-Manager class}{section.5}
+\BOOKMARK [2][-]{subsection.5.3}{User class}{section.5}
+\BOOKMARK [2][-]{subsection.5.4}{Monster class}{section.5}
+\BOOKMARK [2][-]{subsection.5.5}{Request class}{section.5}
+\BOOKMARK [2][-]{subsection.5.6}{Functional Requirements}{section.5}
+\BOOKMARK [1][-]{section.6}{Breed Class}{}
 \BOOKMARK [2][-]{subsection.6.1}{Classes extended and why}{section.6}
 \BOOKMARK [2][-]{subsection.6.2}{Public Methods}{section.6}
-\BOOKMARK [1][-]{section.7}{Request}{}
+\BOOKMARK [1][-]{section.7}{Monster Class}{}
 \BOOKMARK [2][-]{subsection.7.1}{Classes extended and why}{section.7}
 \BOOKMARK [2][-]{subsection.7.2}{Public Methods}{section.7}
-\BOOKMARK [1][-]{section.8}{Request state}{}
+\BOOKMARK [1][-]{section.8}{MySQLDatabase Class}{}
 \BOOKMARK [2][-]{subsection.8.1}{Classes extended and why}{section.8}
 \BOOKMARK [2][-]{subsection.8.2}{Public Methods}{section.8}
-\BOOKMARK [1][-]{section.9}{UserManager}{}
-\BOOKMARK [2][-]{subsection.9.1}{classes extended and why}{section.9}
+\BOOKMARK [1][-]{section.9}{Request}{}
+\BOOKMARK [2][-]{subsection.9.1}{Classes extended and why}{section.9}
 \BOOKMARK [2][-]{subsection.9.2}{Public Methods}{section.9}
-\BOOKMARK [1][-]{section.10}{User}{}
+\BOOKMARK [1][-]{section.10}{Request state}{}
 \BOOKMARK [2][-]{subsection.10.1}{Classes extended and why}{section.10}
 \BOOKMARK [2][-]{subsection.10.2}{Public Methods}{section.10}
-\BOOKMARK [1][-]{section.11}{Status class}{}
-\BOOKMARK [2][-]{subsection.11.1}{Classes extended and why}{section.11}
-\BOOKMARK [2][-]{subsection.11.2}{Public methods}{section.11}
-\BOOKMARK [1][-]{section.12}{RequestType class}{}
+\BOOKMARK [1][-]{section.11}{UserManager}{}
+\BOOKMARK [2][-]{subsection.11.1}{classes extended and why}{section.11}
+\BOOKMARK [2][-]{subsection.11.2}{Public Methods}{section.11}
+\BOOKMARK [1][-]{section.12}{User}{}
 \BOOKMARK [2][-]{subsection.12.1}{Classes extended and why}{section.12}
-\BOOKMARK [2][-]{subsection.12.2}{Public methods}{section.12}
-\BOOKMARK [1][-]{section.13}{Class Diagram}{}
-\BOOKMARK [1][-]{section.14}{Sequence Diagrams}{}
-\BOOKMARK [2][-]{subsection.14.1}{Accept Battle}{section.14}
-\BOOKMARK [2][-]{subsection.14.2}{Accept Breed}{section.14}
-\BOOKMARK [2][-]{subsection.14.3}{Add Friend}{section.14}
-\BOOKMARK [2][-]{subsection.14.4}{Register User}{section.14}
-\BOOKMARK [2][-]{subsection.14.5}{Send Battle/Breed Request}{section.14}
-\BOOKMARK [2][-]{subsection.14.6}{User Log In}{section.14}
-\BOOKMARK [1][-]{section.15}{State Diagram}{}
-\BOOKMARK [1][-]{section.15}{REFERENCES}{}
+\BOOKMARK [2][-]{subsection.12.2}{Public Methods}{section.12}
+\BOOKMARK [1][-]{section.13}{Status class}{}
+\BOOKMARK [2][-]{subsection.13.1}{Classes extended and why}{section.13}
+\BOOKMARK [2][-]{subsection.13.2}{Public methods}{section.13}
+\BOOKMARK [1][-]{section.14}{RequestType class}{}
+\BOOKMARK [2][-]{subsection.14.1}{Classes extended and why}{section.14}
+\BOOKMARK [2][-]{subsection.14.2}{Public methods}{section.14}
+\BOOKMARK [1][-]{section.15}{Class Diagram}{}
+\BOOKMARK [1][-]{section.16}{Sequence Diagrams}{}
+\BOOKMARK [2][-]{subsection.16.1}{Accept Battle}{section.16}
+\BOOKMARK [2][-]{subsection.16.2}{Accept Breed}{section.16}
+\BOOKMARK [2][-]{subsection.16.3}{Add Friend}{section.16}
+\BOOKMARK [2][-]{subsection.16.4}{Register User}{section.16}
+\BOOKMARK [2][-]{subsection.16.5}{Send Battle/Breed Request}{section.16}
+\BOOKMARK [2][-]{subsection.16.6}{User Log In}{section.16}
+\BOOKMARK [1][-]{section.17}{State Diagram}{}
+\BOOKMARK [1][-]{section.17}{REFERENCES}{}
 \BOOKMARK [1][-]{section*.2}{DOCUMENT HISTORY}{}

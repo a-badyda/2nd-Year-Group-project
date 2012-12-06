@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.17)  6 DEC 2012 02:08
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.17)  6 DEC 2012 19:51
 entering extended mode
  %&-line parsing enabled.
 **Design.tex
@@ -297,31 +297,64 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-<relationshipDiagram.jpg, id=284, 395.076pt x 296.307pt>
+<relationshipDiagram.jpg, id=299, 395.076pt x 296.307pt>
 File: relationshipDiagram.jpg Graphic file (type jpg)
 
 <use relationshipDiagram.jpg> [3]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
-
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
- [4 <./relationshipDiagram.jpg>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
- [5] [6] [7] [8]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 152.
+ [4 <./relationshipDiagram.jpg>] [5]
+<Requests.pdf, id=319, page=1, 845.1575pt x 597.23125pt>
+File: Requests.pdf Graphic file (type pdf)
+
+<use Requests.pdf, page 1>
+File: Requests.pdf Graphic file (type pdf)
+ <use Requests.pdf, page 1>
+File: Requests.pdf Graphic file (type pdf)
+
+<use Requests.pdf, page 1>
+File: Requests.pdf Graphic file (type pdf)
+ <use Requests.pdf, page 1>
+File: Requests.pdf Graphic file (type pdf)
+
+<use Requests.pdf, page 1> [6 <./Requests.pdf>]
+<Requests.pdf, id=337, page=2, 845.1575pt x 597.23125pt>
+File: Requests.pdf Graphic file (type pdf)
+
+<use Requests.pdf, page 2>
+File: Requests.pdf Graphic file (type pdf)
+ <use Requests.pdf, page 2>
+File: Requests.pdf Graphic file (type pdf)
+
+<use Requests.pdf, page 2> [7 <./Requests.pdf>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
 
 
-(/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8] [9]
+Underfull \vbox (badness 2781) has occurred while \output is active []
+
+ [10]
+[11]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 161.
+
+ (/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 152.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 161.
 
-Overfull \hbox (43.94257pt too wide) in paragraph at lines 145--155
+Overfull \hbox (43.94257pt too wide) in paragraph at lines 154--164
 \OT1/cmr/m/n/10.95 and takes Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 
 User\OML/cmm/m/it/10.95 >\OT1/cmr/m/n/10.95 friends as a pa-ram-e-ter. pub-lic 
 Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Request\OML/cmm/m/it/10.95 >\
@@ -329,25 +362,22 @@ OT1/cmr/m/n/10.95 getRequests()
  []
 
 
-Overfull \hbox (76.92433pt too wide) in paragraph at lines 145--155
+Overfull \hbox (76.92433pt too wide) in paragraph at lines 154--164
 \OT1/cmr/m/n/10.95 quests(ArrayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Requ
 est\OML/cmm/m/it/10.95 >\OT1/cmr/m/n/10.95 requests) - This will set re-quests 
 and takes Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Request\OML/cmm/m/i
 t/10.95 >\OT1/cmr/m/n/10.95 requests
  []
 
-[9] <MonsterMashClassesv1_1.jpg, id=323, 1050.92625pt x 1348.03625pt>
-File: MonsterMashClassesv1_1.jpg Graphic file (type jpg)
+[12] <MonsterDiagram.png, id=370, 1067.99pt x 1287.81125pt>
+File: MonsterDiagram.png Graphic file (type png)
 
-<use MonsterMashClassesv1_1.jpg>
-Overfull \hbox (22.87808pt too wide) in paragraph at lines 173--174
+<use MonsterDiagram.png>
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 182--183
 [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
+[13]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -357,12 +387,12 @@ Missing character: There is no ù in font cmr10!
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./MonsterMashClassesv1_1.jpg>]
-<SD_accept_battle.png, id=334, 1131.22626pt x 782.925pt>
+ [14 <./MonsterDiagram.png (PNG copy)>]
+<SD_accept_battle.png, id=382, 1131.22626pt x 782.925pt>
 File: SD_accept_battle.png Graphic file (type png)
 
 <use SD_accept_battle.png>
-Overfull \hbox (54.9975pt too wide) in paragraph at lines 179--180
+Overfull \hbox (54.9975pt too wide) in paragraph at lines 188--189
  [] 
  []
 
@@ -372,18 +402,18 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
-<SD_accept_breed.png, id=335, 1131.22626pt x 782.925pt>
+<SD_accept_breed.png, id=383, 1131.22626pt x 782.925pt>
 File: SD_accept_breed.png Graphic file (type png)
 
 <use SD_accept_breed.png>
-Overfull \hbox (54.9975pt too wide) in paragraph at lines 185--186
+Overfull \hbox (54.9975pt too wide) in paragraph at lines 194--195
  [] 
  []
 
 
 Underfull \vbox (badness 1675) has occurred while \output is active []
 
- [12 <./SD_accept_battle.png (PNG copy)>]
+ [15 <./SD_accept_battle.png (PNG copy)>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -403,13 +433,13 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-<SD_accept_friend.png, id=342, 882.29625pt x 623.32875pt>
+<SD_accept_friend.png, id=389, 882.29625pt x 623.32875pt>
 File: SD_accept_friend.png Graphic file (type png)
 
 <use SD_accept_friend.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <./SD_accept_breed.png (PNG copy)>]
+ [16 <./SD_accept_breed.png (PNG copy)>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -417,7 +447,7 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-<SD_register_user.png, id=348, 696.6025pt x 521.95pt>
+<SD_register_user.png, id=395, 696.6025pt x 521.95pt>
 File: SD_register_user.png Graphic file (type png)
 
 <use SD_register_user.png>
@@ -439,8 +469,8 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
- [14 <./SD_accept_friend.png (PNG copy)> <./SD_register_user.png (PNG copy)>]
-<SD_send_battle_breed_request.png, id=354, 900.36375pt x 531.9875pt>
+ [17 <./SD_accept_friend.png (PNG copy)> <./SD_register_user.png (PNG copy)>]
+<SD_send_battle_breed_request.png, id=401, 900.36375pt x 531.9875pt>
 File: SD_send_battle_breed_request.png Graphic file (type png)
 
 <use SD_send_battle_breed_request.png>
@@ -451,50 +481,46 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-<SD_user_login.png, id=355, 713.66624pt x 543.02875pt>
+<SD_user_login.png, id=402, 713.66624pt x 543.02875pt>
 File: SD_user_login.png Graphic file (type png)
  <use SD_user_login.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./SD_send_battle_breed_request.png (PNG copy)>]
-<state_diagram.png, id=361, 871.255pt x 485.815pt>
+ [18 <./SD_send_battle_breed_request.png (PNG copy)>]
+<state_diagram.png, id=409, 871.255pt x 485.815pt>
 File: state_diagram.png Graphic file (type png)
  <use state_diagram.png>
-Overfull \hbox (38.14145pt too wide) in paragraph at lines 214--215
+Overfull \hbox (38.14145pt too wide) in paragraph at lines 223--224
  [] 
  []
 
-[16 <./SD_user_login.png (PNG copy)> <./state_diagram.png (PNG copy)>] [17
+[19 <./SD_user_login.png (PNG copy)> <./state_diagram.png (PNG copy)>] [20
 
 ]
-Overfull \hbox (75.63466pt too wide) in paragraph at lines 227--239
+Overfull \hbox (75.63466pt too wide) in paragraph at lines 236--250
 []
  []
 
-[18
+[21
 
-] (./Design.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+] (./Design.aux) ) 
 Here is how much of TeX's memory you used:
- 5084 strings out of 493848
- 74951 string characters out of 1152822
+ 5102 strings out of 493848
+ 75166 string characters out of 1152822
  149062 words of memory out of 3000000
- 8209 multiletter control sequences out of 15000+50000
+ 8219 multiletter control sequences out of 15000+50000
  8243 words of font info for 29 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,13n,36p,675b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmti10.pfb>
-Output written on Design.pdf (19 pages, 653975 bytes).
+ 38i,16n,37p,675b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmti10.pfb>
+Output written on Design.pdf (22 pages, 622058 bytes).
 PDF statistics:
- 418 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 462 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 466 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 506 words of extra memory for PDF output out of 10000 (max. 10000000)
 

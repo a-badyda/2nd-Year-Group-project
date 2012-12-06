@@ -18,29 +18,38 @@
 \section{Introduction}
 \subsection{Purpose of this Document}
 This should provide everything designers, programmers and testers need to know to use the facilities
-provided by a module. It should include an outline specification for each class in the system. The specification
-should include.
+provided by a module. It should include an outline for all parts of the system. The information provide should be enough to get a basic understanding of the system.
 
 \subsection{Scope}
-The outline specification for each class in the system will contain, name and type of class, what classes it extends and why. Also public methods implemented by the class, parameter names and types for each method will be specified, and a short summary of the purpose of the method given.
+An outline for each class and its containing methods. Explanation of how the server works and significant algorithms. Outline of how the system is navigated and operated through sequence diagrams.
 
 \subsection{Objectives}
-The objective of this document is to give an overview of classes in the system for the monster mash game.
+The objective of this document is to give an overview of the system that is being produced.
 \\
 The areas covered by this plan are:
 \begin{itemize}
-	\item Java Classes names and types
-	\item Classes they extend and why
-	\item Public methods implemented by the class
+	\item Java Classes explanations
+	\item Sequence diagrams
+	\item Relational Database diagram
+	\item JSON Table
+	\item Algorithms
 \end{itemize}
 
 \section{General Functionality}
 \subsection{Description}
 An HTTP servlet is used to access the data contained within the backend of the server as if it was almost a web page.  We will pass parameters between it and get a response. We will be working on the principle that one main servlet will perform different actions, passing through an actions variable and any data required to be processed. There are two methods of accessing this; using ‘get’ and ‘post’ requests.  The get request will pass the parameters through the URL, the post request through a hidden layer, based on the users input. JavaScript will collate the necessary data, and attach the appropriate action command before sending to the server.
-\subsection{Relationship Diagram}
+\subsection{Relational Database diagram}
 \includegraphics{relationshipDiagram.jpg}
+\subsection{Relational Database diagram explanation}
+This is a relational database diagram for our database, we have used 4 tables to store information about the User, the Users table to store information directly related e.g. user name etc.  We then have the Monsters table in which will have information about the user’s monsters, the friends table to store the user’s friends and the notifications table to store information about any notification the user might have e.g. a user who wants to battle their monster with you.
 
+\section{Algorithms}
+The algorithm for the aging process ind strengths as follows:\\
+=(10+2.7*A)*EXP((A*(-0.09)))\\
+The A is the number of days that have passed. Upon birth it is at 100\% health, after 7 days it rises to 150\%. After 21 days(3 weeks) it's back to 100\% and at 84 days(12 weeks) the monster shall be at 0\%(Dead). 
 
+\section{JSON Table}
+\includepdf[pages={1-2}]{Requests.pdf}
 
 \section{Significant Data Classes}
 \subsection{Java Data Classes}
@@ -170,7 +179,7 @@ N/A
 This class is an ENUM class and defines a set of 3 types for request. BATTLE, BREED and FRIEND. 
 
 \section{Class Diagram}
-\includegraphics[scale=0.40]{MonsterMashClassesv1_1.jpg}
+\includegraphics[scale=0.40]{MonsterDiagram.png}
 
 \section{Sequence Diagrams}
 \subsection{Accept Battle}
@@ -233,6 +242,8 @@ Version & CCF No. & Date & Changes made to Document & Changed by \\
 1.1 & N/A & 2012-11-2 & Added information from Mike & CPM4 \\
 \hline
 1.2 & N/A & 2012-12-5 & Updated config ref and added other documents & CPM4 \\
+\hline
+1.3 & N/A & 2012-12-6 & Added missing data and fixed few mistakes & CPM4 \\
 \hline
 \end{tabular}
 \label{thelastpage}
