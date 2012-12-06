@@ -13,6 +13,7 @@ public class Monster {
 	private String name;
 	private MonsterStats stats;
 	private Breed breed;
+	private Status status;
 	//Cash prize is the amount a user wins when they defeat this monster.
 	private int cashPrize, wins, losses;
 	private Date birth;
@@ -63,6 +64,14 @@ public class Monster {
 	public void setBreed(Breed breed) {
 		this.breed = breed;
 	}
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
 	public Date getBirth() {
 		return birth;
 	}
