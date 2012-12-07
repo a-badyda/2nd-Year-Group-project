@@ -8,48 +8,41 @@
 \contentsline {subsection}{\numberline {2.3}Relational Database diagram explanation}{4}{subsection.2.3}
 \contentsline {section}{\numberline {3}Algorithms}{4}{section.3}
 \contentsline {section}{\numberline {4}JSON Table}{5}{section.4}
-\contentsline {section}{\numberline {5}Significant Data Classes}{8}{section.5}
-\contentsline {subsection}{\numberline {5.1}Java Data Classes}{8}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}User-Manager class}{8}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}User class}{8}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Monster class}{8}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}Request class}{8}{subsection.5.5}
-\contentsline {subsection}{\numberline {5.6}Functional Requirements}{9}{subsection.5.6}
-\contentsline {section}{\numberline {6}Breed Class}{9}{section.6}
-\contentsline {subsection}{\numberline {6.1}Classes extended and why}{9}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Public Methods}{9}{subsection.6.2}
-\contentsline {section}{\numberline {7}Monster Class}{9}{section.7}
-\contentsline {subsection}{\numberline {7.1}Classes extended and why}{9}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Public Methods}{9}{subsection.7.2}
-\contentsline {section}{\numberline {8}MySQLDatabase Class}{10}{section.8}
-\contentsline {subsection}{\numberline {8.1}Classes extended and why}{10}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Public Methods}{11}{subsection.8.2}
-\contentsline {section}{\numberline {9}Request}{11}{section.9}
-\contentsline {subsection}{\numberline {9.1}Classes extended and why}{11}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Public Methods}{11}{subsection.9.2}
-\contentsline {section}{\numberline {10}Request state}{11}{section.10}
-\contentsline {subsection}{\numberline {10.1}Classes extended and why}{11}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}Public Methods}{11}{subsection.10.2}
-\contentsline {section}{\numberline {11}UserManager}{12}{section.11}
-\contentsline {subsection}{\numberline {11.1}classes extended and why}{12}{subsection.11.1}
-\contentsline {subsection}{\numberline {11.2}Public Methods}{12}{subsection.11.2}
-\contentsline {section}{\numberline {12}User}{12}{section.12}
-\contentsline {subsection}{\numberline {12.1}Classes extended and why}{12}{subsection.12.1}
-\contentsline {subsection}{\numberline {12.2}Public Methods}{12}{subsection.12.2}
-\contentsline {section}{\numberline {13}Status class}{13}{section.13}
-\contentsline {subsection}{\numberline {13.1}Classes extended and why}{13}{subsection.13.1}
-\contentsline {subsection}{\numberline {13.2}Public methods}{13}{subsection.13.2}
-\contentsline {section}{\numberline {14}RequestType class}{13}{section.14}
-\contentsline {subsection}{\numberline {14.1}Classes extended and why}{13}{subsection.14.1}
-\contentsline {subsection}{\numberline {14.2}Public methods}{13}{subsection.14.2}
-\contentsline {section}{\numberline {15}Class Diagram}{14}{section.15}
-\contentsline {section}{\numberline {16}Sequence Diagrams}{15}{section.16}
-\contentsline {subsection}{\numberline {16.1}Accept Battle}{15}{subsection.16.1}
-\contentsline {subsection}{\numberline {16.2}Accept Breed}{15}{subsection.16.2}
-\contentsline {subsection}{\numberline {16.3}Add Friend}{16}{subsection.16.3}
-\contentsline {subsection}{\numberline {16.4}Register User}{17}{subsection.16.4}
-\contentsline {subsection}{\numberline {16.5}Send Battle/Breed Request}{18}{subsection.16.5}
-\contentsline {subsection}{\numberline {16.6}User Log In}{18}{subsection.16.6}
-\contentsline {section}{\numberline {17}State Diagram}{19}{section.17}
-\contentsline {section}{REFERENCES}{20}{section.17}
+\contentsline {section}{\numberline {5}JSON Explanation}{8}{section.5}
+\contentsline {section}{\numberline {6}Class Diagram}{9}{section.6}
+\contentsline {section}{\numberline {7}Significant Data Classes}{10}{section.7}
+\contentsline {subsection}{\numberline {7.1}Java Data Classes}{10}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}User-Manager class}{10}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}User class}{10}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Monster class}{10}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Request class}{10}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}Functional Requirements}{11}{subsection.7.6}
+\contentsline {section}{\numberline {8}Breed Class}{11}{section.8}
+\contentsline {subsection}{\numberline {8.1}Public Methods}{11}{subsection.8.1}
+\contentsline {section}{\numberline {9}Monster Class}{11}{section.9}
+\contentsline {subsection}{\numberline {9.1}Public Methods}{11}{subsection.9.1}
+\contentsline {section}{\numberline {10}MySQLDatabase Class}{11}{section.10}
+\contentsline {subsection}{\numberline {10.1}Public Methods}{11}{subsection.10.1}
+\contentsline {section}{\numberline {11}Request}{11}{section.11}
+\contentsline {subsection}{\numberline {11.1}Public Methods}{12}{subsection.11.1}
+\contentsline {section}{\numberline {12}Request state}{12}{section.12}
+\contentsline {subsection}{\numberline {12.1}Public Methods}{12}{subsection.12.1}
+\contentsline {section}{\numberline {13}UserManager}{12}{section.13}
+\contentsline {subsection}{\numberline {13.1}Public Methods}{12}{subsection.13.1}
+\contentsline {section}{\numberline {14}User}{13}{section.14}
+\contentsline {subsection}{\numberline {14.1}Public Methods}{13}{subsection.14.1}
+\contentsline {section}{\numberline {15}Status class}{13}{section.15}
+\contentsline {subsection}{\numberline {15.1}Public methods}{13}{subsection.15.1}
+\contentsline {section}{\numberline {16}RequestType class}{14}{section.16}
+\contentsline {subsection}{\numberline {16.1}Public methods}{14}{subsection.16.1}
+\contentsline {section}{\numberline {17}Data Storage}{14}{section.17}
+\contentsline {section}{\numberline {18}Sequence Diagrams}{14}{section.18}
+\contentsline {subsection}{\numberline {18.1}Accept Battle}{14}{subsection.18.1}
+\contentsline {subsection}{\numberline {18.2}Accept Breed}{15}{subsection.18.2}
+\contentsline {subsection}{\numberline {18.3}Add Friend}{16}{subsection.18.3}
+\contentsline {subsection}{\numberline {18.4}Register User}{17}{subsection.18.4}
+\contentsline {subsection}{\numberline {18.5}Send Battle/Breed Request}{18}{subsection.18.5}
+\contentsline {subsection}{\numberline {18.6}User Log In}{18}{subsection.18.6}
+\contentsline {section}{\numberline {19}State Diagram}{19}{section.19}
+\contentsline {section}{REFERENCES}{20}{section.19}
 \contentsline {section}{DOCUMENT HISTORY}{21}{section*.2}
