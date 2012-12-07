@@ -6,12 +6,12 @@
 \begin{document}
 \title{Software Development Life cycle}
 \subtitle{Design Specification}
-\author{Tom Reed, Matt Whitmore, Dave Clark, Silhab Csoma, Mike Steel, Chris 'Tux' Lloyd, Alex Badyda, Sam Jackson, Chris Marriott}
+\author{Tom Reed, Matt Whitmore, Dave Clark, Silhab Csoma, Mike Steel, Chris 'Tux' Lloyd, Aleksandra Badyda, Samual Jackson, Chris Marriott}
 \shorttitle{Design Specification}
-\version{1.2}
+\version{1.3}
 \status{draft}
 \date{2012-12-5}
-\configref{SE.QA.G17}
+\configref{SE.17.DS.01}
 \maketitle
 \tableofcontents
 \newpage
@@ -51,6 +51,9 @@ The A is the number of days that have passed. Upon birth it is at 100\% health, 
 \section{JSON Table}
 \includepdf[pages={1-2}]{Requests.pdf}
 
+\section{Class Diagram}
+\includegraphics[scale=0.40]{MonsterDiagram.png}
+
 \section{Significant Data Classes}
 \subsection{Java Data Classes}
 There are four main classes within the Java designed to be implemented within the project, these are Monster, User, User-Manager, and Request.
@@ -79,45 +82,21 @@ Request & FR6, FR9 \\ \hline
 
 \section{Breed Class}
 The breed class is called Breed.class and is a private class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods} 
 The only public method this class has is ENUM Breed and has no parameters. This is a list of set monster types that the monster will be of type. Used ENUM so can only select a type from that list.
 
 \section{Monster Class}
 The monster class is called Monster.class and is a public class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
-Public methods are as follows:        
-public Integer getId() - This will return an ID, used for identification purposes. public void setId(Integer id) - is used to set the unique IDand takes parameter of Integer id. public Integer getOwnerId() - this will return the unique id of the owner, used for identification of owner. public void setOwnerId(Integer ownerId) - This is used to set the unique owner id and takes Integer ownerId as a parameter.
-
-public String getName() - This will return the name of the owner and monster. public void setName(String name) This will set the name for owner and monster and takes String name as a parameter.
-public float getHealth() - This will get the health of the monster. public void setHealth(float health) - This will set the health of the monster, will be done after battle. Takes float health as a parameter.
-public float getStrength() - This will return the strength of the monster. public void setStrength(float strength) - This sets the strength of the monster and takes float strength as a parameter.
-public float getDefence() - This will return the monsters defence. public void setDefence(float defence) - This will set the monsters defence and take float defence as a parameter.
-
-public float getAggression() - This will return the monsters aggression. public void setAggression(float aggression) - This will set the monsters aggression and will take float aggression as a parameter.
-public float getFertility() - This will return the monsters fertility which will be used during the breeding process. public void setFertility(float fertility) - This will set the fertility of the monster and will take float fertility as a parameter.
-public Breed getBreed() - This will return the monsters breed type. public void setBreed(Breed breed) - This will set the monsters breed type and takes Breed breed as a parameter.
-public Status getStatus() - This will get the status of the monster. public void setStatus(Status status) - This will set the status of the monster and will take Status status as a parameter.
-public int getAge() - This will return the age of the monster. public void setAge(int age) - This will set the age of the monster and will take int age as a parameter.
-
-public int getCashPrize() - This will return the cash prize from the battle. public void setCashPrize(int cashPrize) - This will set the cash prize and take int cashPrize as a parameter.
-public int getWins() - This will return the number of wins. public void setWins(int wins) - This will set the number of wins and takes int wins as a parameter.
-public int getLosses() - This will return number of losses. public void setLosses(int losses) - This will set the losses and takes int losses as a parameter.
+This class contains getter and setters for monster attributes. The getters and setters are for id, ownerId, name, stats, breed, status, birth, cashPrize, wins and losses. They set the value and return the value for the monster.
 
 \section{MySQLDatabase Class}
 The MySQLDatabase class is called MySQLDatabase.class and is a public class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
 
 
 \section{Request}
 The Request class is called Request.class and is a public class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
 public User getFrom() - This will return from which is of type User. public void setFrom(User from) - This will set the User from and take User from as a parameter.
 public User getTo() - This will return to which is of type User. public void setTo(User to) - This will set the User to value and take User to as a parameter.
@@ -128,15 +107,11 @@ public RequestState getState() - This will return state which is of type Request
 
 \section{Request state}
 The request state class is called RequestState.class and is a public ENUM class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
 The only method in this class is enum RequestState. This is used to allow 3 states to be identified of which are ACCEPTED, PENDING and DECLINED. These will be used for requests such as battle and breed.
 
 \section{UserManager}
 The user manager class is called UserManager.class and is a public class.
-\subsection{classes extended and why}
-N/A
 \subsection{Public Methods}
 public UserManager() - 
 public User fetchUser(Integer id)
@@ -148,8 +123,6 @@ public void createUser(Integer id, String username, String email, String passwor
 
 \section{User}
 The user class is called User.class and is a public class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
 public Integer getId() - This will return id which is of type Integer. public void setId(Integer id) - This will set id and takes Integer id as a parameter.
 public String getUsername() - This will return username which is of type String. public void setUsername(String username) - This will set username and takes String username as a parameter.
@@ -165,21 +138,20 @@ public ArrayList\textless Request\textgreater  getRequests() - This will get a l
 
 \section{Status class}
 The Status class is called Status.java and is a public enum class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public methods}
 This class is an ENUM class and defines a set of 4 statuses that monsters can have. NORMAL, SICK, DEAD and HAPPY.
 
 
 \section{RequestType class}
 The Request type class is called RequestType.class and is a public ENUM class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public methods}
 This class is an ENUM class and defines a set of 3 types for request. BATTLE, BREED and FRIEND. 
 
-\section{Class Diagram}
-\includegraphics[scale=0.40]{MonsterDiagram.png}
+\section{Data Storage}
+Within the java programing the data is stored in a number of ways, a major way that data will be handled is through enums; requests will be handled through this and will be stored as either battle, breed, or friend, and the states of these requests will also be stored as enums, being either accepted, viewing, pending, or declined. Also stored as enums will be the statuses of monsters, thusly each monster status will be handled as normal, sick, dead, or happy.  Breed considers the different types of monster that we plan to be breeding with each other, and this therefore will be stored as an enum with the value of slime, beast, demon, dragon, serpent, or ghost.
+
+Array Lists will also be used, but only, as far as designed, in private instances, so there will be no public instances that need to be explained in class diagrams. Otherwise, usernames, passwords, and the like will be handled in private strings and variable types as are appropriate. 
+
 
 \section{Sequence Diagrams}
 \subsection{Accept Battle}
