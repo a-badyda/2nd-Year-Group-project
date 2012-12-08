@@ -40,7 +40,7 @@ $(document).ready(function() {
 	//function to send a battle/breed request
 	function newMonsterRequest(type){
 		$.post(SERVLET_LOCATION, {action: "new" + type +"Request"}, function(response) {
-			
+			$('#response').val(response);
 		});
 	}
 	

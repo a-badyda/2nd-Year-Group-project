@@ -25,7 +25,7 @@ $(document).ready(function() {
 		var id = (".pending_friend #pending_friend_id").val();
 		$.post(SERVLET_LOCATION, {action: 'acceptPendingFriend', friendid: id}, 
 		function(response) {
-			
+			$('#response').val(response);
 		});
 	});
 	
@@ -34,7 +34,7 @@ $(document).ready(function() {
 		var id = (".pending_friend #pending_friend_id").val();
 		$.post(SERVLET_LOCATION, {action: 'declinePendingFriend', friendid: id}, 
 		function(response) {
-			
+			$('#response').val(response);
 		});
 	});
 	
@@ -43,7 +43,7 @@ $(document).ready(function() {
 	$("#send_request #button_add").submit(function() {
 		var email = $("friend_email").val();
 		$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
-			
+			$('#response').val(response);
 		});
 	});
 	
