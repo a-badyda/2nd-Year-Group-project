@@ -11,15 +11,16 @@ $(document).ready(function() {
 
 	//get all notifications on load.
 	$.post(SERVLET_LOCATION, {action: 'getAllNotifications'},function(response) {
-		$.each(response['Notifications'], function(key, val) {
-		
+		var obj = $.parseJSON(response);
+		$.each(obj.Notifications, function(key, val) {
+			var current = $.parseJSON(val);
 			var description = "New ";
-			description += val["Type"].toLowerCase();
+			description += current.type.toLowerCase();
 			description += " request from ";
-			description += val["From"];
+			description += current.from;
 			
 			var outputStr = '<div class="notification_request"><p>'+description+'</p>';
-			outputStr += '<input type="hidden" class="id" value="'+val["ID"]+'"></input>';
+			outputStr += '<input type="hidden" class="id" value="'+current.id+'"></input>';
 			outputStr += '<input type="submit" class="accept" value="accept notification">';
 			outputStr += '<input type="submit" class="decline" value="decline notification">';
 			outputStr += '</div>';
