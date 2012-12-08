@@ -52,10 +52,9 @@ public class GameServer extends HttpServlet {
 
 		if (session.getAttribute("username") != null && session.getAttribute("key") != null){
 			
-			out.print("true");
+			out.print("{\"login\":true}");
 		} else {
-			
-			out.print("false");
+			out.print("{\"login\":false}");
 		}
 		
 		out.flush();
@@ -236,7 +235,7 @@ public class GameServer extends HttpServlet {
 			PrintWriter out;
 			try {
 				out = response.getWriter();
-				out.print("{\"login\":\"true\"}");
+				out.print("{\"login\":true}");
 				out.flush();
 				out.close();
 			} catch (IOException e) {
