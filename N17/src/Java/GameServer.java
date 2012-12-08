@@ -110,6 +110,8 @@ public class GameServer extends HttpServlet {
 			
 			String username = request.getParameter("username");
 		    String password = request.getParameter("password");
+		    
+			
 			
 			int ID;
 			int cash = 100;
@@ -117,7 +119,9 @@ public class GameServer extends HttpServlet {
 			String query = ("SELECT * FROM user WHERE UserName='" +username+ "'");
         	
 			try {
-			
+				PrintWriter out;
+			    out = response.getWriter();
+			    
 	    		ResultSet rset;
 	    		rset = db.query (query);
 	    		while (rset.next ())
@@ -131,7 +135,7 @@ public class GameServer extends HttpServlet {
 	    					char temp = (char) whatever;
 	    					key += temp;
 	    				}
-	    				
+
 	    				User user = users.createUser(key, username, password, cash);
 	    				
 	    				HttpSession session = request.getSession(true);
@@ -142,11 +146,16 @@ public class GameServer extends HttpServlet {
 	    			    query = ("UPDATE user SET 'key'='"+key+"' WHERE 'UserName'='"+username+"';");
 	 		            //run the query and store in DB
 	 		            db.update(query);
+	 		            
+	 		            
+	    				out.print("{\"login\":true}");
+	    				out.flush();
+	    				out.close();
 	    				
 	    				break;
 	    			}
         		}
-    		} catch (SQLException e) {
+    		} catch (SQLException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -230,18 +239,19 @@ public class GameServer extends HttpServlet {
 				// load in notifications
 				
 				
+			}else{
+				//not loged in
+				PrintWriter out;
+			    try {
+					out = response.getWriter();
+					out.print("{\"login\":false}");
+					out.flush();
+					out.close();
+				} catch (IOException e) {e.printStackTrace();}
 			}
 		
-			PrintWriter out;
-			try {
-				out = response.getWriter();
-				out.print("{\"login\":true}");
-				out.flush();
-				out.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				
+				
 			
 		}
 		
