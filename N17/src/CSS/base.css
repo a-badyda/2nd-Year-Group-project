@@ -2,25 +2,87 @@
 
 #error { display: block; color: red; }
 
+body, select, input, textarea{color:#333}
+
 /*Typography section */
+html{font-size:100.00%}
+body{font-size:75%; /*background:url();*/ font-family:"Comic Sans",Arial,sans-serif; margin:0px 0 20px 0}
+h1, h2, h3, h4, h5, h6{font-weight:normal; color:#fff; font-family:"Comic Sans",Arial,sans-serif}
+h1{font-size:25px; line-height:1.10; margin-bottom:0.5em;}
+h2{font-size:18px; margin-bottom:0.75em}
+h3{font-size:14px; line-height:1; margin-bottom:1em}
+h4{font-size:12px; line-height:1.25; margin-bottom:1.25em}
+h5{font-size:10px; font-weight:bold; margin-bottom:1.5em}
+h6{font-size:10px; font-weight:bold}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img{margin:0}
+p{margin:0 0 1.5em}
+p .left{margin:1.5em 1.5em 1.5em 0; padding:0}
+p .right{margin:1.5em 0 1.5em 1.5em; padding:0}
 
-/*Forms */
+a:hover, a:active{outline:none}
+a{margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent}
+a:focus, a:hover{color:#f2f2f2; text-decoration:underline}
+a{color:#1a5895; text-decoration:none}
 
-/*Frames */
+blockquote{margin:1.5em; color:#fff; font-style:italic}
+strong, dfn{font-weight:bold}
+em, dfn{font-style:italic}
+sup, sub{line-height:0}
+li ul, li ol{margin:0}
+ul, ol{margin-left:1.8em}
+ol{list-style-type:decimal}
+ul, ol{margin:0 1.5em 1.5em 0; padding-left:1.5em}
+ul{list-style-type:disc}
+
+tfoot{font-style:italic}
+
+caption{background:#eee}
+.small{font-size:11px}
+.large{font-size:14px; line-height:2.5em; margin-bottom:1.25em}
+.hide{display:none}
+.highlight{background:#ffe400}
+
+tbody tr:nth-child(even).highlight td{background:#fcf300 !important}
+.added{background:#060; color:#fff}
+.removed{background:#900; color:#fff}
+.first{margin-left:0; padding-left:0}
+.last{margin-right:0; padding-right:0}
+.top{margin-top:0; padding-top:0}
+.bottom{margin-bottom:0; padding-bottom:0}
+.bbottom{border-bottom:1px solid #f2f2f2}
+
+
+/* Frame */
+body.frame{margin:0;background:none;}
+body.frame .main_form, body.frame #registration{padding:0;margin:0;border:none;}
 
 /*Colums */
 
+
+
 /*Main Styles */
 
-/*Main Form */
- 
-/*Headers*/
 
-/*Main Menu*/
+
+/*Main Form */
+
+
 
 /*Login Page*/
 
+
+
 /*User Profile*/
+
+
+
+/*Battle & Breed Page*/
+
+
+
+/*Friends Page*/
+
+
 
 /* Footer */
 
