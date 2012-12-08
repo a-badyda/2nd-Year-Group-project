@@ -5,56 +5,62 @@
 body, select, input, textarea{color:#333}
 
 /*Typography section */
-html{font-size:100.00%}
-body{font-size:75%; /*background:url();*/ font-family:"Comic Sans",Arial,sans-serif; margin:0px 0 20px 0}
-h1, h2, h3, h4, h5, h6{font-weight:normal; color:#fff; font-family:"Comic Sans",Arial,sans-serif}
-h1{font-size:25px; line-height:1.10; margin-bottom:0.5em;}
-h2{font-size:18px; margin-bottom:0.75em}
-h3{font-size:14px; line-height:1; margin-bottom:1em}
-h4{font-size:12px; line-height:1.25; margin-bottom:1.25em}
-h5{font-size:10px; font-weight:bold; margin-bottom:1.5em}
-h6{font-size:10px; font-weight:bold}
-h1 img, h2 img, h3 img, h4 img, h5 img, h6 img{margin:0}
-p{margin:0 0 1.5em}
-p .left{margin:1.5em 1.5em 1.5em 0; padding:0}
-p .right{margin:1.5em 0 1.5em 1.5em; padding:0}
+h1,h2,h3,h4,h5,p{font-size:12px; font-family:"wing dings", Helvetica,sans-serif; text-align:left; margin:1em; color: #6495ed;}
+h1{font-size:20px; font-family:bold; margin-bottom:1em; text-align: center;}
+h2{font-size:18px; font-family:bold; margin-bottom:1.2em; text-align: center;}
+h3{font-size:15px; margin-bottom:1.5em; text-indent: 10px}
+h4{font-family:italic,bold; margin-bottom:2em; text-indent: 10px;}
+h5{font-family:italic; margin-bottom:1.5em; text-indent:5px;}
+p{margin-bottom:0.5em;}
 
-a:hover, a:active{outline:none}
-a{margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent}
-a:focus, a:hover{color:#f2f2f2; text-decoration:underline}
-a{color:#1a5895; text-decoration:none}
+a:link {color: #009900;}
+a:visited {color: #999999;}
+a:hover {color: #333333;}
+a:focus {color: #333333;}
+a:active {color: #009900;}
 
-blockquote{margin:1.5em; color:#fff; font-style:italic}
-strong, dfn{font-weight:bold}
-em, dfn{font-style:italic}
-sup, sub{line-height:0}
-li ul, li ol{margin:0}
-ul, ol{margin-left:1.8em}
-ol{list-style-type:decimal}
-ul, ol{margin:0 1.5em 1.5em 0; padding-left:1.5em}
-ul{list-style-type:disc}
+/*Help Page*/
+.help{width:80%; 
+	margin: auto; 
+	padding:20px; 
+	border: 1px solid #666; 
+	background: #ffffff url('image/rainbow.png')top left no-repeat fixed;
+	border: 1px dotted thin #dda0dd ;}
 
-tfoot{font-style:italic}
+/*Lists!*/
 
-caption{background:#eee}
-.small{font-size:11px}
-.large{font-size:14px; line-height:2.5em; margin-bottom:1.25em}
-.hide{display:none}
-.highlight{background:#ffe400}
+html{
+	font:11px Arial, Helvetica, sans-serif; /* Sets the font size and type for the whole html page */
+	color:#333;} /* Sets the font color for the whole html page */
+.menu{
+	width: 100%; /* The menu should be the entire width of it's surrounding object, in this case the whole page */
+	background-color: #333;} /* dark grey bg */
 
-tbody tr:nth-child(even).highlight td{background:#fcf300 !important}
-.added{background:#060; color:#fff}
-.removed{background:#900; color:#fff}
-.first{margin-left:0; padding-left:0}
-.last{margin-right:0; padding-right:0}
-.top{margin-top:0; padding-top:0}
-.bottom{margin-bottom:0; padding-bottom:0}
-.bbottom{border-bottom:1px solid #f2f2f2}
+.menu ul{
+	margin: 0;
+	padding: 0;
+	float: left;}
+
+.menu ul li{
+	display: inline;} /* Makes the link all appear in one line, rather than on top of each other */
+
+.menu ul li a{
+	float: left; 
+	text-decoration: none; /* removes the underline from the menu text */
+	color: #fff; /* text color of the menu */
+	padding: 10.5px 11px; /* 10.5px of padding to the right and left of the link and 11px to the top and bottom */
+	background-color: #333;}
+
+.menu ul li a:visited{ /* This bit just makes sure the text color doesn't change once you've visited a link */
+	color: #fff;
+	text-decoration: none;}
+
+.menu ul li a:hover, .menu ul li .current{
+	color: #fff;
+	background-color:#0b75b2;} /* change the background color of the list item when you hover over it */
 
 
 /* Frame */
-body.frame{margin:0;background:none;}
-body.frame .main_form, body.frame #registration{padding:0;margin:0;border:none;}
 
 /*Colums */
 
