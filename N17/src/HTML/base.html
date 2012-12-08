@@ -5,6 +5,7 @@
 	<script type="text/javascript" src="JavaScript/includes/jquery182.min.js"></script>
 	<script type="text/javascript" src="JavaScript/includes/settings.js"></script>
 	<script type="text/javascript" src="JavaScript/menu.js"></script>
+	<script type="text/javascript" src="JavaScript/base.js"></script>
 	<h1> Monster Mash </h1>
 	<div class="floating_menu">
 		<ul class="menu_options">
@@ -21,27 +22,7 @@
 </head>
 	  
 <body>
-	<script type="text/javascript">
-		$(document).ready(function () {	
-			var $_GET = {};
-			
-			document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
-				function decode(s) {
-					return decodeURIComponent(s.split("+").join(" "));
-				}
-
-				$_GET[decode(arguments[1])] = decode(arguments[2]);
-			});
-
-			var page = $_GET["page"];
-			$.get(page + '.html', function (response) {
-				document.write(response);
-			});
-		});
-	</script>
 </body>
-	
 <footer>
-
 </footer>
 </html>
