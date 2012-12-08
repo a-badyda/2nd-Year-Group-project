@@ -12,15 +12,19 @@ $(document).ready(function() {
 	//load a list of all friends
 	$.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
 		var obj =  $.parseJSON(response);
-		var output; 
-		$.each(obj.Friends, function(key, val) {
-			var friend = $.parseJSON(val);
-			output += '<div class="current_friend">';
-			output += '<input class="friend_id" type="hidden" value="' + friend.id + '"></input>';
-			output += '<h4>' + friend.username + '</h4>';
-			output += '</div>';
-		});
+		var output;
 		
+		if(obj.Friends.length != 0) {
+			$.each(obj.Friends, function(key, val) {
+				var friend = $.parseJSON(val);
+				output += '<div class="current_friend">';
+				output += '<input class="friend_id" type="hidden" value="' + friend.id + '"></input>';
+				output += '<h4>' + friend.username + '</h4>';
+				output += '</div>';
+			});
+		} else {
+			output += '<h4>Looks like you have no friends!</h4>';
+		}
 		$("#friends_list").append(output);
 	});
 	
