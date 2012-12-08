@@ -39,6 +39,8 @@ $(document).ready(function(){
 			$.post(USER_REGISTER, {username: email, password: password,action:'newuser'}, 
 			function(response) {
 				$errorBox.text(response);
+				 $('#home_create_user #new_password').val('');
+				 $('#home_create_user #confirm').val('');
 			});
 		}
 		return false;
