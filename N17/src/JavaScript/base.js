@@ -34,7 +34,7 @@ $(document).ready(function () {
 				});
 				
 				//logout button.
-				$("#logout").submit(function() {
+				$(".logout").submit(function() {
 					$.post(SERVLET_LOCATION, {action: "logout"});
 					return false;
 				});
