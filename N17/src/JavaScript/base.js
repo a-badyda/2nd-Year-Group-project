@@ -13,7 +13,8 @@ $(document).ready(function () {
 	
 	//Request to check if the user is logged in.
 	$.post(SERVLET_LOCATION, {action: "isLoggedIn"}, function(response) {
-		if(response["login"]) {
+		var obj = $.parseJSON(response);
+		if(obj.login) {
 		
 			//extract the GET variable from the url.
 			document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
