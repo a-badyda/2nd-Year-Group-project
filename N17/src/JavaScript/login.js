@@ -21,7 +21,12 @@ $(document).ready(function(){
 		if (validateUserDetails($errorBox, email, password)) {
 			$.post(USER_LOGIN, {username: email, password: password,action:'login'}, 
 			function(response) {
-				$errorBox.text(response);
+				var obj = $.parseJSON(response);
+				if(obj.login) {
+					window.location.replace("index.html?page=profile");
+				} else {
+					$errorBox.text("Invalid login details.");
+				}
 			});
 		}
 		
@@ -39,6 +44,8 @@ $(document).ready(function(){
 			$.post(USER_REGISTER, {username: email, password: password,action:'newuser'}, 
 			function(response) {
 				$errorBox.text(response);
+				 $('#home_create_user #new_password').val('');
+				 $('#home_create_user #confirm').val('');
 			});
 		}
 		return false;

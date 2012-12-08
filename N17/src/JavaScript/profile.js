@@ -9,7 +9,7 @@ Email:	slj11@aber.ac.uk
 
 $(document).ready(function() {
 	//request data on page load.
-	$.post(SERVLET_LOCATION, action: "getMonsters", function(response) {
+	$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		
 	});
 });

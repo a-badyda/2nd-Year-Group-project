@@ -198,7 +198,51 @@ This sequence diagram shows a user logging in to monstermash. The user submits t
 \includegraphics[scale=0.50]{state_diagram.png}
 \end{center}
 
+\subsection{State Diagram Description}
 
+As you can see, the diagram above shows the design structure for how we want to be able to navigate each of our web pages. I will go through each connection individually, and explain the reasoning behind each.
+
+\subsubsection{Login Page to Profile Page}
+
+This is the first page that the user will be able to see when going onto our website, the page will require the user to enter their username and password into the allocated areas, once this is done, the user will be taken to the profile page, this is because the profile page is regarded as the users most important page, as this is where the user can decide what s/he plans to do.
+
+\subsubsection{Profile page to Various pages}
+
+The reason we had the profile page link to most of the pages on the website, was simply because this page acts almost as the “home” page of our structure, and it makes it easier for the user to have just one page in which they can select most of their options. If we separated and spread out each of the links to various pages to other pages in the structure, this would likely confuse and frustrate the user, by having them all in the same place, this avoids most issues about navigation that may arise.
+
+\subsubsection{Profile page to Help page}
+
+It is most likely that if the user had a problem, they would not be on any page other than the profile page, as this would be the starting point for the user, for this reason, we linked the “Help” page only too and from the profile page.
+
+\subsubsection{Profile page to Battle page}
+
+As the “Battle” page one of the most important pages (Alongside Friends) it was important that we put the link to this page in an obvious place, and there is no place more obvious than on your “Profile” page, as (as was explained before) this page works as the “home” page of this website, a page that is constantly referred to.
+
+\subsubsection{Battle page to Battle results page}
+
+After you have accepted an offer of a fight, the user will be taken to an area called the “Battle” page, in which you can watch the battle between your monster and the opponent that challenged you, after the battle has been completed you will be taken to the Battle results page, we structured this so that if you are the user that sent out the battle request, you will automatically be taken to the “Battle Results” page, as (as we have explained previously) the user sending out battle requests does not get to view the battle, but just see’s the results. After the users have seen the results of their battle(s), they have the option to return to the “Profile” page, so that they can continue to do other tasks within the game.
+Profile page to Friends page:
+
+The link to this page is very important, it is from the “Friends” page you will be able to add and accept who you want to be friends with in monster mash, who you would like to battle with, and who’s monsters you would like to breed with. Without this page, the game simply would not work. So for this reason, we linked this page to the “Profile” page, similar to the reason with the “Battle” page, this was done so the user can find this page easily, as the “Profile” page will be the most visited page on the website.
+
+\subsubsection{Friends page to Various pages}
+
+From this page, it is possible to do three separate things, you will be able to manage your friends, select which monsters you wish to breed with, and select which monsters you wish to battle. We decided to put these options on this page and NOT on the “Profile” page, because you would begin to run the risk of cluttering the “Profile” page, as important these tasks are to the game, we concluded that it would be much more neat and less confusing to put these options within a separate “Friends” page, so the user wouldn’t be “drowned” with options on the “Profile” page.
+
+\subsubsection{Friends page to Battle/Breeding page}
+
+Originally, we were going to have the Battle and Breeding pages separate here, so the user would be able to select which one they wanted. It was only later on that we realised that both these tasks could be accomplished on the same page, so having them on the same page was unnecessary. Once the user has selected whether they want to breed or battle certain monsters, the user will be directed back to the “Profile” page, this is a running theme in our structuring, as this is where everything on the website stems from.
+
+\subsubsection{Friends page to Add Friend page}
+
+It would seem fairly obvious that from the “Friends” page, we would be able to select which friends we would want to add, so from here, we added an “Add Friends” page, in which the user can type the recipients email or username, to send a friend request. Once the user has finished adding the friends they wish, they can then link back to the “Profile” page, to continue with other tasks they may wish to do.
+
+\subsubsection{Profile page to Breeding Results page}
+
+This link is very similar to the “Battle” page explained earlier, the only difference being that it does not matter who was the recipient of the offer or not, they would both be linked straight to a breeding results page. Once the user has looked at the results, they can then link back to the “Profile” page.
+
+\subsubsection{Profile page to Logout}
+For a small while, we did consider having a logout page on every page of the website, but we theorised that this may cause problems that would be difficult to fix, for example, what would happen if you logged out in the middle of a battle on the “Battle” page. For this reason, to avoid confusion, we only put the logout page on the “Profile” page, as this guarantees that the user is not in the middle of a task. 
 
 \clearpage
 \addcontentsline{toc}{section}{REFERENCES}

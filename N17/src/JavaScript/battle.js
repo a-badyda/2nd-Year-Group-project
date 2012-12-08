@@ -20,7 +20,7 @@ $(document).ready(function() {
 	});
 	
 	$(".current_friend").click(function(){
-		//show monsters on click
+		//show monsters click on
 		$.post(SERVLET_LOCATION, {action: "getFriendsMonsters"}, function(response) {
 			//get an display the friends monsters
 		});
@@ -40,7 +40,7 @@ $(document).ready(function() {
 	//function to send a battle/breed request
 	function newMonsterRequest(type){
 		$.post(SERVLET_LOCATION, {action: "new" + type +"Request"}, function(response) {
-			
+			$('#response').val(response);
 		});
 	}
 	

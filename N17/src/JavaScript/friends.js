@@ -21,20 +21,22 @@ $(document).ready(function() {
 	
 	
 	//accept a friend request
-	$(".pending_friend #button_accept").submit(function() {
-		var id = (".pending_friend #pending_friend_id").val();
+	$(".button_accept").submit(function() {
+		var parent = $(this).parent();
+		var id = $(parent + " .pending_friend_id").val();
 		$.post(SERVLET_LOCATION, {action: 'acceptPendingFriend', friendid: id}, 
 		function(response) {
-			
+			$('#response').val(response);
 		});
 	});
 	
 	//decline a friend request
-	$(".pending_friend #button_decline").submit(function() {
-		var id = (".pending_friend #pending_friend_id").val();
+	$(".button_decline").submit(function() {
+		var parent = $(this).parent();
+		var id = (parent + " .pending_friend_id").val();
 		$.post(SERVLET_LOCATION, {action: 'declinePendingFriend', friendid: id}, 
 		function(response) {
-			
+			$('#response').val(response);
 		});
 	});
 	
@@ -43,7 +45,7 @@ $(document).ready(function() {
 	$("#send_request #button_add").submit(function() {
 		var email = $("friend_email").val();
 		$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
-			
+			$('#response').val(response);
 		});
 	});
 	
