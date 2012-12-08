@@ -1,4 +1,5 @@
-package Java;
+//package Java;
+package root;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -427,7 +428,7 @@ public class GameServer extends HttpServlet {
 					
 					out.print("{\"Type\":\""+requests.get(i).getType()+"\"");
 					out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
-					out.print("{\"ID\":\""+requests.get(i).getFrom()+"\"");
+					out.print("{\"From\":\""+requests.get(i).getFrom().getUsername()+"\"");
 					
 					
 				}
