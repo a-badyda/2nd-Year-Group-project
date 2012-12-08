@@ -20,12 +20,13 @@ $(document).ready(function () {
 	});
 
 	var page = $_GET["page"];
-	if (page == '') {
-		window.location.replace("login.html");
-	} else {
+	
+	if(page == "profile" || page == "battle" || page == "friends" || page == "help") {
 		$.get(page + '.html', function (response) {
 			$('body').append(response);
 		});
+	} else {
+		window.location.replace("login.html");
 	}
 });
 
