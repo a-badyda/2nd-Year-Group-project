@@ -1,5 +1,4 @@
-//package Java;
-package root;
+package Java;
 
 /**
  * List of monsters' breed types, this will determine their base stats

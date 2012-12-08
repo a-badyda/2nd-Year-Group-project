@@ -1,7 +1,5 @@
-//package Java;
-package root;
+package Java;
 
-import java.util.Calendar;
 import java.util.Random;
 
 /**
@@ -14,7 +12,6 @@ public class MonsterStats {
 	private float base_health, base_strength, base_defence, base_aggression, base_fertility;
 	private float gen_health, gen_strength, gen_defence, gen_aggression, gen_fertility;
 	private float max_genetic_bonus = 20;
-	private Calendar birth;
 
 	/**
 	 * Generates the stats of a monster when it is created.
@@ -26,11 +23,7 @@ public class MonsterStats {
 	}
 	
 	public float getHealth(){
-		Calendar current = Calendar.getInstance();
-		int age = (int) calculateAge(current, birth);
-		float hp = base_health + gen_health;
-		hp = (float) (hp * ((10+2.7*age)*Math.exp(age*(-0.09))));
-		return (hp);
+		return (base_health + gen_health);
 	}
 	
 	public float getStrength(){
@@ -48,24 +41,6 @@ public class MonsterStats {
 	public float getFertility(){
 		return (base_fertility + gen_fertility);
 	}
-	
-	public Calendar getBirth() {
-		return birth;
-	}
-	public void setBirth(Calendar birth) {
-		this.birth = birth;
-	}
-	
-	public long calculateAge(Calendar current, Calendar birth){
-		Calendar date = (Calendar) current.clone();
-		long days = 0;
-		while(date.before(birth)){
-			date.add(Calendar.DAY_OF_MONTH, 1);
-			days++;
-		}
-		return days;
-	}
-	
 	
 	/**
 	 * Generates the genetic stats ranging from 0 to the max_genetic_bonus.

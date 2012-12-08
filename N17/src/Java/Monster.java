@@ -1,7 +1,5 @@
-//package Java;
-package root;
-
-import java.util.Calendar;
+package Java;
+import java.util.Date;
 
 /**
  * Defines all monsters in the MonsterMash game, a monster can age as well as
@@ -18,8 +16,7 @@ public class Monster {
 	private Status status;
 	//Cash prize is the amount a user wins when they defeat this monster.
 	private int cashPrize, wins, losses;
-	
-	public Monster(){}
+	private Date birth;
 	
 	/**
 	 * Creates a new monster with the given parameters.
@@ -27,12 +24,11 @@ public class Monster {
 	 * @param breed The breed type of the monster.
 	 * @param birth The birth date of the monster.
 	 */
-	public Monster(String name, Breed breed){
+	Monster(String name, Breed breed, Date birth){
 		this.name=name;
 		this.breed=breed;
 		stats = new MonsterStats(breed);
-		Calendar now = Calendar.getInstance();
-		stats.setBirth(now);
+		this.birth=birth;
 	}
 	
 	public Integer getId() {
@@ -76,6 +72,12 @@ public class Monster {
 		this.status = status;
 	}
 
+	public Date getBirth() {
+		return birth;
+	}
+	public void setBirth(Date birth) {
+		this.birth = birth;
+	}
 	public int getCashPrize() {
 		return cashPrize;
 	}

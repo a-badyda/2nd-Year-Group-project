@@ -1,5 +1,4 @@
-//package Java;
-package root;
+package Java;
 
 /**
  * This class stores the requests made by users. Each request has a type and state, 

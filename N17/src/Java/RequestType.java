@@ -1,5 +1,4 @@
-//package Java;
-package root;
+package Java;
 
 /**
  * There are 3 types of requests in MonsterMash. Depending on the type, 

@@ -1,5 +1,4 @@
-//package Java;
-package root;
+package Java;
 
 import java.util.*;
 
