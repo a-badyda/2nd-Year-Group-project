@@ -1,7 +1,6 @@
 package Java;
 
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Defines all monsters in the MonsterMash game, a monster can age as well as
@@ -27,7 +26,7 @@ public class Monster {
 	 * @param breed The breed type of the monster.
 	 * @param birth The birth date of the monster.
 	 */
-	public Monster(String name, Breed breed, Date birth){
+	public Monster(String name, Breed breed){
 		this.name=name;
 		this.breed=breed;
 		stats = new MonsterStats(breed);
