@@ -16,10 +16,9 @@ $(document).ready(function() {
 		
 		if(obj.Friends.length != 0) {
 			$.each(obj.Friends, function(key, val) {
-				var friend = $.parseJSON(val);
 				output += '<div class="current_friend">';
-				output += '<input class="friend_id" type="hidden" value="' + friend.id + '"></input>';
-				output += '<h4>' + friend.username + '</h4>';
+				output += '<input class="friend_id" type="hidden" value="' + val.id + '"></input>';
+				output += '<h4>' + val.username + '</h4>';
 				output += '</div>';
 			});
 		} else {
