@@ -21,7 +21,11 @@ $(document).ready(function(){
 		if (validateUserDetails($errorBox, email, password)) {
 			$.post(USER_LOGIN, {username: email, password: password,action:'login'}, 
 			function(response) {
-				$errorBox.text(response);
+				if(response["login"]) {
+					window.location.replace("index.html?page=profile");
+				} else {
+					$errorBox.val("Invalid login details.");
+				}
 			});
 		}
 		
