@@ -25,7 +25,7 @@ $(document).ready(function(){
 				if(obj.login) {
 					window.location.replace("index.html?page=profile");
 				} else {
-					$errorBox.val("Invalid login details.");
+					$errorBox.text("Invalid login details.");
 				}
 			});
 		}
