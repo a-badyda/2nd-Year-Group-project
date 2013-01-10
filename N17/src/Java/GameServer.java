@@ -1,20 +1,29 @@
-//package Java;
 package root;
 
-import java.sql.*;
+/*
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+*/
+import java.sql.SQLException;
+import java.sql.ResultSet;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;
-import java.io.*;
 
-import javax.servlet.*;
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
-
-/**
- * The server class that communicates between the JavaScript and the Java classes. 
- * It also uses a SQL database for validating information like passwords.
- */
 
 @WebServlet(name = "game", urlPatterns = {"/game"})
 public class GameServer extends HttpServlet {
@@ -52,9 +61,10 @@ public class GameServer extends HttpServlet {
 
 		if (session.getAttribute("username") != null && session.getAttribute("key") != null){
 			
-			out.print("{\"login\":true}");
+			out.print("true");
 		} else {
-			out.print("{\"login\":false}");
+			
+			out.print("false");
 		}
 		
 		out.flush();
@@ -96,13 +106,12 @@ public class GameServer extends HttpServlet {
 		case "addFriend":addFriend(request,response);break;
 		case "newBattleRequest":newBattleRequest(request,response);break;
 		case "newBreedRequest":newBreedRequest(request,response);break;
-		case "getMonsters":getMonsters(request,response);break;
-		case "getFriends":getFriends(request,response);break;
-		case "getFriendsMonsters":getFriendsMonsters(request,response);break;
-		case "getAllRequest":getAllRequest(request,response);break;
-		case "acceptRequest":acceptRequest(request,response);break;
-		case "declineRequest":declineRequest(request,response);break;
-		case "isLoggedIn": IsLoggedIn(request, response); break;
+		case "getMonsters":newBreedRequest(request,response);break;
+		case "getFriends":newBreedRequest(request,response);break;
+		case "getFriendsMonsters":newBreedRequest(request,response);break;
+		case "getAllRequest":newBreedRequest(request,response);break;
+		case "acceptRequest":newBreedRequest(request,response);break;
+		case "declineRequest":newBreedRequest(request,response);break;
 		}
 	}
 	
@@ -110,20 +119,16 @@ public class GameServer extends HttpServlet {
 			
 			String username = request.getParameter("username");
 		    String password = request.getParameter("password");
-		    
-			
 			
 			int ID;
-			int cash = 100;
+			int cash;
 			
 			String query = ("SELECT * FROM user WHERE UserName='" +username+ "'");
         	
 			try {
-				PrintWriter out;
-			    out = response.getWriter();
-			    
+			
 	    		ResultSet rset;
-	    		rset = db.query (query);
+	    		rset = db.createQuery (query);
 	    		while (rset.next ())
 	    		{    
 	    			if(rset.getString("password").equalsIgnoreCase(password)){
@@ -135,27 +140,26 @@ public class GameServer extends HttpServlet {
 	    					char temp = (char) whatever;
 	    					key += temp;
 	    				}
-
-	    				User user = users.createUser(key, username, password, cash);
-	    				user.setId(rset.getInt("UserID"));
+	    				
+	    				User user = new User(username,password);
+	    				user.setKey(key);
+	    				users.addUser(user);
+	    				user.setCash(rset.getInt("cash"));
+	    				
+	    				
 	    				HttpSession session = request.getSession(true);
 	    				session.setAttribute("key", key);
 	    				session.setAttribute("username", user.getUsername());
 	    				
 	    				
 	    			    query = ("UPDATE user SET 'key'='"+key+"' WHERE 'UserName'='"+username+"';");
-	 		            //run the query and store in DB
-	 		            db.update(query);
-	 		            
-	 		            
-	    				out.print("{\"login\":true}");
-	    				out.flush();
-	    				out.close();
+	 		            //run the query and stor in DB
+	 		            db.execute(query);
 	    				
 	    				break;
 	    			}
         		}
-    		} catch (SQLException | IOException e) {
+    		} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -164,107 +168,98 @@ public class GameServer extends HttpServlet {
 			
 			if(user != null){
 				
-				query = ("SELECT * FROM friends WHERE userID='" +users.fetchUser(username).getId()+ "'");
+				query = ("SELECT * FROM friends WHERE UserID='" +users.fetchUser(username).getId()+ "'");
+				
 				try{
 					ResultSet rset;
-					rset = db.query (query);
-					while (rset.next())
+					rset = db.createQuery (query);
+					
+					while (rset.next ())
 		    		{
 						User Friend = new User();
-						Friend.setId(rset.getInt("friendID"));
-						String query2 = ("SELECT * FROM user WHERE userID='" +Friend.getId()+ "'");
-						ResultSet rset2;
-						rset2 = db.query (query2);
 						
-						while (rset2.next())
-			    		{
-							Friend.setUsername(rset2.getString("UserName"));
-			    		}
+						Friend.setId(rset.getInt("friendID"));
+						
+						
+						
+						String query2 = ("SELECT * FROM user WHERE UserID='" +Friend.getId()+ "'");
+						ResultSet rset2;
+						rset2 = db.createQuery (query2);
+						
+						Friend.setUsername(rset2.getString("UserName"));
+						
+						//load in freinds monsters here
+						
+						String query3 = ("SELECT * FROM monsters WHERE ownerID='" +Friend.getId()+ "'");
+						
+						ResultSet rset3;
+						rset2 = db.createQuery (query2);
+						try {
+							while(rset2.next()){
+								
+								Monster m = new Monster();
+								m.setName(rset2.getString("name"));
+								m.setId(rset2.getInt("monsterID"));
+								m.setOwnerId(rset2.getInt("ownerID"));
+								
+								Friend.addMonster(m);
+							}
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
 						
 						user.addFriends(Friend);
 		    		}
-		    	
-						
-						
-				}catch (SQLException er) {er.printStackTrace();}
-						
-						
-				
-				}else{
-					//not loged in
-					PrintWriter out;
-				    try {
-						out = response.getWriter();
-						out.print("{\"login\":false}");
-						out.flush();
-						out.close();
-					} catch (IOException e) {e.printStackTrace();}
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			
-		}
-				
-			
-		
 				
 				
+
+
+				//load in your monsters here
 				
+				String query2 = ("SELECT * FROM monsters WHERE ownerID='" +user.getId()+ "'");
 				
+				ResultSet rset2;
+				rset2 = db.createQuery (query2);
+				try {
+					while(rset2.next()){
+						
+						Monster m = new Monster();
+						m.setName(rset2.getString("name"));
+						m.setId(rset2.getInt("monsterID"));
+						m.setOwnerId(rset2.getInt("ownerID"));
+						user.addMonster(m);
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
-						//load in friends monsters here
-//						
-//						String query3 = ("SELECT * FROM monsters WHERE ownerID='" +Friend.getId()+ "'");
-//						
-//						ResultSet rset3;
-//						rset2 = db.query (query2);
-//						try {
-//							while(rset2.next()){
-//								
-//								Monster m = new Monster();
-//								m.setName(rset2.getString("name"));
-//								m.setId(rset2.getInt("monsterID"));
-//								m.setOwnerId(rset2.getInt("ownerID"));
-//								
-//								Friend.addMonster(m);
-//							}
-//						} catch (SQLException e) {
-//							e.printStackTrace();
-//						}
-//						
-//						///////////////freind adding should be here moved for testing TUX
-//						
-//		    		}
-//					
-//				} catch (SQLException e) {
-//					e.printStackTrace();
-//				}
-//				
-//				
-//
-//
-//				//load in your monsters here
-//				
-//				String query2 = ("SELECT * FROM monsters WHERE ownerID='" +user.getId()+ "'");
-//				
-//				ResultSet rset2;
-//				rset2 = db.query (query2);
-//				try {
-//					while(rset2.next()){
-//						
-//						Monster m = new Monster();
-//						m.setName(rset2.getString("name"));
-//						m.setId(rset2.getInt("monsterID"));
-//						m.setOwnerId(rset2.getInt("ownerID"));
-//						user.addMonster(m);
-//					}
-//				} catch (SQLException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-				
-			
 				
 				// load in notifications
 				
-		
+				//do a redirect
+				//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~**~~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+			}
+			else{
+				try {
+					PrintWriter out = response.getWriter();
+					out.print("sorry invalid login");
+					out.flush();
+					out.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+
+		}
 		
 		private void LogOut(HttpServletRequest request, HttpServletResponse response){
 			
@@ -279,12 +274,12 @@ public class GameServer extends HttpServlet {
 			session.invalidate();
 			
 		    String query = ("UPDATE user SET 'key'='' WHERE 'UserName'='"+user.getUsername()+"';");
-			db.update(query);
+			db.execute(query);
 			
 			
 			users.removeUser(user);
 			
-			
+			//redirect
 			
 		}
 		
@@ -295,21 +290,10 @@ public class GameServer extends HttpServlet {
 		    
 		    
 		    String query = ("INSERT INTO `user` (`UserName`, `Email`, `Password`, `Cash`) VALUES ('"+username+"', ' ', '"+password+"', '200');");
-				//run the query and stor in DB
-		    	db.update(query);
+			//run the query and stor in DB
+		    db.execute(query);
 	        
-	        try {
-				PrintWriter out = response.getWriter();
-				out.print("new user created");
-				out.flush();
-				out.close();
-				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	        
-	        
+	        LogIn(request,response);
 	        
 	        
 		}
@@ -322,23 +306,22 @@ public class GameServer extends HttpServlet {
 			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getAttribute("username")+ "'");
 			
 			try {
-				Friend = db.query(query).getInt("UserID");
+				Friend = db.createQuery(query).getInt("UserID");
 				query = "INSERT INTO 'notifications' (`type`, `UserID1`, `UserID2`, `state`) VALUES ('FRIEND', '"+user.getId()+"', '"+Friend+"', 'PENDING')";
-				db.update(query);
+				db.execute(query);
 		        try {
 					PrintWriter out = response.getWriter();
-					out.print("{\"message\":\"added sucsefully\"}");
+					out.print("added sucsefully");
 					out.flush();
 					out.close();
 					
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} catch (SQLException e) {
 				try {
 					PrintWriter out = response.getWriter();
-					out.print("{\"message\":\"error could not add\"}");
+					out.print("error could not add");
 					out.flush();
 					out.close();
 					
@@ -346,12 +329,6 @@ public class GameServer extends HttpServlet {
 				}
 				
 			}
-			
-			
-			
-			
-			
-			
 		}
 		
 		private void newBattleRequest(HttpServletRequest request, HttpServletResponse response){
@@ -363,28 +340,27 @@ public class GameServer extends HttpServlet {
 			int FriendMonster = (int)request.getAttribute("monsterId");
 			int userMonster = (int)request.getAttribute("userMonsterId");
 			
-			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getAttribute("username")+ "'");
+			String query = ("SELECT * FROM user WHERE UserName='" +(String)session.getAttribute("username")+ "'");
 			
 			try {
-				Friend = db.query(query).getInt("UserID");
+				Friend = db.createQuery(query).getInt("UserID");
 				query = "INSERT INTO `notifications` (`type`, `UserID1`, `UserID2`, `MonsterID1`, `MonsterID2`, `state`) VALUES ('BATTLE', '"+user.getId()+"', '"+Friend+"', '"+userMonster+"', '"+FriendMonster+"', 'PENDING')";
-				db.update(query);
+				db.execute(query);
 				
 			
 				try {
 					PrintWriter out = response.getWriter();
-					out.print("{\"message\":\"Request sent\"}");
+					out.print("Request sent");
 					out.flush();
 					out.close();
 					
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} catch (SQLException e) {
 				try {
 					PrintWriter out = response.getWriter();
-					out.print("{\"message\":\"Request faild to send\"}");
+					out.print("Request faild to send");
 					out.flush();
 					out.close();
 					
@@ -407,24 +383,23 @@ public class GameServer extends HttpServlet {
 			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getAttribute("username")+ "'");
 			
 			try {
-				Friend = db.query(query).getInt("UserID");
+				Friend = db.createQuery(query).getInt("UserID");
 				query = "INSERT INTO `notifications` (`type`, `UserID1`, `UserID2`, `MonsterID1`, `MonsterID2`, `state`) VALUES ('BREED', '"+user.getId()+"', '"+Friend+"', '"+userMonster+"', '"+FriendMonster+"', 'PENDING')";
-				db.update(query);
+				db.execute(query);
 				
 				try {
 					PrintWriter out = response.getWriter();
-					out.print("{\"message\":\"Request sent\"}");
+					out.print("Request sent");
 					out.flush();
 					out.close();
 					
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} catch (SQLException e) {
 				try {
 					PrintWriter out = response.getWriter();
-					out.print("{\"message\":\"Request faild to send\"}");
+					out.print("Request faild to send");
 					out.flush();
 					out.close();
 					
@@ -434,42 +409,80 @@ public class GameServer extends HttpServlet {
 		}
 
 		private void getMonsters(HttpServletRequest request, HttpServletResponse response){
-					
-		}
-		//////////////////////////////////////////////////////////////////////////////
-		private void getFriends(HttpServletRequest request, HttpServletResponse response){
-			
 			HttpSession session = request.getSession(true);
 			User user = users.fetchUser((String)session.getAttribute("username"));
-			ArrayList<User> friends = user.getFriends();
+			ArrayList<Monster> requests = user.getMonsters();
 			try {
 				PrintWriter out = response.getWriter();
-				out.print("{\"Friends\":[");
+				out.print("{\"Monsters\":\"[\"");
 				
-				for (int i =0 ;i<friends.size();i++){
-					out.print("{\"id\":\""+friends.get(i).getId()+"\"");
-					out.print(",\"username\":\""+friends.get(i).getUsername()+"\"}");
-					if(i<friends.size()-1){
-						out.print(",");
-					}
+				for (int i =0 ;i<requests.size();i++){
+					
+					
+					out.print("{\"Name\":\""+requests.get(i).getName()+"\"");
+					out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
 				}
 				
-				out.print("]}");
+				out.print("\"]}\"");
+				out.flush();
+				out.close();
+			} catch (IOException ex) {
+			}
+		}
+		private void getFriends(HttpServletRequest request, HttpServletResponse response){
+			HttpSession session = request.getSession(true);
+			User user = users.fetchUser((String)session.getAttribute("username"));
+			ArrayList<User> requests = user.getFriends();
+			try {
+				PrintWriter out = response.getWriter();
+				out.print("{\"Freinds\":\"[\"");
+				
+				for (int i =0 ;i<requests.size();i++){
+					
+					
+					out.print("{\"Name\":\""+requests.get(i).getUsername()+"\"");
+					out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
+					out.print("{\"ServerAddress\":\""+requests.get(i).getServerAdd()+"\"");
+					
+					
+				}
+				
+				out.print("\"]}\"");
 				out.flush();
 				out.close();
 				
+				
+				
+				
 			} catch (IOException ex) {
 			}
-			
-			
-			
-			
-		}
-		
-		private void getFriendsMonsters(HttpServletRequest request, HttpServletResponse response){
-			
 		}
 		//////////////////////////////////////////////////////////////////////////////
+		private void getFriendsMonsters(HttpServletRequest request, HttpServletResponse response){
+			HttpSession session = request.getSession(true);
+			User user = users.fetchUser((String)session.getAttribute("username"));
+			ArrayList<User> requests1 = user.getFriends();
+			ArrayList<Monster> requests = user.getFriendsMonsters((int)session.getAttribute("FriendID"));
+			try {
+				PrintWriter out = response.getWriter();
+				out.print("{\"FreindsMonsters\":\"[\"");
+				
+				for (int i =0 ;i<requests.size();i++){
+					
+					out.print("{\"Name\":\""+requests.get(i).getName()+"\"");
+					out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
+				}
+				
+				out.print("\"]}\"");
+				out.flush();
+				out.close();
+				
+				
+				
+				
+			} catch (IOException ex) {
+			}
+		}
 		private void getAllRequest(HttpServletRequest request, HttpServletResponse response){
 			
 			HttpSession session = request.getSession(true);
@@ -480,9 +493,13 @@ public class GameServer extends HttpServlet {
 				out.print("{\"Notifications\":\"[\"");
 				
 				for (int i =0 ;i<requests.size();i++){
+					
+					
 					out.print("{\"Type\":\""+requests.get(i).getType()+"\"");
-					out.print(",\"ID\":\""+requests.get(i).getId()+"\"");
-					out.print(",\"From\":\""+requests.get(i).getFrom().getUsername()+"\"},");
+					out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
+					out.print("{\"ID2\":\""+requests.get(i).getFrom()+"\"");
+					
+					
 				}
 				
 				out.print("\"]}\"");
@@ -491,23 +508,49 @@ public class GameServer extends HttpServlet {
 				
 			} catch (IOException ex) {
 			}
-			
+		
 		}
 		
 		private void acceptRequest(HttpServletRequest request, HttpServletResponse response){
-			//(int)request.getAttribute("id")
-			
-			String query = ("SELECT * FROM `notifications` WHERE `ID`='"+(int)request.getAttribute("id")+"'");
-			ResultSet rset;
-			rset = db.query(query);
+			HttpSession session = request.getSession(true);
+			User user = users.fetchUser((String)session.getAttribute("username"));
+			Request r =	user.getRequests().get((int)session.getAttribute("ID"));
 			
 			
+			switch(r.getType()){
+			
+				case BATTLE:acceptBattleRequest(request,response);
+				break;
+				
+				case BREED:acceptBreedRequest(request,response);
+				break;
+				
+				case FRIEND:acceptFriendRequest(request,response);
+				break;
+			}
+		}
+		private void acceptBattleRequest(HttpServletRequest request, HttpServletResponse response){
+			
+		}
+		private void acceptBreedRequest(HttpServletRequest request, HttpServletResponse response){
+			
+		}
+		private void acceptFriendRequest(HttpServletRequest request, HttpServletResponse response){
 			
 		}
 		//////////////////////////////////////////////////////////////////////////////
 		private void declineRequest(HttpServletRequest request, HttpServletResponse response){
 			String query = ("DELETE FROM `notifications` WHERE `ID`='"+(int)request.getAttribute("id")+"'");
-			db.update(query);
+			db.execute(query);
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.print("request declined");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			
 		}
 		
