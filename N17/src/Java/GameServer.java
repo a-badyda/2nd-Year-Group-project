@@ -483,7 +483,6 @@ public class GameServer extends HttpServlet {
 					out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
 					out.print("{\"From\":\""+requests.get(i).getFrom()+"\"");
 					
-					
 				}
 				
 				out.print("\"]}\"");
@@ -520,9 +519,31 @@ public class GameServer extends HttpServlet {
 			
 		}
 		private void acceptFriendRequest(HttpServletRequest request, HttpServletResponse response){
+			HttpSession session = request.getSession(true);
+			User user = users.fetchUser((String)session.getAttribute("username"));
 			
+			
+			String query = ("DELETE FROM `notifications` WHERE `ID`='"+(int)request.getAttribute("id")+"'");
+			String query1 ="INSERT INTO `friends` (`userID`, `friendID`) VALUES ('"+user.getId()+"', '"+(int)session.getAttribute("FriendID")+"')";
+			String query2 ="INSERT INTO `friends` (`userID`, `friendID`) VALUES ('"+(int)session.getAttribute("FriendID")+"', '"+user.getId()+"')";
+			
+			
+
+			db.execute(query);
+			db.execute(query1);
+			db.execute(query2);
+			
+			
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.print("friend added");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		//////////////////////////////////////////////////////////////////////////////
 		private void declineRequest(HttpServletRequest request, HttpServletResponse response){
 			String query = ("DELETE FROM `notifications` WHERE `ID`='"+(int)request.getAttribute("id")+"'");
 			db.execute(query);
