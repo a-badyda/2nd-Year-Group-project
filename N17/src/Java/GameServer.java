@@ -108,6 +108,28 @@ public class GameServer extends HttpServlet {
 			String username = request.getParameter("username");
 		    String password = request.getParameter("password");
 			
+		    
+		    try{
+		    	HttpSession session = request.getSession(true);
+				
+				User user = users.fetchUser((String)session.getAttribute("username"));
+				
+				session.setAttribute("key", " ");
+				session.setAttribute("username", " ");
+				session.invalidate();
+				
+			    String query = ("UPDATE user SET 'key'='' WHERE 'UserName'='"+user.getUsername()+"';");
+				db.execute(query);
+				
+				
+				users.removeUser(user);
+		    	
+		    }catch(Exception e){
+		    	
+		    	
+		    }
+		    
+		    
 			int ID;
 			int cash;
 			
@@ -330,11 +352,12 @@ public class GameServer extends HttpServlet {
 			HttpSession session = request.getSession(true);
 			User user = users.fetchUser((String)session.getAttribute("username"));
 			int Friend;
-			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getAttribute("username")+ "'");
+			
 			
 			try {
+				String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getAttribute("username")+ "'");
 				Friend = db.createQuery(query).getInt("UserID");
-				query = "INSERT INTO 'notifications' (`type`, `UserID1`, `UserID2`, `state`) VALUES ('FRIEND', '"+user.getId()+"', '"+Friend+"', 'PENDING')";
+				query = "INSERT INTO `notifications` (`type`, `UserID1`, `UserID2`, `state`) VALUES ('FRIEND', '"+user.getId()+"', '"+Friend+"', 'PENDING')";
 				db.execute(query);
 		        try {
 					PrintWriter out = response.getWriter();
@@ -448,9 +471,7 @@ public class GameServer extends HttpServlet {
 					
 					out.print("{\"Name\":\""+requests.get(i).getName()+"\",");
 					out.print("\"ID\":\""+requests.get(i).getId()+"\"}");
-					if(i<requests.size()-1){
-						out.print(",");
-					}
+					
 				}
 				
 				out.print("]}");
@@ -468,9 +489,13 @@ public class GameServer extends HttpServlet {
 				out.print("{\"Friends\":[");
 				
 				for (int i =0 ;i<requests.size();i++){
-					out.print("{\"username\":\""+requests.get(i).getUsername()+"\"");
-					out.print("{\"id\":\""+requests.get(i).getId()+"\"");
-					out.print("{\"ServerAddress\":\""+requests.get(i).getServerAdd()+"\"");					
+					out.print("{\"username\":\""+requests.get(i).getUsername()+"\",");
+					out.print("\"id\":\""+requests.get(i).getId()+"\",");
+					out.print("\"ServerAddress\":\""+requests.get(i).getServerAdd()+"\"}");	
+					
+					if(i<requests.size()-1){
+						out.print(",");
+					}
 				}
 				
 				out.print("]}");
