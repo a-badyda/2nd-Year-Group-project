@@ -1,8 +1,10 @@
 //package Java;
 package root;
-
+import java.util.Date;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Random;
 import java.io.*;
 
@@ -131,6 +133,7 @@ public class GameServer extends HttpServlet {
 	    				
 	    				User user = new User(username,password);
 	    				user.setKey(key);
+	    				user.setId(rset.getInt("UserID"));
 	    				users.addUser(user);
 	    				user.setCash(rset.getInt("cash"));
 	    				
@@ -254,8 +257,8 @@ public class GameServer extends HttpServlet {
 			User user = users.fetchUser((String)session.getAttribute("username"));
 			
 			
-			session.setAttribute("key", "");
-			session.setAttribute("username", "");
+			session.setAttribute("key", " ");
+			session.setAttribute("username", " ");
 			session.invalidate();
 			
 		    String query = ("UPDATE user SET 'key'='' WHERE 'UserName'='"+user.getUsername()+"';");
@@ -278,10 +281,42 @@ public class GameServer extends HttpServlet {
 			//run the query and store in DB
 		    db.execute(query);
 		    
+		    
+			
+		    
+			Date date = new Date();
+		    SimpleDateFormat ft = 
+		    new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
+		    
+		    LogIn(request,response);
+		    
+			int ID=0;
+			try {
+				query = ("SELECT * FROM user WHERE UserName='" +(String)request.getParameter("username")+ "'");
+				
+				ResultSet rset;
+	    		rset = db.createQuery (query);
+				
+				while(rset.next()){
+					ID=rset.getInt("UserID");
+				}
+				
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		    // give them there first monster
+			
+			
+			
+			query = "INSERT INTO `monsterdata`.`monsters` (`ownerID`, `name`, `health`, `strength`, `defence`, `aggression`, `fertility`, `breed`, `status`, `cashPrize`, `wins`, `losses`, `birth`) VALUES ('"+ID+"', 'my first monster', '10', '10', '10', '10', '10', 'BEAST', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
+		    
+			//run the query and store in DB
+		    db.execute(query);
+		    
 		    try {
 				PrintWriter out = response.getWriter();
-				LogIn(request,response);
 				out.print("new user created");
+				out.print(ft.format(date));
 				out.flush();
 				out.close();
 				
@@ -406,16 +441,19 @@ public class GameServer extends HttpServlet {
 			ArrayList<Monster> requests = user.getMonsters();
 			try {
 				PrintWriter out = response.getWriter();
-				out.print("{\"Monsters\":\"[\"");
+				out.print("{\"Monsters\":[");
 				
 				for (int i =0 ;i<requests.size();i++){
 					
 					
-					out.print("{\"Name\":\""+requests.get(i).getName()+"\"");
-					out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
+					out.print("{\"Name\":\""+requests.get(i).getName()+"\",");
+					out.print("\"ID\":\""+requests.get(i).getId()+"\"}");
+					if(i<requests.size()-1){
+						out.print(",");
+					}
 				}
 				
-				out.print("\"]}\"");
+				out.print("]}");
 				out.flush();
 				out.close();
 			} catch (IOException ex) {
@@ -427,11 +465,11 @@ public class GameServer extends HttpServlet {
 			ArrayList<User> requests = user.getFriends();
 			try {
 				PrintWriter out = response.getWriter();
-				out.print("{\"Freinds\":[");
+				out.print("{\"Friends\":[");
 				
 				for (int i =0 ;i<requests.size();i++){
-					out.print("{\"Name\":\""+requests.get(i).getUsername()+"\"");
-					out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
+					out.print("{\"username\":\""+requests.get(i).getUsername()+"\"");
+					out.print("{\"id\":\""+requests.get(i).getId()+"\"");
 					out.print("{\"ServerAddress\":\""+requests.get(i).getServerAdd()+"\"");					
 				}
 				
