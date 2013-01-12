@@ -47,10 +47,9 @@ public class GameServer extends HttpServlet {
 
 		if (session.getAttribute("username") != null && session.getAttribute("key") != null){
 			
-			out.print("true");
+			 out.print("{\"login\":true}");
 		} else {
-			
-			out.print("false");
+			 out.print("{\"login\":false}");
 		}
 		
 		out.flush();
@@ -428,7 +427,7 @@ public class GameServer extends HttpServlet {
 			ArrayList<User> requests = user.getFriends();
 			try {
 				PrintWriter out = response.getWriter();
-				out.print("{\"Freinds\":\"[\"");
+				out.print("{\"Freinds\":[");
 				
 				for (int i =0 ;i<requests.size();i++){
 					out.print("{\"Name\":\""+requests.get(i).getUsername()+"\"");
@@ -436,7 +435,7 @@ public class GameServer extends HttpServlet {
 					out.print("{\"ServerAddress\":\""+requests.get(i).getServerAdd()+"\"");					
 				}
 				
-				out.print("\"]}\"");
+				out.print("]}");
 				out.flush();
 				out.close();
 			} catch (IOException ex) {
