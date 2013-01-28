@@ -1,4 +1,4 @@
-package root;
+package Java;
 
 import java.util.Date;
 
@@ -6,14 +6,19 @@ public class Monster {
 	
 	private Integer id, ownerId;
 	private String name;
-	private float health, strength, defence, aggression, fertility;
-	private Breed breed;
-	private Status status;
-	private int cashPrize, wins, losses;
+	private MonsterStats stats;
+	private Breed breed;	//extra
+	private Status status;	//extra
+	private int cashPrize = 500, wins = 0, losses = 0;
 	private Date birth;
 	
-	Monster(){
-		
+	public Monster(){}
+	
+	Monster(Integer owner, String name, Date birth){
+		this.name = name;
+		ownerId = owner;
+		this.birth = birth;
+		stats = new MonsterStats(breed);
 	}
 	
 	public Integer getId() {
@@ -35,34 +40,19 @@ public class Monster {
 		this.name = name;
 	}
 	public float getHealth() {
-		return health;
-	}
-	public void setHealth(float health) {
-		this.health = health;
+		return stats.getHealth();
 	}
 	public float getStrength() {
-		return strength;
-	}
-	public void setStrength(float strength) {
-		this.strength = strength;
+		return stats.getStrength();
 	}
 	public float getDefence() {
-		return defence;
-	}
-	public void setDefence(float defence) {
-		this.defence = defence;
+		return stats.getDefence();
 	}
 	public float getAggression() {
-		return aggression;
-	}
-	public void setAggression(float aggression) {
-		this.aggression = aggression;
+		return stats.getAggression();
 	}
 	public float getFertility() {
-		return fertility;
-	}
-	public void setFertility(float fertility) {
-		this.fertility = fertility;
+		return stats.getFertility();
 	}
 	public Breed getBreed() {
 		return breed;
