@@ -1,4 +1,4 @@
-package Java;
+package root;
 
 public enum RequestType {
 BATTLE,
