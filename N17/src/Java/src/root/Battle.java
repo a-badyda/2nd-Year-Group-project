@@ -44,7 +44,7 @@ public class Battle {
 		winner.setStatus(Status.HAPPY);
 		
 		defeated.setLosses(defeated.getLosses()+1);
-		defeated.getStats().setHealth(0);
+		defeated.setHealth(0);
 		defeated.setStatus(Status.DEAD);
 		
 		if(winner == toMon){
@@ -57,14 +57,14 @@ public class Battle {
 	public void attack(Monster atkMon, Monster defMon){
 		Random rnd = new Random();
 		int rn = rnd.nextInt(50);
-		double chance = atkMon.getStats().getAggression() 
+		double chance = atkMon.getAggression() 
 				+ rnd.nextInt(variation);
 		if(rn <= chance){
-			float dmg = (atkMon.getStats().getStrength() 
-					- defMon.getStats().getDefence() + 1);
+			float dmg = (atkMon.getStrength() 
+					- defMon.getDefence() + 1);
 			dmg += rnd.nextInt(variation);
-			float health = defMon.getStats().getHealth() - dmg;
-			defMon.getStats().setHealth(health);
+			float health = defMon.getHealth() - dmg;
+			defMon.setHealth(health);
 			if (health <= 0) {
 				defeated = defMon;
 				winner = atkMon;
