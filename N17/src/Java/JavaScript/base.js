@@ -11,13 +11,10 @@ Email:	slj11@aber.ac.uk
 $(document).ready(function () {	
 
 	//logout button.
-	$("#logout").submit(function() {
-		alert('pressed');
+	$("#logout").click(function() {
 		$.post(SERVLET_LOCATION, {action: "logout"}, function(response) {
-			alert("sent");
 			window.location.replace("login.html");
 		});
-		return false;
 	});
 
 	//Request to check if the user is logged in.
