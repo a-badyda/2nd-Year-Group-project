@@ -9,7 +9,7 @@ public class Monster {
 	private String name;
 	private Breed breed;	//extra
 	private Status status;	//extra
-	private int cashPrize = 500, wins = 0, losses = 0;
+	private int cashPrize = 500, cashSell = 0, cashBreed = 0, wins = 0, losses = 0;
 	private Calendar birth;
 	private float health, strength, defence, aggression, fertility;
 	private float max_health_bonus = 20;
