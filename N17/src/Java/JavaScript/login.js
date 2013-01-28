@@ -48,7 +48,7 @@ $(document).ready(function(){
 	});
 
 	function postLogin(email, password) {
-		var success = false;
+		success = false;
 		$.post(USER_LOGIN, {username: email, password: password,action:'login'}, 
 		function(response) {
 			var obj = $.parseJSON(response);
