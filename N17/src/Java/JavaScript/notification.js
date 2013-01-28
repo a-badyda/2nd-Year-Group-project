@@ -19,8 +19,8 @@ $(document).ready(function() {
 			description += " request from ";
 			description += current.from;
 			
-			var outputStr = '<div class="notification_request"><p>'+description+'</p>';
-			outputStr += '<input type="hidden" class="id" value="'+current.id+'"></input>';
+			var outputStr = '<div id="request_'+current.id+'" class="notification_request"><p>'+description+'</p>';
+			outputStr += '<input type="hidden" id="' + current.id + '"class="id" value="'+current.id+'"></input>';
 			outputStr += '<input type="submit" class="accept" value="accept notification">';
 			outputStr += '<input type="submit" class="decline" value="decline notification">';
 			outputStr += '</div>';
@@ -34,16 +34,17 @@ $(document).ready(function() {
 	$(".accept").submit(function() {
 		var parent = $(this).parent();
 		var notification_id = $(parent + " .id").val();
-		$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, 
-		function(response) {
-			$("#response").val(response);
-		});
+		$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, writeResponse);
 	});
 	
 	//user clicks decline
 	$(".decline").submit(function() {
 		var parent = $(this).parent();
 		var notification_id = $(parent + " .id").val();
-		$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id});
+		$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
 	});
+
+	function writeResponse(response) {
+		$('#request_' + notification_id).html("<span>"+response+"</span>");
+	}
 });
