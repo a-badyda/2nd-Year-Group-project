@@ -20,16 +20,7 @@ $(document).ready(function() {
 	//get a list of the friends and there monsters
 	$.post(SERVLET_LOCATION, {action: "getFriends"}, function(response) {
 		var obj =  $.parseJSON(response);
-		var output = '';
-
-		if(obj.Friends.length != 0) {
-			$.each(obj.Friends, function(key, friend) {
-				output += buildFriendHTML(friend);
-			});
-		} else {
-			output += '<h4>Looks like you have no friends!</h4>';
-		}
-
+		var output = outputList(buildFriendHTML, obj.Friends);
 		$("#friends_list").html(output);
 	});
 	

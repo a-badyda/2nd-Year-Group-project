@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
 		var obj = $.parseJSON(response);
 		var output = outputList(obj.Friends, outputFriendsList);
-		$('#rich_list').html(output);
+		$('#friends_list').html(output);
 	});
 
 	$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
