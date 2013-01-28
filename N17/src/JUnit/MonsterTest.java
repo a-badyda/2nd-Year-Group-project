@@ -6,9 +6,9 @@ import java.util.Calendar;
 
 import org.junit.*;
 
-import Java.src.root.Breed;
-import Java.src.root.Monster;
-import Java.src.root.Status;
+import root.Breed;
+import root.Monster;
+import root.Status;
 
 public class MonsterTest {
 

@@ -6,7 +6,7 @@ body, select, input, textarea{color:#333}
 
 /*Typography section */
 
-h1,h2,h3,h4,h5,p{font-size:12px; font-family:"Comic Sans", Helvetica,sans-serif; text-align:left; margin:1em; color: #6495ed;}
+h1,h2,h3,h4,h5,p{font-size:12px; font-family: Helvetica, sans-serif; text-align:left; margin:1em; color: #292421;}
 h1{font-size:20px; font-family:bold; margin-bottom:1em; text-align: center;}
 h2{font-size:18px; font-family:bold; margin-bottom:1.2em; text-align: center;}
 h3{font-size:15px; margin-bottom:1.5em; text-indent: 10px}
@@ -48,20 +48,12 @@ a:active {color: #009900;}
 	filter: alpha(opacity=30);	
 }
 
-/*Profile - stats list button*/
-.visi1 { visibility:"visible" }
-.visi2 { visibility:"hidden" }
-.disp1 { display:"block" }
-.disp2 { display:"none" }
-
-.stats{
-
-}
-
-
 /*Help Page*/
+
 .help{
-	width:80%; 
+    border-bottom-right-radius: 10% 10%;
+    border-bottom-left-radius: 10% 10%;
+	width:60%; 
 	margin: auto; 
 	padding:20px; 
 	border: 1px solid #666; 
@@ -69,100 +61,38 @@ a:active {color: #009900;}
 	border: 1px dotted thin #dda0dd ;}
 
 /*Friends Page*/
+
 .friends_list {
-	width:80%;
-	margin:auto;
-	border: 2px solid #666;
-	background: #ffffff;
+    border-bottom-right-radius: 10% 10%;
+    border-bottom-left-radius: 10% 10%;
+	width:60%;
+    float:center;
+	margin: auto;
+	background: #EED5D2;  /* Make this dependant on the color of the tab*/
 }
-.current_friends{
-	width: 60%;
-	margin-left: 5px;
-	/*border: 1px solid #666; */
-}
-.current_friend{
-
-}
-.pending_friends{
-	width: 60%;
-	margin-left: 5px;
-	/* border: 1px solid #666; */
-}
-.pending_friend{
-
-}
-.friend_buttons {
-	width: 80%;
-	margin-left: 5px;
-	text-align: right;
-	/*border: 1px solid #666; */
-}
-.send_request{
-
-}
-
-/*Lists!*/
-
-/*html{
-	font:11px Arial, Helvetica, sans-serif; /* Sets the font size and type for the whole html page
-	color:#333;} /* Sets the font color for the whole html page 
-.menu{
-	width: 100%; /* The menu should be the entire width of it's surrounding object, in this case the whole page 
-	background-color: #333;} /* dark grey bg 
-
-.menu ul{
-	margin: 0;
-	padding: 0;
-	float: left;}
-
-.menu ul li{
-	display: inline;} /* Makes the link all appear in one line, rather than on top of each other 
-
-.menu ul li a{
-	float: left; 
-	text-decoration: none; /* removes the underline from the menu text
-	color: #fff; /* text color of the menu 
-	padding: 10.5px 11px; /* 10.5px of padding to the right and left of the link and 11px to the top and bottom 
-	background-color: #333;}
-
-.menu ul li a:visited{ /* This bit just makes sure the text color doesn't change once you've visited a link 
-	color: #fff;
-	text-decoration: none;}
-
-.menu ul li a:hover, .menu ul li .current{
-	color: #fff;
-	background-color:#0b75b2;} /* change the background color of the list item when you hover over it 
-*/
-
-/* Frame */
-
-/*Colums */
-
-
-
-/*Main Styles */
-
-
-
-/*Main Form */
-
-
 
 /*Login Page*/
 
 
-
 /*User Profile*/
+.profile {
+    border-bottom-right-radius: 10% 10%;
+    border-bottom-left-radius: 10% 10%;
+    width: 60%;
+    margin: auto;
+    float:center;
+    background: #BFEFFF;
+}
+
+/*Battle / Breed section */
+.monster_battle {
+    border-bottom-right-radius: 10% 10%;
+    border-bottom-left-radius: 10% 10%;
+    width: 60%;
+    margin: auto;
+    float:center;
+    background: #EED2EE;
+}
 
 
-
-/*Battle & Breed Page*/
-
-
-
-/*Friends Page*/
-
-
-
-/* Footer */
 
