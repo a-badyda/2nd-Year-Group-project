@@ -62,27 +62,4 @@ $(document).ready(function() {
 			$('#response').val(response);
 		});
 	}
-
-	function buildMonsterHTML(mon, user) {
-		outputStr = '';
-		outputStr += '<div id="monster_'+mon.id+'" class="monster">';
-		outputStr += '<p class="monster_name">'+mon.monstername+'</p>';
-		outputStr += '<div id="stats">';
-		outputStr += '<p class="strength">'+mon.strength+'</p>';
-		outputStr += '<p class="aggression">'+mon.aggression+'</p>';
-		outputStr += '<p class="defense">'+mon.defense+'</p>';
-		outputStr += '<p class="health">'+mon.health+'</p>';
-		outputStr += '<p class="fertility">'+mon.fertility+'</p>';
-		outputStr += '</div>';
-
-		if(user) {
-			outputStr += '<input type="radio" name="select_monster" class="select_monster" value="'+mon.id+'"></input>';
-		} else {
-			outputStr += '<input type="submit" class="battle_request" value="battle"></input>';
-		}
-
-		outputStr +='</div>';
-		return outputStr;
-	}
-
 });

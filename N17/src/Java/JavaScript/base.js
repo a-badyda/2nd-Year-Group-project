@@ -37,7 +37,7 @@ $(document).ready(function () {
 			var page = $_GET["page"]; //get what page we are on.
 
 			//select if it is a valid page.
-			if(page == "profile" || page == "battle" || page == "friends" || page == "help" || page == "notification") {
+			if(page == "profile" || page == "battle" || page == "friends" || page == "help" || page == "notification" || page == "auction") {
 				$.get(page + '.html', function (response) {
 					$('body').append(response);
 				});

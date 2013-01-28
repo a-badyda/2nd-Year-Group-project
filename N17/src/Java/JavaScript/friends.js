@@ -27,33 +27,13 @@ $(document).ready(function() {
 		$(".friends_list").html(output);
 	});
 	
-	
-	//accept a friend request
-	$(".button_accept").submit(function() {
-		var parent = $(this).parent();
-		var id = $(parent + " .pending_friend_id").val();
-		$.post(SERVLET_LOCATION, {action: 'acceptPendingFriend', friendid: id}, 
-		function(response) {
-			$('#friends_response').html(response);
-		});
-	});
-	
-	//decline a friend request
-	$(".button_decline").submit(function() {
-		var parent = $(this).parent();
-		var id = (parent + " .pending_friend_id").val();
-		$.post(SERVLET_LOCATION, {action: 'declinePendingFriend', friendid: id}, 
-		function(response) {
-			$('#friends_response').html(response);
-		});
-	});
-	
 	//add a new friend
 	$(".send_request #button_add").submit(function() {
 		var email = $(".friend_email").val();
 		$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
 			$('#friends_response').html(response);
 		});
+		return false;
 	});
 	
 });
