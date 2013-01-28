@@ -84,7 +84,15 @@ a:active {color: #009900;}
     background: #BFEFFF;
 }
 
-
+/*Battle / Breed section */
+.monster_battle {
+    border-bottom-right-radius: 10% 10%;
+    border-bottom-left-radius: 10% 10%;
+    width: 60%;
+    margin: auto;
+    float:center;
+    background: #EED2EE;
+}
 
 
 
