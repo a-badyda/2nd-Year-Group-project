@@ -49,64 +49,12 @@ a:active {color: #009900;}
 }
 
 /*Profile - stats list button*/
+.visi1 { visibility:"visible" }
+.visi2 { visibility:"hidden" }
+.disp1 { display:"block" }
+.disp2 { display:"none" }
 
 .stats{
-	position:absolute;
-    width:175px;
-    padding-right:25px;
-    top:0;
-    bottom:0;
-    margin-left:-175px;
-    float:left;
-    background:#d00;
-    -webkit-transition:margin-left .5s ease-in-out;
-    z-index:1;
-    box-shadow:1px 0 3px rgba(0,0,0,.75);
-}
-.stats:after{
-    content:'|||';
-    -webkit-transform:rotate(-90deg);
-    position:absolute;
-    top:0;
-    right:4px;
-    font-size:20px;
-    display:block;
-    height:25px;
-    line-height:25px;
-    color:#f33;
-    font-family:Helvetica, Century Gothic, Arial, sans-serif;
-    letter-spacing:1px;
-    text-shadow:-1px 0px 2px #800;
-}
-.stats ul{
-    height:100%;
-    background:#900;
-    border-right:solid 1px #f22;
-    overflow:hidden;
-}
-.stats li{
-    background:#b00;
-    border-top:solid 1px #c00;
-    border-bottom:solid 1px #a00;
-
-    padding:1em;
-    color:#fff;
-}
-.stats li:last-child{
-    border-bottom:solid 1px #a00;
-    box-shadow:0 2px 1px #700;
-}
-.stats:hover{
-    margin-left:0;
-}
-.stats{
-    padding:1em;
-    position:absolute;
-    top:0;
-    bottom:0;
-    right:0;
-    left:25px;
-    overflow:auto;
 
 }
 
