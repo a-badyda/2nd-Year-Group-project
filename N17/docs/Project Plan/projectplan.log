@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2013.1.28)  28 JAN 2013 15:41
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2013.1.28)  28 JAN 2013 16:54
 entering extended mode
 **projectplan.tex
 
@@ -287,7 +287,11 @@ lan.out)
 (D:\dac26\Documents\GitHub\2nd-Year-Group-project\N17\docs\ProjectPlan\projectp
 lan.out)
 \@outlinefile=\write3
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count103
 \scratchdimen=\dimen110
@@ -325,7 +329,6 @@ Non-PDF special ignored!
 
 
 
-Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -546,10 +549,10 @@ Non-PDF special ignored!] <incremental.jpg, id=22, 652.68843pt x 481.04718pt>
 File: incremental.jpg Graphic file (type jpg)
 
 <use incremental.jpg>
-Package pdftex.def Info: incremental.jpg used on input line 114.
+Package pdftex.def Info: incremental.jpg used on input line 112.
 (pdftex.def)             Requested size: 326.34341pt x 240.523pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
@@ -593,8 +596,36 @@ docs/ProjectPlan/incremental.jpg>]
 <loginPage.jpg, id=30, 662.475pt x 414.04688pt>
 File: loginPage.jpg Graphic file (type jpg)
  <use loginPage.jpg>
-Package pdftex.def Info: loginPage.jpg used on input line 177.
+Package pdftex.def Info: loginPage.jpg used on input line 176.
 (pdftex.def)             Requested size: 331.2367pt x 207.02292pt.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.179 \\
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.180 T
+       his is the basic design of the page the user will first encounter whe...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -624,8 +655,13 @@ Non-PDF special ignored!] <userProfile.jpg, id=34, 659.46375pt x 414.79968pt>
 File: userProfile.jpg Graphic file (type jpg)
 
 <use userProfile.jpg>
-Package pdftex.def Info: userProfile.jpg used on input line 186.
+Package pdftex.def Info: userProfile.jpg used on input line 189.
 (pdftex.def)             Requested size: 329.73106pt x 207.39934pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--205
+
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -649,16 +685,7 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/ProjectPlan/loginPage.jpg>]
-<breedingPage.jpg, id=38, 666.23906pt x 416.30531pt>
-File: breedingPage.jpg Graphic file (type jpg)
- <use breedingPage.jpg>
-Package pdftex.def Info: breedingPage.jpg used on input line 202.
-(pdftex.def)             Requested size: 333.11871pt x 208.15215pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9
+docs/ProjectPlan/loginPage.jpg>] [9
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -670,22 +697,40 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
 docs/ProjectPlan/userProfile.jpg>]
-! Text line contains an invalid character.
-l.210 ...player to either accept or reject this o
-                                                  er, if it is accepted,
-A funny symbol that I can't read has just been input.
-Continue, and I'll forget that it ever happened.
+<breedingPage.jpg, id=41, 666.23906pt x 416.30531pt>
+File: breedingPage.jpg Graphic file (type jpg)
+ <use breedingPage.jpg>
+Package pdftex.def Info: breedingPage.jpg used on input line 209.
+(pdftex.def)             Requested size: 333.11871pt x 208.15215pt.
 
-<battleSelection.jpg, id=42, 666.99188pt x 421.575pt>
-File: battleSelection.jpg Graphic file (type jpg)
 
-<use battleSelection.jpg>
-Package pdftex.def Info: battleSelection.jpg used on input line 218.
-(pdftex.def)             Requested size: 333.49512pt x 210.78697pt.
+! LaTeX Error: There's no line here to end.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.212 \\
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
- [10
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213 T
+       he monster that you selected for breeding from the previous page will...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[10
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -697,17 +742,49 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
 docs/ProjectPlan/breedingPage.jpg>]
+<battleSelection.jpg, id=45, 666.99188pt x 421.575pt>
+File: battleSelection.jpg Graphic file (type jpg)
+
+<use battleSelection.jpg>
+Package pdftex.def Info: battleSelection.jpg used on input line 229.
+(pdftex.def)             Requested size: 333.49512pt x 210.78697pt.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 \\
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.233 S
+       imilar to the breeding page, this requires the user to select one of ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 <battle.jpg, id=46, 678.28406pt x 421.575pt>
 File: battle.jpg Graphic file (type jpg)
  <use battle.jpg>
-Package pdftex.def Info: battle.jpg used on input line 226.
+Package pdftex.def Info: battle.jpg used on input line 240.
 (pdftex.def)             Requested size: 339.14119pt x 210.78697pt.
 
-! Text line contains an invalid character.
-l.228 ...the user has accepted a battle request o
-                                                   their friend, they will be
-A funny symbol that I can't read has just been input.
-Continue, and I'll forget that it ever happened.
+Underfull \hbox (badness 10000) in paragraph at lines 240--256
+
+ []
 
 [11
 Non-PDF special ignored!
@@ -728,14 +805,23 @@ docs/ProjectPlan/battleSelection.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Group
 <help.jpg, id=50, 673.01437pt x 420.82219pt>
 File: help.jpg Graphic file (type jpg)
  <use help.jpg>
-Package pdftex.def Info: help.jpg used on input line 242.
+Package pdftex.def Info: help.jpg used on input line 258.
 (pdftex.def)             Requested size: 336.50636pt x 210.41057pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--264
+
+ []
 
 <manageFriends.jpg, id=51, 672.26157pt x 420.82219pt>
 File: manageFriends.jpg Graphic file (type jpg)
  <use manageFriends.jpg>
-Package pdftex.def Info: manageFriends.jpg used on input line 248.
+Package pdftex.def Info: manageFriends.jpg used on input line 266.
 (pdftex.def)             Requested size: 336.12996pt x 210.41057pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--278
+
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -754,47 +840,47 @@ docs/ProjectPlan/help.jpg>] <risk1.jpg, id=56, 792.71156pt x 475.7775pt>
 File: risk1.jpg Graphic file (type jpg)
 
 <use risk1.jpg>
-Package pdftex.def Info: risk1.jpg used on input line 265.
+Package pdftex.def Info: risk1.jpg used on input line 285.
 (pdftex.def)             Requested size: 475.6306pt x 285.46869pt.
  <risk2.jpg, id=57, 791.95876pt x 488.57532pt>
 File: risk2.jpg Graphic file (type jpg)
  <use risk2.jpg>
-Package pdftex.def Info: risk2.jpg used on input line 266.
+Package pdftex.def Info: risk2.jpg used on input line 286.
 (pdftex.def)             Requested size: 475.17892pt x 293.14745pt.
 
 <risk3.jpg, id=58, 794.2172pt x 474.27188pt>
 File: risk3.jpg Graphic file (type jpg)
  <use risk3.jpg>
-Package pdftex.def Info: risk3.jpg used on input line 267.
+Package pdftex.def Info: risk3.jpg used on input line 287.
 (pdftex.def)             Requested size: 476.534pt x 284.56532pt.
 
 <risk4.jpg, id=59, 792.71156pt x 402.75468pt>
 File: risk4.jpg Graphic file (type jpg)
  <use risk4.jpg>
-Package pdftex.def Info: risk4.jpg used on input line 268.
+Package pdftex.def Info: risk4.jpg used on input line 288.
 (pdftex.def)             Requested size: 475.6306pt x 241.65466pt.
 
-Overfull \hbox (78.14561pt too wide) in paragraph at lines 265--269
+Overfull \hbox (78.14561pt too wide) in paragraph at lines 285--289
 [] 
  []
 
 
-Overfull \hbox (77.69394pt too wide) in paragraph at lines 265--269
+Overfull \hbox (77.69394pt too wide) in paragraph at lines 285--289
 [] 
  []
 
 
-Overfull \hbox (79.04901pt too wide) in paragraph at lines 265--269
+Overfull \hbox (79.04901pt too wide) in paragraph at lines 285--289
 [] 
  []
 
 
-Overfull \hbox (78.14561pt too wide) in paragraph at lines 265--269
+Overfull \hbox (78.14561pt too wide) in paragraph at lines 285--289
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--269
+Underfull \hbox (badness 10000) in paragraph at lines 285--289
 
  []
 
@@ -866,9 +952,9 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 291.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 311.
 
-Overfull \hbox (75.63466pt too wide) in paragraph at lines 277--291
+Overfull \hbox (75.63466pt too wide) in paragraph at lines 297--311
 []
  []
 
@@ -885,20 +971,20 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 291.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 311.
 
 (D:\dac26\Documents\GitHub\2nd-Year-Group-project\N17\docs\ProjectPlan\projectp
 lan.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 291.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 291.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 311.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 311.
 Package rerunfilecheck Info: File `projectplan.out' has not changed.
-(rerunfilecheck)             Checksum: 703430E51ED9E59B49B5C5E565E11290;2211.
+(rerunfilecheck)             Checksum: 510E6A0D14668B556F718406B838497E;2218.
  ) 
 Here is how much of TeX's memory you used:
- 6081 strings out of 494046
- 89264 string characters out of 3148410
- 188869 words of memory out of 3000000
- 9330 multiletter control sequences out of 15000+200000
+ 6082 strings out of 494046
+ 89286 string characters out of 3148410
+ 188680 words of memory out of 3000000
+ 9331 multiletter control sequences out of 15000+200000
  8243 words of font info for 29 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  37i,13n,39p,260b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -907,7 +993,7 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on projectplan.pdf (19 pages, 1660758 bytes).
+Output written on projectplan.pdf (19 pages, 1661096 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
