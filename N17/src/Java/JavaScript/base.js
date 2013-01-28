@@ -15,7 +15,6 @@ $(document).ready(function () {
 	$.post(SERVLET_LOCATION, {action: "isLoggedIn"}, function(response) {
 		var obj = $.parseJSON(response);
 		if(obj.login) {
-		
 			//extract the GET variable from the url.
 			document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
 				function decode(s) {
@@ -33,18 +32,20 @@ $(document).ready(function () {
 					$('body').append(response);
 				});
 				
-				//logout button.
-				$(".logout").submit(function() {
-					$.post(SERVLET_LOCATION, {action: "logout"});
-					return false;
-				});
-				
 			} else {
 				window.location.replace("login.html");
 			}
 		} else {
 			window.location.replace("login.html");
 		}
+	});
+
+	//logout button.
+	$(".logout").submit(function() {
+		$.post(SERVLET_LOCATION, {action: "logout"}, function(response) {
+			window.location.replace("login.html");
+		});
+		return false;
 	});
 });
 
