@@ -6,7 +6,7 @@ body, select, input, textarea{color:#333}
 
 /*Typography section */
 
-h1,h2,h3,h4,h5,p{font-size:12px; font-family:"Comic Sans", Helvetica,sans-serif; text-align:left; margin:1em; color: #6495ed;}
+h1,h2,h3,h4,h5,p{font-size:12px; font-family: Helvetica, sans-serif; text-align:left; margin:1em; color: #292421;}
 h1{font-size:20px; font-family:bold; margin-bottom:1em; text-align: center;}
 h2{font-size:18px; font-family:bold; margin-bottom:1.2em; text-align: center;}
 h3{font-size:15px; margin-bottom:1.5em; text-indent: 10px}
@@ -48,18 +48,8 @@ a:active {color: #009900;}
 	filter: alpha(opacity=30);	
 }
 
-/*Profile - stats list button*/
-.visi1 { visibility:"visible" }
-.visi2 { visibility:"hidden" }
-.disp1 { display:"block" }
-.disp2 { display:"none" }
-
-.stats{
-
-}
-
-
 /*Help Page*/
+
 .help{
 	width:80%; 
 	margin: auto; 
@@ -69,36 +59,18 @@ a:active {color: #009900;}
 	border: 1px dotted thin #dda0dd ;}
 
 /*Friends Page*/
+
 .friends_list {
-	width:80%;
-	margin:auto;
-	border: 2px solid #666;
-	background: #ffffff;
+    border-bottom-right-radius: 10% 10%;
+    border-bottom-left-radius: 10% 10%;
+	width:60%;
+    float:center;
+	margin-right: 80px;
+	background: #EED5D2;  /* Make this dependant on the color of the tab*/
 }
-.current_friends{
-	width: 60%;
-	margin-left: 5px;
-	/*border: 1px solid #666; */
-}
-.current_friend{
 
-}
-.pending_friends{
-	width: 60%;
-	margin-left: 5px;
-	/* border: 1px solid #666; */
-}
-.pending_friend{
-
-}
-.friend_buttons {
-	width: 80%;
-	margin-left: 5px;
-	text-align: right;
-	/*border: 1px solid #666; */
-}
-.send_request{
-
+.send_request {
+    /* derp */    
 }
 
 /*Lists!*/
