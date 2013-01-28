@@ -1,5 +1,4 @@
-//package root;
-package Java.src.root;
+package root;
 import java.util.Date;
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -204,7 +203,7 @@ public class GameServer extends HttpServlet {
 					while (rset2.next())
 		    		{
 						Friend.setUsername(rset2.getString("UserName"));
-						user.addFriends(Friend);
+						user.addFriend(Friend);
 						//load in freinds monsters here
 						
 						String query3 = ("SELECT * FROM monsters WHERE ownerID='" +Friend.getId()+ "'");
