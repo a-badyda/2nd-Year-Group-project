@@ -12,7 +12,7 @@ $(document).ready(function() {
 	//load a list of all friends
 	$.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
 		var obj = $.parseJSON(response);
-		var output;
+		var output = '';
 		
 		if(obj.Friends.length != 0) {
 			$.each(obj.Friends, function(key, val) {
