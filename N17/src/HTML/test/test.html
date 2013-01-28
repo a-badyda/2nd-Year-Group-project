@@ -1,14 +1,25 @@
 <html>
 	<head>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js">
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script type="text/javascript" src="JavaScript/includes/settings.js"></script>
+		<script type="text/javascript" src="JavaScript/login.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				login_success = postLogin("email", "password");
+				writeTest("Login test", login_success);
+
+
+				function writeTest(name, success) {
+					$('#tests').append("<tr><td>" + name + "</td><td>" + success + "</td></tr>");
+				}
+			});
 		</script>
 	</head>
 	<body>
-		<table>
+		<table id="tests">
 			<tr><td><b>Test</b></td><td><b>Pass?</b></td></tr>
-			<tr>
-				
-			</tr>
 		</table>
 	</body>
 </html>
