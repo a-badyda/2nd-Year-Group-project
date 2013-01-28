@@ -1,9 +1,4 @@
-package Java;
-
-/**
- * List of monsters' breed types, this will determine their base stats
- * and the graphics shown when listing all the monsters.
- */
+package root;
 
 public enum Breed {
 SLIME,
