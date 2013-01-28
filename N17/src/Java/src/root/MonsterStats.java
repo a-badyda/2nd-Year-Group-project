@@ -1,5 +1,6 @@
-package root;
+package Java.src.root;
 
+import java.util.Calendar;
 import java.util.Random;
 
 /**
@@ -11,34 +12,17 @@ public class MonsterStats {
 	
 	private float health, strength, defence, aggression, fertility;
 	private float max_genetic_bonus = 20;
-
+	private Calendar birth;
+	
 	/**
 	 * Generates the stats of a monster when it is created.
+	 * @param birth 
 	 * @param breed The breed type of the monster.
 	 */
-	public MonsterStats(Breed breed){
-		generateBases(breed);
+	public MonsterStats(Calendar birth){
+		this.birth = birth;
+		generateBases();
 		generateGenetics();
-	}
-	
-	public float getHealth(){
-		return (health);
-	}
-	
-	public float getStrength(){
-		return (strength);
-	}
-	
-	public float getDefence(){
-		return (defence);
-	}
-	
-	public float getAggression(){
-		return (aggression);
-	}
-	
-	public float getFertility(){
-		return (fertility);
 	}
 	
 	/**
@@ -61,12 +45,79 @@ public class MonsterStats {
 	 * Generates the base stats based on the breed of the monster.
 	 * @param breed The breed of the monster.
 	 */
-	public void generateBases(Breed breed){
-		health = 20;
+	public void generateBases(){
+		health = 60;
 		strength = 10;
 		defence = 10;
-		aggression = 10;
-		fertility = 10;
+		aggression = 5;
+		fertility = 5;
 		
 	}
+	
+	public Calendar getBirth() {
+		return birth;
+	}
+	public void setBirth(Calendar birth) {
+		this.birth = birth;
+	}
+
+	public float getHealth(){
+		return health;
+	}
+	
+	public void ageHealth(){
+		Calendar current = Calendar.getInstance();
+		int age = (int) calculateAge(current, birth);
+		float hp = health;
+		hp = (float) (hp * ((10+2.7*age)*Math.exp(age*(-0.09))));
+		setHealth(hp);
+	}
+	
+	public long calculateAge(Calendar current, Calendar birth){
+		Calendar date = (Calendar) current.clone();
+		long days = 0;
+		while(date.before(birth)){
+			date.add(Calendar.DAY_OF_MONTH, 1);
+			days++;
+		}
+		return days;
+	}
+
+	public void setHealth(float health) {
+		this.health = health;
+	}
+
+	public float getStrength() {
+		return strength;
+	}
+
+	public void setStrength(float strength) {
+		this.strength = strength;
+	}
+
+	public float getDefence() {
+		return defence;
+	}
+
+	public void setDefence(float defence) {
+		this.defence = defence;
+	}
+
+	public float getAggression() {
+		return aggression;
+	}
+
+	public void setAggression(float aggression) {
+		this.aggression = aggression;
+	}
+
+	public float getFertility() {
+		return fertility;
+	}
+
+	public void setFertility(float fertility) {
+		this.fertility = fertility;
+	}
+	
+
 }
