@@ -8,11 +8,11 @@ Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk	
 */
 
-$(document).read(function() {
-		//get a list of the users monsters
+$(document).read(function(){
+	//get a list of the users monsters
 	$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		var obj =  $.parseJSON(response);
-		outputStr = '<div></div>';
+		var outputStr = '<div></div>';
 		outputStr += outputMonsters(obj, true, buildMonsterAuctionHTML);
 		$("#select_monster_form").html(outputStr);
 	});
