@@ -1,43 +1,21 @@
-package Java;
-
-/**
- * This class stores the requests made by users. Each request has a type and state, 
- * along with information about the users and monsters involved.
- */
+package root;
 
 public class Request {
 	
-	private Integer id;
-	private User from, to;
-	private Monster fromMon, toMon;
+	private Integer id, from, to, fromMon, toMon;
 	private RequestType type;
 	private RequestState state;
 	
-	/**
-	 * Creates a battle or breed request with the given parameters.
-	 * @param u1 The user who made the request.
-	 * @param u2 The user targeted by the request.
-	 * @param m1 The monster of the user who made the request.
-	 * @param m2 The monster of the user who received the request.
-	 * @param type The type of the request.
-	 * @return The request that was created.
-	 */
-	public Request(User u1, User u2, Monster m1, Monster m2, RequestType type){
-		this.setFrom(u1);
-		this.setFromMon(m1);
-		this.setTo(u2);
-		this.setToMon(m2);
+	public Request(Integer u1id, Integer u2id, Integer m1id, Integer m2id, RequestType type){
+		this.setFrom(u1id);
+		this.setFromMon(m1id);
+		this.setTo(u2id);
+		this.setToMon(m2id);
 		this.setType(type);
 	}
-	/**
-	 * Creates a friend request with the given parameters.
-	 * @param u1 The user who made the request.
-	 * @param u2 The user targeted by the request.
-	 * @param type
-	 */
-	public Request(User u1, User u2, RequestType type){
-		this.setFrom(u1);
-		this.setTo(u2);
+	public Request(Integer u1id, Integer u2id, RequestType type){//for request type freind
+		this.setFrom(u1id);
+		this.setTo(u2id);
 		this.setType(type);
 	}
 
@@ -49,35 +27,35 @@ public class Request {
 		this.id = id;
 	}
 
-	public User getFrom() {
+	public Integer getFrom() {
 		return from;
 	}
 
-	public void setFrom(User from) {
+	public void setFrom(Integer from) {
 		this.from = from;
 	}
 
-	public User getTo() {
+	public Integer getTo() {
 		return to;
 	}
 
-	public void setTo(User to) {
+	public void setTo(Integer to) {
 		this.to = to;
 	}
 
-	public Monster getFromMon() {
+	public Integer getFromMon() {
 		return fromMon;
 	}
 
-	public void setFromMon(Monster fromMon) {
+	public void setFromMon(Integer fromMon) {
 		this.fromMon = fromMon;
 	}
 
-	public Monster getToMon() {
+	public Integer getToMon() {
 		return toMon;
 	}
 
-	public void setToMon(Monster toMon) {
+	public void setToMon(Integer toMon) {
 		this.toMon = toMon;
 	}
 

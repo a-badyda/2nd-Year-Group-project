@@ -1,4 +1,4 @@
-package Java;
+package root;
 
 import java.util.ArrayList;
 
@@ -60,12 +60,5 @@ public class Breeding {
 	public void setToMon(Monster toMon) {
 		this.toMon = toMon;
 	}
-	/**
-	 * Adds all children to the user who accepted the request.
-	 */
-	public void addChildren(){
-		ArrayList<Monster> total = to.getMonsters();
-		total.addAll(children);
-		to.setMonsters(total);
-	}
+	
 }
