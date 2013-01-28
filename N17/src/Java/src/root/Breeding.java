@@ -1,4 +1,4 @@
-package Java.src.root;
+package root;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,39 +21,8 @@ public class Breeding {
 	 * @param m1 The monster that was put up for breeding.
 	 * @param m2 The monster that was accepted for breeding.
 	 */
-<<<<<<< HEAD
-	public Breeding(User u1, User u2, Monster m1, Monster m2){
-		this.from = u1;
-		this.fromMon = m1;
-		this.to = u2;
-		this.toMon = m2;
-		children = new ArrayList<Monster>();
-	}
-	
-	/**
-	 * Take average of parents. Then average with average itself.
-	 * Example: (100 + 100 + 50(average))/3 = 83
-	 */
 
-	public User getFrom() {
-		return from;
-	}
-
-	public void setFrom(User from) {
-		this.from = from;
-	}
-
-	public User getTo() {
-		return to;
-	}
-
-	public void setTo(User to) {
-		this.to = to;
-=======
-	public Breeding(){
-		
->>>>>>> 79445f1b8454936da2dbafa194d15878b53c6e43
-	}
+	public Breeding(){}
 	
 	public ArrayList<String> Breed(User u1, User u2, Monster m1, Monster m2){
 		User from, to;
