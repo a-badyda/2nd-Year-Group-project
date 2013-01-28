@@ -94,18 +94,19 @@ public class GameServer extends HttpServlet {
 		case "addFriend":addFriend(request,response);break;
 		case "newBattleRequest":newBattleRequest(request,response);break;
 		case "newBreedRequest":newBreedRequest(request,response);break;
-		case "newBuyRequest":newBreedRequest(request,response);break;
+		case "newBuyRequest":newBuyRequest(request,response);break;
 		case "getMonsters":getMonsters(request,response);break;
 		case "getFriends":getFriends(request,response);break;
 		case "getFriendsMonsters":getFriendsMonsters(request,response);break;
-		case "getAllRequest":getAllRequest(request,response);break;
+		case "getAllNotifications":getAllRequest(request,response);break;
 		case "acceptRequest":acceptRequest(request,response);break;
 		case "declineRequest":declineRequest(request,response);break;
 		case "isLoggedIn": IsLoggedIn(request, response); break;
 		
-		case "setBuyCost": IsLoggedIn(request, response); break;
-		case "setBreedCost": IsLoggedIn(request, response); break;
+		case "setBuyCost": setBuyCost(request, response); break;
+		case "setBreedCost": setBreedCost(request, response); break;
 		
+		case "getRichList": getRichList(request, response); break;
 		
 		}
 	}
@@ -795,4 +796,57 @@ public class GameServer extends HttpServlet {
 		db.execute(query);
 	}
 		
+	private void getRichList(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession(true);
+		User user = users.fetchUser((String)session.getAttribute("username"));
+		
+		
+		
+		User freinds[] = (User[])user.getFriends().toArray();
+		
+		int n = freinds.length;
+		User temp;
+       
+        for(int i=0; i < n; i++){
+                for(int j=1; j < (n-i); j++){
+                       
+                        if(freinds[j-1].getCash() > freinds[j].getCash()){
+                                temp = freinds[j-1];
+                                freinds[j-1] = freinds[j];
+                                freinds[j] = temp;
+                        }
+                }
+        }
+        User richlist[] = new User[10];
+		for(int i =0; i<10;i++){
+			richlist[i] = freinds[i];
+		}
+		
+		PrintWriter out;
+		try {
+			out = response.getWriter();
+		
+		out.print("{\"RichList\":\"[\"");
+		
+		for (int i =0 ;i<10;i++){
+			
+			
+			out.print("{\"username\":\""+richlist[i].getUsername()+"\"");
+			out.print("{\"cash\":\""+richlist[i].getCash()+"\"");
+			
+		}
+		
+		out.print("\"]}\"");
+		out.flush();
+		out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	//richluist top ten getRichList
+	//out of frinds
+	//username: name, cash:cash
 }
