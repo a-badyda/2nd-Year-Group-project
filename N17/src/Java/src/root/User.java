@@ -1,14 +1,15 @@
-package root;
+package Java.src.root;
 
 import java.util.ArrayList;
 
-public class User {
+public class User{
 	
-	private Integer id, cash;
+	private Integer id, cash = 100;
 	private String key, username, password, serverAdd;
 	private ArrayList<Monster> monsters;
 	private ArrayList<User> friends;
 	private ArrayList<Request> requests;
+	
 	
 	public User(String username, String password){
 		this.username=username;
@@ -80,7 +81,7 @@ public class User {
 	public ArrayList<User> getFriends() {
 		return friends;
 	}
-	public void addFriends(User friend) {
+	public void addFriend(User friend) {
 		this.friends.add(friend);
 	}
 	public ArrayList<Request> getRequests() {

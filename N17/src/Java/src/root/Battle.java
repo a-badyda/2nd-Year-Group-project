@@ -1,6 +1,7 @@
-package root;
+package Java.src.root;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * This class handles battles done by 2 users. Their monsters try to inflict damage
@@ -10,8 +11,9 @@ import java.util.ArrayList;
 public class Battle {
 
 	private User from, to;
-	private Monster fromMon, toMon;
+	private Monster fromMon, toMon, defeated = null, winner;
 	private ArrayList<String> messages;
+	int variation = 10;
 	
 	/**
 	 * Initiates a battle between the given monsters.
@@ -26,6 +28,64 @@ public class Battle {
 		this.toMon = m1;
 		this.fromMon = m2;
 		messages = new ArrayList<String>();
+		
+		while (defeated == null){
+			attack(toMon, fromMon);
+			if (defeated == null){
+				attack(fromMon, toMon);
+			}
+		}
+		declareWinner();
+		
+	}
+	
+	private void declareWinner() {
+		winner.setWins(winner.getWins()+1);
+		winner.setStatus(Status.HAPPY);
+		
+		defeated.setLosses(defeated.getLosses()+1);
+		defeated.getStats().setHealth(0);
+		defeated.setStatus(Status.DEAD);
+		
+		if(winner == toMon){
+			to.setCash(to.getCash()+fromMon.getCashPrize());
+		} else {
+			from.setCash(from.getCash()+toMon.getCashPrize());
+		}
+	}
+
+	public void attack(Monster atkMon, Monster defMon){
+		Random rnd = new Random();
+		int rn = rnd.nextInt(50);
+		double chance = atkMon.getStats().getAggression() 
+				+ rnd.nextInt(variation);
+		if(rn <= chance){
+			float dmg = (atkMon.getStats().getStrength() 
+					- defMon.getStats().getDefence() + 1);
+			dmg += rnd.nextInt(variation);
+			float health = defMon.getStats().getHealth() - dmg;
+			defMon.getStats().setHealth(health);
+			if (health <= 0) {
+				defeated = defMon;
+				winner = atkMon;
+			}
+		}
+	}
+
+	public Monster getDefeated() {
+		return defeated;
+	}
+
+	public void setDefeated(Monster defeated) {
+		this.defeated = defeated;
+	}
+
+	public Monster getWinner() {
+		return winner;
+	}
+
+	public void setWinner(Monster winner) {
+		this.winner = winner;
 	}
 
 	public ArrayList<String> getMessages() {

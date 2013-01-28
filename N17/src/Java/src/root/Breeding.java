@@ -1,4 +1,4 @@
-package root;
+package Java.src.root;
 
 import java.util.ArrayList;
 
@@ -28,6 +28,11 @@ public class Breeding {
 		this.toMon = m2;
 		children = new ArrayList<Monster>();
 	}
+	
+	/**
+	 * Take average of parents. Then average with average itself.
+	 * Example: (100 + 100 + 50(average))/3 = 83
+	 */
 
 	public User getFrom() {
 		return from;

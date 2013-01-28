@@ -1,5 +1,6 @@
-package root;
+package Java.src.root;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Monster {
@@ -10,15 +11,15 @@ public class Monster {
 	private Breed breed;	//extra
 	private Status status;	//extra
 	private int cashPrize = 500, wins = 0, losses = 0;
-	private Date birth;
+	private Calendar birth;
 	
 	public Monster(){}
 	
-	Monster(Integer owner, String name, Date birth){
+	public Monster(Integer owner, String name){
 		this.name = name;
 		ownerId = owner;
-		this.birth = birth;
-		stats = new MonsterStats(breed);
+		Calendar birth = Calendar.getInstance();
+		stats = new MonsterStats(birth);
 	}
 	
 	public Integer getId() {
@@ -39,21 +40,14 @@ public class Monster {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public float getHealth() {
-		return stats.getHealth();
+	public MonsterStats getStats() {
+		return stats;
 	}
-	public float getStrength() {
-		return stats.getStrength();
+
+	public void setStats(MonsterStats stats) {
+		this.stats = stats;
 	}
-	public float getDefence() {
-		return stats.getDefence();
-	}
-	public float getAggression() {
-		return stats.getAggression();
-	}
-	public float getFertility() {
-		return stats.getFertility();
-	}
+
 	public Breed getBreed() {
 		return breed;
 	}
@@ -66,10 +60,10 @@ public class Monster {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-	public Date getBirth() {
+	public Calendar getBirth() {
 		return birth;
 	}
-	public void setBirth(Date birth) {
+	public void setBirth(Calendar birth) {
 		this.birth = birth;
 	}
 	public int getCashPrize() {
