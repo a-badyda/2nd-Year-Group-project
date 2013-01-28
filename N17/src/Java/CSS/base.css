@@ -30,43 +30,44 @@ a:active {color: #009900;}
 }
 
 .menu_options li {
-  	float: left;
-  	margin: 0 -5px 0 0;
+  float: left;
+  margin: 0 -5px 0 0;
 }
 
 .menu_options a {
 	font-family:"Comic Sans", Helvetica,sans-serif;
 	float: left;
-  	position: relative;
-  	padding: 0 40px;
-  	height: 0; 
-  	line-height: 30px;
-  	border-right: 30px solid transparent;
-  	border-bottom: 30px solid #3D3D3D;
-  	color: #C1CDCD;
-  	opacity: .3;
+  position: relative;
+  padding: 0 40px;
+  height: 0; 
+  line-height: 30px;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid #3D3D3D;
+  color: #C1CDCD;
+  opacity: .3;
 	filter: alpha(opacity=30);	
 }
 
 /*Help Page*/
 
 .help{
-    border-bottom-right-radius: 10% 10%;
-    border-bottom-left-radius: 10% 10%;
+  float: left;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
 	width:60%; 
 	margin: auto; 
 	padding:20px; 
 	border: 1px solid #666; 
-	background: #ffffff url('image/rainbow.png')top left no-repeat fixed;
+	background-color: #CDC1C5;
 	border: 1px dotted thin #dda0dd ;}
 
 /*Friends Page*/
 
 .friends_list {
-    border-bottom-right-radius: 10% 10%;
-    border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
 	width:60%;
-    float:center;
+  float: left;
 	margin: auto;
 	background: #EED5D2;  /* Make this dependant on the color of the tab*/
 }
@@ -80,7 +81,7 @@ a:active {color: #009900;}
     border-bottom-left-radius: 10% 10%;
     width: 60%;
     margin: auto;
-    float:center;
+    float: left;
     background: #BFEFFF;
 }
 
@@ -90,7 +91,7 @@ a:active {color: #009900;}
     border-bottom-left-radius: 10% 10%;
     width: 60%;
     margin: auto;
-    float:center;
+    float: left;
     background: #EED2EE;
 }
 
