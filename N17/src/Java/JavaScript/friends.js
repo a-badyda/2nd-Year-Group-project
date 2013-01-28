@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 	//load a list of all friends
 	$.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
-		var obj =  $.parseJSON(response);
+		var obj = $.parseJSON(response);
 		var output;
 		
 		if(obj.Friends.length != 0) {
@@ -24,7 +24,7 @@ $(document).ready(function() {
 		} else {
 			output += '<h4>Looks like you have no friends!</h4>';
 		}
-		$("#friends_list").append(output);
+		$(".friends_list").html(output);
 	});
 	
 	
@@ -34,7 +34,7 @@ $(document).ready(function() {
 		var id = $(parent + " .pending_friend_id").val();
 		$.post(SERVLET_LOCATION, {action: 'acceptPendingFriend', friendid: id}, 
 		function(response) {
-			$('#response').val(response);
+			$('#friends_response').html(response);
 		});
 	});
 	
@@ -44,16 +44,15 @@ $(document).ready(function() {
 		var id = (parent + " .pending_friend_id").val();
 		$.post(SERVLET_LOCATION, {action: 'declinePendingFriend', friendid: id}, 
 		function(response) {
-			$('#response').val(response);
+			$('#friends_response').html(response);
 		});
 	});
 	
-	
 	//add a new friend
 	$(".send_request #button_add").submit(function() {
-		var email = $("friend_email").val();
+		var email = $(".friend_email").val();
 		$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
-			$('#response').val(response);
+			$('#friends_response').html(response);
 		});
 	});
 	
