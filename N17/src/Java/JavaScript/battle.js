@@ -35,7 +35,9 @@ $(document).ready(function() {
 	
 	$(".view_monster").click(function(){
 		//show monsters click on
-		$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id}, function(response) {
+		var friend = getParentId(this, '.friend');
+
+		$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
 			//get an display the friends monsters
 			var obj =  $.parseJSON(response);
 			outputStr = outputMonsters(obj, false);
