@@ -1,3 +1,27 @@
+function getGETvars() {
+	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+		function decode(s) {
+			return decodeURIComponent(s.split("+").join(" "));
+		}
+
+		$_GET[decode(arguments[1])] = decode(arguments[2]);
+	});
+}
+
+//generic function to cycle through a list from the server.
+function outputList(func, list) {
+	var output = '';
+	if(list.length != 0) {
+		$.each(list, function(key, val) {
+			output = func(key, val)
+		});
+	} else {
+		output = '<h4>Oops! Looks like there\'s nothing here!</h4>';
+	}
+
+	return output;
+}
+
 function buildFriendHTML(friend){
 	output = '';
 	output += '<div id="friend_'+friend.id+'" class="friend">';

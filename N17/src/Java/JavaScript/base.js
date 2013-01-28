@@ -9,8 +9,7 @@ Email:	slj11@aber.ac.uk
 */
 
 $(document).ready(function () {	
-	var $_GET = {};
-		
+
 	//logout button.
 	$("#logout").submit(function() {
 		alert('pressed');
@@ -25,15 +24,10 @@ $(document).ready(function () {
 	$.post(SERVLET_LOCATION, {action: "isLoggedIn"}, function(response) {
 		var obj = $.parseJSON(response);
 		if(obj.login) {
+			var $_GET = {};
+			
 			//extract the GET variable from the url.
-			document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
-				function decode(s) {
-					return decodeURIComponent(s.split("+").join(" "));
-				}
-
-				$_GET[decode(arguments[1])] = decode(arguments[2]);
-			});
-
+			$_GET = getGETvars();
 			var page = $_GET["page"]; //get what page we are on.
 
 			//select if it is a valid page.
