@@ -7,7 +7,7 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 
-				login_success = postLogin("email", "password");
+				login_success = postLogin($('#errorbox'), "email", "password");
 				writeTest("Login test", login_success);
 
 				pingServer({action: "getMonsters"});
@@ -22,8 +22,8 @@
 
 
 				function pingServer(name, json_data) {
-					$.post(SERVLET_LOCATION, json_data,  function() {
-						writeTest(name, );
+					$.post(SERVLET_LOCATION, json_data,  function(response) {
+						writeTest(name, response);
 					});
 				}
 
@@ -34,6 +34,7 @@
 		</script>
 	</head>
 	<body>
+		<div id="errorbox"></div>
 		<table id="tests">
 			<tr><td><b>Test</b></td><td><b>Pass?</b></td></tr>
 		</table>

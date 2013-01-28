@@ -19,11 +19,7 @@ $(document).ready(function(){
 		var $errorBox = $('#home_login .error');
 		
 		if (validateUserDetails($errorBox, email, password)) {
-			if (postLogin(email, password)) {
-				window.location.replace("index.html?page=profile");
-			} else {
-				$errorBox.text("Invalid login details.");
-			}
+			postLogin($errorBox, email, password);
 		}
 		
 		return false;
@@ -47,16 +43,20 @@ $(document).ready(function(){
 		return false;
 	});
 
-	function postLogin(email, password) {
-		success = false;
+	function postLogin($errorBox,email, password) {
 		$.post(USER_LOGIN, {username: email, password: password,action:'login'}, 
 		function(response) {
 			var obj = $.parseJSON(response);
-			if(obj.login) {
-				success = true;
-			}
+			redirect($errorBox, obj.login)
 		});
-		return success;
+	}
+
+	function redirect($errorBox, loggedin) {
+		if (loggedin) {
+			window.location.replace("index.html?page=profile");
+		} else {
+			$errorBox.text("Invalid login details.");
+		}
 	}
 	
 	//Output error messages if we have a problem with the details
