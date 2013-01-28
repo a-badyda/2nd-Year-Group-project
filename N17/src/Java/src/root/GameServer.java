@@ -94,6 +94,7 @@ public class GameServer extends HttpServlet {
 		case "addFriend":addFriend(request,response);break;
 		case "newBattleRequest":newBattleRequest(request,response);break;
 		case "newBreedRequest":newBreedRequest(request,response);break;
+		case "newBuyRequest":newBreedRequest(request,response);break;
 		case "getMonsters":getMonsters(request,response);break;
 		case "getFriends":getFriends(request,response);break;
 		case "getFriendsMonsters":getFriendsMonsters(request,response);break;
@@ -101,6 +102,11 @@ public class GameServer extends HttpServlet {
 		case "acceptRequest":acceptRequest(request,response);break;
 		case "declineRequest":declineRequest(request,response);break;
 		case "isLoggedIn": IsLoggedIn(request, response); break;
+		
+		case "setBuyCost": IsLoggedIn(request, response); break;
+		case "setBreedCost": IsLoggedIn(request, response); break;
+		
+		
 		}
 	}
 	
@@ -217,6 +223,16 @@ public class GameServer extends HttpServlet {
 								m.setName(rset2.getString("name"));
 								m.setId(rset2.getInt("monsterID"));
 								m.setOwnerId(rset2.getInt("ownerID"));
+								m.setHealth(rset2.getInt("health"));
+								m.setAggression(rset2.getInt("aggression"));
+								m.setStrength(rset2.getInt("strength"));
+								m.setDefence(rset2.getInt("defence"));
+								m.setFertility(rset2.getInt("fertility"));
+								m.setWins(rset2.getInt("wins"));
+								m.setLosses(rset2.getInt("losses"));
+								m.setCashBreed(rset2.getInt("cashbreed"));
+								m.setCashPrize(rset2.getInt("cashprize"));
+								m.setCashSell(rset2.getInt("cashSell"));
 								
 								Friend.addMonster(m);
 							}
@@ -246,6 +262,17 @@ public class GameServer extends HttpServlet {
 					m.setName(rset2.getString("name"));
 					m.setId(rset2.getInt("monsterID"));
 					m.setOwnerId(rset2.getInt("ownerID"));
+					m.setHealth(rset2.getInt("health"));
+					m.setAggression(rset2.getInt("aggression"));
+					m.setStrength(rset2.getInt("strength"));
+					m.setDefence(rset2.getInt("defence"));
+					m.setFertility(rset2.getInt("fertility"));
+					m.setWins(rset2.getInt("wins"));
+					m.setLosses(rset2.getInt("losses"));
+					m.setCashBreed(rset2.getInt("cashbreed"));
+					m.setCashPrize(rset2.getInt("cashprize"));
+					m.setCashSell(rset2.getInt("cashSell"));
+					
 					user.addMonster(m);
 				}
 			} catch (SQLException e) {
@@ -296,7 +323,6 @@ public class GameServer extends HttpServlet {
 		
 
 	}
-	
 	private void LogOut(HttpServletRequest request, HttpServletResponse response){
 		
 		
@@ -318,7 +344,6 @@ public class GameServer extends HttpServlet {
 		//redirect
 		
 	}
-	
 	private void NewUser(HttpServletRequest request, HttpServletResponse response){
 		
 		String username = request.getParameter("username");
@@ -406,7 +431,6 @@ public class GameServer extends HttpServlet {
 			
 		}
 	}
-	
 	private void newBattleRequest(HttpServletRequest request, HttpServletResponse response){
 		
 		HttpSession session = request.getSession(true);
@@ -446,9 +470,8 @@ public class GameServer extends HttpServlet {
 		}
 		
 	}
-
 	private void newBreedRequest(HttpServletRequest request, HttpServletResponse response){
-		
+		//WRONG################################################################################################################################
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		
@@ -483,7 +506,60 @@ public class GameServer extends HttpServlet {
 			}
 		}
 	}
-
+	private void newBuyRequest(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession(true);
+		User user = users.fetchUser((String)session.getAttribute("username"));
+		
+		for(int i=0;i<user.getFriends().size();i++){
+			if(user.getFriends().get(i).getId()==(int)request.getAttribute("friendId")){
+				
+				
+				for(int j=0;j<user.getFriends().get(i).getMonsters().size();j++){
+					if(user.getFriends().get(i).getMonsters().get(j).getId()==(int)request.getAttribute("monsterId")){
+						user.setCash(user.getCash()+user.getFriends().get(i).getMonsters().get(j).getCashSell());
+						user.getFriends().get(i).getMonsters().remove(j);
+					}
+				}
+				
+				String query="UPDATE 'monsters' SET 'ownerID'='"+user.getId()+"' WHERE 'monsterID'='"+(int)request.getAttribute("monsterId")+"'";
+				
+				db.execute(query);
+				
+			}
+		}
+		user.getMonsters().clear();
+		String query2 = ("SELECT * FROM monsters WHERE ownerID='" +user.getId()+ "'");
+		
+		ResultSet rset2;
+		rset2 = db.createQuery (query2);
+		try {
+			while(rset2.next()){
+				
+				Monster m = new Monster();
+				m.setName(rset2.getString("name"));
+				m.setId(rset2.getInt("monsterID"));
+				m.setOwnerId(rset2.getInt("ownerID"));
+				m.setHealth(rset2.getInt("health"));
+				m.setAggression(rset2.getInt("aggression"));
+				m.setStrength(rset2.getInt("strength"));
+				m.setDefence(rset2.getInt("defence"));
+				m.setFertility(rset2.getInt("fertility"));
+				m.setWins(rset2.getInt("wins"));
+				m.setLosses(rset2.getInt("losses"));
+				m.setCashBreed(rset2.getInt("cashbreed"));
+				m.setCashPrize(rset2.getInt("cashprize"));
+				m.setCashSell(rset2.getInt("cashSell"));
+				
+				user.addMonster(m);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
 	private void getMonsters(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
@@ -494,9 +570,17 @@ public class GameServer extends HttpServlet {
 			
 			for (int i =0 ;i<requests.size();i++){
 				
+				String buy;
+				String breed;
+				if(requests.get(i).getCashSell()>0){buy="'ture'";}else{buy="'false'";}
+				if(requests.get(i).getCashBreed()>0){breed="'ture'";}else{breed="'false'";}
+				
 				
 				out.print("{\"monstername\":\""+requests.get(i).getName()+"\",");
 				out.print("\"ID\":\""+requests.get(i).getId()+"\"}");
+				out.print("\"buy\":\""+buy+"\"}");
+				out.print("\"breed\":\""+breed+"\"}");
+				
 				
 				if(i<requests.size()-1){
 					out.print(",");
@@ -544,8 +628,16 @@ public class GameServer extends HttpServlet {
 			
 			for (int i =0 ;i<requests.size();i++){
 				
-				out.print("{\"monstername\":\""+requests.get(i).getName()+"\"");
-				out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
+				String buy;
+				String breed;
+				if(requests.get(i).getCashSell()>0){buy="'ture'";}else{buy="'false'";}
+				if(requests.get(i).getCashBreed()>0){breed="'ture'";}else{breed="'false'";}
+				
+				
+				out.print("{\"monstername\":\""+requests.get(i).getName()+"\",");
+				out.print("\"ID\":\""+requests.get(i).getId()+"\"}");
+				out.print("\"buy\":\""+buy+"\"}");
+				out.print("\"breed\":\""+breed+"\"}");
 			}
 			
 			out.print("\"]}\"");
@@ -682,6 +774,25 @@ public class GameServer extends HttpServlet {
 		
 	}
 	
-	
+	private void setBreedCost(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession(true);
+		User user = users.fetchUser((String)session.getAttribute("username"));
+		user.getMonster((int)session.getAttribute("ID")).setCashBreed((int)session.getAttribute("cash"));
+		
+		String query="UPDATE 'monsters' SET 'cashSell'='"+(int)session.getAttribute("cash")+"' WHERE 'monsterID'='"+(int)session.getAttribute("ID")+"'";
+		
+		db.execute(query);
+		
+	}
+	private void setBuyCost(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession(true);
+		User user = users.fetchUser((String)session.getAttribute("username"));
+		user.getMonster((int)session.getAttribute("ID")).setCashSell((int)session.getAttribute("cash"));
+		
+		String query="UPDATE 'monsters' SET 'cashbreed'='"+(int)session.getAttribute("cash")+"' WHERE 'monsterID'='"+(int)session.getAttribute("ID")+"'";
+		
+		
+		db.execute(query);
+	}
 		
 }
