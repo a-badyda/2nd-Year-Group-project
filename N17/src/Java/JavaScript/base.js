@@ -12,7 +12,7 @@ $(document).ready(function () {
 	var $_GET = {};
 		
 	//logout button.
-	$(".logout").submit(function() {
+	$("#logout").submit(function() {
 		alert('pressed');
 		$.post(SERVLET_LOCATION, {action: "logout"}, function(response) {
 			alert("sent");
