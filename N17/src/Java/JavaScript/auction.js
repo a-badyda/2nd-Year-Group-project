@@ -57,7 +57,7 @@ $(document).read(function(){
 
 	//change the cost for breeding/buying
 	function changeCost(type, obj, cost){
-		if is_int(cost) {
+		if (is_int(cost)) {
 			var mon_id = getParentId(obj,'.monster');
 			$.post(SERVLET_LOCATION, {action: "set" + type +"Cost", cost: new_cost, id: mon_id},
 			function(response) {
