@@ -11,7 +11,9 @@ import java.util.Random;
 public class MonsterStats {
 	
 	private float health, strength, defence, aggression, fertility;
-	private float max_genetic_bonus = 20;
+	private float max_health_bonus = 20;
+	private float max_strDef_bonus = 30;
+	private float max_fertAggr_bonus = 4;
 	private Calendar birth;
 	
 	/**
@@ -30,15 +32,15 @@ public class MonsterStats {
 	 */
 	public void generateGenetics() {
 		Random rn = new Random();
-		health += rn.nextInt((int) max_genetic_bonus);
+		health += rn.nextInt((int) max_health_bonus);
 		rn = new Random();
-		strength += rn.nextInt((int) max_genetic_bonus);
+		strength += rn.nextInt((int) max_strDef_bonus);
 		rn = new Random();
-		defence += rn.nextInt((int) max_genetic_bonus);
+		defence += rn.nextInt((int) max_strDef_bonus);
 		rn = new Random();
-		aggression += rn.nextInt((int) max_genetic_bonus);
+		aggression += rn.nextInt((int) max_fertAggr_bonus);
 		rn = new Random();
-		fertility += rn.nextInt((int) max_genetic_bonus);
+		fertility += rn.nextInt((int) max_fertAggr_bonus);
 	}
 
 	/**
@@ -46,11 +48,11 @@ public class MonsterStats {
 	 * @param breed The breed of the monster.
 	 */
 	public void generateBases(){
-		health = 60;
-		strength = 10;
-		defence = 10;
-		aggression = 5;
-		fertility = 5;
+		health = 50;
+		strength = 45;
+		defence = 45;
+		aggression = 0;
+		fertility = 0;
 		
 	}
 	
