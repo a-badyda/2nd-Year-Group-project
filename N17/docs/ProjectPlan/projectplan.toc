@@ -31,6 +31,6 @@
 \contentsline {subsection}{\numberline {6.6}The Help Page(fig 7)}{12}{subsection.6.6}
 \contentsline {subsection}{\numberline {6.7}Friend Management Page(fig 8)}{13}{subsection.6.7}
 \contentsline {section}{\numberline {7}Gantt chart}{13}{section.7}
-\contentsline {section}{\numberline {8}Risk Assessment}{13}{section.8}
-\contentsline {section}{REFERENCES}{14}{section.8}
-\contentsline {section}{DOCUMENT HISTORY}{15}{section*.2}
+\contentsline {section}{\numberline {8}Risk Assessment}{15}{section.8}
+\contentsline {section}{REFERENCES}{17}{section.8}
+\contentsline {section}{DOCUMENT HISTORY}{18}{section*.2}

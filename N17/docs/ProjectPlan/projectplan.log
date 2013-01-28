@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2013.1.28)  28 JAN 2013 15:06
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2013.1.28)  28 JAN 2013 15:41
 entering extended mode
 **projectplan.tex
 
@@ -549,6 +549,11 @@ File: incremental.jpg Graphic file (type jpg)
 Package pdftex.def Info: incremental.jpg used on input line 114.
 (pdftex.def)             Requested size: 326.34341pt x 240.523pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
 Underfull \vbox (badness 2980) has occurred while \output is active []
 
  [5
@@ -591,11 +596,6 @@ File: loginPage.jpg Graphic file (type jpg)
 Package pdftex.def Info: loginPage.jpg used on input line 177.
 (pdftex.def)             Requested size: 331.2367pt x 207.02292pt.
 
-Overfull \hbox (2.61511pt too wide) in paragraph at lines 177--178
-[] \OT1/cmr/m/n/10.95 This is the ba-
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7
@@ -626,11 +626,6 @@ File: userProfile.jpg Graphic file (type jpg)
 <use userProfile.jpg>
 Package pdftex.def Info: userProfile.jpg used on input line 186.
 (pdftex.def)             Requested size: 329.73106pt x 207.39934pt.
-
-Overfull \hbox (1.10948pt too wide) in paragraph at lines 186--192
-[] \OT1/cmr/m/n/10.95 This is the ba-
- []
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -688,11 +683,6 @@ File: battleSelection.jpg Graphic file (type jpg)
 Package pdftex.def Info: battleSelection.jpg used on input line 218.
 (pdftex.def)             Requested size: 333.49512pt x 210.78697pt.
 
-Overfull \hbox (2.34898pt too wide) in paragraph at lines 218--220
-[] \OT1/cmr/m/n/10.95 Sim-i-lar to the
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10
@@ -741,10 +731,6 @@ File: help.jpg Graphic file (type jpg)
 Package pdftex.def Info: help.jpg used on input line 242.
 (pdftex.def)             Requested size: 336.50636pt x 210.41057pt.
 
-Overfull \hbox (6.91025pt too wide) in paragraph at lines 242--246
-[] \OT1/cmr/m/n/10.95 A sim-ple page
- []
-
 <manageFriends.jpg, id=51, 672.26157pt x 420.82219pt>
 File: manageFriends.jpg Graphic file (type jpg)
  <use manageFriends.jpg>
@@ -764,10 +750,58 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/ProjectPlan/help.jpg>] [13
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
+docs/ProjectPlan/help.jpg>] <risk1.jpg, id=56, 792.71156pt x 475.7775pt>
+File: risk1.jpg Graphic file (type jpg)
+
+<use risk1.jpg>
+Package pdftex.def Info: risk1.jpg used on input line 265.
+(pdftex.def)             Requested size: 475.6306pt x 285.46869pt.
+ <risk2.jpg, id=57, 791.95876pt x 488.57532pt>
+File: risk2.jpg Graphic file (type jpg)
+ <use risk2.jpg>
+Package pdftex.def Info: risk2.jpg used on input line 266.
+(pdftex.def)             Requested size: 475.17892pt x 293.14745pt.
+
+<risk3.jpg, id=58, 794.2172pt x 474.27188pt>
+File: risk3.jpg Graphic file (type jpg)
+ <use risk3.jpg>
+Package pdftex.def Info: risk3.jpg used on input line 267.
+(pdftex.def)             Requested size: 476.534pt x 284.56532pt.
+
+<risk4.jpg, id=59, 792.71156pt x 402.75468pt>
+File: risk4.jpg Graphic file (type jpg)
+ <use risk4.jpg>
+Package pdftex.def Info: risk4.jpg used on input line 268.
+(pdftex.def)             Requested size: 475.6306pt x 241.65466pt.
+
+Overfull \hbox (78.14561pt too wide) in paragraph at lines 265--269
+[] 
+ []
+
+
+Overfull \hbox (77.69394pt too wide) in paragraph at lines 265--269
+[] 
+ []
+
+
+Overfull \hbox (79.04901pt too wide) in paragraph at lines 265--269
+[] 
+ []
+
+
+Overfull \hbox (78.14561pt too wide) in paragraph at lines 265--269
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--269
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -781,13 +815,11 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/ProjectPlan/manageFriends.jpg>] [14
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
+docs/ProjectPlan/manageFriends.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+ [14
+Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -797,17 +829,54 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 288.
+Overfull \vbox (12.6594pt too high) has occurred while \output is active []
 
-Overfull \hbox (75.63466pt too wide) in paragraph at lines 274--288
-[]
- []
 
 [15
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
+docs/ProjectPlan/risk1.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N
+17/docs/ProjectPlan/risk2.jpg>] [16
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
+docs/ProjectPlan/risk3.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N
+17/docs/ProjectPlan/risk4.jpg>] [17
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 291.
+
+Overfull \hbox (75.63466pt too wide) in paragraph at lines 277--291
+[]
+ []
+
+[18
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
 
 
 Non-PDF special ignored!
@@ -816,24 +885,20 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 288.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 291.
 
 (D:\dac26\Documents\GitHub\2nd-Year-Group-project\N17\docs\ProjectPlan\projectp
 lan.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 288.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 288.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 291.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 291.
 Package rerunfilecheck Info: File `projectplan.out' has not changed.
 (rerunfilecheck)             Checksum: 703430E51ED9E59B49B5C5E565E11290;2211.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 6061 strings out of 494046
- 89008 string characters out of 3148410
+ 6081 strings out of 494046
+ 89264 string characters out of 3148410
  188869 words of memory out of 3000000
- 9314 multiletter control sequences out of 15000+200000
+ 9330 multiletter control sequences out of 15000+200000
  8243 words of font info for 29 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  37i,13n,39p,260b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -842,9 +907,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on projectplan.pdf (16 pages, 978071 bytes).
+Output written on projectplan.pdf (19 pages, 1660758 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
+ 96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
