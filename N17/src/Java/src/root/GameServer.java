@@ -499,6 +499,9 @@ public class GameServer extends HttpServlet {
 				out.print("{\"monstername\":\""+requests.get(i).getName()+"\",");
 				out.print("\"ID\":\""+requests.get(i).getId()+"\"}");
 				
+				if(i<requests.size()-1){
+					out.print(",");
+				}
 			}
 			
 			out.print("]}");
@@ -679,6 +682,7 @@ public class GameServer extends HttpServlet {
 		}
 		
 	}
+	
 	
 		
 }
