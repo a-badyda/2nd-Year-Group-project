@@ -19,12 +19,13 @@ public class GameServer extends HttpServlet {
     
 	Database db;
 	UserManager users;
-    
+    Breeding breeding;
+	
     public GameServer() {
     	db = new Database();
     	db.connect();
     	users = new UserManager();
-				
+    	breeding = new Breeding();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -578,6 +579,38 @@ public class GameServer extends HttpServlet {
 			
 		}
 		private void acceptBreedRequest(HttpServletRequest request, HttpServletResponse response){
+			
+			HttpSession session = request.getSession(true);
+			User user = users.fetchUser((String)session.getAttribute("username"));
+			int requestid = (int)request.getAttribute("id");
+			
+			String query = ("SELECT * FROM notifications WHERE ID='" +requestid+ "'");
+			
+			try {
+					ResultSet rset;
+					rset = db.createQuery (query);
+					while (rset.next ())
+					{
+						User u1=users.fetchUser(rset.getString("UserID1"));
+						User u2=users.fetchUser(rset.getString("UserID2"));
+						
+						Monster m1=u1.getMonster(Integer.parseInt(rset.getString("MonsterID1")));
+						Monster m2=u2.getMonster(Integer.parseInt(rset.getString("MonsterID2")));
+						
+						
+						ArrayList<String> querylist = breeding.Breed(u1,u2,m1,m2);
+						
+						for (int i=0; i<querylist.size();i++){
+							db.execute(querylist.get(i));
+						}
+						
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		
+			
 			
 		}
 		private void acceptFriendRequest(HttpServletRequest request, HttpServletResponse response){
