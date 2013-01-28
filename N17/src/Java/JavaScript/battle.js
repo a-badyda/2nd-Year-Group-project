@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		var obj =  $.parseJSON(response);
 		outputStr = '<div></div>';
-		outputStr += outputMonsters(obj, true);
+		outputStr += outputMonsters(obj, true, buildMonsterHTML);
 		$("#select_monster_form").html(outputStr);
 	});
 	
@@ -33,26 +33,22 @@ $(document).ready(function() {
 		$("#friends_list").html(output);
 	});
 	
-	$(".view_monster").click(function(){
+	$(".view_monster").on("click", function(){
 		//show monsters click on
 		var friend = getParentId(this, '.friend');
 
 		$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
 			//get an display the friends monsters
 			var obj =  $.parseJSON(response);
-			outputStr = outputMonsters(obj, false);
+			outputStr = outputMonsters(obj, false, buildMonsterHTML);
 			$('#friend_'+obj.friend_id+' .monster_list').html(outputStr);
 		});
 	});
-	
+
 	//handle clicking the battle request button
-	$("#friends_list .battle_request").submit(function() {
+	$("#friends_list .battle_request").on("submit", function() {
 		newMonsterRequest("Battle", this);
-	});
-	
-	//handle clicking the breed request button
-	$("#friends_list .breed_request").submit(function() {
-		newMonsterRequest("Breed", this);
+		return false;
 	});
 	
 	//function to send a battle/breed request
@@ -67,35 +63,6 @@ $(document).ready(function() {
 		});
 	}
 
-	//strip an ID off an selector
-	function getParentId(obj, selector){
-		var parent = $(obj).parent(selector).id();
-		var id = parent.substring(parent.length-2);
-		return id;
-	}
-	
-	function buildFriendHTML(friend){
-		output = '';
-		output += '<div id="friend_'+friend.id+'" class="friend">';
-		output += '<p class="friend_name">'+friend.username+'</p>';
-		output += '<a class="view_monster" href="#">View Monsters</a>';
-		output += '<div class="monster_list"></div>';
-		output += '</div>';
-		return output;
-	}
-
-	function outputMonsters(obj, user) {
-		var outputStr = ''; 
-		if(obj.Monsters.length != 0) {
-			$.each(obj.Monsters, function(key, mon) {
-				outputStr += buildMonsterHTML(mon, user);
-			});
-		} else {
-			outputStr += '<h4>Looks like you have no monsters!</h4>';
-		}
-		return outputStr;
-	}
-
 	function buildMonsterHTML(mon, user) {
 		outputStr = '';
 		outputStr += '<div id="monster_'+mon.id+'" class="monster">';
@@ -105,17 +72,17 @@ $(document).ready(function() {
 		outputStr += '<p class="aggression">'+mon.aggression+'</p>';
 		outputStr += '<p class="defense">'+mon.defense+'</p>';
 		outputStr += '<p class="health">'+mon.health+'</p>';
-		outputStr += '<p class="fertility">'+mon.fertility+'</p>'; 
+		outputStr += '<p class="fertility">'+mon.fertility+'</p>';
 		outputStr += '</div>';
 
 		if(user) {
 			outputStr += '<input type="radio" name="select_monster" class="select_monster" value="'+mon.id+'"></input>';
 		} else {
 			outputStr += '<input type="submit" class="battle_request" value="battle"></input>';
-			outputStr += '<input type="submit" class="breed_request" value="breed"></input>';
 		}
 
 		outputStr +='</div>';
 		return outputStr;
 	}
+
 });
