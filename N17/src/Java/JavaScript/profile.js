@@ -20,7 +20,7 @@ $(document).ready(function() {
 			var outputStr = outputList(buildProfileHTML, obj.Monsters, true);
 			$('.monster_list').html(outputStr);
 		});
-	}
+	});
 
 
 	function buildProfileHTML(key, mon) {
