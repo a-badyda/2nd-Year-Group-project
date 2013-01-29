@@ -1,54 +1,27 @@
 package root;
-//package Java.src.root;
 
 import java.util.Calendar;
 import java.util.Random;
 
-public class Monster {
+/**
+ * Holds all of the statistics of a monster. All stats have a base value depending on their
+ * breed and a genetic value that is randomly assigned when they are born.
+ */
+
+public class MonsterStats {
 	
-	private Integer id, ownerId;
-	private String name;
-	private Breed breed;	//extra
-	private Status status;	//extra
-	private int cashPrize = 500, cashSell = 0, cashBreed = 0, wins = 0, losses = 0;
-	
-	private Calendar birth;
 	private float health, strength, defence, aggression, fertility;
 	private float max_health_bonus = 20;
 	private float max_strDef_bonus = 30;
 	private float max_fertAggr_bonus = 4;
-	
-	public Monster(){}
-	
-	public Monster(Integer owner, String name){
-		this.name = name;
-		ownerId = owner;
-		Calendar birth = Calendar.getInstance();
-		generateStats(birth);
-	}
-	
-	public int getCashSell() {
-		return cashSell;
-	}
-
-	public void setCashSell(int cashSell) {
-		this.cashSell = cashSell;
-	}
-
-	public int getCashBreed() {
-		return cashBreed;
-	}
-
-	public void setCashBreed(int cashBreed) {
-		this.cashBreed = cashBreed;
-	}
+	private Calendar birth;
 	
 	/**
 	 * Generates the stats of a monster when it is created.
 	 * @param birth 
 	 * @param breed The breed type of the monster.
 	 */
-	public void generateStats(Calendar birth){
+	public MonsterStats(Calendar birth){
 		this.birth = birth;
 		generateBases();
 		generateGenetics();
@@ -148,56 +121,5 @@ public class Monster {
 		this.fertility = fertility;
 	}
 	
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public Integer getOwnerId() {
-		return ownerId;
-	}
-	public void setOwnerId(Integer ownerId) {
-		this.ownerId = ownerId;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 
-	public Breed getBreed() {
-		return breed;
-	}
-	public void setBreed(Breed breed) {
-		this.breed = breed;
-	}
-	public Status getStatus() {
-		return status;
-	}
-	public void setStatus(Status status) {
-		this.status = status;
-	}
-	public int getCashPrize() {
-		return cashPrize;
-	}
-	public void setCashPrize(int cashPrize) {
-		this.cashPrize = cashPrize;
-	}
-	public int getWins() {
-		return wins;
-	}
-	public void setWins(int wins) {
-		this.wins = wins;
-	}
-	public int getLosses() {
-		return losses;
-	}
-	public void setLosses(int losses) {
-		this.losses = losses;
-	}
-
-	
 }

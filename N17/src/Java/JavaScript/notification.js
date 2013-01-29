@@ -19,7 +19,7 @@ $(document).ready(function() {
 	
 	function addResponseEvents() {
 		//user clicks accept.
-		$(".accept").submit(function() {
+		$(".accept").on('submit', function() {
 			var parent = $(this).parent().attr('id');
 			var notification_id = $(parent + " .id").val();
 			$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, writeResponse);
@@ -27,7 +27,7 @@ $(document).ready(function() {
 		});
 		
 		//user clicks decline.
-		$(".decline").submit(function() {
+		$(".decline").on('submit', function() {
 			var parent = $(this).parent().attr('id');
 			var notification_id = $(parent + " .id").val();
 			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
@@ -35,7 +35,7 @@ $(document).ready(function() {
 		});
 
 		//user clicks to view a result.
-		$(".view").submit(function() {
+		$(".view").on('submit', function() {
 			window.location.replace("view_results.html");
 			return false
 		});

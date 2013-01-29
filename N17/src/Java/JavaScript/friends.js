@@ -29,7 +29,7 @@ $(document).ready(function() {
 	$(".send_request #button_add").submit(function() {
 		var email = $(".friend_email").val();
 		$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
-			//write back reponse
+			$('email_response').html(response);
 		});
 		return false;
 	});

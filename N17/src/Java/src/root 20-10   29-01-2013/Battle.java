@@ -1,10 +1,7 @@
-//package Java.src.root;
 package root;
 
 import java.util.ArrayList;
 import java.util.Random;
-
-import Java.src.root.Status;
 
 /**
  * This class handles battles done by 2 users. Their monsters try to inflict damage
@@ -23,7 +20,7 @@ public class Battle {
 	/**
 	* The percentage of extra damage done in aggression attacks.
 	*/
-	float extra_dmg = 20;
+	int extra_dmg = 20;
 
 	
 	public Battle(){}
@@ -40,11 +37,8 @@ public class Battle {
 		this.from = u2;
 		this.toMon = m1;
 		this.fromMon = m2;
-		System.out.println("It's "+toMon.getName()+" vs "+fromMon.getName()+"!\n");
-		System.out.println(toMon.getName()+" has: "+toMon.getHealth()+" "+
-		toMon.getStrength()+" "+toMon.getDefence()+" "+toMon.getAggression()+"\n");
-		System.out.println(fromMon.getName()+" has: "+fromMon.getHealth()+" "+
-				fromMon.getStrength()+" "+fromMon.getDefence()+" "+fromMon.getAggression()+"\n");
+		
+		
 		while (defeated == null){
 			attack(toMon, fromMon);
 			if (defeated == null){
@@ -82,8 +76,6 @@ public class Battle {
 			messages.add("UPDATE 'user' SET 'Cash'='"+(from.getCash()+winner.getCashPrize())+"' WHERE'UserID'='"+winner.getOwnerId()+"'");
 			messages.add("INSERT INTO 'notifications'('type','UserID1',UserID2','MonsterID1','MonsterID2','state','cash','outcome') VALUES('battle_results','"+from.getId()+"','"+to.getId()+"','"+fromMon.getId()+"','"+toMon.getId()+"','pending','0','you lost'");
 		}
-		messages.add("INSERT INTO 'result'('type','userID1','userID2','monsterID1','monsterID2','userwon','monsterwon','winmessage','lostmessage','cash','baby1','baby2','baby3','baby4','baby5','baby6','baby7','baby8','baby9','baby10')" +
-				"VALUES('battle_results','"+to.getId()+"','"+from.getId()+"','"+toMon.getId()+"','"+fromMon.getId()+"','"+winner.getOwnerId()+"','"+winner.getId()+"','congratulations you won the fight','sorry you lost the fight','"+winner.getCashPrize()+"','NULL','NULL','NULL','NULL','NULL','NULL','NULL','NULL','NULL','NULL'");
 		
 		return messages;
 	}
@@ -95,31 +87,26 @@ public class Battle {
 	 */
 
 	public void attack(Monster atkMon, Monster defMon) {
-		System.out.println(atkMon.getName()+" attacks!\n");
 		// Defence chance of evading
 		if (atkSuccess(defMon)) {
 			// Base damage with variation
 			Random rnd = new Random();
 			float dmg = atkMon.getStrength();
 			dmg += rnd.nextInt(dmg_variation);
-			System.out.println(dmg+" damage!");
+
 			// Chance for extra damage
 			float extra_atk = atkMon.getAggression();
-			float more_dmg = 0;
+			int extra_dmg = 0;
 			for (int i = 0; i < extra_atk; i++) {
-				System.out.println(atkMon.getName()+" goes again!\n");
 				if (atkSuccess(defMon)) {
-					more_dmg += dmg * (extra_dmg / 100);
-					System.out.println(more_dmg+" damage!\n");
+					extra_dmg += (dmg * extra_dmg) / 100;
 				}
 			}
 
 			// Deal damage, check if defMon is dead
-			float health = defMon.getHealth() - (dmg + more_dmg);
+			float health = defMon.getHealth() - dmg + extra_dmg;
 			defMon.setHealth(health);
-			System.out.println(defMon.getName()+" has "+defMon.getHealth()+" HP left!\n");
 			if (health <= 0) {
-				System.out.println(defMon.getName()+" is KO!\n");
 				defeated = defMon;
 				winner = atkMon;
 			}
@@ -139,7 +126,6 @@ public class Battle {
 		if (rn <= chance) {
 			return true;
 		}
-		System.out.println(defMon.getName()+" dodged!\n");
 		return false;
 	}
 	public User getFrom() {
