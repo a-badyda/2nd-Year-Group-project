@@ -21,14 +21,18 @@ $(document).ready(function() {
 		//user clicks accept.
 		$(".accept").on('click', function() {
 			var notification_id = getParentId(this, '.notification_request');
-			$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, writeResponse);
+			$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, function(response) {
+				$('#request_' + notification_id).fadeOut();
+			});
 			return false;
 		});
 		
 		//user clicks decline.
 		$(".decline").on('click', function() {
 			var notification_id = getParentId(this, '.notification_request');
-			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
+			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, function(response) {
+				$('#request_' + notification_id).fadeOut();
+			});
 			return false;
 		});
 
@@ -62,9 +66,5 @@ $(document).ready(function() {
 
 		outputStr += '</div>';
 		return outputStr;
-	}
-
-	function writeResponse(response) {
-		$('#request_' + notification_id).html("<span>"+response+"</span>");
 	}
 });
