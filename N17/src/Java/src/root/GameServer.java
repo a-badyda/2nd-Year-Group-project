@@ -600,8 +600,8 @@ public class GameServer extends HttpServlet {
 				
 				String buy;
 				String breed;
-				if(requests.get(i).getCashSell()>0){buy="'ture'";}else{buy="'false'";}
-				if(requests.get(i).getCashBreed()>0){breed="'ture'";}else{breed="'false'";}
+				if(requests.get(i).getCashSell()>0){buy="ture";}else{buy="false";}
+				if(requests.get(i).getCashBreed()>0){breed="ture";}else{breed="false";}
 				
 				
 				out.print("{\"monstername\":\""+requests.get(i).getName()+"\",");
@@ -857,10 +857,6 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		
-		
-		
-		
-		
 		User freinds[] = new User[user.getFriends().size()];
 		
 		for(int i=0; i<user.getFriends().size(); i++){
@@ -882,7 +878,10 @@ public class GameServer extends HttpServlet {
                 }
         }
         User richlist[] = new User[10];
-		for(int i =0; (i<10)&&(i<freinds.length-1);i++){
+		for(int i =0; i<10;i++){
+			if(i==freinds.length){
+				break;
+			}
 			richlist[i] = freinds[i];
 		}
 		
@@ -890,17 +889,26 @@ public class GameServer extends HttpServlet {
 		try {
 			out = response.getWriter();
 		
-		out.print("{\"RichList\":\"[\"");
+		out.print("{\"RichList\":\"[");
 		
-		for (int i =0 ;(i<10)&&(richlist[i]!=null);i++){
+		for (int i =0 ;(i<10);i++){
+			
+			if(i==freinds.length){
+				break;
+			}
+			out.print("{\"username\":\""+richlist[i].getUsername()+"\",");
+			out.print("\"cash\":\""+richlist[i].getCash()+"\"}");
 			
 			
-			out.print("{\"username\":\""+richlist[i].getUsername()+"\"");
-			out.print("{\"cash\":\""+richlist[i].getCash()+"\"");
-			
+			if(i<9){
+				if(i==freinds.length-1){
+					break;
+				}
+				out.print(",");
+			}
 		}
 		
-		out.print("\"]}\"");
+		out.print("]\"}");
 		out.flush();
 		out.close();
 		} catch (IOException e) {
