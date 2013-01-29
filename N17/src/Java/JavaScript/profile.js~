@@ -28,11 +28,11 @@ $(document).ready(function() {
 		outputStr += '<div id="monster_'+mon.id+'" class="monster">';
 		outputStr += '<p class="monster_name">Monster Name: '+mon.monstername+'</p>';
 		outputStr += '<div id="stats">';
-		outputStr += '<p class="strength">'+mon.strength+'</p>';
-		outputStr += '<p class="aggression">'+mon.aggression+'</p>';
-		outputStr += '<p class="defense">'+mon.defense+'</p>';
-		outputStr += '<p class="health">'+mon.health+'</p>';
-		outputStr += '<p class="fertility">'+mon.fertility+'</p>';
+		outputStr += '<p class="strength">Strength: '+mon.strength+'</p>';
+		outputStr += '<p class="aggression">Aggression: '+mon.aggression+'</p>';
+		outputStr += '<p class="defense">Defence: '+mon.defense+'</p>';
+		outputStr += '<p class="health">Health: '+mon.health+'</p>';
+		outputStr += '<p class="fertility">Fertility: '+mon.fertility+'</p>';
 		outputStr += '</div>';
 		return outputStr;
 	}

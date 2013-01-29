@@ -33,7 +33,7 @@ $(document).ready(function() {
 		outputStr += '<p class="defense">Defence: '+mon.defense+'</p>';
 		outputStr += '<p class="health">Health: '+mon.health+'</p>';
 		outputStr += '<p class="fertility">Fertility: '+mon.fertility+'</p>';
-		outputStr += '</div>';
+		outputStr += '</div></div>';
 		return outputStr;
 	}
 });
