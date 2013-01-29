@@ -1,3 +1,4 @@
+//package root;
 package root;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class Battle {
 	/**
 	* The percentage of extra damage done in aggression attacks.
 	*/
-	int extra_dmg = 20;
+	float extra_dmg = 20;
 
 	
 	public Battle(){}
@@ -70,10 +71,13 @@ public class Battle {
 		if(winner == toMon){
 			to.setCash(to.getCash()+fromMon.getCashPrize());
 			messages.add("UPDATE 'user' SET 'Cash'='"+(to.getCash()+winner.getCashPrize())+"' WHERE'UserID'='"+winner.getOwnerId()+"'");
+			messages.add("INSERT INTO 'notifications'('type','UserID1',UserID2','MonsterID1','MonsterID2','state','cash','outcome') VALUES('battle_results','"+from.getId()+"','"+to.getId()+"','"+fromMon.getId()+"','"+toMon.getId()+"','pending','"+winner.getCashPrize()+"','you won'");
 		} else {
 			from.setCash(from.getCash()+toMon.getCashPrize());
 			messages.add("UPDATE 'user' SET 'Cash'='"+(from.getCash()+winner.getCashPrize())+"' WHERE'UserID'='"+winner.getOwnerId()+"'");
+			messages.add("INSERT INTO 'notifications'('type','UserID1',UserID2','MonsterID1','MonsterID2','state','cash','outcome') VALUES('battle_results','"+from.getId()+"','"+to.getId()+"','"+fromMon.getId()+"','"+toMon.getId()+"','pending','0','you lost'");
 		}
+		
 		return messages;
 	}
 
@@ -93,15 +97,15 @@ public class Battle {
 
 			// Chance for extra damage
 			float extra_atk = atkMon.getAggression();
-			int extra_dmg = 0;
+			int more_dmg = 0;
 			for (int i = 0; i < extra_atk; i++) {
 				if (atkSuccess(defMon)) {
-					extra_dmg += (dmg * extra_dmg) / 100;
+					more_dmg += dmg * (extra_dmg / 100);
 				}
 			}
 
 			// Deal damage, check if defMon is dead
-			float health = defMon.getHealth() - dmg + extra_dmg;
+			float health = defMon.getHealth() - (dmg + more_dmg);
 			defMon.setHealth(health);
 			if (health <= 0) {
 				defeated = defMon;

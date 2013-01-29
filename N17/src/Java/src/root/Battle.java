@@ -1,4 +1,5 @@
 package root;
+//package Java.src.root;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,7 +21,7 @@ public class Battle {
 	/**
 	* The percentage of extra damage done in aggression attacks.
 	*/
-	int extra_dmg = 20;
+	float extra_dmg = 20;
 
 	
 	public Battle(){}
@@ -96,15 +97,15 @@ public class Battle {
 
 			// Chance for extra damage
 			float extra_atk = atkMon.getAggression();
-			int extra_dmg = 0;
+			int more_dmg = 0;
 			for (int i = 0; i < extra_atk; i++) {
 				if (atkSuccess(defMon)) {
-					extra_dmg += (dmg * extra_dmg) / 100;
+					more_dmg += dmg * (extra_dmg / 100);
 				}
 			}
 
 			// Deal damage, check if defMon is dead
-			float health = defMon.getHealth() - dmg + extra_dmg;
+			float health = defMon.getHealth() - (dmg + more_dmg);
 			defMon.setHealth(health);
 			if (health <= 0) {
 				defeated = defMon;

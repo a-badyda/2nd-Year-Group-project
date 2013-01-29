@@ -15,6 +15,7 @@ public class BattleTest {
 	public void setup() {
 		User chris = new User("Chris", "passWd");
 		Monster delegator = new Monster(1, "Delegator");
+		delegator.setHealth(1000);
 		delegator.setStrength(100);
 		User tux = new User("Tux", "delegate");
 		Monster derp = new Monster(2, "Derp");
