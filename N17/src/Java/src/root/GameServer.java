@@ -300,7 +300,7 @@ public class GameServer extends HttpServlet {
 					
 					
 					Request r = new Request(u1, u2, m1, m2,RequestType.valueOf(rset3.getString("type").toUpperCase()));
-					
+					r.setId(rset3.getInt("ID"));
 					requests.add(r);
 				}
 			} catch (SQLException e) {
@@ -1038,7 +1038,7 @@ public class GameServer extends HttpServlet {
 				int m2=Integer.parseInt(rset3.getString("MonsterID2"));
 				
 				Request r = new Request(u1, u2, m1, m2,RequestType.valueOf(rset3.getString("type").toUpperCase()));
-				
+				r.setId(rset3.getInt("ID"));
 				requests.add(r);
 			}
 		} catch (SQLException e) {
