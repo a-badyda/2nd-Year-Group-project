@@ -10,18 +10,20 @@ Email:	slj11@aber.ac.uk
 
 $(document).ready(function() {
 	//get a list of the users monsters
-	$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
+	$monsters = $.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		var obj =  $.parseJSON(response);
 		var outputStr = outputList(obj.Monsters, buildMonsterHTML, true);
 		$("#select_monster_form").html(outputStr);
 	});
 	
-	//get a list of the friends and there monsters
-	$.post(SERVLET_LOCATION, {action: "getFriends"}, function(response) {
-		var obj =  $.parseJSON(response);
-		var output = outputList(buildFriendHTML, obj.Friends);
-		$("#friends_list").html(output);
-		addMonsterViewerEvents();
+	$monsters.done(function() {
+		//get a list of the friends and there monsters
+		$.post(SERVLET_LOCATION, {action: "getFriends"}, function(response) {
+			var obj =  $.parseJSON(response);
+			var output = outputList(buildFriendHTML, obj.Friends);
+			$("#friends_list").html(output);
+			addMonsterViewerEvents();
+		});
 	});
 
 	function addMonsterViewerEvents() {

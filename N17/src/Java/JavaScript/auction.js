@@ -10,24 +10,29 @@ Email:	slj11@aber.ac.uk
 
 $(document).read(function(){
 	//get a list of the users monsters
-	$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
+	$monsters = $.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		var obj =  $.parseJSON(response);
 		var outputStr = outputList(obj.Monsters, buildMonsterAuctionHTML, true);
 		$("#select_monster_form").html(outputStr);
+		
+		//add checkbox enabling
+		checkboxEvent('select_monster_sell');
+		checkboxEvent('select_breed_sell');
 		addSetCostEvents();
 	});
 	
-	//get a list of the friends and there monsters
-	$.post(SERVLET_LOCATION, {action: "getFriends"}, function(response) {
-		var obj =  $.parseJSON(response);
-		var output = outputList(buildFriendHTML, obj.Friends);
-		$("#friends_list").html(output);
-		addMonsterViewerEvents();
+	$monsters.done(function() {
+		//get a list of the friends and there monsters
+		$.post(SERVLET_LOCATION, {action: "getFriends"}, function(response) {
+			var obj =  $.parseJSON(response);
+			var output = outputList(buildFriendHTML, obj.Friends);
+			$("#friends_list").html(output);
+			addMonsterViewerEvents();
+		});
 	});
 
-	//add checkbox enabling
-	checkboxEvent('select_monster_sell');
-	checkboxEvent('select_breed_sell');
+
+
 
 	//enable the monster for breeding/selling
 	function checkboxEvent(name) {

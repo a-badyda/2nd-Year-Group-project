@@ -11,16 +11,18 @@ Email:	slj11@aber.ac.uk
 $(document).ready(function() {
 
 	//load a list of all friends
-	$.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
+	$friend = $.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
 		var obj = $.parseJSON(response);
 		var output = outputList(obj.Friends, outputFriendsList);
 		$('#friends_list').html(output);
 	});
 
-	$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
-		var obj = $.parseJSON(response);
-		var output = outputList(obj.RichList, outputRichList);
-		$('#rich_list').html(output);
+	$friend.done(function() {
+		$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
+			var obj = $.parseJSON(response);
+			var output = outputList(obj.RichList, outputRichList);
+			$('#rich_list').html(output);
+		});
 	});
 	
 	//add a new friend
