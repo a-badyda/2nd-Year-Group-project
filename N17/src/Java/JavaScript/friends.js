@@ -13,14 +13,14 @@ $(document).ready(function() {
 	//load a list of all friends
 	$friend = $.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
 		var obj = $.parseJSON(response);
-		var output = outputList(obj.Friends, outputFriendsList);
+		var output = outputList(outputFriendsList, obj.Friends);
 		$('#friends_list').html(output);
 	});
 
 	$friend.done(function() {
 		$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
 			var obj = $.parseJSON(response);
-			var output = outputList(obj.RichList, outputRichList);
+			var output = outputList(outputRichList, obj.RichList);
 			$('#rich_list').html(output);
 		});
 	});
