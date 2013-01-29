@@ -14,21 +14,24 @@ $(document).ready(function() {
 		var obj = $.parseJSON(response);
 		outputStr = outputList(writeNotification, obj.Notifications);
 		$('#notifications_list').html(outputStr);
+		addResponseEvents();
 	});
 	
 	//user clicks accept
-	$(".accept").submit(function() {
-		var parent = $(this).parent();
-		var notification_id = $(parent + " .id").val();
-		$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, writeResponse);
-	});
-	
-	//user clicks decline
-	$(".decline").submit(function() {
-		var parent = $(this).parent();
-		var notification_id = $(parent + " .id").val();
-		$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
-	});
+	function addResponseEvents() {
+		$(".accept").submit(function() {
+			var parent = $(this).parent();
+			var notification_id = $(parent + " .id").val();
+			$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, writeResponse);
+		});
+		
+		//user clicks decline
+		$(".decline").submit(function() {
+			var parent = $(this).parent();
+			var notification_id = $(parent + " .id").val();
+			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
+		});
+	}
 
 	function writeNotification(key, val) {
 		var current = val;
