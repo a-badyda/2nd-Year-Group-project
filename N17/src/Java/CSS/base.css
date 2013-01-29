@@ -21,12 +21,8 @@ a:hover {color: #333333;}
 a:focus {color: #333333;}
 a:active {color: #009900;}
 
-/*Base Style*/
-#base_look {
-  background: #EEC591;
-}
-
 /*Index menu - tabs*/
+
 .menu_options{
 	float: center;
   margin-top: -5px;
@@ -53,6 +49,7 @@ a:active {color: #009900;}
 	filter: alpha(opacity=30);	
 }
 
+
 /*Help Page*/
 
 .help{
@@ -66,6 +63,7 @@ a:active {color: #009900;}
 	background-color: #CDC1C5;
 }
 
+
 /*Friends Page*/
 
 #friends {
@@ -76,6 +74,24 @@ a:active {color: #009900;}
 	margin: auto;
 	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
 }
+#friends_list{
+  float:right;
+  width:800px;
+  background: #CDB7B5;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  margin: 5px;
+}
+#rich_list{
+  float:left;
+  width: 310px;
+  background: #CDB7B5;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  margin: 5px;
+}
+
+
 
 /*Login Page*/
 
@@ -89,6 +105,7 @@ a:active {color: #009900;}
   float: left;
  background: #BFEFFF;
 }
+
 
 /*Battle section + results*/
 .monster_battle {
@@ -118,6 +135,7 @@ a:active {color: #009900;}
   float: left;
   background: #FDF5E6;
 }
+
 
 /*Auction Page+ results*/
 #monster_auction{
