@@ -26,7 +26,7 @@ $(document).ready(function() {
 	});
 	
 	//add a new friend
-	$(".send_request #button_add").submit(function() {
+	$(".send_request .button_add").click(function() {
 		var email = $(".friend_email").val();
 		$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
 			$('email_response').html(response);
