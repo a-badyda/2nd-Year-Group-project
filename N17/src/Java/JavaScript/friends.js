@@ -36,7 +36,7 @@ $(document).ready(function() {
 	
 });
 
-function outputFriendsList(key, list) {
+function outputFriendsList(key, vaL) {
 	var output = '';
 	output += '<div class="friend">';
 	output += '<input class="friend_id" type="hidden" value="' + val.id + '"></input>';
@@ -44,7 +44,7 @@ function outputFriendsList(key, list) {
 	output += '</div>';
 }
 
-function outputRichList(key, list) {
+function outputRichList(key, val) {
 	var output = '';
 	output += '<div class="friend">';
 	output += '<h4>' + val.username + ': '+ val.cash +'</h4>';
