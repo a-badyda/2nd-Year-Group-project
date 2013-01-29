@@ -21,25 +21,31 @@ $(document).ready(function() {
 		var obj =  $.parseJSON(response);
 		var output = outputList(buildFriendHTML, obj.Friends);
 		$("#friends_list").html(output);
+		addMonsterViewerEvents();
 	});
-	
-	$(".view_monster").on("click", function(){
-		//show monsters click on
-		var friend = getParentId(this, '.friend');
 
-		$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
-			//get an display the friends monsters
-			var obj =  $.parseJSON(response);
-			var outputStr = outputList(obj.Monsters, buildMonsterHTML, true);
-			$('#friend_'+obj.friend_id+' .monster_list').html(outputStr);
+	function addMonsterViewerEvents() {
+		$(".view_monster").on("click", function(e){
+			//show monsters click on
+			var friend = getParentId(this, '.friend');
+
+			$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
+				//get an display the friends monsters
+				var obj =  $.parseJSON(response);
+				var outputStr = outputList(obj.Monsters, buildMonsterHTML, true);
+				$('#friend_'+obj.friend_id+' .monster_list').html(outputStr);
+				addBattleRequestEvents();
+			});
 		});
-	});
+	}
 
 	//handle clicking the battle request button
-	$("#friends_list .battle_request").on("submit", function() {
-		newMonsterRequest("Battle", this);
-		return false;
-	});
+	function addBattleRequestsEvents() {
+		$("#friends_list .battle_request").on("submit", function() {
+			newMonsterRequest("Battle", this);
+			return false;
+		});
+	}
 	
 	//function to send a battle/breed request
 	function newMonsterRequest(type, obj){

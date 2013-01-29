@@ -36,8 +36,8 @@ function outputList(func, list, args) {
 
 //strip an ID off an selector
 function getParentId(obj, selector){
-	var parent = $(obj).parent(selector).id();
-	var id = parent.substring(parent.length-2);
+	var parent = $(obj).closest(selector).attr('id');
+	var id = parent.replace(/[A-Za-z_$]/g, "");
 	return id;
 }
 
@@ -74,9 +74,9 @@ function buildMonsterHTML(key, mon, user) {
 function buildFriendHTML(key, friend){
 	output = '';
 	output += '<div id="friend_'+friend.id+'" class="friend">';
-	output += '<p class="friend_name">'+friend.username+'</p>';
-	output += '<a class="view_monster" href="#">View Monsters</a>';
-	output += '<div class="monster_list"></div>';
+		output += '<p class="friend_name">'+friend.username+'</p>';
+		output += '<a class="view_monster" href="#">View Monsters</a>';
+		output += '<div class="monster_list"></div>';
 	output += '</div>';
 	return output;
 }
