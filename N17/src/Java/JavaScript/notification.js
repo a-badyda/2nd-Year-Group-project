@@ -33,13 +33,6 @@ $(document).ready(function() {
 			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
 			return false;
 		});
-
-		$(".view").submit(function() {
-			var parent = $(this).parent();
-			var notification_id = $(parent + " .id").val();
-			$.post(SERVLET_LOCATION, {action: "viewRequest", id: notification_id}, viewResult);
-			return false;
-		});
 	}
 
 	function viewResult(response) {
