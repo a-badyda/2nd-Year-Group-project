@@ -63,7 +63,7 @@ a:active {color: #009900;}
 
 /*Friends Page*/
 
-.friends_list {
+#friends {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
 	width:80%;
@@ -85,7 +85,7 @@ a:active {color: #009900;}
  background: #BFEFFF;
 }
 
-/*Battle / Breed section */
+/*Battle section + results*/
 .monster_battle {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
@@ -94,6 +94,15 @@ a:active {color: #009900;}
   float: left;
   background: #EED2EE;
 }
+#battle_results{
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  width: 80%;
+  margin: auto;
+  float: left;
+  background: #EED2EE;
+}
+
 
 /*Notifications Page */
 .notifications_list {
@@ -105,8 +114,16 @@ a:active {color: #009900;}
   background: #FDF5E6;
 }
 
-/*Auction Page*/
+/*Auction Page+ results*/
 #monster_auction{
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  width: 80%;
+  margin: auto;
+  float: left;
+  background: #BDFCC9;
+}
+#breeding_results{
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
   width: 80%;
