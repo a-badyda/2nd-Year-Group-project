@@ -26,19 +26,47 @@ $(document).ready(function() {
 		outputStr += '<input type="hidden" id="' + current.ID + '"class="id" value="'+current.ID+'"></input>';
 
 		if (type == "battle_results") {
-			//todo
+			writeBattleResult(key, val);
 		} else if (type == "breed_result") {
-			//todo
+			outputStr += '<div class="breed_results">';
+			outputStr += outputList(writeBaby, obj.babies);
+			outputStr += '</div>';
 		} else if (type == "buy_result") {
-			//todo
-		} else if (type == "friend_accepted") {
-			//todo
+			writeBuyResult(key, obj.);
 		}
+		
 
 		outputStr += '<input type="submit" class="decline" value="OK"></input>';
 
 		outputStr += '</div>';
 		return outputStr;
+	}
+
+	function writeBattleResult(key, val) {
+		var output = ''; 
+		output += '<div class="battle_results>"';
+		output += buildMonsterHTML(key, val.my_monster);
+		output += buildMonsterHTML(key, val.friend_monster);
+		output += '<p>'+val.message+'</p>';
+		output += '<p>Money Exchanged: '+val.cost+'</p>';
+		output += '</div>'
+	}
+
+	function writeBaby(key, val) {
+		var output ='';
+		output += '<div class="baby">';
+		buildMons
+		output += '</div>';
+		return output;
+	}
+
+	function writeBuyResult(key, val) {
+		var output = ''; 
+		output += '<div class="buy_results>"';
+		output += buildMonsterHTML(key, val.friend_monster);
+		output += '<p>'+val.message+'</p>';
+		output += '<p>Money Exchanged: '+val.cost+'</p>';
+		output += '</div>'
 	}
 
 	function writeResponse(response) {

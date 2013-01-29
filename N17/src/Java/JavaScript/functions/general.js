@@ -7,6 +7,7 @@ Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk	
 */
 
+//Get a list of GET variables for the url
 function getGETvars() {
 	$_GET = {}
 	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
@@ -20,7 +21,7 @@ function getGETvars() {
 	return $_GET;
 }
 
-//generic function to cycle through a list from the server.
+//generic function to cycle through a JSON list from the server.
 function outputList(func, list, args) {
 	var output = '';
 	if(list.length != 0) {
@@ -41,16 +42,17 @@ function getParentId(obj, selector){
 	return id;
 }
 
+//Check if the value is an Int
 function is_int(value){ 
   	return ((parseFloat(value) == parseInt(value)) && !isNaN(value));
 }
 
 //////////////////////////////////////////////////////
-// Dynamic HTML Builder Functions.
+// Generic Dynamic HTML Builder Functions.
 //////////////////////////////////////////////////////
-function buildMonsterHTML(key, mon, user) {
+function buildMonsterHTML(key, mon) {
 	outputStr = '';
-	outputStr += '<div id="monster_'+mon.id+'" class="monster">';
+	outputStr += '<div id="monster_'+mon.ID+'" class="monster">';
 	outputStr += '<p class="monster_name">'+mon.monstername+'</p>';
 	outputStr += '<div id="stats">';
 	outputStr += '<p class="strength">'+mon.strength+'</p>';
@@ -59,15 +61,6 @@ function buildMonsterHTML(key, mon, user) {
 	outputStr += '<p class="health">'+mon.health+'</p>';
 	outputStr += '<p class="fertility">'+mon.fertility+'</p>';
 	outputStr += '</div></div>';
-
-	if(user) {
-		outputStr += '<input type="radio" name="select_monster" class="select_monster" value="'+mon.id+'"></input>';
-	} else {
-		outputStr += '<input type="submit" class="battle_request" value="battle"></input>';
-	}
-
-	outputStr +='</div>';
-	return outputStr;
 }
 
 function buildFriendHTML(key, friend){

@@ -12,7 +12,7 @@ $(document).ready(function() {
 	//get a list of the users monsters
 	$monsters = $.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		var obj =  $.parseJSON(response);
-		var outputStr = outputList(obj.Monsters, buildMonsterHTML, true);
+		var outputStr = outputList(buildMonsterSelectHTML, obj.Monsters, true);
 		$("#select_monster_form").html(outputStr);
 	});
 	
@@ -34,7 +34,7 @@ $(document).ready(function() {
 			$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
 				//get an display the friends monsters
 				var obj =  $.parseJSON(response);
-				var outputStr = outputList(obj.Monsters, buildMonsterHTML, true);
+				var outputStr = outputList(buildMonsterSelectHTML, obj.Monsters, true);
 				$('#friend_'+obj.friend_id+' .monster_list').html(outputStr);
 				addBattleRequestEvents();
 			});
@@ -59,5 +59,18 @@ $(document).ready(function() {
 		function(response) {
 			$('#response').val(response);
 		});
+	}
+
+	function buildMonsterSelectHTML(key, mon) {
+		outputStr += buildMonsterHTML(key, mon);
+		
+		if(user) {
+			outputStr += '<input type="radio" name="select_monster" class="select_monster" value="'+mon.id+'"></input>';
+		} else {
+			outputStr += '<input type="submit" class="battle_request" value="battle"></input>';
+		}
+
+		outputStr +='</div>';
+		return outputStr;
 	}
 });
