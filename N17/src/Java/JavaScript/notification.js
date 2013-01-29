@@ -36,7 +36,7 @@ $(document).ready(function() {
 	function writeNotification(key, val) {
 		var current = val;
 		var description = "New ";
-		description += current.type.toLowerCase();
+		description += current["type"].toLowerCase();
 		description += " request from ";
 		description += current.from;
 		
