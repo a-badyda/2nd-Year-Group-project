@@ -669,7 +669,7 @@ public class GameServer extends HttpServlet {
 				
 			}
 			
-			out.print("\"]}\"");
+			out.print("\"]\"}");
 			out.flush();
 			out.close();
 			
