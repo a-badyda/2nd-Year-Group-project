@@ -14,6 +14,7 @@ $(document).read(function(){
 		var obj =  $.parseJSON(response);
 		var outputStr = outputList(obj.Monsters, buildMonsterAuctionHTML, true);
 		$("#select_monster_form").html(outputStr);
+		addSetCostEvents();
 	});
 	
 	//get a list of the friends and there monsters
@@ -21,6 +22,7 @@ $(document).read(function(){
 		var obj =  $.parseJSON(response);
 		var output = outputList(buildFriendHTML, obj.Friends);
 		$("#friends_list").html(output);
+		addMonsterViewerEvents();
 	});
 
 	//add checkbox enabling
@@ -35,27 +37,33 @@ $(document).read(function(){
 		});
 	}
 
-	$(".view_monster").on("click", function(){
-		//show monsters click on
-		var friend = getParentId(this, '.friend');
 
-		$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
-			//get an display the friends monsters
-			var obj =  $.parseJSON(response);
-			var outputStr = outputList(obj.Monsters, buildMonsterAuctionHTML, true);
-			$('#friend_'+obj.friend_id+' .monster_list').html(outputStr);
+	function addMonsterViewerEvents() {
+		$(".view_monster").on("click", function(){
+			//show monsters click on
+			var friend = getParentId(this, '.friend');
+
+			$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
+				//get an display the friends monsters
+				var obj =  $.parseJSON(response);
+				var outputStr = outputList(obj.Monsters, buildMonsterAuctionHTML, true);
+				$('#friend_'+obj.friend_id+' .monster_list').html(outputStr);
+				addAuctionEvents();
+			});
 		});
-	});
+	}
 
-	$("#friends_list .set_sell_cost").on("click", function() {
-		var cost = obj.siblings('.monster_breed_cost').val();
-		changeCost("Buy", this, cost);
-	});
+	function addSetCostEvents() {
+		$("#friends_list .set_sell_cost").on("click", function() {
+			var cost = obj.siblings('.monster_breed_cost').val();
+			changeCost("Buy", this, cost);
+		});
 
-	$("#friends_list .set_breed_cost").on("click", function() {
-		var cost = obj.siblings('.monster_sell_cost').val();
-		changeCost("Breed", this, cost);
-	});
+		$("#friends_list .set_breed_cost").on("click", function() {
+			var cost = obj.siblings('.monster_sell_cost').val();
+			changeCost("Breed", this, cost);
+		});
+	}
 
 	//change the cost for breeding/buying
 	function changeCost(type, obj, cost){
@@ -68,17 +76,20 @@ $(document).read(function(){
 		}
 	}
 
-	//handle clicking the breed request button
-	$("#friends_list .breed_request").on("submit", function() {
-		newBuyRequest(this);
-		return false;
-	});
+	
+	function addAuctionEvents() {
+		//handle clicking the breed request button
+		$("#friends_list .breed_request").on("submit", function() {
+			newBuyRequest(this);
+			return false;
+		});
 
-	//handle clicking the buy request button
-	$("#friends_list .buy_request").on("submit", function() {
-		newBreedRequest(this);
-		return false;
-	});
+		//handle clicking the buy request button
+		$("#friends_list .buy_request").on("submit", function() {
+			newBreedRequest(this);
+			return false;
+		});
+	}
 	
 	//function to send a breed request
 	function newBreedRequest(obj){
