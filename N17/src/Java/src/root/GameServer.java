@@ -1,4 +1,4 @@
-package root;
+package Java.src.root;
 import java.util.Date;
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -759,7 +759,7 @@ public class GameServer extends HttpServlet {
 					Monster m2=u2.getMonster(Integer.parseInt(rset.getString("MonsterID2")));
 					
 					
-					ArrayList<String> querylist = battle.Battle(u1,u2,m1,m2);
+					ArrayList<String> querylist = battle.doBattle(u1,u2,m1,m2);
 					
 					for (int i=0; i<querylist.size();i++){
 						db.execute(querylist.get(i));

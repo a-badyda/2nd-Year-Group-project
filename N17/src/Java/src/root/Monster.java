@@ -1,4 +1,4 @@
-package root;
+package Java.src.root;
 
 import java.util.Calendar;
 import java.util.Random;
@@ -176,8 +176,8 @@ public class Monster {
 	public Status getStatus() {
 		return status;
 	}
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setStatus(Status happy) {
+		this.status = happy;
 	}
 	public int getCashPrize() {
 		return cashPrize;
