@@ -11,7 +11,21 @@ public class Request {
 	private Integer id, from, to, fromMon, toMon;
 	private RequestType type;
 	private RequestState state;
+	private String outcome;
+	private int cash;
 	
+	public String getOutcome() {
+		return outcome;
+	}
+	public void setOutcome(String outcome) {
+		this.outcome = outcome;
+	}
+	public int getCash() {
+		return cash;
+	}
+	public void setCash(int cash) {
+		this.cash = cash;
+	}
 	public Request(Integer u1id, Integer u2id, Integer m1id, Integer m2id, RequestType type){
 		this.setFrom(u1id);
 		this.setFromMon(m1id);

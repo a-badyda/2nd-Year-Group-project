@@ -301,6 +301,8 @@ public class GameServer extends HttpServlet {
 					
 					Request r = new Request(u1, u2, m1, m2,RequestType.valueOf(rset3.getString("type").toUpperCase()));
 					r.setId(rset3.getInt("ID"));
+					r.setCash(rset3.getInt("cash"));
+					r.setOutcome(rset3.getString("outcome"));
 					requests.add(r);
 				}
 			} catch (SQLException e) {
@@ -531,7 +533,7 @@ public class GameServer extends HttpServlet {
 		for (int i=0; i<querylist.size();i++){
 			db.execute(querylist.get(i));
 		}
-		
+		//responce (monster array babies,stats) amount_paid: 
 		
 	}
 	private void newBuyRequest(HttpServletRequest request, HttpServletResponse response){
@@ -584,7 +586,7 @@ public class GameServer extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
+		//responce monster   amount_paid:
 	}
 	
 	
@@ -702,6 +704,11 @@ public class GameServer extends HttpServlet {
 		} catch (IOException ex) {
 		}
 	}
+	
+	private void getallresults(HttpServletRequest request, HttpServletResponse response){
+		
+	}
+	
 	private void getAllRequest(HttpServletRequest request, HttpServletResponse response){
 		reloadnotifications(request,response);
 		HttpSession session = request.getSession(true);
@@ -716,10 +723,115 @@ public class GameServer extends HttpServlet {
 				
 				out.print("{\"Type\":\""+requests.get(i).getType()+"\",");
 				out.print("\"ID\":\""+requests.get(i).getId()+"\",");
-				out.print("\"From\":\""+requests.get(i).getFrom()+"\"}");
+				out.print("\"From\":\""+users.fetchUser(requests.get(i).getFrom()).getUsername()+"\"");
+				
+				if(requests.get(i).getType()==RequestType.battle_results){
+					
+					out.print(",\"Outcome\":\""+requests.get(i).getOutcome()+"\",");
+					out.print("\"Prize\":\""+requests.get(i).getCash()+"\" ");
+					
+				}
+				
+				if(requests.get(i).getType()==RequestType.battle_request){
+					
+					String query = ("SELECT * FROM monsters WHERE monsterID='" +requests.get(i).getToMon()+ "'");
+					
+						ResultSet rset;
+						rset = db.createQuery(query);
+						
+						try {
+							while (rset.next ())
+							{
+								out.print("{\"my_monster\":[");
+								out.print("{\"monstername\":\""+rset.getString("name")+"\",");
+								out.print("\"ID\":\""+rset.getInt("monsterID")+"\",");
+								out.print("\"strength\":\""+rset.getInt("strength")+"\",");
+								out.print("\"health\":\""+rset.getInt("health")+"\",");
+								out.print("\"fertility\":\""+rset.getInt("fertility")+"\",");
+								out.print("\"defense\":\""+rset.getInt("defence")+"\",");
+								out.print("\"aggression\":\""+rset.getInt("aggression")+"\",");
+								out.print("]}");
+							}
+						
+							query = ("SELECT * FROM monsters WHERE monsterID='" +requests.get(i).getFromMon()+ "'");
+							
+							rset = db.createQuery (query);
+							
+							while (rset.next())
+				    		{
+								out.print("{\"friend_monster\":[");
+								out.print("{\"monstername\":\""+rset.getString("name")+"\",");
+								out.print("\"ID\":\""+rset.getInt("monsterID")+"\",");
+								out.print("\"strength\":\""+rset.getInt("strength")+"\",");
+								out.print("\"health\":\""+rset.getInt("health")+"\",");
+								out.print("\"fertility\":\""+rset.getInt("fertility")+"\",");
+								out.print("\"defense\":\""+rset.getInt("defence")+"\",");
+								out.print("\"aggression\":\""+rset.getInt("aggression")+"\",");
+								out.print("]}");
+				    		}
+						} catch (SQLException e) {
+							e.printStackTrace();
+						}
+				}
+				
+				if(requests.get(i).getType()==RequestType.friend_accepted){
+				}
+				if(requests.get(i).getType()==RequestType.friend_request){
+				}
+				if(requests.get(i).getType()==RequestType.breed_result){
+					String query = ("SELECT * FROM monsters WHERE monsterID='" +requests.get(i).getToMon()+ "'");
+					
+					ResultSet rset;
+					rset = db.createQuery(query);
+					
+					try {
+						while (rset.next ())
+						{
+							out.print("{\"my_monster\":[");
+							out.print("{\"monstername\":\""+rset.getString("name")+"\",");
+							out.print("\"ID\":\""+rset.getInt("monsterID")+"\",");
+							out.print("\"strength\":\""+rset.getInt("strength")+"\",");
+							out.print("\"health\":\""+rset.getInt("health")+"\",");
+							out.print("\"fertility\":\""+rset.getInt("fertility")+"\",");
+							out.print("\"defense\":\""+rset.getInt("defence")+"\",");
+							out.print("\"aggression\":\""+rset.getInt("aggression")+"\",");
+							out.print("]}");
+						}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+					out.print("\"cash\":\""+requests.get(i).getCash()+"\"");
+				}
+				if(requests.get(i).getType()==RequestType.buy_result){
+					out.print("\"cash\":\""+requests.get(i).getCash()+"\"");
+					
+					String query = ("SELECT * FROM monsters WHERE monsterID='" +requests.get(i).getToMon()+ "'");
+					
+					ResultSet rset;
+					rset = db.createQuery(query);
+					
+					try {
+						while (rset.next ())
+						{
+							out.print("{\"my_monster\":[");
+							out.print("{\"monstername\":\""+rset.getString("name")+"\",");
+							out.print("\"ID\":\""+rset.getInt("monsterID")+"\",");
+							out.print("\"strength\":\""+rset.getInt("strength")+"\",");
+							out.print("\"health\":\""+rset.getInt("health")+"\",");
+							out.print("\"fertility\":\""+rset.getInt("fertility")+"\",");
+							out.print("\"defense\":\""+rset.getInt("defence")+"\",");
+							out.print("\"aggression\":\""+rset.getInt("aggression")+"\",");
+							out.print("]}");
+						}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+					
+				}
+				
 				
 				if(i<requests.size()-1){
-					out.print(",");
+					out.print("},");
 				}
 			}
 			
@@ -781,8 +893,11 @@ public class GameServer extends HttpServlet {
 				e.printStackTrace();
 			}
 		
+		//batte result info
+		
 	}
-	private void acceptBreedRequest(HttpServletRequest request, HttpServletResponse response){
+	
+private void acceptBreedRequest(HttpServletRequest request, HttpServletResponse response){//legesy
 	
 		HttpSession session = request.getSession(true);
 		
@@ -835,7 +950,7 @@ public class GameServer extends HttpServlet {
 		PrintWriter out;
 		try {
 			out = response.getWriter();
-			out.print("request declined");
+			out.print("notification removed");
 			out.flush();
 			out.close();
 		} catch (IOException e) {
@@ -1037,8 +1152,10 @@ public class GameServer extends HttpServlet {
 				int m1=Integer.parseInt(rset3.getString("MonsterID1"));
 				int m2=Integer.parseInt(rset3.getString("MonsterID2"));
 				
-				Request r = new Request(u1, u2, m1, m2,RequestType.valueOf(rset3.getString("type").toUpperCase()));
+				Request r = new Request(u2,u1,m2,m1,RequestType.valueOf(rset3.getString("type").toUpperCase()));
 				r.setId(rset3.getInt("ID"));
+				r.setCash(rset3.getInt("cash"));
+				r.setOutcome(rset3.getString("outcome"));
 				requests.add(r);
 			}
 		} catch (SQLException e) {
