@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 	$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		var obj = $.parseJSON(response);
-		var outputStr = outputMonsters(obj, true, buildMonsterHTML);
-		$('#monster_list').html(outputStr);
+		var outputStr = outputList(buildMonsterHTML, obj.Monsters, true);
+		$('.monster_list').html(outputStr);
 	});
 });
