@@ -21,6 +21,11 @@ a:hover {color: #333333;}
 a:focus {color: #333333;}
 a:active {color: #009900;}
 
+/*Base Style*/
+#base_look {
+  background: #EEC591;
+}
+
 /*Index menu - tabs*/
 .menu_options{
 	float: center;
