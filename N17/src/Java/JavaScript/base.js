@@ -26,7 +26,8 @@ $(document).ready(function () {
 			var page = $_GET["page"]; //get what page we are on.
 
 			//select if it is a valid page.
-			if(page == "profile" || page == "battle" || page == "friends" || page == "help" || page == "notification" || page == "auction") {
+			if($.inArray(page, PAGES) >= 0) {
+				//dynamically load the page content
 				$.get(page + '.html', function (response) {
 					$('#response').html(response);
 				});
