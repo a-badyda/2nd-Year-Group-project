@@ -23,6 +23,17 @@ $(document).read(function(){
 		$("#friends_list").html(output);
 	});
 
+	//add checkbox enabling
+	checkboxEvent('select_monster_sell');
+	checkboxEvent('select_breed_sell');
+
+	//enable the monster for breeding/selling
+	function checkboxEvent(name) {
+		$('input[type="checkbox"][name="'+name+'"]').on('change', function() {
+			$(this).siblings('set_sell_cost').toggle();
+			$(this).siblings('monster_sell_cost').toggle();
+		});
+	}
 
 	$(".view_monster").on("click", function(){
 		//show monsters click on
@@ -57,13 +68,13 @@ $(document).read(function(){
 		}
 	}
 
-	//handle clicking the battle request button
+	//handle clicking the breed request button
 	$("#friends_list .breed_request").on("submit", function() {
 		newBuyRequest(this);
 		return false;
 	});
 
-	//handle clicking the battle request button
+	//handle clicking the buy request button
 	$("#friends_list .buy_request").on("submit", function() {
 		newBreedRequest(this);
 		return false;
