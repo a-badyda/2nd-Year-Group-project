@@ -1,0 +1,42 @@
+<html>
+	<head>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script type="text/javascript" src="JavaScript/includes/settings.js"></script>
+		<script type="text/javascript" src="JavaScript/login.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				login_success = postLogin($('#errorbox'), "email", "password");
+				writeTest("Login test", login_success);
+
+				pingServer({action: "getMonsters"});
+				pingServer({action: "getFriends"});
+				pingServer({action: "getFriendsMonsters", friendId: 1});
+				pingServer({action: "newBattleRequest", userMonsterId: 1, friendId: 1, monsterId: 1});
+				pingServer({action: "newBreedRequest", userMonsterId: 1, friendId: 1, monsterId: 1});
+				pingServer({action: "getAllNotifications"});
+				pingServer({action: "acceptRequest", id: 1});
+				pingServer({action: "declineRequest", id: 1});
+				pingServer({action: "addFriend", username: "email"});
+
+
+				function pingServer(name, json_data) {
+					$.post(SERVLET_LOCATION, json_data,  function(response) {
+						writeTest(name, response);
+					});
+				}
+
+				function writeTest(name, success) {
+					$('#tests').append("<tr><td>" + name + "</td><td>" + Response + "</td></tr>");
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="errorbox"></div>
+		<table id="tests">
+			<tr><td><b>Test</b></td><td><b>Pass?</b></td></tr>
+		</table>
+	</body>
+</html>

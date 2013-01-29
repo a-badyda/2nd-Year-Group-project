@@ -6,12 +6,12 @@
 \begin{document}
 \title{Software Development Life cycle}
 \subtitle{Design Specification}
-\author{Tom Reed, Matt Whitmore, Dave Clark, Silhab Csoma, Mike Steel, Chris 'Tux' Lloyd, Alex Badyda, Sam Jackson, Chris Marriott}
+\author{Tom Reed, Matt Whitmore, Dave Clark, Silhab Csoma, Mike Steel, Chris 'Tux' Lloyd, Aleksandra Badyda, Samuel Jackson, Chris Marriott}
 \shorttitle{Design Specification}
-\version{1.2}
+\version{1.3}
 \status{draft}
 \date{2012-12-5}
-\configref{SE.QA.G17}
+\configref{SE.17.DS.01}
 \maketitle
 \tableofcontents
 \newpage
@@ -51,6 +51,12 @@ The A is the number of days that have passed. Upon birth it is at 100\% health, 
 \section{JSON Table}
 \includepdf[pages={1-2}]{Requests.pdf}
 
+\subsection{JSON Explanation}
+JSON (also known as JavaScript Object Notation) is a form of data interchange that is designed to be "human readable". Derived from the JavaScript scripting language, it shows simple data structures and associative arrays, which they call "objects". This table shows us the various data interchanges that take place within the design of our project.  JSON is used as an alternative to XML.
+
+\section{Class Diagram}
+\includegraphics[scale=0.40]{MonsterDiagram.png}
+
 \section{Significant Data Classes}
 \subsection{Java Data Classes}
 There are four main classes within the Java designed to be implemented within the project, these are Monster, User, User-Manager, and Request.
@@ -79,45 +85,21 @@ Request & FR6, FR9 \\ \hline
 
 \section{Breed Class}
 The breed class is called Breed.class and is a private class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods} 
 The only public method this class has is ENUM Breed and has no parameters. This is a list of set monster types that the monster will be of type. Used ENUM so can only select a type from that list.
 
 \section{Monster Class}
 The monster class is called Monster.class and is a public class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
-Public methods are as follows:        
-public Integer getId() - This will return an ID, used for identification purposes. public void setId(Integer id) - is used to set the unique IDand takes parameter of Integer id. public Integer getOwnerId() - this will return the unique id of the owner, used for identification of owner. public void setOwnerId(Integer ownerId) - This is used to set the unique owner id and takes Integer ownerId as a parameter.
-
-public String getName() - This will return the name of the owner and monster. public void setName(String name) This will set the name for owner and monster and takes String name as a parameter.
-public float getHealth() - This will get the health of the monster. public void setHealth(float health) - This will set the health of the monster, will be done after battle. Takes float health as a parameter.
-public float getStrength() - This will return the strength of the monster. public void setStrength(float strength) - This sets the strength of the monster and takes float strength as a parameter.
-public float getDefence() - This will return the monsters defence. public void setDefence(float defence) - This will set the monsters defence and take float defence as a parameter.
-
-public float getAggression() - This will return the monsters aggression. public void setAggression(float aggression) - This will set the monsters aggression and will take float aggression as a parameter.
-public float getFertility() - This will return the monsters fertility which will be used during the breeding process. public void setFertility(float fertility) - This will set the fertility of the monster and will take float fertility as a parameter.
-public Breed getBreed() - This will return the monsters breed type. public void setBreed(Breed breed) - This will set the monsters breed type and takes Breed breed as a parameter.
-public Status getStatus() - This will get the status of the monster. public void setStatus(Status status) - This will set the status of the monster and will take Status status as a parameter.
-public int getAge() - This will return the age of the monster. public void setAge(int age) - This will set the age of the monster and will take int age as a parameter.
-
-public int getCashPrize() - This will return the cash prize from the battle. public void setCashPrize(int cashPrize) - This will set the cash prize and take int cashPrize as a parameter.
-public int getWins() - This will return the number of wins. public void setWins(int wins) - This will set the number of wins and takes int wins as a parameter.
-public int getLosses() - This will return number of losses. public void setLosses(int losses) - This will set the losses and takes int losses as a parameter.
+This class contains getter and setters for monster attributes. The getters and setters are for id, ownerId, name, stats, breed, status, birth, cashPrize, wins and losses. They set the value and return the value for the monster.
 
 \section{MySQLDatabase Class}
 The MySQLDatabase class is called MySQLDatabase.class and is a public class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
 
 
 \section{Request}
 The Request class is called Request.class and is a public class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
 public User getFrom() - This will return from which is of type User. public void setFrom(User from) - This will set the User from and take User from as a parameter.
 public User getTo() - This will return to which is of type User. public void setTo(User to) - This will set the User to value and take User to as a parameter.
@@ -128,15 +110,11 @@ public RequestState getState() - This will return state which is of type Request
 
 \section{Request state}
 The request state class is called RequestState.class and is a public ENUM class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
 The only method in this class is enum RequestState. This is used to allow 3 states to be identified of which are ACCEPTED, PENDING and DECLINED. These will be used for requests such as battle and breed.
 
 \section{UserManager}
 The user manager class is called UserManager.class and is a public class.
-\subsection{classes extended and why}
-N/A
 \subsection{Public Methods}
 public UserManager() - 
 public User fetchUser(Integer id)
@@ -148,8 +126,6 @@ public void createUser(Integer id, String username, String email, String passwor
 
 \section{User}
 The user class is called User.class and is a public class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public Methods}
 public Integer getId() - This will return id which is of type Integer. public void setId(Integer id) - This will set id and takes Integer id as a parameter.
 public String getUsername() - This will return username which is of type String. public void setUsername(String username) - This will set username and takes String username as a parameter.
@@ -165,21 +141,20 @@ public ArrayList\textless Request\textgreater  getRequests() - This will get a l
 
 \section{Status class}
 The Status class is called Status.java and is a public enum class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public methods}
 This class is an ENUM class and defines a set of 4 statuses that monsters can have. NORMAL, SICK, DEAD and HAPPY.
 
 
 \section{RequestType class}
 The Request type class is called RequestType.class and is a public ENUM class.
-\subsection{Classes extended and why}
-N/A
 \subsection{Public methods}
 This class is an ENUM class and defines a set of 3 types for request. BATTLE, BREED and FRIEND. 
 
-\section{Class Diagram}
-\includegraphics[scale=0.40]{MonsterDiagram.png}
+\section{Data Storage}
+Within the java programing the data is stored in a number of ways, a major way that data will be handled is through enums; requests will be handled through this and will be stored as either battle, breed, or friend, and the states of these requests will also be stored as enums, being either accepted, viewing, pending, or declined. Also stored as enums will be the statuses of monsters, thusly each monster status will be handled as normal, sick, dead, or happy.  Breed considers the different types of monster that we plan to be breeding with each other, and this therefore will be stored as an enum with the value of slime, beast, demon, dragon, serpent, or ghost.
+
+Array Lists will also be used, but only, as far as designed, in private instances, so there will be no public instances that need to be explained in class diagrams. Otherwise, usernames, passwords, and the like will be handled in private strings and variable types as are appropriate. 
+
 
 \section{Sequence Diagrams}
 \subsection{Accept Battle}
@@ -223,7 +198,51 @@ This sequence diagram shows a user logging in to monstermash. The user submits t
 \includegraphics[scale=0.50]{state_diagram.png}
 \end{center}
 
+\subsection{State Diagram Description}
 
+As you can see, the diagram above shows the design structure for how we want to be able to navigate each of our web pages. I will go through each connection individually, and explain the reasoning behind each.
+
+\subsubsection{Login Page to Profile Page}
+
+This is the first page that the user will be able to see when going onto our website, the page will require the user to enter their username and password into the allocated areas, once this is done, the user will be taken to the profile page, this is because the profile page is regarded as the users most important page, as this is where the user can decide what s/he plans to do.
+
+\subsubsection{Profile page to Various pages}
+
+The reason we had the profile page link to most of the pages on the website, was simply because this page acts almost as the “home” page of our structure, and it makes it easier for the user to have just one page in which they can select most of their options. If we separated and spread out each of the links to various pages to other pages in the structure, this would likely confuse and frustrate the user, by having them all in the same place, this avoids most issues about navigation that may arise.
+
+\subsubsection{Profile page to Help page}
+
+It is most likely that if the user had a problem, they would not be on any page other than the profile page, as this would be the starting point for the user, for this reason, we linked the “Help” page only too and from the profile page.
+
+\subsubsection{Profile page to Battle page}
+
+As the “Battle” page one of the most important pages (Alongside Friends) it was important that we put the link to this page in an obvious place, and there is no place more obvious than on your “Profile” page, as (as was explained before) this page works as the “home” page of this website, a page that is constantly referred to.
+
+\subsubsection{Battle page to Battle results page}
+
+After you have accepted an offer of a fight, the user will be taken to an area called the “Battle” page, in which you can watch the battle between your monster and the opponent that challenged you, after the battle has been completed you will be taken to the Battle results page, we structured this so that if you are the user that sent out the battle request, you will automatically be taken to the “Battle Results” page, as (as we have explained previously) the user sending out battle requests does not get to view the battle, but just see’s the results. After the users have seen the results of their battle(s), they have the option to return to the “Profile” page, so that they can continue to do other tasks within the game.
+Profile page to Friends page:
+
+The link to this page is very important, it is from the “Friends” page you will be able to add and accept who you want to be friends with in monster mash, who you would like to battle with, and who’s monsters you would like to breed with. Without this page, the game simply would not work. So for this reason, we linked this page to the “Profile” page, similar to the reason with the “Battle” page, this was done so the user can find this page easily, as the “Profile” page will be the most visited page on the website.
+
+\subsubsection{Friends page to Various pages}
+
+From this page, it is possible to do three separate things, you will be able to manage your friends, select which monsters you wish to breed with, and select which monsters you wish to battle. We decided to put these options on this page and NOT on the “Profile” page, because you would begin to run the risk of cluttering the “Profile” page, as important these tasks are to the game, we concluded that it would be much more neat and less confusing to put these options within a separate “Friends” page, so the user wouldn’t be “drowned” with options on the “Profile” page.
+
+\subsubsection{Friends page to Battle/Breeding page}
+
+Originally, we were going to have the Battle and Breeding pages separate here, so the user would be able to select which one they wanted. It was only later on that we realised that both these tasks could be accomplished on the same page, so having them on the same page was unnecessary. Once the user has selected whether they want to breed or battle certain monsters, the user will be directed back to the “Profile” page, this is a running theme in our structuring, as this is where everything on the website stems from.
+
+\subsubsection{Friends page to Add Friend page}
+
+It would seem fairly obvious that from the “Friends” page, we would be able to select which friends we would want to add, so from here, we added an “Add Friends” page, in which the user can type the recipients email or username, to send a friend request. Once the user has finished adding the friends they wish, they can then link back to the “Profile” page, to continue with other tasks they may wish to do.
+
+\subsubsection{Profile page to Breeding Results page}
+
+This link is very similar to the “Battle” page explained earlier, the only difference being that it does not matter who was the recipient of the offer or not, they would both be linked straight to a breeding results page. Once the user has looked at the results, they can then link back to the “Profile” page.
+
+\subsubsection{Profile page to Logout}
+For a small while, we did consider having a logout page on every page of the website, but we theorised that this may cause problems that would be difficult to fix, for example, what would happen if you logged out in the middle of a battle on the “Battle” page. For this reason, to avoid confusion, we only put the logout page on the “Profile” page, as this guarantees that the user is not in the middle of a task. 
 
 \clearpage
 \addcontentsline{toc}{section}{REFERENCES}

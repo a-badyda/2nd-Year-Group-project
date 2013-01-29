@@ -42,4 +42,5 @@ Made a small start on some of the JavaScript. Awaiting HTML for further developm
 Added Client side folder structure.
 
 
-
+28/01/13 -- Hours Worked 15
+Rewrote current code
