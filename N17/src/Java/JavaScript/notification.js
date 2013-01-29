@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$.post(SERVLET_LOCATION, {action: 'getAllNotifications'},function(response) {
 		var obj = $.parseJSON(response);
 		var outputStr = outputList(writeNotification, obj.Notifications);
-		$('#notifications_list').append(outputStr);
+		$('.notifications_list').append(outputStr);
 		addResponseEvents();
 	});
 	
