@@ -32,11 +32,6 @@ a:active {color: #009900;}
 /*Friends Page*/
 
 #friends {
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
-  width:80%;
-  float: left;
-  margin: auto;
   background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
 }
 
