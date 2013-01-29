@@ -38,7 +38,7 @@ $(document).ready(function() {
 		var description = "New ";
 		description += current["Type"].toLowerCase();
 		description += " request from ";
-		description += current.from;
+		description += current.From;
 		
 		var outputStr = '<div id="request_'+current.id+'" class="notification_request"><p>'+description+'</p>';
 		outputStr += '<input type="hidden" id="' + current.id + '"class="id" value="'+current.id+'"></input>';
