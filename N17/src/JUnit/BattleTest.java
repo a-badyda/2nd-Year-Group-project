@@ -3,9 +3,9 @@ package JUnit;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-import Java.src.root.Battle;
-import Java.src.root.Monster;
-import Java.src.root.User;
+import root.Battle;
+import root.Monster;
+import root.User;
 
 public class BattleTest {
 	
@@ -15,7 +15,7 @@ public class BattleTest {
 	public void setup() {
 		User chris = new User("Chris", "passWd");
 		Monster delegator = new Monster(1, "Delegator");
-		delegator.getStats().setStrength(100);
+		delegator.setStrength(100);
 		User tux = new User("Tux", "delegate");
 		Monster derp = new Monster(2, "Derp");
 		
@@ -66,7 +66,7 @@ public class BattleTest {
 	
 	@Test
 	public void testAttack(){
-		assertTrue(battle.getDefeated().getStats().getHealth() <= 0);
+		assertTrue(battle.getDefeated().getHealth() <= 0);
 	}
 	
 	@Test

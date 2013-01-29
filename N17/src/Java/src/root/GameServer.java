@@ -102,6 +102,7 @@ public class GameServer extends HttpServlet {
 		case "acceptRequest":acceptRequest(request,response);break;
 		case "declineRequest":declineRequest(request,response);break;
 		case "isLoggedIn": IsLoggedIn(request, response); break;
+		case "getUserData": GetUserData(request, response); break;
 		
 		case "setBuyCost": setBuyCost(request, response); break;
 		case "setBreedCost": setBreedCost(request, response); break;
@@ -586,6 +587,7 @@ public class GameServer extends HttpServlet {
 	
 	
 	private void getMonsters(HttpServletRequest request, HttpServletResponse response){
+		reloadmonsters(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<Monster> requests = user.getMonsters();
@@ -604,6 +606,11 @@ public class GameServer extends HttpServlet {
 				out.print("{\"monstername\":\""+requests.get(i).getName()+"\",");
 				out.print("\"ID\":\""+requests.get(i).getId()+"\",");
 				out.print("\"buy\":\""+buy+"\",");
+				out.print("\"strength\":\""+requests.get(i).getStrength()+"\",");
+				out.print("\"health\":\""+requests.get(i).getHealth()+"\",");
+				out.print("\"fertility\":\""+requests.get(i).getFertility()+"\",");
+				out.print("\"defecnce\":\""+requests.get(i).getDefence()+"\",");
+				out.print("\"aggrestion\":\""+requests.get(i).getAggression()+"\",");
 				out.print("\"breed\":\""+breed+"\"}");
 				
 				
@@ -619,6 +626,7 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void getFriends(HttpServletRequest request, HttpServletResponse response){
+		reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<User> requests = user.getFriends();
@@ -643,6 +651,7 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void getFriendsMonsters(HttpServletRequest request, HttpServletResponse response){
+		reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<User> requests1 = user.getFriends();
@@ -662,6 +671,11 @@ public class GameServer extends HttpServlet {
 				out.print("{\"monstername\":\""+requests.get(i).getName()+"\",");
 				out.print("\"ID\":\""+requests.get(i).getId()+"\"}");
 				out.print("\"buy\":\""+buy+"\"}");
+				out.print("\"strength\":\""+requests.get(i).getStrength()+"\",");
+				out.print("\"health\":\""+requests.get(i).getHealth()+"\",");
+				out.print("\"fertility\":\""+requests.get(i).getFertility()+"\",");
+				out.print("\"defecnce\":\""+requests.get(i).getDefence()+"\",");
+				out.print("\"aggrestion\":\""+requests.get(i).getAggression()+"\",");
 				out.print("\"breed\":\""+breed+"\"}");
 			}
 			
@@ -676,13 +690,13 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void getAllRequest(HttpServletRequest request, HttpServletResponse response){
-		
+		reloadnotuifications(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<Request> requests = user.getRequests();
 		try {
 			PrintWriter out = response.getWriter();
-			out.print("{\"Notifications\":\"[\"");
+			out.print("{\"Notifications\":[\"");
 			
 			for (int i =0 ;i<requests.size();i++){
 				
@@ -693,7 +707,7 @@ public class GameServer extends HttpServlet {
 				
 			}
 			
-			out.print("\"]\"}");
+			out.print("\"]}");
 			out.flush();
 			out.close();
 			
@@ -842,7 +856,7 @@ public class GameServer extends HttpServlet {
                 }
         }
         User richlist[] = new User[10];
-		for(int i =0; i<10;i++){
+		for(int i =0; (i<10)&&(i<freinds.length);i++){
 			richlist[i] = freinds[i];
 		}
 		

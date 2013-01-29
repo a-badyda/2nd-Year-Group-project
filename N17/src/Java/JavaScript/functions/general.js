@@ -8,6 +8,7 @@ Email:	slj11@aber.ac.uk
 */
 
 function getGETvars() {
+	$_GET = {}
 	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
 		function decode(s) {
 			return decodeURIComponent(s.split("+").join(" "));
@@ -15,6 +16,8 @@ function getGETvars() {
 
 		$_GET[decode(arguments[1])] = decode(arguments[2]);
 	});
+	
+	return $_GET;
 }
 
 //generic function to cycle through a list from the server.
