@@ -92,13 +92,13 @@ JSON (also known as JavaScript Object Notation) is a form of data interchange th
 \subsection{Java Data Classes}
 There are four main classes within the Java designed to be implemented within the project, these are Monster, User, User-Manager, and Request.
 \subsection{User-Manager class}
-User-Manager handles the basic ability to get a user from the database and find out if they exist, as well as being able to add and remove a user from the database. This class is therefore key to having a usable log in page, as well as being absolutely necessary for a functioning registration form for new users.
+The User-Manager class handles many different tasks related to how each of the User profiles are created and organised. This class has creates the ability to add and remove a user from a database, this can be seen in the "addUser" and "removeUser" methods located within the class. This class can also perform other tasks that are important to the functionality of the system, such as the ability to fetch particular User data, which can either be the Users ID, or the Users name (as depicted by a String).  Without this class, it would be impossible to create a usable log in page, as the system would not be able to get (fetch) the data that is stored in the database to validate their log in. This class would be absolutely necessary for a functioning registration form for the new users, as without it, no Users could be added to the system.
 \subsection{User class}
-The User class handles more specific details appropriate to a user, including both details necessary for the user logging in, such as getting the user-name and password, as well as details necessary for the management of the user within the game, such as methods to get which monsters the user has. There will also be parts of this class that handle setting the user-name and password and other key parts of the user’s details, so this is a class key to many functions of the website; from creating a new user and logging in, to finding out what monsters and friends that user has.
+The User class handles the more specific information appropriate each user that is registered to the system. This includes information such as the Username and password of each of the registered Users. But this is not all this class holds. The User Class also holds details that are necessary for the management of the user within the game. This includes a method to get how many monsters the User owns, and another method which calculates how much cash the User owns. This class also contains information on which Server the User is registered to, without this method within this class, the game would simply not work, as the online features, such as the battling, mating and friend requests would not know where to look for the other users also wanting to play Monster Mash.
 \subsection{Monster class}
-There is then the Monster class which will handle all the functionality regarding monsters that a user might own, including basic things such as who owns the monster, its stats, and what its name is, to key details that add depth to the game, such as the monster’s age, how many battles it has won, and how fertile it is.
+The Monster class will handle all of the functionality regarding monsters that the registered Users may own. This can include many basic things, such as how many battles the monster has won or lost, which User owns the monster, the name of the monster and its birthday. However, other more complex stats of the monster will be included within the MonsterStats class, this includes personality attributes, such as how aggressive each particular monster is, and also includes the battle statistics (the health, attack power and the defensive power of each monster). This MonsterStats class will also contain the fertility rate of each monster, which will be important in the breeding stage of the game. The idea behind splitting the information between each of the classes, is for added simplicity when coding, it would have been a shame not to include extra features such as the age of each of the monsters, as these extra stats add greater depth to the game.
 \subsection{Request class}
-Finally, there is the Request class, which will handle requests from other players to breed, fight, or become friends. This will handle everything to do with notifying the recipient of these requests, such as noting who the request is from, and responding to it.
+The Request class, as the name would suggest, handles the various requests that each of the registered Users will send to each other while playing the game, these include the options to be able to fight and breed with another Users monsters, and also the ability to become friends with another registered User. Aside from these requests, this class also deals with the notification feature we are implementing within our game, this class will be able to tell the User from these notifications what sort of request another User has sent to them, who has sent it, and the ability to respond to the request.
 
 \subsection{Functional Requirements}
 \begin{table}[!h]
@@ -115,17 +115,17 @@ Request & FR6, FR9 \\ \hline
 \end{table} 
 
 \section{Breed Class}
-The breed class is called Breed.class and is a private class.
+The Breed class is a Private class that deals with the breeding process of the particular User monsters that are in question. The name of this class is Breed.class. There is an ENUM and it is also the only Public Method located within this class, this ENUM has no parameters. The Breed class is basically a set list of monster types that will be able to breed. We used ENUM so that you can only select a type from that particular list.
 \subsection{Public Methods} 
 The only public method this class has is ENUM Breed and has no parameters. This is a list of set monster types that the monster will be of type. Used ENUM so can only select a type from that list.
 
 \section{Monster Class}
-The monster class is called Monster.class and is a public class.
+The Monster class is named Monster.class and is a public class. This class contains getters and setters for the monsters attributes. These methods can set and get attributes such as the ID of the monster, the owners (the Users) ID, the name of the monster, the stats of the monster (which include attributes such as the attack, the defence and the aggression of the monster), the breed of the monster, the status of the monster, the cash prize that would be attained by defeating the particular monster and finally the wins and losses each monster has achieved. These methods will set the value for each of these, and will be able to return the value for the monster.
 \subsection{Public Methods}
 This class contains getter and setters for monster attributes. The getters and setters are for id, ownerId, name, stats, breed, status, birth, cashPrize, wins and losses. They set the value and return the value for the monster.
 
 \section{MySQLDatabase Class}
-The MySQLDatabase class is called MySQLDatabase.class and is a public class.
+The MySQLDatabase class is called MySQLDatabase.class and is a public class. The MySQLDatabase doesn't contain any public methods. The MySQLDatabase class's goal is to manage the data in our relational database system. This class will store all the information that is important to each particular User. This includes the Username and Password of each of the Users, the monsters they own, and what friends they are with. Without this class the game would simply break, as there would be nowhere to store and retrieve the relevant information for the User.
 \subsection{Public Methods}
 
 
@@ -145,7 +145,7 @@ The request state class is called RequestState.class and is a public ENUM class.
 The only method in this class is enum RequestState. This is used to allow 3 states to be identified of which are ACCEPTED, PENDING and DECLINED. These will be used for requests such as battle and breed.
 
 \section{UserManager}
-The user manager class is called UserManager.class and is a public class.
+The User-Manager class handles many different tasks related to how each of the User profiles are created and organised. This class has creates the ability to add and remove a user from a database, this can be seen in the "addUser" and "removeUser" methods located within the class. This class can also perform other tasks that are important to the functionality of the system, such as the ability to fetch particular User data, which can either be the Users ID, or the Users name (as depicted by a String).  Without this class, it would be impossible to create a usable log in page, as the system would not be able to get (fetch) the data that is stored in the database to validate their log in. This class would be absolutely necessary for a functioning registration form for the new users, as without it, no Users could be added to the system.
 \subsection{Public Methods}
 public UserManager() - 
 public User fetchUser(Integer id)
@@ -156,7 +156,7 @@ public void createUser(Integer id, String username, String email, String passwor
 
 
 \section{User}
-The user class is called User.class and is a public class.
+The User class handles the more specific information appropriate each user that is registered to the system. This includes information such as the Username and password of each of the registered Users. But this is not all this class holds. The User Class also holds details that are necessary for the management of the user within the game. This includes a method to get how many monsters the User owns, and another method which calculates how much cash the User owns. This class also contains information on which Server the User is registered to, without this method within this class, the game would simply not work, as the online features, such as the battling, mating and friend requests would not know where to look for the other users also wanting to play Monster Mash.
 \subsection{Public Methods}
 public Integer getId() - This will return id which is of type Integer. public void setId(Integer id) - This will set id and takes Integer id as a parameter.
 public String getUsername() - This will return username which is of type String. public void setUsername(String username) - This will set username and takes String username as a parameter.
@@ -177,7 +177,7 @@ This class is an ENUM class and defines a set of 4 statuses that monsters can ha
 
 
 \section{RequestType class}
-The Request type class is called RequestType.class and is a public ENUM class.
+The Request class, as the name would suggest, handles the various requests that each of the registered Users will send to each other while playing the game, these include the options to be able to fight and breed with another Users monsters, and also the ability to become friends with another registered User. Aside from these requests, this class also deals with the notification feature we are implementing within our game, this class will be able to tell the User from these notifications what sort of request another User has sent to them, who has sent it, and the ability to respond to the request.
 \subsection{Public methods}
 This class is an ENUM class and defines a set of 3 types for request. BATTLE, BREED and FRIEND. 
 
@@ -289,13 +289,13 @@ Version & CCF No. & Date & Changes made to Document & Changed by \\
 \hline
 1.0 & N/A & 2012-10-31 & Initial creation & CPM4 \\
 \hline
-1.1 & N/A & 2012-11-2 & Added information from Mike & CPM4 \\
+1.1 & 6 & 2012-11-2 & Added information from Mike & CPM4 \\
 \hline
-1.2 & N/A & 2012-12-5 & Updated config ref and added other documents & CPM4 \\
+1.2 & 7 & 2012-12-5 & Updated config ref and added other documents & CPM4 \\
 \hline
-1.3 & N/A & 2012-12-6 & Added missing data and fixed few mistakes & CPM4 \\
+1.3 & 8 & 2012-12-6 & Added missing data and fixed few mistakes & CPM4 \\
 \hline
-1.4 & N/A & 2013-13-28 & Changes made based on feedback from Bernie found on Blackboard & THR5 \\
+1.4 & 9 & 2013-13-28 & Changes made based on feedback from Bernie found on Blackboard & THR5 \\
 \hline
 \end{tabular}
 \label{thelastpage}
