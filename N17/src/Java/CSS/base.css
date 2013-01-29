@@ -20,21 +20,6 @@ a:hover {color: #333333;}
 a:focus {color: #333333;}
 a:active {color: #009900;}
 
-/*basic look*/
-#response{
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
-  width:80%;
-  float: left;
-  margin: auto;
-}
-
-/*Friends Page*/
-
-#friends {
-  background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
-}
-
 /*Index menu - tabs*/
 .menu_options{
 	float: left;
@@ -73,7 +58,18 @@ a:active {color: #009900;}
 	padding:20px; 
 	border: 1px solid #666; 
 	background-color: #CDC1C5;
-  }
+}
+
+/*Friends Page*/
+
+#friends {
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+	width:80%;
+  float: left;
+	margin: auto;
+	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
+}
 
 /*Login Page*/
 
