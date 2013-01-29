@@ -627,7 +627,7 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void getFriends(HttpServletRequest request, HttpServletResponse response){
-		//reloadfreinds(request,response);
+		reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<User> requests = user.getFriends();
@@ -859,7 +859,14 @@ public class GameServer extends HttpServlet {
 		
 		
 		
-		User freinds[] = (User[])user.getFriends().toArray();
+		
+		
+		User freinds[] = new User[user.getFriends().size()];
+		
+		for(int i=0; i<user.getFriends().size(); i++){
+			freinds[i]=user.getFriends().get(i);
+		}
+		
 		
 		int n = freinds.length;
 		User temp;
@@ -875,7 +882,7 @@ public class GameServer extends HttpServlet {
                 }
         }
         User richlist[] = new User[10];
-		for(int i =0; (i<10)&&(i<freinds.length);i++){
+		for(int i =0; (i<10)&&(i<freinds.length-1);i++){
 			richlist[i] = freinds[i];
 		}
 		
@@ -885,7 +892,7 @@ public class GameServer extends HttpServlet {
 		
 		out.print("{\"RichList\":\"[\"");
 		
-		for (int i =0 ;i<10;i++){
+		for (int i =0 ;(i<10)&&(richlist[i]!=null);i++){
 			
 			
 			out.print("{\"username\":\""+richlist[i].getUsername()+"\"");
