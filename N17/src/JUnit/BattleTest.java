@@ -19,7 +19,8 @@ public class BattleTest {
 		User tux = new User("Tux", "delegate");
 		Monster derp = new Monster(2, "Derp");
 		
-		battle = new Battle(chris, tux, delegator, derp);
+		battle = new Battle();
+		battle.doBattle(chris, tux, delegator, derp);
 	}
 	
 	@Test

@@ -86,4 +86,52 @@ public class Battle {
 		}
 	}
 
+	public User getFrom() {
+		return from;
+	}
+
+	public void setFrom(User from) {
+		this.from = from;
+	}
+
+	public User getTo() {
+		return to;
+	}
+
+	public void setTo(User to) {
+		this.to = to;
+	}
+
+	public Monster getFromMon() {
+		return fromMon;
+	}
+
+	public void setFromMon(Monster fromMon) {
+		this.fromMon = fromMon;
+	}
+
+	public Monster getToMon() {
+		return toMon;
+	}
+
+	public void setToMon(Monster toMon) {
+		this.toMon = toMon;
+	}
+
+	public Monster getDefeated() {
+		return defeated;
+	}
+
+	public void setDefeated(Monster defeated) {
+		this.defeated = defeated;
+	}
+
+	public Monster getWinner() {
+		return winner;
+	}
+
+	public void setWinner(Monster winner) {
+		this.winner = winner;
+	}
+
 }
