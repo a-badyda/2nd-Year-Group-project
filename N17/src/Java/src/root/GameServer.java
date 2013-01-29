@@ -102,6 +102,7 @@ public class GameServer extends HttpServlet {
 		case "acceptRequest":acceptRequest(request,response);break;
 		case "declineRequest":declineRequest(request,response);break;
 		case "isLoggedIn": IsLoggedIn(request, response); break;
+		case "getUserData": GetUserData(request, response); break;
 		
 		case "setBuyCost": setBuyCost(request, response); break;
 		case "setBreedCost": setBreedCost(request, response); break;
