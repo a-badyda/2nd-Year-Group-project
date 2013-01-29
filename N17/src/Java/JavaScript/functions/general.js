@@ -42,9 +42,8 @@ function getParentId(obj, selector){
 }
 
 function is_int(value){ 
-  	return ((parseFloat(value) == parseInt(value)) && !isNaN(value)); 
+  	return ((parseFloat(value) == parseInt(value)) && !isNaN(value));
 }
-
 
 //////////////////////////////////////////////////////
 // Dynamic HTML Builder Functions.

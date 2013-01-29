@@ -2,16 +2,16 @@ $(document).ready(function() {
 	//get all notifications on load.
 	$.post(SERVLET_LOCATION, {action: 'getAllResults'}, function(response) {
 		var obj = $.parseJSON(response);
-		var outputStr = outputList(writeNotification, obj.Notifications);
+		var outputStr = outputList(writeResult, obj.Results);
 		$('.results_list').append(outputStr);
 		addResponseEvents();
 	});
 
 	function addResponseEvents() {
 		$(".decline").submit(function() {
-			var parent = $(this).parent();
-			var notification_id = $(parent + " .id").val();
-			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
+			var parent = $(this).parent().attr('id');
+			var results_id = $(parent + " .id").val();
+			$.post(SERVLET_LOCATION, {action: "declineRequest", id: results_id}, writeResponse);
 			return false;
 		});
 	}
@@ -22,8 +22,8 @@ $(document).ready(function() {
 		var vtype = verboseType(type);
 		var description = current.From + vtype;
 		
-		var outputStr = '<div id="result_'+current.id+'" class="result"><p>'+description+'</p>';
-		outputStr += '<input type="hidden" id="' + current.id + '"class="id" value="'+current.id+'"></input>';
+		var outputStr = '<div id="result_'+current.ID+'" class="result"><p>'+description+'</p>';
+		outputStr += '<input type="hidden" id="' + current.ID + '"class="id" value="'+current.ID+'"></input>';
 
 		if (type == "battle_results") {
 			//todo

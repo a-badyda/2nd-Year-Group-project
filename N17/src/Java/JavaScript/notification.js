@@ -20,7 +20,7 @@ $(document).ready(function() {
 	function addResponseEvents() {
 		//user clicks accept.
 		$(".accept").submit(function() {
-			var parent = $(this).parent();
+			var parent = $(this).parent().attr('id');
 			var notification_id = $(parent + " .id").val();
 			$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, writeResponse);
 			return false;
@@ -28,7 +28,7 @@ $(document).ready(function() {
 		
 		//user clicks decline.
 		$(".decline").submit(function() {
-			var parent = $(this).parent();
+			var parent = $(this).parent().attr('id');
 			var notification_id = $(parent + " .id").val();
 			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
 			return false;
@@ -47,8 +47,8 @@ $(document).ready(function() {
 		var vtype = verboseType(type);
 		var description = current.From + vtype;
 		
-		var outputStr = '<div id="request_'+current.id+'" class="notification_request"><p>'+description+'</p>';
-		outputStr += '<input type="hidden" id="' + current.id + '"class="id" value="'+current.id+'"></input>';
+		var outputStr = '<div id="request_'+current.ID+'" class="notification_request"><p>'+description+'</p>';
+		outputStr += '<input type="hidden" id="' + current.ID + '"class="id" value="'+current.ID+'"></input>';
 
 		//output different buttons depending on results.
 		if (type == "friend_request" || type == "battle_request") {
