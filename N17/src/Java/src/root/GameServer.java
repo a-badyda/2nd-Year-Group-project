@@ -218,24 +218,24 @@ public class GameServer extends HttpServlet {
 						String query3 = ("SELECT * FROM monsters WHERE ownerID='" +Friend.getId()+ "'");
 						
 						ResultSet rset3;
-						rset2 = db.createQuery (query2);
+						rset3 = db.createQuery(query3);
 						try {
-							while(rset2.next()){
+							while(rset3.next()){
 								
 								Monster m = new Monster();
-								m.setName(rset2.getString("name"));
-								m.setId(rset2.getInt("monsterID"));
-								m.setOwnerId(rset2.getInt("ownerID"));
-								m.setHealth(rset2.getInt("health"));
-								m.setAggression(rset2.getInt("aggression"));
-								m.setStrength(rset2.getInt("strength"));
-								m.setDefence(rset2.getInt("defence"));
-								m.setFertility(rset2.getInt("fertility"));
-								m.setWins(rset2.getInt("wins"));
-								m.setLosses(rset2.getInt("losses"));
-								m.setCashBreed(rset2.getInt("cashbreed"));
-								m.setCashPrize(rset2.getInt("cashprize"));
-								m.setCashSell(rset2.getInt("cashSell"));
+								m.setName(rset3.getString("name"));
+								m.setId(rset3.getInt("monsterID"));
+								m.setOwnerId(rset3.getInt("ownerID"));
+								m.setHealth(rset3.getInt("health"));
+								m.setAggression(rset3.getInt("aggression"));
+								m.setStrength(rset3.getInt("strength"));
+								m.setDefence(rset3.getInt("defence"));
+								m.setFertility(rset3.getInt("fertility"));
+								m.setWins(rset3.getInt("wins"));
+								m.setLosses(rset3.getInt("losses"));
+								m.setCashBreed(rset3.getInt("cashbreed"));
+								m.setCashPrize(rset3.getInt("cashprize"));
+								m.setCashSell(rset3.getInt("cashSell"));
 								
 								Friend.addMonster(m);
 							}
@@ -655,11 +655,12 @@ public class GameServer extends HttpServlet {
 		reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
-		ArrayList<User> requests1 = user.getFriends();
-		ArrayList<Monster> requests = user.getFriendsMonsters((int)session.getAttribute("FriendID"));
+		ArrayList<User> requests1 = user.getFriends(); 
+		ArrayList<Monster> requests = user.getFriendsMonsters((int)request.getAttribute("friend_id"));
+		
 		try {
 			PrintWriter out = response.getWriter();
-			out.print("{\"friend_id:"+(int)session.getAttribute("FriendID")+", Monsters\":\"[\"");
+			out.print("{\"friend_id:"+(int)request.getAttribute("friend_id")+", Monsters\":\"[\"");
 			
 			for (int i =0 ;i<requests.size();i++){
 				
