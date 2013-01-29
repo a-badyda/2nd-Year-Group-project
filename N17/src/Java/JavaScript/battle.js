@@ -12,8 +12,7 @@ $(document).ready(function() {
 	//get a list of the users monsters
 	$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		var obj =  $.parseJSON(response);
-		outputStr = '<div></div>';
-		outputStr += outputMonsters(obj, true, buildMonsterHTML);
+		var outputStr = outputList(obj.Monsters, buildMonsterHTML, true);
 		$("#select_monster_form").html(outputStr);
 	});
 	
@@ -31,7 +30,7 @@ $(document).ready(function() {
 		$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
 			//get an display the friends monsters
 			var obj =  $.parseJSON(response);
-			outputStr = outputMonsters(obj, false, buildMonsterHTML);
+			var outputStr = outputList(obj.Monsters, buildMonsterHTML, true);
 			$('#friend_'+obj.friend_id+' .monster_list').html(outputStr);
 		});
 	});
