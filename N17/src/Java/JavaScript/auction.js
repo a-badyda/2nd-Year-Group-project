@@ -12,9 +12,9 @@ $(document).read(function(){
 	//get a list of the users monsters
 	$monsters = $.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		var obj =  $.parseJSON(response);
-		var outputStr = outputList(obj.Monsters, buildMonsterAuctionHTML, true);
+		var outputStr = outputList(buildMonsterAuctionHTML, obj.Monsters, true);
 		$("#select_monster_form").html(outputStr);
-		
+
 		//add checkbox enabling
 		checkboxEvent('select_monster_sell');
 		checkboxEvent('select_breed_sell');
@@ -51,7 +51,7 @@ $(document).read(function(){
 			$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
 				//get an display the friends monsters
 				var obj =  $.parseJSON(response);
-				var outputStr = outputList(obj.Monsters, buildMonsterAuctionHTML, true);
+				var outputStr = outputList(buildMonsterAuctionHTML, obj.Monsters, true);
 				$('#friend_'+obj.friend_id+' .monster_list').html(outputStr);
 				addAuctionEvents();
 			});
