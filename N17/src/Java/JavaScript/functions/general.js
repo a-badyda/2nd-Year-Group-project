@@ -79,15 +79,15 @@ function verboseType(type) {
 	if(type == "friend_accepted") {
 		out = " accepted your friend request.";
 	} else if (type == "friend_request") {
-		out == " has requested to be friends with you.";
+		out = " has requested to be friends with you.";
 	} else if (type == "battle_request") {
-		out == " has requested to battle with you.";
+		out = " has requested to battle with you.";
 	} else if (type == "battle_results") {
-		out == " accepted your battle request.";
+		out = " accepted your battle request.";
 	} else if (type == "buy_result") {
-		out == " bought your monster.";
+		out = " bought your monster.";
 	} else if (type == "breed_result") {
-		out == " bred with your monster.";
+		out = " bred with your monster.";
 	}
 
 	return out;

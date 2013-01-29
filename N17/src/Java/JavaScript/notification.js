@@ -19,21 +19,21 @@ $(document).ready(function() {
 	
 	function addResponseEvents() {
 		//user clicks accept.
-		$(".accept").on('submit', function() {
+		$(".accept").on('click', function() {
 			var notification_id = getParentId(this, '.notification_request');
 			$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, writeResponse);
 			return false;
 		});
 		
 		//user clicks decline.
-		$(".decline").on('submit', function() {
+		$(".decline").on('click', function() {
 			var notification_id = getParentId(this, '.notification_request');
 			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
 			return false;
 		});
 
 		//user clicks to view a result.
-		$(".view").on('submit', function() {
+		$(".view").on('click', function() {
 			window.location.replace("view_results.html");
 			return false
 		});
@@ -46,7 +46,6 @@ $(document).ready(function() {
 		var description = current.From + vtype;
 		
 		var outputStr = '<div id="request_'+current.ID+'" class="notification_request"><p>'+description+'</p>';
-		outputStr += '<input type="hidden" id="' + current.ID + '"class="id" value="'+current.ID+'"></input>';
 
 		//output different buttons depending on results.
 		if (type == "friend_request" || type == "battle_request") {
