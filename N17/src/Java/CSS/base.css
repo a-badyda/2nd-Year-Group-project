@@ -6,11 +6,10 @@ body, select, input, textarea{color:#333}
 
 /*Typography section */
 
-h1,h2,h3,h4,{font-family: Impact,sans-serif; text-align:left; margin:1em; color: #292421;}
-h5,p,li{font-family: Verdana,sans-serif; text-align:left; margin:1em; color: #292421;}
+h1,h2,h3,h4,h5,p,li{text-align:left; margin:1em; color: #292421;font-family: Verdana,sans-serif;}
 h1{font-size:40px; text-align: center; font-family: Impact, sans-serif; color: #66CD00;}
-h2{font-size:20px; margin-bottom:1.2em; text-align: center;}
-h3{font-size:15px; margin-bottom:1.5em; text-indent: 10px;}
+h2{font-size:20px; margin-bottom:1.2em; text-align: center; font-family: Impact,sans-serif;}
+h3{font-size:15px; margin-bottom:1.5em; text-indent: 10px; font-family: Impact,sans-serif;}
 h4{font-size:15px;}
 h5{font-family:italic; margin-bottom:1.5em; text-indent:5px;}
 p{margin-bottom:0.5em;}
@@ -32,8 +31,7 @@ a:active {color: #009900;}
 }
 
 .menu_options li {
-  float: left;
-  margin: 0 -5px 0 0;
+  float: center;
 }
 
 .menu_options a {
