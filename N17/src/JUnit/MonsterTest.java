@@ -17,6 +17,7 @@ public class MonsterTest {
 	@Before
 	public void setup() {
 		mon = new Monster();
+		mon.generateBases();
 	}
 	
 	@Test
@@ -73,5 +74,62 @@ public class MonsterTest {
 		mon.setBirth(date);
 		assertEquals(date, mon.getBirth());
 	}
+	
+	@Test
+	public void testGenerateHealth() {
+		assertEquals(50, mon.getHealth(), 10);
+	}
+	
+	@Test
+	public void testGenerateStrength(){
+		assertEquals(45, mon.getStrength(), 10);
+	}
+	
+	@Test
+	public void testGenerateDefence(){
+		assertEquals(45, mon.getDefence(), 10);
+	}
+	
+	@Test
+	public void testGenerateAggression(){
+		assertEquals(0, mon.getAggression(), 10);
+	}
+	
+	@Test
+	public void testGenerateFertility(){
+		assertEquals(0, mon.getFertility(), 10);
+	}
+	
+	@Test
+	public void testGenerateGenetics(){
+		double prev = mon.getHealth();
+		mon.generateGenetics();
+		double modi = mon.getHealth();
+		assertNotSame(prev, modi);
+	}
+	
+	@Test
+	public void testAgeHealth(){
+		float prev1 = mon.getHealth();
+		float prev2 = mon.getStrength();
+		Calendar cal = Calendar.getInstance();
+		cal.set(2013, 1, 0);
+		mon.setBirth(cal);
+		mon.ageHealth();
+		System.out.println("Health Test:\n Original: "+
+		prev1+" New: "+mon.getHealth());
+		
+		System.out.println("Strength Test:\n Original: "+
+				prev2+" New: "+mon.getStrength());
+		assertNotSame(prev1, mon.getHealth());
+	}
+	
+	@Test
+	public void testCalculateAge(){
+		Calendar cu = Calendar.getInstance();
+		int age = (int) mon.calculateAge(cu, mon.getBirth());
+		assertEquals(0, age);
+	}
+
 	
 }
