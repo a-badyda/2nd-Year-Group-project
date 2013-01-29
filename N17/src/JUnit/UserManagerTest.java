@@ -2,7 +2,8 @@ package JUnit;
 
 import static org.junit.Assert.*;
 
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 
 import Java.src.root.User;
 import Java.src.root.UserManager;

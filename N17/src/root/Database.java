@@ -7,7 +7,7 @@ public class Database {
 	
 	Connection conn;
 
-	Database(){
+	public Database(){
 		
 	}
 	
