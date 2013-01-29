@@ -3,6 +3,11 @@ package Java.src.root;
 import java.util.Calendar;
 import java.util.Random;
 
+/**
+ * A monster in the server, it has an owner, stats and multiple cash values.
+ * @author Csoma Silhab
+ *
+ */
 public class Monster {
 	
 	private Integer id, ownerId;

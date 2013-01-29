@@ -1,5 +1,11 @@
 package Java.src.root;
 
+/**
+ * Stores all the data related to requests, the users and monsters involved as well
+ * as the type and state of the request.
+ * @author Csoma Silhab
+ *
+ */
 public class Request {
 	
 	private Integer id, from, to, fromMon, toMon;
