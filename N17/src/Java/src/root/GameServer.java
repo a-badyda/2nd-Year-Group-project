@@ -609,8 +609,8 @@ public class GameServer extends HttpServlet {
 				out.print("\"strength\":\""+requests.get(i).getStrength()+"\",");
 				out.print("\"health\":\""+requests.get(i).getHealth()+"\",");
 				out.print("\"fertility\":\""+requests.get(i).getFertility()+"\",");
-				out.print("\"defecnce\":\""+requests.get(i).getDefence()+"\",");
-				out.print("\"aggrestion\":\""+requests.get(i).getAggression()+"\",");
+				out.print("\"defense\":\""+requests.get(i).getDefence()+"\",");
+				out.print("\"aggression\":\""+requests.get(i).getAggression()+"\",");
 				out.print("\"breed\":\""+breed+"\"}");
 				
 				
@@ -626,7 +626,7 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void getFriends(HttpServletRequest request, HttpServletResponse response){
-		reloadfreinds(request,response);
+		//reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<User> requests = user.getFriends();
