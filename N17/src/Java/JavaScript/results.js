@@ -1,3 +1,12 @@
+/*
+Results.js
+----------------
+JavaScript for the results page.
+----------------
+Author:	Samuel Jackson
+Email:	slj11@aber.ac.uk	
+*/
+
 $(document).ready(function() {
 	//get all notifications on load.
 	$.post(SERVLET_LOCATION, {action: 'getAllResults'}, function(response) {
@@ -7,8 +16,9 @@ $(document).ready(function() {
 		addResponseEvents();
 	});
 
+	//Add event handlers after load.
 	function addResponseEvents() {
-		$(".decline").submit(function() {
+		$(".decline").on('submit', function() {
 			var parent = $(this).parent().attr('id');
 			var results_id = $(parent + " .id").val();
 			$.post(SERVLET_LOCATION, {action: "declineRequest", id: results_id}, writeResponse);
@@ -16,6 +26,9 @@ $(document).ready(function() {
 		});
 	}
 
+	/////////////////////////////////////////
+	// Dynamic HTML writer functions
+	/////////////////////////////////////////
 	function writeResult(key, val) {
 		var current = val;
 		var type = current["Type"];
