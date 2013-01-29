@@ -20,16 +20,14 @@ $(document).ready(function() {
 	function addResponseEvents() {
 		//user clicks accept.
 		$(".accept").on('submit', function() {
-			var parent = $(this).parent().attr('id');
-			var notification_id = $(parent + " .id").val();
+			var notification_id = getParentId(this, '.notification_request');
 			$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, writeResponse);
 			return false;
 		});
 		
 		//user clicks decline.
 		$(".decline").on('submit', function() {
-			var parent = $(this).parent().attr('id');
-			var notification_id = $(parent + " .id").val();
+			var notification_id = getParentId(this, '.notification_request');
 			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, writeResponse);
 			return false;
 		});
