@@ -6,17 +6,10 @@
 \BOOKMARK [1][-]{section.3}{Deployment}{}% 6
 \BOOKMARK [2][-]{subsection.3.1}{Overview}{section.3}% 7
 \BOOKMARK [2][-]{subsection.3.2}{Hosting}{section.3}% 8
-<<<<<<< HEAD:N17/docs/ProjectPlan/projectplan.out
 \BOOKMARK [2][-]{subsection.3.3}{Apache Tomcat HTTP}{section.3}% 9
 \BOOKMARK [2][-]{subsection.3.4}{MySQL}{section.3}% 10
 \BOOKMARK [2][-]{subsection.3.5}{TomCat}{section.3}% 11
 \BOOKMARK [2][-]{subsection.3.6}{Server Side Conclusion}{section.3}% 12
-=======
-\BOOKMARK [2][-]{subsection.3.3}{Apache HTTP}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.4}{MySQL}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.5}{TomCat}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.6}{server Side Conclusion}{section.3}% 12
->>>>>>> c0c3b16f1f5888737f0b30cb0cee2b0dc76e0dce:N17/docs/Project Plan/projectplan.out
 \BOOKMARK [1][-]{section.4}{Methodology}{}% 13
 \BOOKMARK [1][-]{section.5}{Use Case}{}% 14
 \BOOKMARK [2][-]{subsection.5.1}{Welcome Page}{section.5}% 15
