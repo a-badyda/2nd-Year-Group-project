@@ -25,7 +25,7 @@ function outputList(func, list, args) {
 	var output = '';
 	if(list.length != 0) {
 		$.each(list, function(key, val) {
-			output = func(key, val, args)
+			output += func(key, val, args)
 		});
 	} else {
 		output = '<h4>Oops! Looks like there\'s nothing here!</h4>';
