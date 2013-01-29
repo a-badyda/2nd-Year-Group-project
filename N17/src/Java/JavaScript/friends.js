@@ -36,12 +36,13 @@ $(document).ready(function() {
 	
 });
 
-function outputFriendsList(key, vaL) {
+function outputFriendsList(key, val) {
 	var output = '';
 	output += '<div class="friend">';
 	output += '<input class="friend_id" type="hidden" value="' + val.id + '"></input>';
 	output += '<h4>' + val.username + '</h4>';
 	output += '</div>';
+	return output;
 }
 
 function outputRichList(key, val) {
