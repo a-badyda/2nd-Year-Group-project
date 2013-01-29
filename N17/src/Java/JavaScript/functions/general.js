@@ -86,15 +86,15 @@ function verboseType(type) {
 	var out = '';
 	if(type == "friend_accepted") {
 		out = " accepted your friend request.";
-	} (type == "friend_request") {
+	} else if (type == "friend_request") {
 		out == " has requested to be friends with you.";
-	} (type == "battle_request") {
+	} else if (type == "battle_request") {
 		out == " has requested to battle with you.";
-	} (type == "battle_results") {
+	} else if (type == "battle_results") {
 		out == " accepted your battle request.";
-	} (type == "buy_result") {
+	} else if (type == "buy_result") {
 		out == " bought your monster.";
-	} (type == "breed_result") {
+	} else if (type == "breed_result") {
 		out == " bred with your monster.";
 	}
 

@@ -58,7 +58,7 @@ $(document).ready(function() {
 		} else if (type == "battle_results" || type == "breed_result" || type == "buy_result") {
 			//select to view event.
 			outputStr += '<input type="submit" class="view" value="view"></input>';
-		} else if (type == "friend_accepted" ||) {
+		} else if (type == "friend_accepted") {
 			//mark as seen.
 			outputStr += '<input type="submit" class="decline" value="OK"></input>';
 		}

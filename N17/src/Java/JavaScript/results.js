@@ -31,7 +31,7 @@ $(document).ready(function() {
 			//todo
 		} else if (type == "buy_result") {
 			//todo
-		} else if (type == "friend_accepted" ||) {
+		} else if (type == "friend_accepted") {
 			//todo
 		}
 
