@@ -1,4 +1,4 @@
-package Java.src.root;
+package root;
 
 /**
  * Stores all the data related to requests, the users and monsters involved as well

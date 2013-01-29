@@ -30,7 +30,6 @@ $(document).ready(function () {
 				$.get(page + '.html', function (response) {
 					$('#response').html(response);
 				});
-				
 			} else {
 				window.location.replace("login.html");
 			}

@@ -59,7 +59,7 @@ function buildMonsterHTML(key, mon, user) {
 	outputStr += '<p class="defense">'+mon.defense+'</p>';
 	outputStr += '<p class="health">'+mon.health+'</p>';
 	outputStr += '<p class="fertility">'+mon.fertility+'</p>';
-	outputStr += '</div>';
+	outputStr += '</div></div>';
 
 	if(user) {
 		outputStr += '<input type="radio" name="select_monster" class="select_monster" value="'+mon.id+'"></input>';
@@ -74,9 +74,9 @@ function buildMonsterHTML(key, mon, user) {
 function buildFriendHTML(key, friend){
 	output = '';
 	output += '<div id="friend_'+friend.id+'" class="friend">';
-		output += '<p class="friend_name">'+friend.username+'</p>';
-		output += '<a class="view_monster" href="#">View Monsters</a>';
-		output += '<div class="monster_list"></div>';
+	output += '<p class="friend_name">'+friend.username+'</p>';
+	output += '<a class="view_monster" href="#">View Monsters</a>';
+	output += '<div class="monster_list"></div>';
 	output += '</div>';
 	return output;
 }
