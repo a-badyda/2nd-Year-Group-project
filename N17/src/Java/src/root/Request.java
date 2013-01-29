@@ -1,5 +1,4 @@
 package root;
-//package Java.src.root;
 
 public class Request {
 	
@@ -29,8 +28,8 @@ public class Request {
 		this.setType(type);
 	}
 	public Request(Integer u1id, Integer u2id, RequestType type){//for request type freind
-		this.setFrom(u2id);
-		this.setTo(u1id);
+		this.setFrom(u1id);
+		this.setTo(u2id);
 		this.setType(type);
 	}
 

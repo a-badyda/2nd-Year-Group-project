@@ -1,11 +1,10 @@
 package root;
-//package Java.src.root;
 
 import java.util.ArrayList;
 
 public class User{
 	
-	private Integer id, cash = 100;
+	private Integer id, cash = 0;
 	private String key, username, password, serverAdd;
 	private ArrayList<Monster> monsters;
 	private ArrayList<User> friends;

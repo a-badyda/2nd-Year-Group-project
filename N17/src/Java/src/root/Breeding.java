@@ -1,5 +1,4 @@
 package root;
-//package Java.src.root;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

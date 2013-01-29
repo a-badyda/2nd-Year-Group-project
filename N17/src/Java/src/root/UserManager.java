@@ -1,14 +1,64 @@
 package root;
-//package Java.src.root;
 
+import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 public class UserManager {
 
 	private LinkedList<User> users;
+	private Database db;
 	
 	public UserManager(){
 		users = new LinkedList<User>();
+		db = new Database();
+	}
+	
+	public User fetchUserFromDatabase(int id) {
+		String query = "SELECT * FROM user WHERE UserID='" +id+ "'";
+		try {
+			ResultSet rset;
+			rset = db.createQuery(query);
+			while (rset.next ()){
+				User user = new User();
+				user.setUsername(rset.getString("UserName"));
+				user.setCash(rset.getInt("Cash"));
+				user.setId(id);	
+				return user;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public Monster fetchMonsterFromDatabase(int id){
+		String query = "SELECT * FROM monsters WHERE monsterID='" +id+ "'";
+		try {
+			ResultSet rset;
+			rset = db.createQuery(query);
+			while (rset.next ()){
+				Monster monster = new Monster();
+				monster.setName(rset.getString("name"));
+				monster.setId(rset.getInt("monsterID"));
+				monster.setOwnerId(rset.getInt("ownerID"));
+				monster.setHealth(rset.getInt("health"));
+				monster.setAggression(rset.getInt("aggression"));
+				monster.setStrength(rset.getInt("strength"));
+				monster.setDefence(rset.getInt("defence"));
+				monster.setFertility(rset.getInt("fertility"));
+				monster.setWins(rset.getInt("wins"));
+				monster.setLosses(rset.getInt("losses"));
+				monster.setCashBreed(rset.getInt("cashbreed"));
+				monster.setCashPrize(rset.getInt("cashprize"));
+				monster.setCashSell(rset.getInt("cashSell"));
+				return monster;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	public User fetchUser(Integer id){

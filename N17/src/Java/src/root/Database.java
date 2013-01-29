@@ -1,12 +1,11 @@
 package root;
-//package Java.src.root;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class Database {
 	
-	Connection conn;
+	private static Connection conn;
 
 	Database(){
 		
