@@ -586,6 +586,7 @@ public class GameServer extends HttpServlet {
 	
 	
 	private void getMonsters(HttpServletRequest request, HttpServletResponse response){
+		reloadmonsters(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<Monster> requests = user.getMonsters();
@@ -619,6 +620,7 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void getFriends(HttpServletRequest request, HttpServletResponse response){
+		reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<User> requests = user.getFriends();
@@ -643,6 +645,7 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void getFriendsMonsters(HttpServletRequest request, HttpServletResponse response){
+		reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<User> requests1 = user.getFriends();
@@ -676,7 +679,7 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void getAllRequest(HttpServletRequest request, HttpServletResponse response){
-		
+		reloadnotuifications(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<Request> requests = user.getRequests();
