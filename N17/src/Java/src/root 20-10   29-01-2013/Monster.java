@@ -3,6 +3,11 @@ package root;
 import java.util.Calendar;
 import java.util.Random;
 
+/**
+ * A monster in the server, it has an owner, stats and multiple cash values.
+ * @author Csoma Silhab
+ *
+ */
 public class Monster {
 	
 	private Integer id, ownerId;
@@ -176,8 +181,8 @@ public class Monster {
 	public Status getStatus() {
 		return status;
 	}
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setStatus(Status happy) {
+		this.status = happy;
 	}
 	public int getCashPrize() {
 		return cashPrize;

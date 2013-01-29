@@ -51,9 +51,9 @@ public class Breeding {
 			int health = (int)((m1.getHealth()+m2.getHealth())/2) + (-10 +(int)(Math.random()*((10-(-10))+1)));
 			
 			//query 
-			String child = "INSERT INTO `monsters` " +
+			String child = "INSERT INTO `monsterdata`.`monsters` " +
 					"(`ownerID`, `name`, `health`, `strength`, `defence`, `aggression`, `fertility`, `breed`, `status`, `cashPrize`, `wins`, `losses`, `birth`) " +
-					"VALUES ('"+u2.getId()+"', 'baby', '"+health+"', '"+strength+"', '"+defence+"', '"+agretion+"', '"+fretillity+"', '11899', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
+					"VALUES ('"+u2.getId()+"', 'baby', '"+health+"', '"+strength+"', '"+defence+"', '"+agretion+"', '"+fretillity+"', 'BEAST', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
 		    
 			children.add(child);
 			
