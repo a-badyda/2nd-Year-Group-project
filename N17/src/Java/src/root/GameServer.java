@@ -11,8 +11,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-/**
- */
+
 @WebServlet(name = "game", urlPatterns = {"/game"})
 public class GameServer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -20,12 +19,14 @@ public class GameServer extends HttpServlet {
 	Database db;
 	UserManager users;
     Breeding breeding;
+    Battle battle;
 	
     public GameServer() {
     	db = new Database();
     	db.connect();
     	users = new UserManager();
     	breeding = new Breeding();
+    	battle = new Battle();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -696,18 +697,21 @@ public class GameServer extends HttpServlet {
 		ArrayList<Request> requests = user.getRequests();
 		try {
 			PrintWriter out = response.getWriter();
-			out.print("{\"Notifications\":[\"");
+			out.print("{\"Notifications\":[");
 			
 			for (int i =0 ;i<requests.size();i++){
 				
 				
-				out.print("{\"Type\":\""+requests.get(i).getType()+"\"");
-				out.print("{\"ID\":\""+requests.get(i).getId()+"\"");
-				out.print("{\"From\":\""+requests.get(i).getFrom()+"\"");
+				out.print("{\"Type\":\""+requests.get(i).getType()+"\",");
+				out.print("\"ID\":\""+requests.get(i).getId()+"\",");
+				out.print("\"From\":\""+requests.get(i).getFrom()+"\"}");
 				
+				if(i<requests.size()-1){
+					out.print(",");
+				}
 			}
 			
-			out.print("\"]}");
+			out.print("]}");
 			out.flush();
 			out.close();
 			
@@ -735,12 +739,9 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void acceptBattleRequest(HttpServletRequest request, HttpServletResponse response){
-		
-	}
-	private void acceptBreedRequest(HttpServletRequest request, HttpServletResponse response){
-		
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
+		
 		int requestid = (int)request.getAttribute("id");
 		
 		String query = ("SELECT * FROM notifications WHERE ID='" +requestid+ "'");
@@ -757,7 +758,7 @@ public class GameServer extends HttpServlet {
 					Monster m2=u2.getMonster(Integer.parseInt(rset.getString("MonsterID2")));
 					
 					
-					ArrayList<String> querylist = breeding.Breed(u1,u2,m1,m2);
+					ArrayList<String> querylist = battle.Battle(u1,u2,m1,m2);
 					
 					for (int i=0; i<querylist.size();i++){
 						db.execute(querylist.get(i));
@@ -765,11 +766,29 @@ public class GameServer extends HttpServlet {
 					
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-	
 		
+	}
+	private void acceptBreedRequest(HttpServletRequest request, HttpServletResponse response){
+	
+		HttpSession session = request.getSession(true);
+		
+		int myMonsterID = (int)request.getAttribute("myMonsterID");
+		int friendMonsterID = (int)request.getAttribute("friendMonsterID");
+		int friendID = (int)request.getAttribute("friendID");
+		
+		User u1 = users.fetchUser((String)session.getAttribute("username"));
+		User u2 = users.fetchUser(friendID);
+		
+		Monster m1 = u1.getMonster(myMonsterID);
+		Monster m2 = u2.getMonster(friendMonsterID);
+		
+		ArrayList<String> querylist = breeding.Breed(u1,u2,m1,m2);
+		
+		for (int i=0; i<querylist.size();i++){
+			db.execute(querylist.get(i));
+		}
 		
 	}
 	private void acceptFriendRequest(HttpServletRequest request, HttpServletResponse response){
