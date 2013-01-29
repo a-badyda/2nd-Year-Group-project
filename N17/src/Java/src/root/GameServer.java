@@ -70,13 +70,13 @@ public class GameServer extends HttpServlet {
 
 			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
-			out.print("{\"isLoggedIn\":\" true\" \"username\": \"" + user.getUsername() + "\", \"key\": \"" + user.getKey() + "\" ,\"cash\": \""+user.getCash() + "\" }");
+			out.print("{\"isLoggedIn\": true, \"username\": \"" + user.getUsername() + "\", \"cash\": \""+user.getCash() + "\" }");
 			out.flush();
 			out.close();
 		}else{
 			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
-			out.print("{\"isLoggedIn\": \"false\" ");
+			out.print("{\"isLoggedIn\": false }");
 			out.flush();
 			out.close();
 		}
@@ -284,7 +284,7 @@ public class GameServer extends HttpServlet {
 			
 			
 			// load in notifications
-			String query3 = ("SELECT * FROM monsters WHERE ownerID='" +user.getId()+ "'");
+			String query3 = ("SELECT * FROM notifications WHERE UserID1='" +user.getId()+ "'");
 			
 			ResultSet rset3;
 			rset3 = db.createQuery (query3);
@@ -298,8 +298,9 @@ public class GameServer extends HttpServlet {
 					int m1=Integer.parseInt(rset3.getString("MonsterID1"));
 					int m2=Integer.parseInt(rset3.getString("MonsterID2"));
 					
-					Request r = new Request(u1, u2, m1, m2,RequestType.valueOf(rset3.getString("MonsterID2")));
 					
+					Request r = new Request(u1, u2, m1, m2,RequestType.valueOf(rset3.getString("type").toUpperCase()));
+					r.setId(rset3.getInt("ID"));
 					requests.add(r);
 				}
 			} catch (SQLException e) {
@@ -655,8 +656,18 @@ public class GameServer extends HttpServlet {
 		reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
-		ArrayList<User> requests1 = user.getFriends(); 
-		ArrayList<Monster> requests = user.getFriendsMonsters((int)request.getAttribute("friend_id"));
+		
+		ArrayList<Monster> requests = null;
+		
+		for(int i =0; i<user.getFriends().size(); i++){
+			
+			if(user.getFriends().get(i).getId()==(int)request.getAttribute("friend_id")){//##############################
+				requests = user.getFriends().get(i).getMonsters();
+				break;
+			}
+			
+		}
+		
 		
 		try {
 			PrintWriter out = response.getWriter();
@@ -692,7 +703,7 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	private void getAllRequest(HttpServletRequest request, HttpServletResponse response){
-		reloadnotuifications(request,response);
+		reloadnotifications(request,response);
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		ArrayList<Request> requests = user.getRequests();
@@ -890,7 +901,7 @@ public class GameServer extends HttpServlet {
 		try {
 			out = response.getWriter();
 		
-		out.print("{\"RichList\":\"[");
+		out.print("{\"RichList\":[");
 		
 		for (int i =0 ;(i<10);i++){
 			
@@ -909,7 +920,7 @@ public class GameServer extends HttpServlet {
 			}
 		}
 		
-		out.print("]\"}");
+		out.print("]}");
 		out.flush();
 		out.close();
 		} catch (IOException e) {
@@ -1007,12 +1018,12 @@ public class GameServer extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	private void reloadnotuifications(HttpServletRequest request, HttpServletResponse response){
+	private void reloadnotifications(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		user.getRequests().clear();
 		
-		String query3 = ("SELECT * FROM monsters WHERE ownerID='" +user.getId()+ "'");
+		String query3 = ("SELECT * FROM notifications WHERE UserID1='" +user.getId()+ "'");
 		
 		ResultSet rset3;
 		rset3 = db.createQuery (query3);
@@ -1026,8 +1037,8 @@ public class GameServer extends HttpServlet {
 				int m1=Integer.parseInt(rset3.getString("MonsterID1"));
 				int m2=Integer.parseInt(rset3.getString("MonsterID2"));
 				
-				Request r = new Request(u1, u2, m1, m2,RequestType.valueOf(rset3.getString("MonsterID2")));
-				
+				Request r = new Request(u1, u2, m1, m2,RequestType.valueOf(rset3.getString("type").toUpperCase()));
+				r.setId(rset3.getInt("ID"));
 				requests.add(r);
 			}
 		} catch (SQLException e) {

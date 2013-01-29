@@ -12,8 +12,8 @@ $(document).ready(function() {
 	//get all notifications on load.
 	$.post(SERVLET_LOCATION, {action: 'getAllNotifications'},function(response) {
 		var obj = $.parseJSON(response);
-		outputStr = outputList(writeNotification, obj.Notifications);
-		$('#notifications_list').html(outputStr);
+		var outputStr = outputList(writeNotification, obj.Notifications);
+		$('.notifications_list').append(outputStr);
 		addResponseEvents();
 	});
 	
@@ -36,9 +36,9 @@ $(document).ready(function() {
 	function writeNotification(key, val) {
 		var current = val;
 		var description = "New ";
-		description += current.type.toLowerCase();
+		description += current["Type"].toLowerCase();
 		description += " request from ";
-		description += current.from;
+		description += current.From;
 		
 		var outputStr = '<div id="request_'+current.id+'" class="notification_request"><p>'+description+'</p>';
 		outputStr += '<input type="hidden" id="' + current.id + '"class="id" value="'+current.id+'"></input>';
