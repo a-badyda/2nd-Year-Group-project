@@ -2,6 +2,7 @@
 Friends.js
 ----------------
 Javascript to deal with user input from the friends page.
+Also loads a rich list.
 ----------------
 Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk	
