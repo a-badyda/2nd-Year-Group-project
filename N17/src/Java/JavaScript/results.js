@@ -18,11 +18,9 @@ $(document).ready(function() {
 
 	//Add event handlers after load.
 	function addResponseEvents() {
-		$(".decline").on('submit', function() {
-			var parent = $(this).parent().attr('id');
-			var results_id = $(parent + " .id").val();
-			$.post(SERVLET_LOCATION, {action: "declineRequest", id: results_id}, writeResponse);
-			return false;
+		$(".decline").on('click', function() {
+			var results_id = $(this).attr('id');
+			$.post(SERVLET_LOCATION, {action: "declineRequest", id: results_id, result: true}, writeResponse);
 		});
 	}
 
@@ -49,7 +47,7 @@ $(document).ready(function() {
 		}
 		
 
-		outputStr += '<input type="submit" class="decline" value="OK"></input>';
+		outputStr += '<input id="'+current.ID+'" type="button" class="decline" value="OK"></input>';
 		outputStr += '</div>';
 		return outputStr;
 	}
@@ -84,7 +82,7 @@ $(document).ready(function() {
 	}
 
 	function writeResponse(response) {
-		$('#result_' + notification_id).html("<span>"+response+"</span>");
+		//$('#result_' + notification_id).html("<span>"+response+"</span>");
 	}
 });
 	

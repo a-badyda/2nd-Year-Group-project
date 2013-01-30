@@ -726,7 +726,7 @@ public class GameServer extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("monster_id"));
 		String name = request.getParameter("new_name");
 		
-		String query = "UPDATE monsters SET monstername='"+name+"' WHERE monsterID='"+id+"'";
+		String query = "UPDATE monsters SET name='"+name+"' WHERE monsterID='"+id+"'";
 		db.execute(query);
 	}
 	
@@ -740,17 +740,21 @@ public class GameServer extends HttpServlet {
 			out.print("{\"Results\":[");
 	    	HttpSession session = request.getSession(true);
 			
-			User user = users.fetchUser((String)session.getAttribute("username"));
+			User user = users.fetchUserFromDatabase((String)session.getAttribute("username"));
 			
-		    String query = ("SELECT * FROM result WHERE userID1='"+user.getId()+"'");
-		    
+		   
+		    //"+user.getId()+"
+		    String query = ("SELECT COUNT(*) AS total FROM result WHERE userID1='"+user.getId()+"'");
 		    ResultSet rset;
-    		rset = db.createQuery (query);
     		
-    		
-    		rset.last();
-    		int norows = rset.getRow();
-    		rset.first();
+		    rset = db.createQuery(query);
+		    int norows=0;
+		    
+	    	rset.next();
+	    	norows = rset.getInt("total");
+		    
+    		query = ("SELECT * FROM result WHERE userID1='"+user.getId()+"'");
+    		rset = db.createQuery(query);
     		int count =0;
     		
     		while (rset.next ())
@@ -840,12 +844,12 @@ public class GameServer extends HttpServlet {
 				}
 				
     		}
+    		
     		out.print("]}");
     		out.flush();
 			out.close();
-	    }catch(Exception e){
-	    	
-	    	
+	    }catch(SQLException | IOException e){
+	    	e.printStackTrace();
 	    }
 		
 		
@@ -1001,7 +1005,21 @@ public class GameServer extends HttpServlet {
 	private void declineRequest(HttpServletRequest request, HttpServletResponse response){
 		int ID;
 		ID =  Integer.parseInt(request.getParameter("id"));
-		String query = "DELETE FROM notifications WHERE ID='"+ID+"'";
+		
+		if(request.getParameter("result").equalsIgnoreCase("true")){
+			String query = "DELETE FROM result WHERE ID='"+ID+"'";
+			db.execute(query);
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.print("{\"id\":"+ID+",\"message\":\"result removed\"}");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}else{
+			String query = "DELETE FROM notifications WHERE ID='"+ID+"'";
 		db.execute(query);
 		PrintWriter out;
 		try {
@@ -1012,6 +1030,11 @@ public class GameServer extends HttpServlet {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		}
+		
+		
+		
+		
 		
 	}
 	
