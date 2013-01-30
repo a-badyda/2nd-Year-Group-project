@@ -84,13 +84,13 @@ $(document).read(function(){
 	
 	function addAuctionEvents() {
 		//handle clicking the breed request button
-		$("#friends_list .breed_request").on("submit", function() {
+		$("#friends_list .breed_request").on("click", function() {
 			newBuyRequest(this);
 			return false;
 		});
 
 		//handle clicking the buy request button
-		$("#friends_list .buy_request").on("submit", function() {
+		$("#friends_list .buy_request").on("click", function() {
 			newBreedRequest(this);
 			return false;
 		});
