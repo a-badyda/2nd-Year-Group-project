@@ -87,32 +87,28 @@ public class GameServer extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		switch(request.getParameter("action")){
-		
-		case "login": LogIn(request,response);break;
-		case "logout": LogOut(request,response);break;
-		case "newuser": NewUser(request,response);break;
-		case "addFriend":addFriend(request,response);break;
-		case "newBattleRequest":newBattleRequest(request,response);break;
-		case "newBreedRequest":newBreedRequest(request,response);break;
-		case "newBuyRequest":newBuyRequest(request,response);break;
-		case "getMonsters":getMonsters(request,response);break;
-		case "getFriends":getFriends(request,response);break;
-		case "getFriendsMonsters":getFriendsMonsters(request,response);break;
-		case "getAllNotifications":getAllRequest(request,response);break;
-		case "acceptRequest":acceptRequest(request,response);break;
-		case "declineRequest":declineRequest(request,response);break;
-		case "isLoggedIn": IsLoggedIn(request, response); break;
-		case "getUserData": GetUserData(request, response); break;
-		
-		
-		
-		
-		case "setBuyCost": setBuyCost(request, response); break;
-		case "setBreedCost": setBreedCost(request, response); break;
-		
-		case "getRichList": getRichList(request, response); break;
-		
+		switch(request.getParameter("action")){		
+			case "login": LogIn(request,response);break;
+			case "logout": LogOut(request,response);break;
+			case "newuser": NewUser(request,response);break;
+			case "addFriend":addFriend(request,response);break;
+			case "newBattleRequest":newBattleRequest(request,response);break;
+			case "newBreedRequest":newBreedRequest(request,response);break;
+			case "newBuyRequest":newBuyRequest(request,response);break;
+			case "getMonsters":getMonsters(request,response);break;
+			case "getFriends":getFriends(request,response);break;
+			case "getFriendsMonsters":getFriendsMonsters(request,response);break;
+			case "getAllNotifications":getAllRequest(request,response);break;
+			case "acceptRequest":acceptRequest(request,response);break;
+			case "declineRequest":declineRequest(request,response);break;
+			case "isLoggedIn": IsLoggedIn(request, response); break;
+			case "getUserData": GetUserData(request, response); break;
+			case "changeName": changeName(request, response); break;
+			case "setBuyCost": setBuyCost(request, response); break;
+			case "setBreedCost": setBreedCost(request, response); break;	
+			case "getRichList": getRichList(request, response); break;
+			case "getAllResults": getAllResults(request, response); break;
+			
 		}
 	}
 	
@@ -614,8 +610,7 @@ public class GameServer extends HttpServlet {
 		
 		//responce monster   amount_paid:
 	}
-	
-	
+		
 	private void getMonsters(HttpServletRequest request, HttpServletResponse response){
 		reloadmonsters(request,response);
 		HttpSession session = request.getSession(true);
@@ -639,7 +634,7 @@ public class GameServer extends HttpServlet {
 				out.print("\"strength\":\""+requests.get(i).getStrength()+"\",");
 				out.print("\"health\":\""+requests.get(i).getHealth()+"\",");
 				out.print("\"fertility\":\""+requests.get(i).getFertility()+"\",");
-				out.print("\"defense\":\""+requests.get(i).getDefence()+"\",");
+				out.print("\"defence\":\""+requests.get(i).getDefence()+"\",");
 				out.print("\"aggression\":\""+requests.get(i).getAggression()+"\",");
 				out.print("\"breed\":\""+breed+"\"}");
 				
@@ -687,7 +682,6 @@ public class GameServer extends HttpServlet {
 		
 		ArrayList<Monster> requests = users.fetchFriendsMonstersFromDatabase(Integer.parseInt(request.getParameter("friend_id")));
 		
-				
 		
 		try {
 			PrintWriter out = response.getWriter();
@@ -697,19 +691,19 @@ public class GameServer extends HttpServlet {
 				
 				String buy;
 				String breed;
-				if(requests.get(i).getCashSell()>0){buy="'ture'";}else{buy="'false'";}
-				if(requests.get(i).getCashBreed()>0){breed="'ture'";}else{breed="'false'";}
+				if(requests.get(i).getCashSell()>0){buy="true";}else{buy="false";}
+				if(requests.get(i).getCashBreed()>0){breed="true";}else{breed="false";}
 				
 				
 				out.print("{\"monstername\":\""+requests.get(i).getName()+"\",");
 				out.print("\"ID\":\""+requests.get(i).getId()+"\",");
-				out.print("\"buy\":\""+buy+"\",");
+				out.print("\"buy\":"+buy+",");
 				out.print("\"strength\":\""+requests.get(i).getStrength()+"\",");
 				out.print("\"health\":\""+requests.get(i).getHealth()+"\",");
 				out.print("\"fertility\":\""+requests.get(i).getFertility()+"\",");
-				out.print("\"defecnce\":\""+requests.get(i).getDefence()+"\",");
-				out.print("\"aggrestion\":\""+requests.get(i).getAggression()+"\",");
-				out.print("\"breed\":\""+breed+"\"}");
+				out.print("\"defence\":\""+requests.get(i).getDefence()+"\",");
+				out.print("\"aggression\":\""+requests.get(i).getAggression()+"\",");
+				out.print("\"breed\":"+breed+"}");
 				
 				if(i<requests.size()-1){
 					out.print(",");
@@ -726,11 +720,17 @@ public class GameServer extends HttpServlet {
 		} catch (IOException ex) {
 		}
 	}
+		
+	private void changeName(HttpServletRequest request, HttpServletResponse response) {
+		int id = Integer.parseInt(request.getParameter("monster_id"));
+		String name = request.getParameter("new_name");
+		
+		String query = "UPDATE monsters SET name='"+name+"' WHERE monsterID='"+id+"'";
+		db.execute(query);
+	}
 	
 	private void getAllResults(HttpServletRequest request, HttpServletResponse response){
-		
-		
-		
+	
 		try{
 			PrintWriter out;
 		
@@ -739,18 +739,29 @@ public class GameServer extends HttpServlet {
 			out.print("{\"Results\":[");
 	    	HttpSession session = request.getSession(true);
 			
-			User user = users.fetchUser((String)session.getAttribute("username"));
+			User user = users.fetchUserFromDatabase((String)session.getAttribute("username"));
 			
-		    String query = ("SELECT * FROM result WHERE userID1='"+user.getId()+"'");
-		    
+		   
+		    //"+user.getId()+"
+		    String query = ("SELECT COUNT(*) AS total FROM result WHERE userID1='"+user.getId()+"'");
 		    ResultSet rset;
-    		rset = db.createQuery (query);
+    		
+		    rset = db.createQuery(query);
+		    int norows=0;
+		    
+	    	rset.next();
+	    	norows = rset.getInt("total");
+		    
+    		query = ("SELECT * FROM result WHERE userID1='"+user.getId()+"'");
+    		rset = db.createQuery(query);
+    		int count =0;
+    		
     		while (rset.next ())
     		{ 
     			
     			out.print("{\"Type\":\""+rset.getString("type")+"\",");
 				out.print("\"ID\":\""+rset.getInt("ID")+"\",");
-				out.print("\"From\":\""+users.fetchUser(rset.getInt("userID2")).getUsername()+"\"");
+				out.print("\"From\":\""+users.fetchUserFromDatabase(rset.getInt("userID2")).getUsername()+"\",");
 				
 				
 				String query2 = ("SELECT * FROM monsters WHERE monsterID='" +rset.getInt("monsterID1")+ "'");
@@ -761,15 +772,15 @@ public class GameServer extends HttpServlet {
 			
 				while (rset2.next ())
 				{
-					out.print("{\"my_monster\":[");
+					out.print("\"my_monster\":");
 					out.print("{\"monstername\":\""+rset2.getString("name")+"\",");
 					out.print("\"ID\":\""+rset2.getInt("monsterID")+"\",");
 					out.print("\"strength\":\""+rset2.getInt("strength")+"\",");
 					out.print("\"health\":\""+rset2.getInt("health")+"\",");
 					out.print("\"fertility\":\""+rset2.getInt("fertility")+"\",");
 					out.print("\"defense\":\""+rset2.getInt("defence")+"\",");
-					out.print("\"aggression\":\""+rset2.getInt("aggression")+"\",");
-					out.print("]}");
+					out.print("\"aggression\":\""+rset2.getInt("aggression")+"\"");
+					out.print("},");
 				}
 			
 				query2 = ("SELECT * FROM monsters WHERE monsterID='" +rset.getInt("monsterID2")+ "'");
@@ -778,51 +789,68 @@ public class GameServer extends HttpServlet {
 				
 				while (rset2.next())
 	    		{
-					out.print("{\"friend_monster\":[");
+					out.print("\"friend_monster\":");
 					out.print("{\"monstername\":\""+rset2.getString("name")+"\",");
 					out.print("\"ID\":\""+rset2.getInt("monsterID")+"\",");
 					out.print("\"strength\":\""+rset2.getInt("strength")+"\",");
 					out.print("\"health\":\""+rset2.getInt("health")+"\",");
 					out.print("\"fertility\":\""+rset2.getInt("fertility")+"\",");
 					out.print("\"defense\":\""+rset2.getInt("defence")+"\",");
-					out.print("\"aggression\":\""+rset2.getInt("aggression")+"\",");
-					out.print("]}");
+					out.print("\"aggression\":\""+rset2.getInt("aggression")+"\"");
+					out.print("},");
 	    		}
 			
     			
 				if(user.getId()==rset.getInt("userWon")){
-					out.print("\"message\":\""+rset2.getString("winmessage")+"\",");
-					out.print("\"cash\":\""+rset2.getInt("cash")+"\",");
+					out.print("\"message\":\""+rset.getString("winmessage")+"\",");
+					out.print("\"cash\":\""+rset.getInt("cash")+"\",");
 				}else{
-					out.print("\"message\":\""+rset2.getString("lostmessage")+"\",");
-					out.print("\"cash\":\""+(0-rset2.getInt("cash"))+"\",");
+					out.print("\"message\":\""+rset.getString("lostmessage")+"\",");
+					out.print("\"cash\":\""+(0-rset.getInt("cash"))+"\",");
 				}
+				
+				
 				
 				out.print("\"babies\": [");
 				for (int i =0; i<10;i++){
-					query2 = ("SELECT * FROM monsters WHERE monsterID='" +rset.getInt("baby"+i)+ "'");
-					
-					rset2 = db.createQuery (query2);
-					
-					while (rset2.next())
-		    		{
-						out.print("{\"monstername\":\""+rset2.getString("name")+"\",");
-						out.print("\"ID\":\""+rset2.getInt("monsterID")+"\",");
-						out.print("\"strength\":\""+rset2.getInt("strength")+"\",");
-						out.print("\"health\":\""+rset2.getInt("health")+"\",");
-						out.print("\"fertility\":\""+rset2.getInt("fertility")+"\",");
-						out.print("\"defense\":\""+rset2.getInt("defence")+"\",");
-						out.print("\"aggression\":\""+rset2.getInt("aggression")+"\"");
-						out.print("}");
-		    		}
-					
+					//baby 1 is the colomb 12 starting counting from 1
+					if(rset.getInt(12+i)!=0){
+						query2 = ("SELECT * FROM monsters WHERE monsterID='" +rset.getInt(12+i)+ "'");
+						
+						rset2 = db.createQuery (query2);
+						
+						while (rset2.next())
+			    		{
+							out.print("{\"monstername\":\""+rset2.getString("name")+"\",");
+							out.print("\"ID\":\""+rset2.getInt("monsterID")+"\",");
+							out.print("\"strength\":\""+rset2.getInt("strength")+"\",");
+							out.print("\"health\":\""+rset2.getInt("health")+"\",");
+							out.print("\"fertility\":\""+rset2.getInt("fertility")+"\",");
+							out.print("\"defense\":\""+rset2.getInt("defence")+"\",");
+							out.print("\"aggression\":\""+rset2.getInt("aggression")+"\"");
+							out.print("}");
+			    		}
+						if(i<9){
+							out.print(",");
+						}
+					}
 				}
-				out.print("]");
+				
+				out.print("]}");
+				count++;
+				if(count<norows-1){
+					out.print(",");
+				}
+				
     		}
-	    }catch(Exception e){
-	    	
-	    	
+    		
+    		out.print("]}");
+    		out.flush();
+			out.close();
+	    }catch(SQLException | IOException e){
+	    	e.printStackTrace();
 	    }
+		
 		
 	}
 	
@@ -976,7 +1004,21 @@ public class GameServer extends HttpServlet {
 	private void declineRequest(HttpServletRequest request, HttpServletResponse response){
 		int ID;
 		ID =  Integer.parseInt(request.getParameter("id"));
-		String query = "DELETE FROM notifications WHERE ID='"+ID+"'";
+		
+		if(request.getParameter("result").equalsIgnoreCase("true")){
+			String query = "DELETE FROM result WHERE ID='"+ID+"'";
+			db.execute(query);
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.print("{\"id\":"+ID+",\"message\":\"result removed\"}");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}else{
+			String query = "DELETE FROM notifications WHERE ID='"+ID+"'";
 		db.execute(query);
 		PrintWriter out;
 		try {
@@ -987,6 +1029,11 @@ public class GameServer extends HttpServlet {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		}
+		
+		
+		
+		
 		
 	}
 	

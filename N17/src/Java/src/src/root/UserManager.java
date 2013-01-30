@@ -33,6 +33,24 @@ public class UserManager {
 		return null;
 	}
 	
+	public User fetchUserFromDatabase(String name) {
+		String query = "SELECT * FROM user WHERE UserName='" +name+ "'";
+		try {
+			ResultSet rset;
+			rset = db.createQuery(query);
+			while (rset.next ()){
+				User user = new User();
+				user.setUsername(rset.getString("UserName"));
+				user.setCash(rset.getInt("Cash"));
+				user.setId(rset.getInt("UserID"));	
+				return user;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public Monster fetchMonsterFromDatabase(int id){
 		String query = "SELECT * FROM monsters WHERE monsterID='" +id+ "'";
 		try {

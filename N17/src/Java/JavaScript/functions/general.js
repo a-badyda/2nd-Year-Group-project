@@ -57,7 +57,7 @@ function buildMonsterHTML(key, mon) {
 	outputStr += '<div id="stats">';
 	outputStr += '<td class="strength">'+mon.strength+'</td>';
 	outputStr += '<td class="aggression">'+mon.aggression+'</td>';
-	outputStr += '<td class="defense">'+mon.defense+'</td>';
+	outputStr += '<td class="defense">'+mon.defence+'</td>';
 	outputStr += '<td class="health">'+mon.health+'</td>';
 	outputStr += '<td class="fertility">'+mon.fertility+'</td>';
 	outputStr += '</div></div>';
