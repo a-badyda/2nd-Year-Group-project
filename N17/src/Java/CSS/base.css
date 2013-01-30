@@ -7,8 +7,8 @@ body, select, input, textarea{color:#333}
 /*Typography section */
 
 h1,h2,h3,h4,h5,p,li{text-align:left; margin:1em; color: #292421;font-family: Verdana,sans-serif;}
-h1{font-size:40px; text-align: center; font-family: Impact, sans-serif; color: #66CD00;}
-h2{font-size:20px; margin-bottom:1.2em; text-align: center; font-family: Impact,sans-serif;}
+h1{font-size:40px; text-align: center; font-family: Verdana, sans-serif; color: #66CD00;}
+h2{font-size:20px; margin-bottom:1.2em; text-align: center; font-family: Verdana,sans-serif;}
 h3{font-size:15px; margin-bottom:1.5em; text-indent: 10px; font-family: Verdana,sans-serif;}
 h4{font-size:15px;}
 h5{font-family:italic; margin-bottom:1.5em; text-indent:5px;}
@@ -27,6 +27,14 @@ a:visited {color: #999999;}
 a:hover {color: #333333;}
 a:focus {color: #333333;}
 a:active {color: #009900;}
+
+/*Logo + background */
+html{
+  color: #B0E0E6;
+}
+#logo{
+  background-image: url('image/pic.jpg');
+}
 
 /*BUTTONS HELL YEAH  - this might not work at all though*/
 button{
@@ -74,7 +82,7 @@ button{
   float: left;
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-	width:100%; 
+	width:auto; 
 	margin: auto; 
 	padding:20px; 
 	background-color: #CDB79E;
@@ -86,7 +94,7 @@ button{
 #friends {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-	width:100%;
+	width:auto;
   float: left;
 	margin: auto;
 	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
@@ -119,7 +127,7 @@ button{
 .profile {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 100%;
+  width: auto;
   margin: auto;
   float: left;
  background: #BFEFFF;
@@ -130,14 +138,14 @@ button{
 .monster_battle {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 100%;
+  width: auto;
   margin: auto;
   float: left;
   background: #EED2EE;
 }
 #your_monsters {
   float:left;
-  width: 300px;
+  width: 550px;
   background: #CDB7B5;
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
@@ -160,7 +168,7 @@ button{
 .notifications_list {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 100%;
+  width: auto;
   margin: auto;
   float: left;
   background: #FDF5E6;
@@ -171,7 +179,7 @@ button{
 #monster_auction{
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 100%;
+  width: auto;
   margin: auto;
   float: left;
   background: #BDFCC9;
@@ -190,7 +198,7 @@ button{
 .results_list{
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 100%;
+  width: auto;
   margin: auto;
   float: left;
   background: #D2B48C;
