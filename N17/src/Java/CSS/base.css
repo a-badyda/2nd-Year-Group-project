@@ -32,8 +32,9 @@ a:active {color: #009900;}
 html{
   color: #B0E0E6;
 }
-#logo{
-  background-image: url('image/pic.jpg');
+img{
+  text-align:center;
+  display:block;
 }
 
 /*BUTTONS HELL YEAH  - this might not work at all though*/
