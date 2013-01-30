@@ -40,13 +40,12 @@ $(document).ready(function() {
 			outputStr +=writeBattleResult(key, val);
 		} else if (type == "breed_result") {
 			outputStr += '<div class="breed_results">';
-			outputStr += outputList(writeBaby, obj.babies);
+			outputStr += outputList(writeBaby, val.babies);
 			outputStr += '</div>';
 		} else if (type == "buy_result") {
 			outputStr += writeBuyResult(key, val);
 		}
 		
-
 		outputStr += '<input id="'+current.ID+'" type="button" class="decline" value="OK"></input>';
 		outputStr += '</div>';
 		return outputStr;

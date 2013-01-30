@@ -63,13 +63,13 @@ $(document).ready(function(){
 	}
 
 	function addSetCostEvents() {
-		$("#select_monster_form .set_sell_cost").on("click", function() {
-			var cost = $(this).siblings('.monster_breed_cost').val();
+		$(".set_sell_cost").on("click", function() {
+			var cost = $(this).siblings('.monster_sell_cost').val();
 			changeCost("Buy", this, cost);
 		});
 
-		$("#select_monster_form .set_breed_cost").on("click", function() {
-			var cost = $(this).siblings('.monster_sell_cost').val();
+		$(".set_breed_cost").on("click", function() {
+			var cost = $(this).siblings('.monster_breed_cost').val();
 			changeCost("Breed", this, cost);
 		});
 	}
@@ -111,7 +111,7 @@ $(document).ready(function(){
 	//function to send a buy request
 	function newBuyRequest(obj){
 		var friend_id = getParentId(obj,'.friend');
-		var mon_id = getParentId(obj, '.friend_monster');
+		var mon_id = $(obj).attr('id');
 
 		$.post(SERVLET_LOCATION, {action: "newBuyRequest", friendId: friend_id, monsterId: mon_id},
 		function(response) {
@@ -144,11 +144,11 @@ $(document).ready(function(){
 		} else {
 			if(mon.buy) {
 
-				outputStr += '<td>Breeding Cost: '+mon.cost_breed+'<input type="button" class="breed_request" value="Breed"></input></td>';
+				outputStr += '<td>Breeding Cost: '+mon.cost_breed+'<input id="'+mon.ID+'" type="button" class="breed_request" value="Breed"></input></td>';
 			}
 			
 			if(mon.breed) {
-				outputStr += '<td>Buying Cost: '+mon.cost_buy+'<input type="button" class="buy_request" value="Buy"></input></td>';
+				outputStr += '<td>Buying Cost: '+mon.cost_buy+'<input id="'+mon.ID+'" type="button" class="buy_request" value="Buy"></input></td>';
 			}
 		}
 

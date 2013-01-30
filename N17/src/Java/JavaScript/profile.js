@@ -29,7 +29,7 @@ $(document).ready(function() {
 			var ID = $(this).attr('id');
 			var name =  $(this).siblings('.change_name').val();
 			$.post(SERVLET_LOCATION, {action: "changeName", monster_id: ID, new_name: name}, function(response) {
-				$('#monster_'+mon.ID+' .monster_name').html(name);
+				$("td[id='"+ID+"'][class='monster_name']").html(name);
 			});
 		});
 	}

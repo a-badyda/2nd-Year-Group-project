@@ -53,7 +53,7 @@ function is_int(value){
 function buildMonsterHTML(key, mon) {
 	outputStr = '';
 	outputStr += '<div id="monster_'+mon.ID+'" class="monster">';
-	outputStr += '<td class="monster_name">'+mon.monstername+'</td>';
+	outputStr += '<td id="'+mon.ID+' "class="monster_name">'+mon.monstername+'</td>';
 	outputStr += '<div id="stats">';
 	outputStr += '<td class="strength">'+mon.strength+'</td>';
 	outputStr += '<td class="aggression">'+mon.aggression+'</td>';
