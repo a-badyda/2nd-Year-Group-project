@@ -90,6 +90,7 @@ width: 100%;
 	margin: auto; 
 	padding:20px; 
 	background-color: #CDB79E;
+  opacity: .8;
 }
 
 
@@ -102,6 +103,7 @@ width: 100%;
   float: left;
 	margin: auto;
 	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
+  opacity: .8;
 }
 
 #friends_list{
@@ -178,7 +180,8 @@ input[type=submit][type=button]{
   width: 100%;
   margin: auto;
   float: left;
- background: #BFEFFF;
+  background: #BFEFFF;
+  opacity: .8;
 }
 
 
@@ -190,6 +193,7 @@ input[type=submit][type=button]{
   margin: auto;
   float: left;
   background: #EED2EE;
+  opacity: .8;
 }
 #your_monsters {
   float:left;
@@ -220,6 +224,7 @@ input[type=submit][type=button]{
   margin: auto;
   float: left;
   background: #FDF5E6;
+  opacity: .8;
 }
 
 
@@ -250,6 +255,7 @@ input[type=submit][type=button]{
   margin: auto;
   float: left;
   background: #D2B48C;
+  opacity: .8;
 }
 
 
