@@ -28,6 +28,17 @@ a:hover {color: #333333;}
 a:focus {color: #333333;}
 a:active {color: #009900;}
 
+/*BUTTONS HELL YEAH  - this might not work at all though*/
+button{
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  padding: 0 20px;
+  text-align: center;
+  color: #515151;
+  background: #d3d3d3;
+}
+
 
 /*Index menu - tabs*/
 
@@ -63,7 +74,7 @@ a:active {color: #009900;}
   float: left;
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-	width:80%; 
+	width:100%; 
 	margin: auto; 
 	padding:20px; 
 	background-color: #CDB79E;
@@ -75,7 +86,7 @@ a:active {color: #009900;}
 #friends {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-	width:80%;
+	width:100%;
   float: left;
 	margin: auto;
 	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
@@ -108,7 +119,7 @@ a:active {color: #009900;}
 .profile {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 80%;
+  width: 100%;
   margin: auto;
   float: left;
  background: #BFEFFF;
@@ -119,7 +130,7 @@ a:active {color: #009900;}
 .monster_battle {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 80%;
+  width: 100%;
   margin: auto;
   float: left;
   background: #EED2EE;
@@ -149,7 +160,7 @@ a:active {color: #009900;}
 .notifications_list {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 80%;
+  width: 100%;
   margin: auto;
   float: left;
   background: #FDF5E6;
@@ -160,7 +171,7 @@ a:active {color: #009900;}
 #monster_auction{
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 80%;
+  width: 100%;
   margin: auto;
   float: left;
   background: #BDFCC9;
@@ -179,7 +190,7 @@ a:active {color: #009900;}
 .results_list{
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: 80%;
+  width: 100%;
   margin: auto;
   float: left;
   background: #D2B48C;
