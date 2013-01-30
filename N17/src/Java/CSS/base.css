@@ -154,7 +154,7 @@ input{
   color: #555555;
 }
 
-input[type=submit]{
+input[type=submit][type=button]{
   position: relative;
   margin: 10px;
   padding: 0 20px;
