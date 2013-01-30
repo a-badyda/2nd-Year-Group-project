@@ -30,10 +30,14 @@ a:active {color: #009900;}
 
 /*Logo + background */
 html{
-  color: #B0E0E6;
+  background-color: #B0E0E6;
+  background-image: url('CSS/image/monsters1.png');
+  background-repeat:no-repeat;
+  background-position:right bottom;
 }
 img{
-  text-align:center;
+  margin-left:auto;
+  margin-right: auto;
   display:block;
 }
 
@@ -83,7 +87,7 @@ button{
   float: left;
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-	width:auto; 
+	width:100%; 
 	margin: auto; 
 	padding:20px; 
 	background-color: #CDB79E;
@@ -95,7 +99,7 @@ button{
 #friends {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-	width:auto;
+	width:100%;
   float: left;
 	margin: auto;
 	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
@@ -128,7 +132,7 @@ button{
 .profile {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: auto;
+  width: 100%;
   margin: auto;
   float: left;
  background: #BFEFFF;
@@ -139,14 +143,14 @@ button{
 .monster_battle {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: auto;
+  width: 100%;
   margin: auto;
   float: left;
   background: #EED2EE;
 }
 #your_monsters {
   float:left;
-  width: 550px;
+  width: auto;
   background: #CDB7B5;
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
@@ -169,7 +173,7 @@ button{
 .notifications_list {
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: auto;
+  width: 100%;
   margin: auto;
   float: left;
   background: #FDF5E6;
@@ -180,7 +184,7 @@ button{
 #monster_auction{
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: auto;
+  width: 100%;
   margin: auto;
   float: left;
   background: #BDFCC9;
@@ -199,7 +203,7 @@ button{
 .results_list{
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
-  width: auto;
+  width: 100%;
   margin: auto;
   float: left;
   background: #D2B48C;
