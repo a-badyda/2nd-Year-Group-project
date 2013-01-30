@@ -61,11 +61,12 @@ $(document).ready(function() {
 		});
 	}
 
-	function buildMonsterSelectHTML(key, mon) {
+	function buildMonsterSelectHTML(key, mon, user) {
+		outputStr = '';
 		outputStr += buildMonsterHTML(key, mon);
 		
 		if(user) {
-			outputStr += '<input type="radio" name="select_monster" class="select_monster" value="'+mon.id+'"></input>';
+			outputStr += '<input type="radio" name="select_monster" class="select_monster" value="'+mon.ID+'"></input>';
 		} else {
 			outputStr += '<input type="submit" class="battle_request" value="battle"></input>';
 		}

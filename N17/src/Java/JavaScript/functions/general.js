@@ -9,7 +9,7 @@ Email:	slj11@aber.ac.uk
 
 //Get a list of GET variables for the url
 function getGETvars() {
-	$_GET = {}
+	$_GET = {};
 	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
 		function decode(s) {
 			return decodeURIComponent(s.split("+").join(" "));
@@ -26,7 +26,7 @@ function outputList(func, list, args) {
 	var output = '';
 	if(list.length != 0) {
 		$.each(list, function(key, val) {
-			output += func(key, val, args)
+			output += func(key, val, args);
 		});
 	} else {
 		output = '<h4>Oops! Looks like there\'s nothing here!</h4>';
@@ -61,6 +61,7 @@ function buildMonsterHTML(key, mon) {
 	outputStr += '<p class="health">'+mon.health+'</p>';
 	outputStr += '<p class="fertility">'+mon.fertility+'</p>';
 	outputStr += '</div></div>';
+	return outputStr;
 }
 
 function buildFriendHTML(key, friend){
