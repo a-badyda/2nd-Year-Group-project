@@ -72,7 +72,7 @@ $(document).ready(function() {
 	}
 
 	function buildMonsterSelectHTML(key, mon, user) {
-		outputStr = '<tr id="monster_row_'+mon.ID+'">';
+		outputStr = '<tr id="monster_row_'+mon.ID+'" class=".monster">';
 		outputStr += buildMonsterHTML(key, mon);
 		
 		if(user) {
