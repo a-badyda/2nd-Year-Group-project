@@ -87,32 +87,26 @@ public class GameServer extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		switch(request.getParameter("action")){
-		
-		case "login": LogIn(request,response);break;
-		case "logout": LogOut(request,response);break;
-		case "newuser": NewUser(request,response);break;
-		case "addFriend":addFriend(request,response);break;
-		case "newBattleRequest":newBattleRequest(request,response);break;
-		case "newBreedRequest":newBreedRequest(request,response);break;
-		case "newBuyRequest":newBuyRequest(request,response);break;
-		case "getMonsters":getMonsters(request,response);break;
-		case "getFriends":getFriends(request,response);break;
-		case "getFriendsMonsters":getFriendsMonsters(request,response);break;
-		case "getAllNotifications":getAllRequest(request,response);break;
-		case "acceptRequest":acceptRequest(request,response);break;
-		case "declineRequest":declineRequest(request,response);break;
-		case "isLoggedIn": IsLoggedIn(request, response); break;
-		case "getUserData": GetUserData(request, response); break;
-		
-		
-		
-		
-		case "setBuyCost": setBuyCost(request, response); break;
-		case "setBreedCost": setBreedCost(request, response); break;
-		
-		case "getRichList": getRichList(request, response); break;
-		
+		switch(request.getParameter("action")){		
+			case "login": LogIn(request,response);break;
+			case "logout": LogOut(request,response);break;
+			case "newuser": NewUser(request,response);break;
+			case "addFriend":addFriend(request,response);break;
+			case "newBattleRequest":newBattleRequest(request,response);break;
+			case "newBreedRequest":newBreedRequest(request,response);break;
+			case "newBuyRequest":newBuyRequest(request,response);break;
+			case "getMonsters":getMonsters(request,response);break;
+			case "getFriends":getFriends(request,response);break;
+			case "getFriendsMonsters":getFriendsMonsters(request,response);break;
+			case "getAllNotifications":getAllRequest(request,response);break;
+			case "acceptRequest":acceptRequest(request,response);break;
+			case "declineRequest":declineRequest(request,response);break;
+			case "isLoggedIn": IsLoggedIn(request, response); break;
+			case "getUserData": GetUserData(request, response); break;
+			case "changeName": changeName(request, response); break;
+			case "setBuyCost": setBuyCost(request, response); break;
+			case "setBreedCost": setBreedCost(request, response); break;	
+			case "getRichList": getRichList(request, response); break;
 		}
 	}
 	
@@ -725,6 +719,15 @@ public class GameServer extends HttpServlet {
 			
 		} catch (IOException ex) {
 		}
+	}
+	
+	
+	private void changeName(HttpServletRequest request, HttpServletResponse response) {
+		int id = Integer.parseInt(request.getParameter("monster_id"));
+		String name = request.getParameter("new_name");
+		
+		String query = "UPDATE monsters SET monstername='"+name+"' WHERE monsterID='"+id+"'";
+		db.execute(query);
 	}
 	
 	private void getAllResults(HttpServletRequest request, HttpServletResponse response){
