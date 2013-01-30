@@ -25,8 +25,6 @@ $(document).ready(function () {
 			var $_GET = getGETvars();
 			var page = $_GET["page"]; //get what page we are on.
 
-			alert("hi");
-			
 			//select if it is a valid page.
 			if($.inArray(page, PAGES) >= 0) {
 				//dynamically load the page content
