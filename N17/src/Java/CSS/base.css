@@ -30,7 +30,7 @@ a:active {color: #009900;}
 
 /*Logo + background */
 html{
-  background-image: url('CSS/image/palmstree.png'), repeat;
+  background-image: url('image/palmtree.png');
 }
 
 img{
@@ -63,15 +63,18 @@ width: 100%;
 }
 
 .menu_options a {
-	font-family: Verdana,sans-serif;
-	float: left;
-  position: relative;
-  padding: 0 40px;
+  font-family: Verdana,sans-serif;
+  float: left;
+  position: center;
+  padding:0 40px;
   height: 0; 
   line-height: 30px;
-  border-right: 30px solid transparent;
-  border-bottom: 30px solid #3D3D3D;
+  border-right: 20px solid transparent;
+  border-bottom: 30px solid #EE9A00;
   color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px rgba(0,0,0, .34), inset 1px 1px 1px rgba(255,255,255, .7);
+  text-align: center;
 }
 
 /*extra menu? */
