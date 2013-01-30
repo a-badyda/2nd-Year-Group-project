@@ -54,13 +54,12 @@ function buildMonsterHTML(key, mon) {
 	outputStr = '';
 	outputStr += '<div id="monster_'+mon.ID+'" class="monster">';
 	outputStr += '<td class="monster_name">'+mon.monstername+'</td>';
-	outputStr += '<div id="stats">';
 	outputStr += '<td class="strength">'+mon.strength+'</td>';
 	outputStr += '<td class="aggression">'+mon.aggression+'</td>';
 	outputStr += '<td class="defense">'+mon.defense+'</td>';
 	outputStr += '<td class="health">'+mon.health+'</td>';
 	outputStr += '<td class="fertility">'+mon.fertility+'</td>';
-	outputStr += '</div></div>';
+	outputStr += '</div>';
 	return outputStr;
 }
 

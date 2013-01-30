@@ -67,12 +67,12 @@ $(document).ready(function() {
 
 		$.post(SERVLET_LOCATION, {action: "new" + type +"Request", userMonsterId: user_mon_id, friendId: friend_id, monsterId: mon_id},
 		function(response) {
-	
+			//todo
 		});
 	}
 
 	function buildMonsterSelectHTML(key, mon, user) {
-		outputStr = '<tr id="monster_row_'+mon.ID+'">';
+		outputStr = '<tr id="monster_row_'+mon.ID+'" class=".monster">';
 		outputStr += buildMonsterHTML(key, mon);
 		
 		if(user) {

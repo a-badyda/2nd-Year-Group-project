@@ -41,11 +41,10 @@ $(document).ready(function() {
 });
 
 function outputFriendsList(key, val) {
-	var output = '<tr>';
-	output += '<div class="friend">';
+	var output = '<tr class="friend">';
 	output += '<input class="friend_id" type="hidden" value="' + val.id + '"></input>';
 	output += '<td><h4>' + val.username + '</h4></td>';
-	output += '</div></tr>';
+	output += '</tr>';
 	return output;
 }
 
