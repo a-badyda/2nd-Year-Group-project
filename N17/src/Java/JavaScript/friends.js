@@ -11,23 +11,23 @@ Email:	slj11@aber.ac.uk
 $(document).ready(function() {
 
 	//load a list of all friends
-	// $friend = $.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
-	// 	var obj = $.parseJSON(response);
-	// 	var output = '<table><tr><th>Name</th></tr>';
-	// 	output += '<tr>' + outputList(outputFriendsList, obj.Friends) + '</tr>';
-	// 	output += '</table>';
-	// 	$('#friends_list').append(output);
-	// });
+	$friend = $.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
+		var obj = $.parseJSON(response);
+		var output = '<table><tr><th>Name</th></tr>';
+		output += '<tr>' + outputList(outputFriendsList, obj.Friends) + '</tr>';
+		output += '</table>';
+		$('#friends_list').append(output);
+	});
 
-	// $friend.done(function() {
-	// 	$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
-	// 		var obj = $.parseJSON(response);
-	// 		var output = '<table><tr><th>Name</th><th>Money</th></tr>';
-	// 		output += outputList(outputRichList, obj.RichList);
-	// 		output += '</table>';
-	// 		$('#rich_list').append(output);
-	// 	});
-	// });
+	$friend.done(function() {
+		$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
+			var obj = $.parseJSON(response);
+			var output = '<table><tr><th>Name</th><th>Money</th></tr>';
+			output += outputList(outputRichList, obj.RichList);
+			output += '</table>';
+			$('#rich_list').append(output);
+		});
+	});
 	
 	//add a new friend
 	$(".send_request .button_add").click(function() {
