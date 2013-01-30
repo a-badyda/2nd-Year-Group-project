@@ -39,18 +39,17 @@ $(document).ready(function() {
 		outputStr += '<input type="hidden" id="' + current.ID + '"class="id" value="'+current.ID+'"></input>';
 
 		if (type == "battle_results") {
-			writeBattleResult(key, val);
+			outputStr +=writeBattleResult(key, val);
 		} else if (type == "breed_result") {
 			outputStr += '<div class="breed_results">';
 			outputStr += outputList(writeBaby, obj.babies);
 			outputStr += '</div>';
 		} else if (type == "buy_result") {
-			writeBuyResult(key, val);
+			outputStr += writeBuyResult(key, val);
 		}
 		
 
 		outputStr += '<input type="submit" class="decline" value="OK"></input>';
-
 		outputStr += '</div>';
 		return outputStr;
 	}
@@ -61,8 +60,9 @@ $(document).ready(function() {
 		output += buildMonsterHTML(key, val.my_monster);
 		output += buildMonsterHTML(key, val.friend_monster);
 		output += '<p>'+val.message+'</p>';
-		output += '<p>Money Exchanged: '+val.cost+'</p>';
+		output += '<p>Money Exchanged: '+val.cash+'</p>';
 		output += '</div>';
+		return output;
 	}
 
 	function writeBaby(key, val) {
@@ -80,6 +80,7 @@ $(document).ready(function() {
 		output += '<p>'+val.message+'</p>';
 		output += '<p>Money Exchanged: '+val.cost+'</p>';
 		output += '</div>';
+		return output;
 	}
 
 	function writeResponse(response) {
