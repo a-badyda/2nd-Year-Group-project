@@ -30,9 +30,8 @@ a:active {color: #009900;}
 
 /*Logo + background */
 html{
-  background-color: #B0E0E6;
   background-image: url('CSS/image/monsters1.png');
-  background-repeat:no-repeat;
+  background-repeat: repeat;
   background-position:right bottom;
 }
 
