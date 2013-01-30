@@ -115,7 +115,7 @@ button{
 
 #friends_list{
   float:right;
-  width:500px;
+  width:auto;
   background: #CDB7B5;
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
@@ -124,7 +124,7 @@ button{
 
 #rich_list{
   float:left;
-  width: 300px;
+  width: auto;
   background: #CDB7B5;
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
