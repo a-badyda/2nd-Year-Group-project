@@ -39,7 +39,7 @@ $(document).ready(function() {
 		//user clicks to view a result.
 		$(".view").on('click', function() {
 			window.location.replace("view_results.html");
-			return false
+			return false;
 		});
 	}
 

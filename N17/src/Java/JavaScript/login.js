@@ -47,7 +47,7 @@ $(document).ready(function(){
 		$.post(USER_LOGIN, {username: email, password: password,action:'login'}, 
 		function(response) {
 			var obj = $.parseJSON(response);
-			redirect($errorBox, obj.login)
+			redirect($errorBox, obj.login);
 		});
 	}
 
