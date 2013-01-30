@@ -42,7 +42,17 @@ img{
   display:block;
 }
 
-/*BUTTONS HELL YEAH  - this might not work at all though*/
+/* Footer Time*/
+#foot_logo{
+float: center;
+width: 100%;
+}
+#foot_monster{
+float: right;
+width: 100%;
+}
+
+/*BUTTONS DO NOT WORK AW NAYYY */
 button{
   display: inline-block;
   position: relative;
