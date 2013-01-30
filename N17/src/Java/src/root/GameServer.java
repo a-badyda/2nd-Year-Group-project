@@ -59,7 +59,6 @@ public class GameServer extends HttpServlet {
 		out.flush();
 		out.close();
 	}
-	
 	private void GetUserData(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		HttpSession session = request.getSession(true);
@@ -503,7 +502,7 @@ public class GameServer extends HttpServlet {
 				db.execute(querylist.get(i));
 			}
 			
-			String query2 ="SELECT * FROM monsters WHERE breed="+u2.getId()+"";
+			String query2 ="SELECT * FROM monsters WHERE breed="+u1.getId()+"";
 			ResultSet rset;
 			rset = db.createQuery(query2);
 			int count =1;
@@ -523,6 +522,12 @@ public class GameServer extends HttpServlet {
 					"VALUES('breed_result','"+u2.getId()+"','"+u1.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
 			
 			db.execute(query);
+			
+			query ="INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES ('breed_result','"+u2.getId()+"','"+u1.getId()+"','"+m1.getId()+"','"+m2.getId()+"','PENDING','0','')";
+			
+			db.execute(query);
+			
+			
 			
 			PrintWriter out = response.getWriter();
 			out.print("Request sent");

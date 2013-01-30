@@ -53,7 +53,7 @@ public class Breeding {
 			//query 
 			String child = "INSERT INTO `monsters` " +
 					"(`ownerID`, `name`, `health`, `strength`, `defence`, `aggression`, `fertility`, `breed`, `status`, `cashPrize`, `wins`, `losses`, `birth`) " +
-					"VALUES ('"+u2.getId()+"', 'baby', '"+health+"', '"+strength+"', '"+defence+"', '"+agretion+"', '"+fretillity+"', '"+u2.getId()+"', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
+					"VALUES ('"+u1.getId()+"', 'baby', '"+health+"', '"+strength+"', '"+defence+"', '"+agretion+"', '"+fretillity+"', '"+u1.getId()+"', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
 		    
 			children.add(child);
 			
