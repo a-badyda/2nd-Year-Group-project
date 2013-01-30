@@ -24,7 +24,7 @@ public class Breeding {
 
 	public Breeding(){}
 	
-	public ArrayList<String> Breed(User u1, User u2, Monster m1, Monster m2){
+	public ArrayList<String> doBreed(User u1, User u2, Monster m1, Monster m2){
 		User from, to;
 		Monster fromMon, toMon;
 		
@@ -53,7 +53,7 @@ public class Breeding {
 			//query 
 			String child = "INSERT INTO `monsters` " +
 					"(`ownerID`, `name`, `health`, `strength`, `defence`, `aggression`, `fertility`, `breed`, `status`, `cashPrize`, `wins`, `losses`, `birth`) " +
-					"VALUES ('"+u2.getId()+"', 'baby', '"+health+"', '"+strength+"', '"+defence+"', '"+agretion+"', '"+fretillity+"', '11899', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
+					"VALUES ('"+u2.getId()+"', 'baby', '"+health+"', '"+strength+"', '"+defence+"', '"+agretion+"', '"+fretillity+"', '"+u2.getId()+"', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
 		    
 			children.add(child);
 			

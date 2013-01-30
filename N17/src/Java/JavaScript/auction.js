@@ -63,26 +63,24 @@ $(document).ready(function(){
 	}
 
 	function addSetCostEvents() {
-		$("#friends_list .set_sell_cost").on("click", function() {
-			var cost = obj.siblings('.monster_breed_cost').val();
+		$("#select_monster_form .set_sell_cost").on("click", function() {
+			var cost = $(this).siblings('.monster_breed_cost').val();
 			changeCost("Buy", this, cost);
 		});
 
-		$("#friends_list .set_breed_cost").on("click", function() {
-			var cost = obj.siblings('.monster_sell_cost').val();
+		$("#select_monster_form .set_breed_cost").on("click", function() {
+			var cost = $(this).siblings('.monster_sell_cost').val();
 			changeCost("Breed", this, cost);
 		});
 	}
 
 	//change the cost for breeding/buying
-	function changeCost(type, obj, cost){
-		if (is_int(cost)) {
-			var mon_id = getParentId(obj,'.monster');
-			$.post(SERVLET_LOCATION, {action: "set" + type +"Cost", cost: new_cost, id: mon_id},
-			function(response) {
-				$('#change_response').html(response);
-			});
-		}
+	function changeCost(type, obj, new_cost){
+		var mon_id = $(obj).attr('id');
+		$.post(SERVLET_LOCATION, {action: "set" + type +"Cost", cost: new_cost, id: mon_id},
+		function(response) {
+			$('#change_response').html(response);
+		});
 	}
 
 	
@@ -101,7 +99,7 @@ $(document).ready(function(){
 	//function to send a breed request
 	function newBreedRequest(obj){
 		var friend_id = getParentId(obj,'.friend');
-		var mon_id = getParentId(obj, '.friend_monster');
+		var mon_id = $(obj).attr('id');
 		var user_mon_id = $('input[name=select_monster]:checked').val();
 
 		$.post(SERVLET_LOCATION, {action: "newBreedRequest", userMonsterId: user_mon_id, friendId: friend_id, monsterId: mon_id},
@@ -134,22 +132,23 @@ $(document).ready(function(){
 
 			//input form for setting selling
 			outputStr += '<tr><td><input id="'+mon.ID+'" type="checkbox" name="select_monster_sell" class="select_monster_sell" value=""></input>';
-			outputStr += '<input id="'+mon.ID+'" type="text" name="sell_cost" class="monster_sell_cost" value="" disabled="true"></input>';
+			outputStr += '<input id="'+mon.ID+'" type="text" name="sell_cost" class="monster_sell_cost" value="'+mon.cost_buy+'" disabled="true"></input>';
 			outputStr += '<input id="'+mon.ID+'" type="button" name="set_sell_cost" class="set_sell_cost" value="Set Sell Cost" disabled="true"></input></td></tr>';
 
 			//input form for setting breeding
 			outputStr += '<tr><td><input id="'+mon.ID+'" type="checkbox" name="select_monster_breed" class="select_monster_breed" value=""></input>';
-			outputStr += '<input id="'+mon.ID+'" type="text" name="breed_cost" class="monster_breed_cost" value="" disabled="true"></input>';
+			outputStr += '<input id="'+mon.ID+'" type="text" name="breed_cost" class="monster_breed_cost" value="'+mon.cost_breed+'" disabled="true"></input>';
 			outputStr += '<input id="'+mon.ID+'" type="button" name="set_breed_cost" class="set_breed_cost" value="Set Breed Cost" disabled="true"></input></td></tr></table></td>';
 
 		//else output this if friend
 		} else {
 			if(mon.buy) {
-				outputStr += '<td><input type="button" class="breed_request" value="Breed"></input></td>';
+
+				outputStr += '<td>Breeding Cost: '+mon.cost_breed+'<input type="button" class="breed_request" value="Breed"></input></td>';
 			}
 			
 			if(mon.breed) {
-				outputStr += '<td><input type="button" class="buy_request" value="Buy"></input></td>';
+				outputStr += '<td>Buying Cost: '+mon.cost_buy+'<input type="button" class="buy_request" value="Buy"></input></td>';
 			}
 		}
 
