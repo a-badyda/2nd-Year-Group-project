@@ -67,12 +67,13 @@ $(document).ready(function() {
 
 		$.post(SERVLET_LOCATION, {action: "new" + type +"Request", userMonsterId: user_mon_id, friendId: friend_id, monsterId: mon_id},
 		function(response) {
-			//$('#response').val(response);
+			$('#friend_'+friend_id).fadeOut();
+			$('#monster_row_'+mon_id).fadeOut();
 		});
 	}
 
 	function buildMonsterSelectHTML(key, mon, user) {
-		outputStr = '<tr>';
+		outputStr = '<tr id="monster_row_'+mon.ID+'">';
 		outputStr += buildMonsterHTML(key, mon);
 		
 		if(user) {
