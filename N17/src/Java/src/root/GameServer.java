@@ -503,24 +503,24 @@ public class GameServer extends HttpServlet {
 				db.execute(querylist.get(i));
 			}
 			
-			String query2 = ("SELECT * FROM monster WHERE breed="+u2.getId()+"");
+			String query2 ="SELECT * FROM monsters WHERE breed="+u2.getId()+"";
 			ResultSet rset;
-			rset = db.createQuery (query2);
+			rset = db.createQuery(query2);
 			int count =1;
 			int babies[]=new int[10];
-			while (rset.next ())
+			while ((rset.next())&&(count<10))
 			{ 
-				babies[count-1]=rset.getInt("ID");
+				babies[count-1]=rset.getInt("monsterID");
 				count++;
 			}
 			
 			String query ="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
-				"VALUES('battle_results','"+u1.getId()+"','"+u2.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
+				"VALUES('breed_result','"+u1.getId()+"','"+u2.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
 		
 			db.execute(query);
 			
 			query ="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
-					"VALUES('battle_results','"+u2.getId()+"','"+u1.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
+					"VALUES('breed_result','"+u2.getId()+"','"+u1.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
 			
 			db.execute(query);
 			
@@ -530,7 +530,7 @@ public class GameServer extends HttpServlet {
 			out.close();
 			
 		} catch (SQLException | IOException e) {
-			
+			e.printStackTrace();
 			try {
 				PrintWriter out = response.getWriter();
 				out.print("Request failed to send");
@@ -539,7 +539,7 @@ public class GameServer extends HttpServlet {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-			e.printStackTrace();
+			
 		}
 		
 		//responce (monster array babies,stats) amount_paid: 
@@ -829,19 +829,20 @@ public class GameServer extends HttpServlet {
 							out.print("\"defense\":\""+rset2.getInt("defence")+"\",");
 							out.print("\"aggression\":\""+rset2.getInt("aggression")+"\"");
 							out.print("}");
+							
 			    		}
-						if(i<9){
-							out.print(",");
-						}
+						if((i<9)&&(rset.getInt(12+i+1)!=0)){
+								out.print(",");
+							}
 					}
 				}
 				
 				out.print("]}");
-				count++;
+				
 				if(count<norows-1){
 					out.print(",");
 				}
-				
+				count++;
     		}
     		
     		out.print("]}");
