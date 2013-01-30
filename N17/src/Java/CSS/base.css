@@ -49,18 +49,6 @@ float: right;
 width: 100%;
 }
 
-/*BUTTONS DO NOT WORK AW NAYYY */
-button{
-  display: inline-block;
-  position: relative;
-  margin: 10px;
-  padding: 0 20px;
-  text-align: center;
-  color: #515151;
-  background: #d3d3d3;
-}
-
-
 /*Index menu - tabs*/
 
 .menu_options{
@@ -83,18 +71,18 @@ button{
   line-height: 30px;
   border-right: 30px solid transparent;
   border-bottom: 30px solid #3D3D3D;
-  color: #C1CDCD;
-  opacity: .3;
-	filter: alpha(opacity=30);	
+  color: #ffffff;
 }
+
+/*extra menu? */
 
 
 /*Help Page*/
 
 .help{
   float: left;
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
 	width:100%; 
 	margin: auto; 
 	padding:20px; 
@@ -105,8 +93,8 @@ button{
 /*Friends Page*/
 
 #friends {
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
 	width:100%;
   float: left;
 	margin: auto;
@@ -117,8 +105,8 @@ button{
   float:right;
   width:auto;
   background: #CDB7B5;
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
   margin: 5px;
 }
 
@@ -126,8 +114,8 @@ button{
   float:left;
   width: auto;
   background: #CDB7B5;
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
   margin: 5px;
 }
 
@@ -182,8 +170,8 @@ input[type=submit]{
 
 /*User Profile*/
 .profile {
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
   width: 100%;
   margin: auto;
   float: left;
@@ -193,8 +181,8 @@ input[type=submit]{
 
 /*Battle section + results*/
 .monster_battle {
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
   width: 100%;
   margin: auto;
   float: left;
@@ -204,8 +192,8 @@ input[type=submit]{
   float:left;
   width: auto;
   background: #CDB7B5;
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
   margin: 5px;
 }
 
@@ -223,8 +211,8 @@ input[type=submit]{
 
 /*Notifications Page */
 .notifications_list {
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
   width: 100%;
   margin: auto;
   float: left;
@@ -234,8 +222,8 @@ input[type=submit]{
 
 /*Auction Page+ results*/
 #monster_auction{
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
   width: 100%;
   margin: auto;
   float: left;
@@ -253,8 +241,8 @@ input[type=submit]{
  
 /*Results for everything i guess?*/
 .results_list{
-  border-bottom-right-radius: 10% 10%;
-  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
   width: 100%;
   margin: auto;
   float: left;
