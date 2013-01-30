@@ -18,7 +18,9 @@ $(document).ready(function() {
 		}
 		outputStr += outputList(buildMonsterSelectHTML, obj.Monsters, true);
 		outputStr += '</table></form>';
+		
 		$("#select_monster_form").html(outputStr);
+		$(".select_monster").first().attr('checked',true);
 	});
 	
 	$monsters.done(function() {
@@ -61,7 +63,7 @@ $(document).ready(function() {
 	//function to send a battle/breed request
 	function newMonsterRequest(type, obj){
 		var friend_id = getParentId(obj,'.friend');
-		var mon_id = $(obj).siblings('.monster').attr('id');
+		var mon_id = $(obj).attr('id');
 		mon_id = mon_id.replace(/[A-Za-z_$]/g, "");
 		var user_mon_id = $('input[name=select_monster]:checked').val();
 
@@ -78,7 +80,7 @@ $(document).ready(function() {
 		if(user) {
 			outputStr += '<td><input type="radio" name="select_monster" class="select_monster" value="'+mon.ID+'"></input></td>';
 		} else {
-			outputStr += '<td><input type="button" class="battle_request" value="battle"></input></td>';
+			outputStr += '<td><input id="'+mon.ID+'" type="button" class="battle_request" value="battle"></input></td>';
 		}
 
 		return outputStr + '</tr>';

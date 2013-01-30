@@ -30,16 +30,17 @@ $(document).ready(function() {
 		//user clicks decline.
 		$(".decline").on('click', function() {
 			var notification_id = getParentId(this, '.notification_request');
-			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id}, function(response) {
+			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id, result: false}, function(response) {
 				$('#request_' + notification_id).fadeOut();
 			});
-			return false;
 		});
 
 		//user clicks to view a result.
 		$(".view").on('click', function() {
-			window.location.replace("view_results.html");
-			return false;
+			var notification_id = getParentId(this, '.notification_request');
+			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id, result: false}, function(response) {
+				window.location.replace("index.html?page=view_results");
+			});
 		});
 	}
 
