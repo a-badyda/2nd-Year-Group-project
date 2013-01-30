@@ -102,7 +102,7 @@ width: 100%;
 }
 
 #friends_list{
-  float:right;
+  float:left;
   width:auto;
   background: #CDB7B5;
   border-bottom-right-radius: 50px 50px;
