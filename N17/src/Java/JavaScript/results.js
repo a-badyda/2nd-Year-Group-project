@@ -45,7 +45,7 @@ $(document).ready(function() {
 			outputStr += outputList(writeBaby, obj.babies);
 			outputStr += '</div>';
 		} else if (type == "buy_result") {
-			writeBuyResult(key, obj.);
+			writeBuyResult(key, val);
 		}
 		
 
@@ -62,13 +62,13 @@ $(document).ready(function() {
 		output += buildMonsterHTML(key, val.friend_monster);
 		output += '<p>'+val.message+'</p>';
 		output += '<p>Money Exchanged: '+val.cost+'</p>';
-		output += '</div>'
+		output += '</div>';
 	}
 
 	function writeBaby(key, val) {
 		var output ='';
 		output += '<div class="baby">';
-		buildMons
+		output += buildMonsterHTML(key, val);
 		output += '</div>';
 		return output;
 	}
@@ -79,7 +79,7 @@ $(document).ready(function() {
 		output += buildMonsterHTML(key, val.friend_monster);
 		output += '<p>'+val.message+'</p>';
 		output += '<p>Money Exchanged: '+val.cost+'</p>';
-		output += '</div>'
+		output += '</div>';
 	}
 
 	function writeResponse(response) {
