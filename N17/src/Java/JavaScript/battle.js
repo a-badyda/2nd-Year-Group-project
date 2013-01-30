@@ -12,9 +12,12 @@ $(document).ready(function() {
 	//get a list of the users monsters
 	$monsters = $.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 		var obj =  $.parseJSON(response);
-		var outputStr = '<form>';
+		var outputStr = '<form><table>';
+		if(obj.Monsters.length > 0) {
+			outputStr += '<tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th><th>Selected</th></tr>';
+		}
 		outputStr += outputList(buildMonsterSelectHTML, obj.Monsters, true);
-		outputStr += '</form>';
+		outputStr += '</table></form>';
 		$("#select_monster_form").html(outputStr);
 	});
 	
@@ -22,7 +25,7 @@ $(document).ready(function() {
 		//get a list of the friends and there monsters
 		$.post(SERVLET_LOCATION, {action: "getFriends"}, function(response) {
 			var obj =  $.parseJSON(response);
-			var output = outputList(buildFriendHTML, obj.Friends);
+			output = outputList(buildFriendHTML, obj.Friends);
 			$("#friends_list").html(output);
 			addMonsterViewerEvents();
 		});
@@ -36,9 +39,12 @@ $(document).ready(function() {
 			$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
 				//get an display the friends monsters
 				var obj =  $.parseJSON(response);
-				var outputStr = '<form>';
+				var outputStr = '<form><table>';
+				if(obj.Monsters.length > 0) {
+					outputStr += '<tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th><th>Selected</th></tr>';
+				}
 				outputStr += outputList(buildMonsterSelectHTML, obj.Monsters, false);
-				outputStr += '</form>';
+				outputStr += '</table></form>';
 				$('#friend_'+obj.friend_id+' .monster_list').html(outputStr);
 				addBattleRequestEvents();
 			});
@@ -66,15 +72,15 @@ $(document).ready(function() {
 	}
 
 	function buildMonsterSelectHTML(key, mon, user) {
-		outputStr = '';
+		outputStr = '<tr>';
 		outputStr += buildMonsterHTML(key, mon);
 		
 		if(user) {
-			outputStr += '<input type="radio" name="select_monster" class="select_monster" value="'+mon.ID+'"></input>';
+			outputStr += '<td><input type="radio" name="select_monster" class="select_monster" value="'+mon.ID+'"></input></td>';
 		} else {
-			outputStr += '<input type="button" class="battle_request" value="battle"></input>';
+			outputStr += '<td><input type="button" class="battle_request" value="battle"></input></td>';
 		}
 
-		return outputStr;
+		return outputStr + '</tr>';
 	}
 });

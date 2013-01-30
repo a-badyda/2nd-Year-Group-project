@@ -13,14 +13,18 @@ $(document).ready(function() {
 	//load a list of all friends
 	$friend = $.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
 		var obj = $.parseJSON(response);
-		var output = outputList(outputFriendsList, obj.Friends);
+		var output = '<table><tr><th>Name</th></tr>';
+		output += '<tr>' + outputList(outputFriendsList, obj.Friends) + '</tr>';
+		output += '</table>';
 		$('#friends_list').append(output);
 	});
 
 	$friend.done(function() {
 		$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
 			var obj = $.parseJSON(response);
-			var output = outputList(outputRichList, obj.RichList);
+			var output = '<table><tr><th>Name</th><th>Money</th></tr>';
+			output += outputList(outputRichList, obj.RichList);
+			output += '</table>';
 			$('#rich_list').append(output);
 		});
 	});
@@ -37,18 +41,18 @@ $(document).ready(function() {
 });
 
 function outputFriendsList(key, val) {
-	var output = '';
+	var output = '<tr>';
 	output += '<div class="friend">';
 	output += '<input class="friend_id" type="hidden" value="' + val.id + '"></input>';
-	output += '<h4>' + val.username + '</h4>';
-	output += '</div>';
+	output += '<td><h4>' + val.username + '</h4></td>';
+	output += '</div></tr>';
 	return output;
 }
 
 function outputRichList(key, val) {
-	var output = '';
+	var output = '<tr>';
 	output += '<div class="friend">';
-	output += '<h4>' + val.username + ': '+ val.cash +'</h4>';
-	output += '</div>';
+	output += '<td><h4>' + val.username + '</h4></td><td>'+ val.cash +'</td>';
+	output += '</div></tr>';
 	return output;
 }

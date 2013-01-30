@@ -17,23 +17,30 @@ $(document).ready(function() {
 	$user_data.done(function() {
 		$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 			var obj = $.parseJSON(response);
-			var outputStr = outputList(buildProfileHTML, obj.Monsters, true);
+			var outputStr = '<table><tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th><th>Change Name</th></tr>';
+			outputStr += outputList(buildProfileHTML, obj.Monsters, true);
 			$('.monster_list').html(outputStr);
+			addChangeNameEvents();
 		});
 	});
 
+	function addChangeNameEvents() {
+		$('.change_name_button').on('click', function() {
+			var ID = $(this).attr('id');
+			var name =  $(this).siblings('.change_name').val();
+			$.post(SERVLET_LOCATION, {action: "changeName", monster_id: ID, new_name: name}, function(response) {
+				$('#monster_'+mon.ID+' .monster_name').html(name);
+			});
+		});
+	}
 
-	function buildProfileHTML(key, mon) {
-		outputStr = '';
-		outputStr += '<div id="monster_'+mon.id+'" class="monster">';
-		outputStr += '<p class="monster_name">Monster Name: '+mon.monstername+'</p>';
-		outputStr += '<div id="stats">';
-		outputStr += '<p class="strength">Strength: '+mon.strength+'</p>';
-		outputStr += '<p class="aggression">Aggression: '+mon.aggression+'</p>';
-		outputStr += '<p class="defense">Defence: '+mon.defense+'</p>';
-		outputStr += '<p class="health">Health: '+mon.health+'</p>';
-		outputStr += '<p class="fertility">Fertility: '+mon.fertility+'</p>';
-		outputStr += '</div></div>';
+
+	function buildProfileHTML(key, mon, user) {
+		outputStr = '<tr>';
+		outputStr += buildMonsterHTML(key, mon, user);
+		outputStr += '<td><input type="text" id="'+mon.ID+'" class="change_name" value="" ></input>';
+		outputStr += '<input type="button" id="'+mon.ID+' class="change_name_button" value="Change Name"></input></td>';
+		outputStr += '</tr>';
 		return outputStr;
 	}
 });

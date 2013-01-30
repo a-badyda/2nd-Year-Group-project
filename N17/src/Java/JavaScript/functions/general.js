@@ -29,7 +29,7 @@ function outputList(func, list, args) {
 			output += func(key, val, args);
 		});
 	} else {
-		output = '<h4>Oops! Looks like there\'s nothing here!</h4>';
+		output += '<h4>Oops! Looks like there\'s nothing here!</h4>';
 	}
 
 	return output;
@@ -53,13 +53,13 @@ function is_int(value){
 function buildMonsterHTML(key, mon) {
 	outputStr = '';
 	outputStr += '<div id="monster_'+mon.ID+'" class="monster">';
-	outputStr += '<p class="monster_name">'+mon.monstername+'</p>';
+	outputStr += '<td class="monster_name">'+mon.monstername+'</td>';
 	outputStr += '<div id="stats">';
-	outputStr += '<p class="strength">'+mon.strength+'</p>';
-	outputStr += '<p class="aggression">'+mon.aggression+'</p>';
-	outputStr += '<p class="defense">'+mon.defense+'</p>';
-	outputStr += '<p class="health">'+mon.health+'</p>';
-	outputStr += '<p class="fertility">'+mon.fertility+'</p>';
+	outputStr += '<td class="strength">'+mon.strength+'</td>';
+	outputStr += '<td class="aggression">'+mon.aggression+'</td>';
+	outputStr += '<td class="defense">'+mon.defense+'</td>';
+	outputStr += '<td class="health">'+mon.health+'</td>';
+	outputStr += '<td class="fertility">'+mon.fertility+'</td>';
 	outputStr += '</div></div>';
 	return outputStr;
 }
@@ -67,9 +67,9 @@ function buildMonsterHTML(key, mon) {
 function buildFriendHTML(key, friend){
 	output = '';
 	output += '<div id="friend_'+friend.id+'" class="friend">';
-	output += '<p class="friend_name">'+friend.username+'</p>';
-	output += '<a class="view_monster" href="#">View Monsters</a>';
-	output += '<div class="monster_list"></div>';
+	output += '<td class="friend_name">'+friend.username+'</td>';
+	output += '<td><a class="view_monster" href="#">View Monsters</a></td>';
+	output += '<td><div class="monster_list"></div></td>';
 	output += '</div>';
 	return output;
 }
