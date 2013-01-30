@@ -134,7 +134,51 @@ button{
 
 
 /*Login Page*/
+#login{
+  text-align: center;
+}
+#login_text{
+text-align: center;
+}
 
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+label {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  }
+
+form {
+  margin: 0 0 20px;
+}
+
+input{
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 9px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+}
+
+input[type=submit]{
+  position: relative;
+  margin: 10px;
+  padding: 0 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #515151;
+  background: #d3d3d3;
+  text-shadow: 1px 1px 1px rgba(255,255,255, .22);
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+  transition: all 0.15s ease;
+  }
 
 /*User Profile*/
 .profile {
