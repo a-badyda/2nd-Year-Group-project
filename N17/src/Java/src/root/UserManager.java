@@ -61,6 +61,39 @@ public class UserManager {
 		return null;
 	}
 	
+	
+	public ArrayList<Monster> fetchFriendsMonstersFromDatabase(int id){
+		
+		ArrayList<Monster> monsters = new ArrayList<Monster>();
+		
+		String query = "SELECT * FROM monsters WHERE ownerID='" +id+ "'";
+		try {
+			ResultSet rset;
+			rset = db.createQuery(query);
+			while (rset.next ()){
+				Monster monster = new Monster();
+				monster.setName(rset.getString("name"));
+				monster.setId(rset.getInt("monsterID"));
+				monster.setOwnerId(rset.getInt("ownerID"));
+				monster.setHealth(rset.getInt("health"));
+				monster.setAggression(rset.getInt("aggression"));
+				monster.setStrength(rset.getInt("strength"));
+				monster.setDefence(rset.getInt("defence"));
+				monster.setFertility(rset.getInt("fertility"));
+				monster.setWins(rset.getInt("wins"));
+				monster.setLosses(rset.getInt("losses"));
+				monster.setCashBreed(rset.getInt("cashbreed"));
+				monster.setCashPrize(rset.getInt("cashprize"));
+				monster.setCashSell(rset.getInt("cashSell"));
+				
+				monsters.add(monster);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return monsters;
+	}
+	
 	public User fetchUser(Integer id){
 		for(int i=0; i<users.size(); i++){
 			if (id.equals(users.get(i).getId())){

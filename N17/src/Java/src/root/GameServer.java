@@ -413,13 +413,19 @@ public class GameServer extends HttpServlet {
 		
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
-		int Friend;
 		
 		
 		try {
-			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getAttribute("username")+ "'");
-			Friend = db.createQuery(query).getInt("UserID");
-			query = "INSERT INTO `notifications` (`type`, `UserID1`, `UserID2`, `state`) VALUES ('FRIEND', '"+user.getId()+"', '"+Friend+"', 'PENDING')";
+			int Friend=0;
+			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getParameter("username")+ "'");
+			
+			ResultSet rset;
+			rset = db.createQuery(query);
+			while(rset.next()){
+				Friend = rset.getInt("UserID");
+			}
+			
+			query = "INSERT INTO notifications (type, UserID1, UserID2, MonsterID1, MonsterID2, state) VALUES ('friend_request', '"+Friend+"', '"+user.getId()+"', 0, 0, 'PENDING')";
 			db.execute(query);
 	        try {
 				PrintWriter out = response.getWriter();
@@ -447,28 +453,26 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		
-		int Friend = (int)request.getAttribute("friendId");
-		int FriendMonster = (int)request.getAttribute("monsterId");
-		int userMonster = (int)request.getAttribute("userMonsterId");
 		
-		String query = ("SELECT * FROM user WHERE UserName='" +(String)session.getAttribute("username")+ "'");
+		int Friend = Integer.parseInt(request.getParameter("friendId"));
+		int FriendMonster = Integer.parseInt(request.getParameter("monsterId"));
+		int userMonster = Integer.parseInt(request.getParameter("userMonsterId"));
 		
 		try {
-			Friend = db.createQuery(query).getInt("UserID");
-			query = "INSERT INTO `notifications` (`type`, `UserID1`, `UserID2`, `MonsterID1`, `MonsterID2`, `state`) VALUES ('BATTLE', '"+user.getId()+"', '"+Friend+"', '"+userMonster+"', '"+FriendMonster+"', 'PENDING')";
+			
+			
+			String query = "INSERT INTO notifications (type, UserID1, UserID2, MonsterID1, MonsterID2, state) VALUES ('battle_request', '"+Friend+"', '"+user.getId()+"', '"+userMonster+"', '"+FriendMonster+"', 'PENDING')";
 			db.execute(query);
 			
 		
-			try {
-				PrintWriter out = response.getWriter();
-				out.print("Request sent");
-				out.flush();
-				out.close();
+			
+			PrintWriter out = response.getWriter();
+			out.print("Request sent");
+			out.flush();
+			out.close();
 				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		} catch (SQLException e) {
+			
+		} catch (IOException e) {
 			try {
 				PrintWriter out = response.getWriter();
 				out.print("Request faild to send");
@@ -681,21 +685,13 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		
-		ArrayList<Monster> requests = null;
+		ArrayList<Monster> requests = users.fetchFriendsMonstersFromDatabase(Integer.parseInt(request.getParameter("friend_id")));
 		
-		for(int i =0; i<user.getFriends().size(); i++){
-			
-			if(user.getFriends().get(i).getId()==(int)request.getAttribute("friend_id")){//##############################
-				requests = user.getFriends().get(i).getMonsters();
-				break;
-			}
-			
-		}
-		
+				
 		
 		try {
 			PrintWriter out = response.getWriter();
-			out.print("{\"friend_id:"+(int)request.getAttribute("friend_id")+", Monsters\":\"[\"");
+			out.print("{\"friend_id\":"+Integer.parseInt(request.getParameter("friend_id"))+", \"Monsters\":[");
 			
 			for (int i =0 ;i<requests.size();i++){
 				
@@ -706,17 +702,21 @@ public class GameServer extends HttpServlet {
 				
 				
 				out.print("{\"monstername\":\""+requests.get(i).getName()+"\",");
-				out.print("\"ID\":\""+requests.get(i).getId()+"\"}");
-				out.print("\"buy\":\""+buy+"\"}");
+				out.print("\"ID\":\""+requests.get(i).getId()+"\",");
+				out.print("\"buy\":\""+buy+"\",");
 				out.print("\"strength\":\""+requests.get(i).getStrength()+"\",");
 				out.print("\"health\":\""+requests.get(i).getHealth()+"\",");
 				out.print("\"fertility\":\""+requests.get(i).getFertility()+"\",");
 				out.print("\"defecnce\":\""+requests.get(i).getDefence()+"\",");
 				out.print("\"aggrestion\":\""+requests.get(i).getAggression()+"\",");
 				out.print("\"breed\":\""+breed+"\"}");
+				
+				if(i<requests.size()-1){
+					out.print(",");
+				}
 			}
 			
-			out.print("\"]}\"");
+			out.print("]}");
 			out.flush();
 			out.close();
 			
@@ -916,6 +916,8 @@ public class GameServer extends HttpServlet {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+		query = ("DELETE FROM notifications WHERE ID='" +requestid+ "'");
+		db.execute(query);
 		
 		
 	}
@@ -951,12 +953,14 @@ public class GameServer extends HttpServlet {
 		String query = ("DELETE FROM `notifications` WHERE `ID`='"+id+"'");
 		String query1 ="INSERT INTO `friends` (`userID`, `friendID`) VALUES ('"+user.getId()+"', '"+friendid+"')";
 		String query2 ="INSERT INTO `friends` (`userID`, `friendID`) VALUES ('"+friendid+"', '"+user.getId()+"')";
+		String query3 ="INSERT INTO notifications (type, UserID1, UserID2, MonsterID1, MonsterID2, state) VALUES ('friend_accepted', '"+friendid+"', '"+user.getId()+"', 0, 0, 'PENDING')";
 		
 		
 
 		db.execute(query);
 		db.execute(query1);
 		db.execute(query2);
+		db.execute(query3);
 		
 		
 		PrintWriter out;
