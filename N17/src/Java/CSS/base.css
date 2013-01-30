@@ -9,13 +9,18 @@ body, select, input, textarea{color:#333}
 h1,h2,h3,h4,h5,p,li{text-align:left; margin:1em; color: #292421;font-family: Verdana,sans-serif;}
 h1{font-size:40px; text-align: center; font-family: Impact, sans-serif; color: #66CD00;}
 h2{font-size:20px; margin-bottom:1.2em; text-align: center; font-family: Impact,sans-serif;}
-h3{font-size:15px; margin-bottom:1.5em; text-indent: 10px; font-family: Impact,sans-serif;}
+h3{font-size:15px; margin-bottom:1.5em; text-indent: 10px; font-family: Verdana,sans-serif;}
 h4{font-size:15px;}
 h5{font-family:italic; margin-bottom:1.5em; text-indent:5px;}
 p{margin-bottom:0.5em;}
 li{font-size:12px;}
 
-table, th, tr{font-family: Verdana, sans-serif; font-size: 14; margin: 0.5px;}
+td,th{
+  padding: 0.5em;
+  text-align: center;
+  font-family: Verdana,sans-serif;
+  font-size: 12px;
+}
 
 a:link {color: #009900;}
 a:visited {color: #999999;}
@@ -75,6 +80,7 @@ a:active {color: #009900;}
 	margin: auto;
 	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
 }
+
 #friends_list{
   float:right;
   width:500px;
@@ -127,6 +133,7 @@ a:active {color: #009900;}
   margin: 5px;
 }
 
+/*
 #battle_results{
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
@@ -134,7 +141,8 @@ a:active {color: #009900;}
   margin: auto;
   float: left;
   background: #EED2EE;
-}
+} 
+*/
 
 
 /*Notifications Page */
@@ -157,6 +165,7 @@ a:active {color: #009900;}
   float: left;
   background: #BDFCC9;
 }
+/*
 #breeding_results{
   border-bottom-right-radius: 10% 10%;
   border-bottom-left-radius: 10% 10%;
@@ -164,8 +173,8 @@ a:active {color: #009900;}
   margin: auto;
   float: left;
   background: #BDFCC9;
-}
-
+} */
+ 
 /*Results for everything i guess?*/
 .results_list{
   border-bottom-right-radius: 10% 10%;
