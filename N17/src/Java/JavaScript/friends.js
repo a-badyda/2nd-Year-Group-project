@@ -34,9 +34,12 @@ $(document).ready(function() {
 	//event handler to send a friend request.
 	$(".send_request .button_add").click(function() {
 		var email = $(".friend_email").val();
-		$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
-			$('.email_response').html(response);
-		});
+
+		if (validateEmail(email)) {
+			$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
+				$('.email_response').html(response);
+			});
+		}
 		return false;
 	});
 	

@@ -20,7 +20,7 @@ $(document).ready(function() {
 		outputStr += '</table></form>';
 		
 		$("#select_monster_form").html(outputStr);
-		$(".select_monster").first().attr('checked',true);
+		$(".select_monster").first().attr('checked', true);
 	});
 	
 	//When we have a list of users monsters, get a list of their friends

@@ -71,7 +71,7 @@ function buildMonsterHTML(key, mon) {
 function buildFriendHTML(key, friend){
 	output = '';
 	output += '<div id="friend_'+friend.id+'" class="friend">';
-	output += '<td  id="'+friend.id+'"class="friend_name">'+friend.username+'</td>';
+	output += '<td id="'+friend.id+'"class="friend_name">'+friend.username+'</td>';
 	output += '<td><a class="view_monster" href="#">View Monsters</a></td>';
 	output += '<td><div class="monster_list"></div></td>';
 	output += '</div>';
