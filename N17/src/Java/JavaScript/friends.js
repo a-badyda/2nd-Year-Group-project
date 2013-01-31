@@ -14,7 +14,10 @@ $(document).ready(function() {
 	//load a list of all friends
 	$friend = $.post(SERVLET_LOCATION, {action: 'getFriends'}, function(response) {
 	 	var obj = $.parseJSON(response);
-	 	var output = '<table><tr><th>Name</th></tr>';
+	 	var output ='<table>';
+	 	if(obj.Friends.length != 0) {
+		 	output += '<tr><th>Name</th></tr>';
+		 }
 	 	output += '<tr>' + outputList(outputFriendsList, obj.Friends) + '</tr>';
 	 	output += '</table>';
 	 	$('#friends_list').append(output);
@@ -24,7 +27,10 @@ $(document).ready(function() {
 	 $friend.done(function() {
 	 	$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
 	 		var obj = $.parseJSON(response);
-	 		var output = '<br /><table><tr><th>Name</th><th>Money</th></tr>';
+	 		var output = '<br/><table>';
+	 		if (obj.RichList.length != 0) {
+		 		output += '<tr><th>Name</th><th>Money</th></tr>';
+		 	}
 	 		output += outputList(outputRichList, obj.RichList);
 	 		output += '</table>';
 	 		$('#rich_list').append(output);
