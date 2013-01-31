@@ -178,7 +178,7 @@ public class GameServer extends HttpServlet {
  		            //run the query and stor in DB
  		            db.execute(query);
     				
- 		            out.print("{\"login\":true}");
+ 		            out.print("{\"login\":true,\"message\":\"login sucsess\"}");
     				out.flush();
     				out.close();
  		            
@@ -319,7 +319,7 @@ public class GameServer extends HttpServlet {
 		else{
 			try {
 				PrintWriter out = response.getWriter();
-				out.print("sorry invalid login");
+				out.print("{\"login\":false,\"message\":\"sorry invalid login\"}");
 				out.flush();
 				out.close();
 			} catch (IOException e) {
@@ -357,7 +357,7 @@ public class GameServer extends HttpServlet {
 	    String password = request.getParameter("password");
 	    
 	    try {
-	    	String query ="SELECT * FROM user WHERE UserName='"+request.getParameter("username")+"'";
+	    	String query ="SELECT * FROM user WHERE UserName='"+(String)request.getParameter("username")+"'";
 	    	ResultSet rset = db.createQuery(query);
 			while(rset.next()){
 				exists=true;
