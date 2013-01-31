@@ -29,6 +29,11 @@ public class GameServer extends HttpServlet {
     	battle = new Battle();
     }
 
+    /**
+     * @method doGet responsible for preforming actions in response to requests
+     * @param HttpServletRequest the request recived
+     * @param HttpServletResponse the response to be supplied
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -42,6 +47,9 @@ public class GameServer extends HttpServlet {
 		
 		
 	}
+	/**
+	 * @method IsLoggedIn checks wether user is logged in
+	 */
 	
 	private void IsLoggedIn(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
@@ -59,6 +67,11 @@ public class GameServer extends HttpServlet {
 		out.flush();
 		out.close();
 	}
+	
+	/**
+	 * @method GetUserData requests  the username and cash attribute
+	 */
+	
 	private void GetUserData(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		HttpSession session = request.getSession(true);
@@ -83,6 +96,10 @@ public class GameServer extends HttpServlet {
 		
 	}
 	
+	/**
+	 * @method doPost recives all the requests from the client side 
+	 * - the major function that everything is put through.
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -111,6 +128,9 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	
+	/**
+	 * @method LogIn  loads in the user into the server and creates a new session
+	 */
 	private void LogIn(HttpServletRequest request, HttpServletResponse response){
 		
 		String username = request.getParameter("username");
@@ -329,6 +349,7 @@ public class GameServer extends HttpServlet {
 		
 
 	}
+	
 	private void LogOut(HttpServletRequest request, HttpServletResponse response){
 		
 		
@@ -350,6 +371,7 @@ public class GameServer extends HttpServlet {
 		//redirect
 		
 	}
+	
 	private void NewUser(HttpServletRequest request, HttpServletResponse response){
 		 boolean exists= false;
 	    
@@ -424,6 +446,11 @@ public class GameServer extends HttpServlet {
 	    }
 	}
 	
+	/**
+	 * @method addFriend a method tries to find the matching string in database and if it is found, the match is sent a friend request
+	 * if the friend is not found, an error message is returned
+	 * when friend request is accepted/declined by the user, the method either creates the link between players or not. 
+	 */
 	private void addFriend(HttpServletRequest request, HttpServletResponse response){
 		
 		HttpSession session = request.getSession(true);
@@ -512,6 +539,9 @@ public class GameServer extends HttpServlet {
 			}
 		}
 	}
+	/**
+	 * @method newBattleRequest Sends out the request to marked user
+	 */
 	private void newBattleRequest(HttpServletRequest request, HttpServletResponse response){
 		
 		HttpSession session = request.getSession(true);
