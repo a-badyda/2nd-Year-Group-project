@@ -48,7 +48,7 @@ function outputFriendsList(key, val) {
 	output += '<div class="friend">';
 	output += '<input class="friend_id" type="hidden" ' + val.id + '"></input>';
 	output += '<td><h4>' + val.username + '</h4></td>';
-	output += '</div></tr>';
+	output += '</div></tr><br />';
 	return output;
 }
 
@@ -57,6 +57,6 @@ function outputRichList(key, val) {
 	var output = '<tr>';
 	output += '<div class="friend">';
 	output += '<td><h4>' + val.username + '</h4></td><td>'+ val.cash +'</td>';
-	output += '</div></tr>';
+	output += '</div></tr><br />';
 	return output;
 }

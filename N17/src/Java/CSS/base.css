@@ -49,13 +49,35 @@ float: right;
 width: 100%;
 }
 
+/*rounded edges for all*/
+.help,
+#friends, 
+#friends_list, 
+#rich_list,
+.profile, 
+.monster_battle,
+ #your_monsters,
+.breeding_results, 
+.battle_results, 
+.results_list,
+#monster_auction,
+.notifications_list {
+
+  border-top-left-radius: 20px 20px;
+  border-top-right-radius:20px 20px;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
+  width:90%;
+}
+
+
 /*Index menu - tabs*/
 
 .menu_options{
-	float: center;
+  float: center;
   margin-top: -5px;
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 .menu_options li {
@@ -84,12 +106,9 @@ width: 100%;
 
 .help{
   float: left;
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
-	width:100%; 
-	margin: auto; 
-	padding:20px; 
-	background-color: #CDB79E;
+  margin: auto; 
+  padding:20px; 
+  background-color: #CDB79E;
   opacity: .8;
 }
 
@@ -97,12 +116,9 @@ width: 100%;
 /*Friends Page*/
 
 #friends {
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
-	width:100%;
   float: left;
-	margin: auto;
-	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
+  margin: auto;
+  background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
   opacity: .8;
 }
 
@@ -110,8 +126,6 @@ width: 100%;
   float:left;
   width:auto;
   background: #CDB7B5;
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
   margin: 5px;
 }
 
@@ -119,8 +133,6 @@ width: 100%;
   float:left;
   width: auto;
   background: #CDB7B5;
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
   margin: 5px;
 }
 
@@ -175,9 +187,6 @@ input[type=submit][type=button]{
 
 /*User Profile*/
 .profile {
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
-  width: 100%;
   margin: auto;
   float: left;
   background: #BFEFFF;
@@ -187,9 +196,6 @@ input[type=submit][type=button]{
 
 /*Battle section + results*/
 .monster_battle {
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
-  width: 100%;
   margin: auto;
   float: left;
   background: #EED2EE;
@@ -199,8 +205,6 @@ input[type=submit][type=button]{
   float:left;
   width: auto;
   background: #CDB7B5;
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
   margin: 5px;
 }
 
@@ -218,9 +222,6 @@ input[type=submit][type=button]{
 
 /*Notifications Page */
 .notifications_list {
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
-  width: 100%;
   margin: auto;
   float: left;
   background: #FDF5E6;
@@ -230,12 +231,10 @@ input[type=submit][type=button]{
 
 /*Auction Page+ results*/
 #monster_auction{
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
-  width: 100%;
   margin: auto;
   float: left;
   background: #BDFCC9;
+  opacity: .8;
 }
 /*
 #breeding_results{
@@ -249,9 +248,6 @@ input[type=submit][type=button]{
  
 /*Results for everything i guess?*/
 .results_list{
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
-  width: 100%;
   margin: auto;
   float: left;
   background: #D2B48C;
@@ -265,6 +261,7 @@ input[type=submit][type=button]{
   text-align:left; margin:1em; color: #292421;font-family: Verdana,sans-serif;
   margin-bottom:0.5em; font-size: 12px;
 }
+
 #stats,
 #monster{
   margin: 2px;
