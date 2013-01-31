@@ -194,7 +194,7 @@ input[type=submit][type=button][type=email]{
 .profile {
   margin: auto;
   float: left;
-  background: #BFEFFF;
+  background: #D2B48C;
   opacity: .8;
 }
 
@@ -238,7 +238,7 @@ input[type=submit][type=button][type=email]{
 #monster_auction{
   margin: auto;
   float: left;
-  background: #BDFCC9;
+  background: #FFE7BA;
   opacity: .8;
 }
 /*
