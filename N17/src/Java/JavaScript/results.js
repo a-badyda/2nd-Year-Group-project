@@ -59,8 +59,8 @@ $(document).ready(function() {
 	function writeBattleResult(key, val) {
 		var output = ''; 
 		output += '<div class="battle_results>"';
-		output += buildMonsterHTML(key, val.my_monster);
-		output += buildMonsterHTML(key, val.friend_monster);
+		output += '<p>'buildMonsterHTML(key, val.my_monster);'</p>'
+		output += '<p>'buildMonsterHTML(key, val.friend_monster); '</p>'
 		output += '<p>'+val.message+'</p>';
 		output += '<p>Money Exchanged: '+val.cash+'</p>';
 		output += '</div>';
