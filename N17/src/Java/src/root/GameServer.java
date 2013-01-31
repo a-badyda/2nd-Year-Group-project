@@ -598,6 +598,8 @@ public class GameServer extends HttpServlet {
 				int babies[]=new int[10];
 				while ((rset.next())&&(count<10))
 				{ 
+					String query3="UPDATE monsters SET breed='BEAST' WHERE monsterID='"+rset.getInt("monsterID")+"'";
+					db.execute(query3);
 					babies[count-1]=rset.getInt("monsterID");
 					count++;
 				}
@@ -1246,6 +1248,18 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		users.cheakForUsersMonsterss(user.getId());
+		
+		try {
+		String query="SELECT * FROM user WHERE UserID='"+user.getId()+"'";
+		ResultSet rset;
+		rset = db.createQuery (query);
+			while(rset.next()){
+				user.setCash(rset.getInt("Cash"));
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
 		user.getMonsters().clear();
 		String query2 = ("SELECT * FROM monsters WHERE ownerID='" +user.getId()+ "'");
 		

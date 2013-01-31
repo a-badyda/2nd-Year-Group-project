@@ -36,7 +36,21 @@ public class Battle {
 		
 	}
 	
+	public void clean(){
+		to =null;
+		from = null;
+		toMon = null;
+		fromMon = null;
+		winner = null;
+		defeated = null;
+		messages.clear();
+		
+		
+	}
+	
+	
 	public ArrayList<String> doBattle(User u1, User u2, Monster m1, Monster m2){
+		clean();
 		this.to = u1;
 		this.from = u2;
 		this.toMon = m1;
