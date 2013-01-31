@@ -385,12 +385,12 @@ public class GameServer extends HttpServlet {
 		}
 	    // give them there first monster
 		
+		users.genereate(ID);
 		
-		
-		query = "INSERT INTO `monsterdata`.`monsters` (`ownerID`, `name`, `health`, `strength`, `defence`, `aggression`, `fertility`, `breed`, `status`, `cashPrize`, `wins`, `losses`, `birth`) VALUES ('"+ID+"', 'my first monster', '10', '10', '10', '10', '10', 'BEAST', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
-	    
-		//run the query and store in DB
-	    db.execute(query);
+//		query = "INSERT INTO `monsterdata`.`monsters` (`ownerID`, `name`, `health`, `strength`, `defence`, `aggression`, `fertility`, `breed`, `status`, `cashPrize`, `wins`, `losses`, `birth`) VALUES ('"+ID+"', 'my first monster', '10', '10', '10', '10', '10', 'BEAST', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
+//	    
+//		//run the query and store in DB
+//	    db.execute(query);
 	    
 	    try {
 			PrintWriter out = response.getWriter();
@@ -1128,6 +1128,7 @@ public class GameServer extends HttpServlet {
 	private void reloadmonsters(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
+		users.cheakForUsersMonsterss(user.getId());
 		user.getMonsters().clear();
 		String query2 = ("SELECT * FROM monsters WHERE ownerID='" +user.getId()+ "'");
 		

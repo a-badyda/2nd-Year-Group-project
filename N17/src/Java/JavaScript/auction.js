@@ -69,13 +69,21 @@ $(document).ready(function(){
 		//clicking to set the cost of selling a monster
 		$(".set_sell_cost").on("click", function() {
 			var cost = $(this).siblings('.monster_sell_cost').val();
-			changeCost("Buy", this, cost);
+			if (is_int(cost) && cost >=0) {
+				changeCost("Buy", this, cost);
+			} else {
+				alert("Please enter a valid number.");
+			}
 		});
 
 		//clicking to set the cost of breeding with a monster
 		$(".set_breed_cost").on("click", function() {
 			var cost = $(this).siblings('.monster_breed_cost').val();
-			changeCost("Breed", this, cost);
+			if (is_int(cost) && cost >=0) {
+				changeCost("Breed", this, cost);
+			} else {
+				alert("Please enter a valid number.");
+			}
 		});
 	}
 

@@ -55,7 +55,7 @@ public class Battle {
 		defeated.setLosses(defeated.getLosses()+1);
 		defeated.setHealth(0);
 		defeated.setStatus(Status.DEAD);
-		messages.add("UPDATE monsters SET losses='"+(defeated.getLosses()+1)+"', health='0', status='DEAD' WHERE monsterID='"+defeated.getId()+"'");
+		messages.add("UPDATE monsters SET losses='"+(defeated.getLosses()+1)+"', health='0', status='DEAD', ownerID='102' WHERE monsterID='"+defeated.getId()+"'");
 		
 		
 		if(winner == toMon){
@@ -63,6 +63,7 @@ public class Battle {
 			messages.add("UPDATE user SET Cash='"+(to.getCash()+winner.getCashPrize())+"' WHERE UserID='"+winner.getOwnerId()+"'");
 			messages.add("INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES ('battle_results','"+from.getId()+"','"+to.getId()+"','"+fromMon.getId()+"','"+toMon.getId()+"','pending','"+winner.getCashPrize()+"','you won')");
 			messages.add("INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES ('battle_results','"+to.getId()+"','"+from.getId()+"','"+toMon.getId()+"','"+fromMon.getId()+"','pending','"+winner.getCashPrize()+"','you lost')");
+			
 		} else {
 			from.setCash(from.getCash()+toMon.getCashPrize());
 			messages.add("UPDATE user SET Cash='"+(from.getCash()+winner.getCashPrize())+"' WHERE UserID='"+winner.getOwnerId()+"'");
