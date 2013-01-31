@@ -35,9 +35,10 @@ $(document).ready(function(){
 		if (validateUserDetails($errorBox, email, password, password_confirm)) {
 			$.post(USER_REGISTER, {username: email, password: password,action:'newuser'}, 
 			function(response) {
-				$errorBox.text(response);
-				 $('#home_create_user #new_password').val('');
-				 $('#home_create_user #confirm').val('');
+				$('#home_create_user #new_username').val('');
+				$('#home_create_user #new_password').val('');
+				$('#home_create_user #confirm').val('');
+				redirect($errorBox, obj);
 			});
 		}
 		return false;
