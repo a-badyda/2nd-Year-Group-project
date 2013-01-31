@@ -275,3 +275,11 @@ input[type=submit][type=button][type=email]{
   font-family: Verdana, sans-serif;
   font-size: 13px;
 }
+
+.friend_name, .view_monster{
+  padding: 0.5em;
+  text-align: left;
+  font-family: Verdana,sans-serif;
+  font-size: 12px;
+}
+
