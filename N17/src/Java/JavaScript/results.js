@@ -24,7 +24,7 @@ $(document).ready(function() {
 		$(".decline").on('click', function() {
 			var results_id = $(this).attr('id');
 			$.post(SERVLET_LOCATION, {action: "declineRequest", id: results_id, result: true}, function(response) {
-				$(this).closest('.result').fadeOut();
+				$(this).parents('.result').fadeOut();
 			});
 		});
 	}
