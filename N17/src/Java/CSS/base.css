@@ -17,7 +17,7 @@ li{font-size:12px;}
 
 td,th{
   padding: 0.5em;
-  text-align: left;
+  text-align: center;
   font-family: Verdana,sans-serif;
   font-size: 12px;
 }
@@ -30,7 +30,7 @@ a:active {color: #009900;}
 
 /*Logo + background */
 html{
-  background-image: url('image/palmtree.png');
+  background-image: url('CSS/image/palmstree.png');
 }
 
 img{
@@ -49,6 +49,18 @@ float: right;
 width: 100%;
 }
 
+/*BUTTONS DO NOT WORK AW NAYYY */
+button{
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  padding: 0 20px;
+  text-align: center;
+  color: #515151;
+  background: #d3d3d3;
+}
+
+
 /*Index menu - tabs*/
 
 .menu_options{
@@ -63,55 +75,50 @@ width: 100%;
 }
 
 .menu_options a {
-  font-family: Verdana,sans-serif;
-  float: left;
-  position: center;
-  padding:0 40px;
+	font-family: Verdana,sans-serif;
+	float: left;
+  position: relative;
+  padding: 0 40px;
   height: 0; 
   line-height: 30px;
-  border-right: 20px solid transparent;
-  border-bottom: 30px solid #EE9A00;
-  color: #ffffff;
-  border-radius: 30px;
-  box-shadow: 1px 1px 1px rgba(0,0,0, .34), inset 1px 1px 1px rgba(255,255,255, .7);
-  text-align: center;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid #3D3D3D;
+  color: #C1CDCD;
+  opacity: .3;
+	filter: alpha(opacity=30);	
 }
-
-/*extra menu? */
 
 
 /*Help Page*/
 
 .help{
   float: left;
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
 	width:100%; 
 	margin: auto; 
 	padding:20px; 
 	background-color: #CDB79E;
-  opacity: .8;
 }
 
 
 /*Friends Page*/
 
 #friends {
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
 	width:100%;
   float: left;
 	margin: auto;
 	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
-  opacity: .8;
 }
 
 #friends_list{
-  float:left;
+  float:right;
   width:auto;
   background: #CDB7B5;
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
   margin: 5px;
 }
 
@@ -119,8 +126,8 @@ width: 100%;
   float:left;
   width: auto;
   background: #CDB7B5;
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
   margin: 5px;
 }
 
@@ -159,7 +166,7 @@ input{
   color: #555555;
 }
 
-input[type=submit][type=button]{
+input[type=submit]{
   position: relative;
   margin: 10px;
   padding: 0 20px;
@@ -175,32 +182,30 @@ input[type=submit][type=button]{
 
 /*User Profile*/
 .profile {
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
   width: 100%;
   margin: auto;
   float: left;
-  background: #BFEFFF;
-  opacity: .8;
+ background: #BFEFFF;
 }
 
 
 /*Battle section + results*/
 .monster_battle {
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
   width: 100%;
   margin: auto;
   float: left;
   background: #EED2EE;
-  opacity: .8;
 }
 #your_monsters {
   float:left;
   width: auto;
   background: #CDB7B5;
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
   margin: 5px;
 }
 
@@ -218,20 +223,19 @@ input[type=submit][type=button]{
 
 /*Notifications Page */
 .notifications_list {
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
   width: 100%;
   margin: auto;
   float: left;
   background: #FDF5E6;
-  opacity: .8;
 }
 
 
 /*Auction Page+ results*/
 #monster_auction{
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
   width: 100%;
   margin: auto;
   float: left;
@@ -249,20 +253,12 @@ input[type=submit][type=button]{
  
 /*Results for everything i guess?*/
 .results_list{
-  border-bottom-right-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
   width: 100%;
   margin: auto;
   float: left;
   background: #D2B48C;
-  opacity: .8;
 }
-.battle_results{
-    text-align:left; margin:1em; color: #292421;font-family: Verdana,sans-serif;
-  margin-bottom:0.5em; font-size: 12px;
-}
-.breeding_results{
-  text-align:left; margin:1em; color: #292421;font-family: Verdana,sans-serif;
-  margin-bottom:0.5em; font-size: 12px;
-}
+
 
