@@ -432,7 +432,7 @@ public class GameServer extends HttpServlet {
 		boolean viable=true;
 		
 		try {
-		String query = "SELECT * FROM friends WHERE userID='" +user.getId()+ "' AND friendID='"+users.fetchUserFromDatabase((String)request.getParameter("username"))+"'";
+		String query = "SELECT * FROM friends WHERE userID='" +user.getId()+ "' AND friendID='"+users.fetchUserFromDatabase((String)request.getParameter("username")).getId()+"'";
 		
 		ResultSet rset;
 		rset = db.createQuery(query);
@@ -441,9 +441,25 @@ public class GameServer extends HttpServlet {
 			}
 			
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		
+		try {
+			String query = "SELECT * FROM user WHERE UserID='" +users.fetchUserFromDatabase((String)request.getParameter("username")).getId()+"'";
+			
+			ResultSet rset;
+			rset = db.createQuery(query);
+				while(rset.next()){
+					viable=false;
+				}
+				
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		
+		
+		
 		
 		try {
 			String query = "SELECT * FROM notifications WHERE UserID2='" +user.getId()+ "' AND UserID1='"+users.fetchUserFromDatabase((String)request.getParameter("username")).getId()+"' AND type='friend_request'";
