@@ -1,6 +1,7 @@
 /* A big file for all the base css classes that can later be called somewhere else: keeps the html cleaner */
 
 #error { display: block; color: red; }
+#server_response {text-align:center; margin:1em; color: #292421;font-family: Verdana,sans-serif;}
 
 body, select, input, textarea{color:#333}
 
