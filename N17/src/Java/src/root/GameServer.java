@@ -1111,14 +1111,15 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		
-		User freinds[] = new User[user.getFriends().size()];
+		User freinds[] = new User[user.getFriends().size()+1];
+		
 		
 		for(int i=0; i<user.getFriends().size(); i++){
 			freinds[i]=user.getFriends().get(i);
 		}
+		freinds[freinds.length]=user;
 		
-		
-		int n = freinds.length;
+		int n = freinds.length+1;
 		User temp;
        
         for(int i=0; i < n; i++){
