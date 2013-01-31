@@ -409,38 +409,57 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		
+		boolean viable=true;
 		
 		try {
-			int Friend=0;
-			String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getParameter("username")+ "'");
-			
-			ResultSet rset;
-			rset = db.createQuery(query);
+		String query = "SELECT * FROM friends WHERE userID='" +user.getId()+ "' AND friendID='"+users.fetchUserFromDatabase((String)request.getParameter("username"))+"'";
+		
+		ResultSet rset;
+		rset = db.createQuery(query);
 			while(rset.next()){
-				Friend = rset.getInt("UserID");
+				viable=false;
 			}
 			
-			query = "INSERT INTO notifications (type, UserID1, UserID2, MonsterID1, MonsterID2, state) VALUES ('friend_request', '"+Friend+"', '"+user.getId()+"', 0, 0, 'PENDING')";
-			db.execute(query);
-	        try {
-				PrintWriter out = response.getWriter();
-				out.print("added sucsefully");
-				out.flush();
-				out.close();
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		} catch (SQLException e) {
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		if((user.getUsername().equalsIgnoreCase((String)request.getParameter("username")))&&(viable)){
+		}else{
+		
 			try {
-				PrintWriter out = response.getWriter();
-				out.print("error could not add");
-				out.flush();
-				out.close();
+				int Friend=0;
+				String query = ("SELECT * FROM user WHERE UserName='" +(String)request.getParameter("username")+ "'");
 				
-			} catch (IOException ex) {
+				ResultSet rset;
+				rset = db.createQuery(query);
+				while(rset.next()){
+					Friend = rset.getInt("UserID");
+				}
+				
+				query = "INSERT INTO notifications (type, UserID1, UserID2, MonsterID1, MonsterID2, state) VALUES ('friend_request', '"+Friend+"', '"+user.getId()+"', 0, 0, 'PENDING')";
+				db.execute(query);
+		        try {
+					PrintWriter out = response.getWriter();
+					out.print("added sucsefully");
+					out.flush();
+					out.close();
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} catch (SQLException e) {
+				try {
+					PrintWriter out = response.getWriter();
+					out.print("error could not add");
+					out.flush();
+					out.close();
+					
+				} catch (IOException ex) {
+				}
+				
 			}
-			
 		}
 	}
 	private void newBattleRequest(HttpServletRequest request, HttpServletResponse response){
