@@ -579,7 +579,7 @@ public class GameServer extends HttpServlet {
 		db.execute(query);
 		
 	}
-		
+	
 	private void getMonsters(HttpServletRequest request, HttpServletResponse response){
 		reloadmonsters(request,response);
 		HttpSession session = request.getSession(true);
@@ -693,7 +693,7 @@ public class GameServer extends HttpServlet {
 		} catch (IOException ex) {
 		}
 	}
-		
+	
 	private void changeName(HttpServletRequest request, HttpServletResponse response) {
 		int id = Integer.parseInt(request.getParameter("monster_id"));
 		String name = request.getParameter("new_name");
@@ -989,27 +989,17 @@ public class GameServer extends HttpServlet {
 	}
 	
 	private void setBreedCost(HttpServletRequest request, HttpServletResponse response){
-		HttpSession session = request.getSession(true);
-		User user = users.fetchUser((String)session.getAttribute("username"));
-		user.getMonster(Integer.parseInt(request.getParameter("ID"))).setCashBreed(Integer.parseInt(request.getParameter("cost")));
 		
-		String query="UPDATE monsters SET cashbreed='"+Integer.parseInt(request.getParameter("cost"))+"' WHERE 'monsterID'='"+Integer.parseInt(request.getParameter("ID"))+"'";
-		
+		String query="UPDATE monsters SET cashbreed='"+Integer.parseInt(request.getParameter("cost"))+"' WHERE monsterID='"+Integer.parseInt(request.getParameter("id"))+"'";
 		db.execute(query);
 		
 	}
 	private void setBuyCost(HttpServletRequest request, HttpServletResponse response){
-		HttpSession session = request.getSession(true);
-		User user = users.fetchUser((String)session.getAttribute("username"));
-		Monster m =user.getMonster(Integer.parseInt(request.getParameter("id")));
-		m.setCashSell(Integer.parseInt(request.getParameter("cost")));
 		
-		String query="UPDATE monsters SET cashSell='"+Integer.parseInt(request.getParameter("cost"))+"' WHERE 'monsterID'='"+Integer.parseInt(request.getParameter("id"))+"'";
-		
-		
+		String query="UPDATE monsters SET cashSell='"+Integer.parseInt(request.getParameter("cost"))+"' WHERE monsterID='"+Integer.parseInt(request.getParameter("id"))+"'";
 		db.execute(query);
 	}
-		
+	
 	private void getRichList(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
@@ -1072,7 +1062,7 @@ public class GameServer extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
+	
 	private void reloadfreinds(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
