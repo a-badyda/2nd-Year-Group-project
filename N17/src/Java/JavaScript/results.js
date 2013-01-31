@@ -13,8 +13,9 @@ $(document).ready(function() {
 	//get all notifications on load.
 	$.post(SERVLET_LOCATION, {action: 'getAllResults'}, function(response) {
 		var obj = $.parseJSON(response);
-		var outputStr = var outputStr = '<table><tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th><th>Change Name</th></tr>';
-		outputList(writeResult, obj.Results);
+		var outputStr = '<table><tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th></tr>';
+		outputStr += outputList(writeResult, obj.Results);
+		outputStr += '</table>';
 		$('.results_list').append(outputStr);
 		addResponseEvents();
 	});

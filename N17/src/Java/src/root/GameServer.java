@@ -445,7 +445,7 @@ public class GameServer extends HttpServlet {
 		}
 		
 		try {
-			String query = "SELECT * FROM user WHERE UserID='" +users.fetchUserFromDatabase((String)request.getParameter("username")).getId()+"'";
+			String query = "SELECT * FROM user WHERE UserName='" +users.fetchUserFromDatabase((String)request.getParameter("username")).getId()+"'";
 			
 			ResultSet rset;
 			rset = db.createQuery(query);
@@ -654,7 +654,7 @@ public class GameServer extends HttpServlet {
 	}
 	private void newBuyRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
-		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashBreed()){
+		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashSell()){
 			
 			User user = users.fetchUser((String)session.getAttribute("username"));
 			
@@ -667,7 +667,7 @@ public class GameServer extends HttpServlet {
 			String query="UPDATE user SET Cash='"+(user.getCash()-monster.getCashSell())+"' WHERE UserID='"+user.getId()+"'";
 			db.execute(query);
 			user.setCash(user.getCash()-monster.getCashSell());
-			query="UPDATE user SET Cash='"+(user.getCash()+monster.getCashSell())+"' WHERE UserID='"+friendID+"'";
+			query="UPDATE user SET Cash='"+(users.fetchUserFromDatabase(friendID).getCash()+monster.getCashSell())+"' WHERE UserID='"+friendID+"'";
 			db.execute(query);
 			query="UPDATE monsters SET cashSell='0' WHERE monsterID='"+monsterID+"'";
 			db.execute(query);
@@ -1024,6 +1024,7 @@ public class GameServer extends HttpServlet {
 					
 					Monster m1=users.fetchMonsterFromDatabase(rset.getInt("MonsterID1"));
 					Monster m2=users.fetchMonsterFromDatabase(rset.getInt("MonsterID2"));
+					
 					
 					
 					ArrayList<String> querylist = battle.doBattle(u1,u2,m1,m2);
