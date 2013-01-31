@@ -436,7 +436,7 @@ public class GameServer extends HttpServlet {
 	    	
 	    	try {
 				PrintWriter out = response.getWriter();
-				out.print("{\"login\":false,\"message\":\"sorry invalid login\"}");
+				out.print("{\"login\":false,\"message\":\"Sorry that user already exists\"}");
 				out.flush();
 				out.close();
 				
@@ -467,8 +467,16 @@ public class GameServer extends HttpServlet {
 				viable=false;
 			}
 			
-		} catch (SQLException e1) {
-			e1.printStackTrace();
+		} catch (SQLException|NullPointerException e1) {
+			try {
+				PrintWriter out = response.getWriter();
+				out.print("sorry that user dosn't exist");
+				out.flush();
+				out.close();
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		try {
@@ -519,7 +527,7 @@ public class GameServer extends HttpServlet {
 				db.execute(query);
 		        try {
 					PrintWriter out = response.getWriter();
-					out.print("added sucsefully");
+					out.print("Added successfully");
 					out.flush();
 					out.close();
 					
@@ -1026,7 +1034,7 @@ public class GameServer extends HttpServlet {
 	}
 	private void acceptBattleRequest(HttpServletRequest request, HttpServletResponse response,Request r){
 		int requestid = r.getId();
-		
+		battle = new Battle();
 		String query = ("SELECT * FROM notifications WHERE ID='" +requestid+ "'");
 		
 		try {
@@ -1035,25 +1043,26 @@ public class GameServer extends HttpServlet {
 				while (rset.next ())
 				{
 					
-					
 					User u1=users.fetchUserFromDatabase(rset.getInt("UserID1"));
 					User u2=users.fetchUserFromDatabase(rset.getInt("UserID2"));
 					
 					Monster m1=users.fetchMonsterFromDatabase(rset.getInt("MonsterID1"));
 					Monster m2=users.fetchMonsterFromDatabase(rset.getInt("MonsterID2"));
 					
-					
-					
 					ArrayList<String> querylist = battle.doBattle(u1,u2,m1,m2);
 					
 					for (int i=0; i<querylist.size();i++){
 						db.execute(querylist.get(i));
 					}
-					
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+		
+		User winner = users.fetchUserFromDatabase(battle.getWinnerID());		
+		String query2="UPDATE user SET Cash='"+Integer.toString((winner.getCash()+100))+"' WHERE UserID='"+battle.getwinnerMonsterID()+"'";			
+		db.execute(query2);
+		
 		query = ("DELETE FROM notifications WHERE ID='" +requestid+ "'");
 		db.execute(query);
 		
@@ -1147,9 +1156,9 @@ public class GameServer extends HttpServlet {
 		for(int i=0; i<user.getFriends().size(); i++){
 			freinds[i]=user.getFriends().get(i);
 		}
-		freinds[freinds.length]=user;
+		freinds[freinds.length-1]=user;
 		
-		int n = freinds.length+1;
+		int n = freinds.length;
 		User temp;
        
         for(int i=0; i < n; i++){
@@ -1205,6 +1214,21 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		user.getFriends().clear();
+		
+		
+		try {
+			String query="SELECT * FROM user WHERE UserID='"+user.getId()+"'";
+			ResultSet rset;
+			rset = db.createQuery (query);
+				while(rset.next()){
+					user.setCash(rset.getInt("Cash"));
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		
+		
+		
 		String query = ("SELECT * FROM friends WHERE UserID='" +users.fetchUser((String)session.getAttribute("username")).getId()+ "'");
 		
 		try{
@@ -1229,9 +1253,9 @@ public class GameServer extends HttpServlet {
 					String query3 = ("SELECT * FROM monsters WHERE ownerID='" +Friend.getId()+ "'");
 					
 					ResultSet rset3;
-					rset2 = db.createQuery (query2);
+					rset3 = db.createQuery (query3);
 					try {
-						while(rset2.next()){
+						while(rset3.next()){
 							
 							Monster m = new Monster();
 							m.setName(rset2.getString("name"));
@@ -1309,6 +1333,18 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		user.getRequests().clear();
+		
+		
+		try {
+			String query="SELECT * FROM user WHERE UserID='"+user.getId()+"'";
+			ResultSet rset;
+			rset = db.createQuery (query);
+				while(rset.next()){
+					user.setCash(rset.getInt("Cash"));
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 		
 		String query3 = ("SELECT * FROM notifications WHERE UserID1='" +user.getId()+ "'");
 		
