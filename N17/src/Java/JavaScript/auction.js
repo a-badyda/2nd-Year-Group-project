@@ -104,7 +104,7 @@ $(document).ready(function(){
 
 		$.post(SERVLET_LOCATION, {action: "newBreedRequest", userMonsterId: user_mon_id, friendId: friend_id, monsterId: mon_id},
 		function(response) {
-			$('friend_'+friend_id+' monster_' +mon_id+'  .auction_result').html(response);
+			writeServerResponse(response);
 		});
 	}
 
@@ -115,7 +115,7 @@ $(document).ready(function(){
 
 		$.post(SERVLET_LOCATION, {action: "newBuyRequest", friendId: friend_id, monsterId: mon_id},
 		function(response) {
-			$('friend_'+friend_id+' monster_' +mon_id+'  .auction_result').html(response);
+			writeServerResponse(response);
 		});
 	}
 
@@ -143,7 +143,6 @@ $(document).ready(function(){
 		//else output this if friend
 		} else {
 			if(mon.breed) {
-
 				outputStr += '<td>Breeding Cost: '+mon.cost_breed+'<input id="'+mon.ID+'" type="button" class="breed_request" value="Breed"></input></td>';
 			}
 			

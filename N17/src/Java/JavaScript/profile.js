@@ -19,6 +19,7 @@ $(document).ready(function() {
 			var obj = $.parseJSON(response);
 			var outputStr = '<table><tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th><th>Change Name</th></tr>';
 			outputStr += outputList(buildProfileHTML, obj.Monsters, true);
+			outputStr += '</table>';
 			$('.monster_list').html(outputStr);
 			addChangeNameEvents();
 		});

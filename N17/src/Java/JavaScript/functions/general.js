@@ -93,3 +93,7 @@ function verboseType(type) {
 
 	return out;
 }
+
+function writeServerResponse(response) {
+	$('#server_response').html(response);
+}

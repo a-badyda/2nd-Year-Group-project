@@ -81,7 +81,7 @@ $(document).ready(function() {
 	}
 
 	function writeResponse(response) {
-		//$('#result_' + notification_id).html("<span>"+response+"</span>");
+		$(this).parent('.result').fadeOut();
 	}
 });
 	
