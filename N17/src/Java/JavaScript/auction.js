@@ -61,7 +61,7 @@ $(document).ready(function(){
 			});
 		});
 	}
-
+ 
 	function addSetCostEvents() {
 		$(".set_sell_cost").on("click", function() {
 			var cost = $(this).siblings('.monster_sell_cost').val();
@@ -142,12 +142,12 @@ $(document).ready(function(){
 
 		//else output this if friend
 		} else {
-			if(mon.buy) {
+			if(mon.breed) {
 
 				outputStr += '<td>Breeding Cost: '+mon.cost_breed+'<input id="'+mon.ID+'" type="button" class="breed_request" value="Breed"></input></td>';
 			}
 			
-			if(mon.breed) {
+			if(mon.buy) {
 				outputStr += '<td>Buying Cost: '+mon.cost_buy+'<input id="'+mon.ID+'" type="button" class="buy_request" value="Buy"></input></td>';
 			}
 		}
