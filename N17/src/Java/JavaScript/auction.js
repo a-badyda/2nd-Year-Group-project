@@ -101,11 +101,13 @@ $(document).ready(function(){
 		//handle clicking the breed request button
 		$("#friends_list .breed_request").on("click", function() {
 			newBreedRequest(this);
+			$(this).attr('disabled', true);
 		});
 
 		//handle clicking the buy request button
 		$("#friends_list .buy_request").on("click", function() {
 			newBuyRequest(this);
+			$(this).attr('disabled', true);
 		});
 	}
 	
