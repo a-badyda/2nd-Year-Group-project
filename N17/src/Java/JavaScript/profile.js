@@ -13,6 +13,7 @@ $(document).ready(function() {
 	var $user_data = $.post(SERVLET_LOCATION, {action: "getUserData"}, function(response) {
 		var obj = $.parseJSON(response);
 		$('#username').html(obj.username);
+		$('#cash').html(obj.cash);
 	});
 
 	//once user data is loaded, load users monsters, add them to the DOM
@@ -33,7 +34,7 @@ $(document).ready(function() {
 			var ID = $(this).attr('id');
 			var name =  $(this).siblings('.change_name').val();
 			$.post(SERVLET_LOCATION, {action: "changeName", monster_id: ID, new_name: name}, function(response) {
-				$("td[id='"+ID+"'][class='monster_name']").html(name);
+				$("#"+ID+" .monster_name").html(name);
 			});
 		});
 	}

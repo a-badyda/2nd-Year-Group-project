@@ -89,7 +89,7 @@ $(document).ready(function() {
 
 	//hide the result when the server has responded deleting it.
 	function writeResponse(response) {
-		$(this).parent('.result').fadeOut();
+		$(this).closest('.result').fadeOut();
 	}
 });
 	
