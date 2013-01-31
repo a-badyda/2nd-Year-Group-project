@@ -61,7 +61,7 @@ width: 100%;
 .battle_results, 
 .results_list,
 #monster_auction,
-.notification_list {
+.notifications_list {
 
   border-top-left-radius: 20px 20px;
   border-top-right-radius:20px 20px;
