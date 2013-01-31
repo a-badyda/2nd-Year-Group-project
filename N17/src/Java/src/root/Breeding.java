@@ -12,18 +12,15 @@ import java.util.Date;
 
 public class Breeding {
 
-	
+	public Breeding(){}
 	
 	/**
-	 * Initiates a breeding session between two monters.
+	 * Initiates a breeding session between two monsters.
 	 * @param u1 The owner of monster 1.
 	 * @param u2 The owner of monster 2.
 	 * @param m1 The monster that was put up for breeding.
 	 * @param m2 The monster that was accepted for breeding.
-	 */
-
-	public Breeding(){}
-	
+	 */	
 	public ArrayList<String> doBreed(User u1, User u2, Monster m1, Monster m2){
 		User from, to;
 		Monster fromMon, toMon;

@@ -3,14 +3,21 @@ package root;
 import java.util.Calendar;
 import java.util.Random;
 
+/**
+ * A monster in the server, it has an owner, stats and multiple cash values for
+ * battling, breeding and selling.
+ * @author Csoma Silhab
+ *
+ */
 public class Monster {
-	
+
+	//The owner, its records and cash values of the monster
 	private Integer id, ownerId;
 	private String name;
 	private Breed breed;	//extra
 	private Status status;	//extra
 	private int cashPrize = 500, cashSell = 0, cashBreed = 0, wins = 0, losses = 0;
-	
+	//Monster stat related variables
 	private Calendar birth;
 	private float health, strength, defence, aggression, fertility;
 	private float max_health_bonus = 20;
@@ -19,6 +26,11 @@ public class Monster {
 	
 	public Monster(){}
 	
+	/**
+	 * Creates a new monster with the given owner and name, stats are generated automatically.
+	 * @param owner the owner's id number
+	 * @param name the name of the monster
+	 */
 	public Monster(Integer owner, String name){
 		this.name = name;
 		ownerId = owner;
@@ -44,8 +56,8 @@ public class Monster {
 	
 	/**
 	 * Generates the stats of a monster when it is created.
-	 * @param birth 
-	 * @param breed The breed type of the monster.
+	 * @param birth the birth date of this monster
+	 * @param breed The breed type of this monster.
 	 */
 	public void generateStats(Calendar birth){
 		this.birth = birth;
@@ -93,7 +105,11 @@ public class Monster {
 		return health;
 	}
 	
-	public void ageHealth(){
+	/**
+	 * Modifies the monster's health and strength based on its age. It reaches a high point before
+	 * steadily decreasing over time.
+	 */
+	public void ageHealthAndStrength(){
 		Calendar current = Calendar.getInstance();
 		int age = (int) calculateAge(current, birth);
 		float hp = health;
@@ -101,6 +117,12 @@ public class Monster {
 		setHealth(hp);
 	}
 	
+	/**
+	 * Calculates the number of days between the current time and the monster's birth date.
+	 * @param current the current date of the system
+	 * @param the birth date of the monster
+	 * @return the age of the monster
+	 */
 	public long calculateAge(Calendar current, Calendar birth){
 		Calendar date = (Calendar) current.clone();
 		long days = 0;
@@ -110,6 +132,7 @@ public class Monster {
 		}
 		return days;
 	}
+
 
 	public void setHealth(float health) {
 		this.health = health;

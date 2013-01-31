@@ -57,6 +57,18 @@ public class MonsterTest {
 	}
 	
 	@Test
+	public void testSetAndGetCashSell(){
+		mon.setCashSell(100);
+		assertEquals(100, mon.getCashSell());
+	}
+	
+	@Test
+	public void testSetAndGetCashBreed(){
+		mon.setCashBreed(100);
+		assertEquals(100, mon.getCashBreed());
+	}
+	
+	@Test
 	public void testSetAndGetWins(){
 		mon.setWins(3);
 		assertEquals(3, mon.getWins());
@@ -109,7 +121,7 @@ public class MonsterTest {
 	}
 	
 	@Test
-	public void testAgeHealth(){
+	public void testAgeHealthAndStrength(){
 		float prev1 = mon.getHealth();
 		float prev2 = mon.getStrength();
 		Calendar cal = Calendar.getInstance();

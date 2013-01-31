@@ -2,15 +2,26 @@ package root;
 
 import java.util.ArrayList;
 
+/**
+ * This class describes a user in the server, it stores their credentials and their list
+ * of monsters, friends and requests.
+ * @author Csoma Silhab
+ *
+ */
 public class User{
 	
 	private Integer id, cash = 0;
-	private String key, username, password, serverAdd;
+	//serverAdd is for storing addresses on another server
+	private String key, username, password, serverAdd; 
 	private ArrayList<Monster> monsters;
 	private ArrayList<User> friends;
 	private ArrayList<Request> requests;
 	
-	
+	/**
+	 * Creates a new user with the given username and password.
+	 * @param username name of the user
+	 * @param password password of the user
+	 */
 	public User(String username, String password){
 		this.username=username;
 		this.password=password;
@@ -69,6 +80,11 @@ public class User{
 		this.monsters.add(monster);
 	}
 	
+	/**
+	 * Return a monster with the given owner.
+	 * @param ownerId owner of the monster
+	 * @return a monster with the given owner
+	 */
 	public Monster getMonster(Integer ownerId){
 		for (int i=0; i<monsters.size(); i++){
 			if(monsters.get(i).getOwnerId().equals(ownerId)){

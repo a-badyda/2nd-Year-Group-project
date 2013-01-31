@@ -3,6 +3,13 @@ package root;
 import java.sql.*;
 import java.util.ArrayList;
 
+	/**
+	 * This class handles communication between the server and the database, sending
+	 * and executing the queries.
+	 * @author Csoma Silhab
+	 *
+	 */
+
 public class Database {
 	
 	private static Connection conn;
@@ -11,6 +18,9 @@ public class Database {
 		
 	}
 	
+	/**
+	 * Opens a connection with the SQL Database.
+	 */
 	public void connect(){
 		// JDBC driver name and database URL
 		   final String DB_URL="jdbc:mysql://localhost:3306/monsterdata";
@@ -30,6 +40,11 @@ public class Database {
 			}
 	}
 	
+	/**
+	 * Takes a string as a query to the database and executes it.
+	 * @param q creates a new query
+	 * @return the results of the query
+	 */
 	public ResultSet createQuery(String q){
 		try {
 			Statement st = conn.createStatement();
@@ -41,6 +56,10 @@ public class Database {
 		return null;
 	}
 	
+	/**
+	 * Executes a statement written in data manipulation language.
+	 * @param q the query to be executed
+	 */
 	public void execute(String q){
 		try {
 			PreparedStatement ps;

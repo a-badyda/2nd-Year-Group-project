@@ -5,6 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import Java.src.root.RequestType;
+
+import Java.src.root.Request;
+
 import Java.src.root.User;
 import Java.src.root.UserManager;
 
@@ -41,5 +45,11 @@ public class UserManagerTest {
 		man.addUser(user);
 		man.removeUser(user);
 		assertNull(man.fetchUser("Bad"));
+	}
+	
+	@Test
+	public void testNewRequest(){
+		Request req = man.newRequest(10, 20, 5,2, RequestType.BATTLE);
+		assertNull(req);
 	}
 }
