@@ -46,8 +46,8 @@ $(document).ready(function(){
 	});
 
 	//Send the user data to the server
-	function postLogin($errorBox,email, password) {
-		$.post(USER_LOGIN, {username: email, password: password,action:'login'}, 
+	function postLogin($errorBox, email, password) {
+		$.post(USER_LOGIN, {username: email, password: password, action:'login'}, 
 		function(response) {
 			var obj = $.parseJSON(response);
 			redirect($errorBox, obj);

@@ -23,7 +23,9 @@ $(document).ready(function() {
 	function addResponseEvents() {
 		$(".decline").on('click', function() {
 			var results_id = $(this).attr('id');
-			$.post(SERVLET_LOCATION, {action: "declineRequest", id: results_id, result: true}, writeResponse);
+			$.post(SERVLET_LOCATION, {action: "declineRequest", id: results_id, result: true}, function(response) {
+				$(this).closest('.result').fadeOut();
+			});
 		});
 	}
 
@@ -86,11 +88,6 @@ $(document).ready(function() {
 		output += '<tr><td>Money Exchanged: '+val.cash+'</td></tr>';
 		output += '</table>';
 		return output;
-	}
-
-	//hide the result when the server has responded deleting it.
-	function writeResponse(response) {
-		$(this).closest('.result').fadeOut();
 	}
 });
 	

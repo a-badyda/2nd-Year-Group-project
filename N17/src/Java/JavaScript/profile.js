@@ -46,7 +46,7 @@ $(document).ready(function() {
 	function buildProfileHTML(key, mon, user) {
 		outputStr = '<tr>';
 		outputStr += buildMonsterHTML(key, mon, user);
-		outputStr += '<td><input type="text" id="'+mon.ID+'" class="change_name" value="" ></input>';
+		outputStr += '<td><input type="text" id="'+mon.ID+'" class="change_name" value=""></input>';
 		outputStr += '<input type="button" id="'+mon.ID+'" class="change_name_button" value="Change Name"></input></td>';
 		outputStr += '</tr>';
 		return outputStr;
