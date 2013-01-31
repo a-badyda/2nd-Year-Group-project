@@ -653,6 +653,18 @@ public class GameServer extends HttpServlet {
 		query="INSERT INTO notifications (type, UserID1, UserID2, MonsterID1, MonsterID2, state) VALUES ('buy_result', '"+friendID+"', '"+userID+"', '"+monsterID+"', '"+monsterID+"', 'PENDING')";
 		db.execute(query);
 		
+		PrintWriter out;
+		try {
+			out = response.getWriter();
+			out.print("Request sent");
+			out.flush();
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 	private void getMonsters(HttpServletRequest request, HttpServletResponse response){
@@ -829,7 +841,7 @@ public class GameServer extends HttpServlet {
 					out.print("\"strength\":\""+rset2.getInt("strength")+"\",");
 					out.print("\"health\":\""+rset2.getInt("health")+"\",");
 					out.print("\"fertility\":\""+rset2.getInt("fertility")+"\",");
-					out.print("\"defense\":\""+rset2.getInt("defence")+"\",");
+					out.print("\"defence\":\""+rset2.getInt("defence")+"\",");
 					out.print("\"aggression\":\""+rset2.getInt("aggression")+"\"");
 					out.print("},");
 				}
@@ -846,7 +858,7 @@ public class GameServer extends HttpServlet {
 					out.print("\"strength\":\""+rset2.getInt("strength")+"\",");
 					out.print("\"health\":\""+rset2.getInt("health")+"\",");
 					out.print("\"fertility\":\""+rset2.getInt("fertility")+"\",");
-					out.print("\"defense\":\""+rset2.getInt("defence")+"\",");
+					out.print("\"defence\":\""+rset2.getInt("defence")+"\",");
 					out.print("\"aggression\":\""+rset2.getInt("aggression")+"\"");
 					out.print("},");
 	    		}
@@ -877,7 +889,7 @@ public class GameServer extends HttpServlet {
 							out.print("\"strength\":\""+rset2.getInt("strength")+"\",");
 							out.print("\"health\":\""+rset2.getInt("health")+"\",");
 							out.print("\"fertility\":\""+rset2.getInt("fertility")+"\",");
-							out.print("\"defense\":\""+rset2.getInt("defence")+"\",");
+							out.print("\"defence\":\""+rset2.getInt("defence")+"\",");
 							out.print("\"aggression\":\""+rset2.getInt("aggression")+"\"");
 							out.print("}");
 							
