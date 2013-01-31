@@ -265,4 +265,9 @@ input[type=submit][type=button]{
   text-align:left; margin:1em; color: #292421;font-family: Verdana,sans-serif;
   margin-bottom:0.5em; font-size: 12px;
 }
-
+#stats,
+#monster{
+  margin: 2px;
+  display: block;
+  float:left;
+}
