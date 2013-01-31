@@ -83,7 +83,7 @@ $(document).ready(function() {
 		output += '<table class="buy_results>"';
 		output += '<tr>' + buildMonsterHTML(key, val.friend_monster) + '</tr>';
 		output += '<tr><td>'+val.message+'</td></tr>';
-		output += '<tr><td>Money Exchanged: '+val.cost+'</td></tr>';
+		output += '<tr><td>Money Exchanged: '+val.cash+'</td></tr>';
 		output += '</table>';
 		return output;
 	}
