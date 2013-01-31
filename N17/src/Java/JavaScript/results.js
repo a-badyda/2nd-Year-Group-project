@@ -71,9 +71,9 @@ $(document).ready(function() {
 	//write a bady to the DOM
 	function writeBaby(key, val) {
 		var output ='';
-		output += '<div class="baby">';
-		output += buildMonsterHTML(key, val);
-		output += '</div>';
+		output += '<table class="baby">';
+		output += '<tr>' + buildMonsterHTML(key, val) + '</tr>';
+		output += '</table>';
 		return output;
 	}
 

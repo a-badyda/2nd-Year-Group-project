@@ -82,7 +82,7 @@ $(document).ready(function() {
 		outputStr += buildMonsterHTML(key, mon);
 		
 		if(user) {
-			outputStr += '<td><input type="radio" name="select_monster" class="select_monster" value="'+mon.ID+'"></input></td>';
+			outputStr += '<td>Select For Battle: <input type="radio" name="select_monster" class="select_monster" value="'+mon.ID+'"></input></td>';
 		} else {
 			outputStr += '<td><input id="'+mon.ID+'" type="button" class="battle_request" value="battle"></input></td>';
 		}

@@ -141,7 +141,7 @@ $(document).ready(function(){
 		//if user output this
 		if(user == true) {
 			//select monster for breeding
-			outputStr += '<td><table><tr><td><input type="radio" name="select_monster" class="select_monster" value="'+mon.ID+'"></input></td></tr>';
+			outputStr += '<td><table><tr><td>Select For Breeding: <input type="radio" name="select_monster" class="select_monster" value="'+mon.ID+'"></input></td></tr>';
 
 			//input form for setting selling
 			outputStr += '<tr><td><input id="'+mon.ID+'" type="checkbox" name="select_monster_sell" class="select_monster_sell" value=""></input>';
