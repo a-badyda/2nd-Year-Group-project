@@ -46,7 +46,7 @@ $(document).ready(function() {
 function outputFriendsList(key, val) {
 	var output = '<tr>';
 	output += '<div class="friend">';
-	output += '<input class="friend_id" type="hidden" value="' + val.id + '"></input>';
+	output += '<input class="friend_id" type="hidden" ' + val.id + '"></input>';
 	output += '<td><h4>' + val.username + '</h4></td>';
 	output += '</div></tr>';
 	return output;
