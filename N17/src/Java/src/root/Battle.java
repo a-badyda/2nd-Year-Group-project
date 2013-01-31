@@ -3,6 +3,8 @@ package root;
 import java.util.ArrayList;
 import java.util.Random;
 
+import root.Monster;
+
 /**
  * This class handles battles done by 2 users. Their monsters try to inflict damage
  * each round and the first one to have 0 health is the loser.
@@ -13,7 +15,14 @@ public class Battle {
 	private User from, to;
 	private Monster fromMon, toMon, defeated = null, winner;
 	private ArrayList<String> messages;
-	int variation = 10;
+	/**
+	* Variation of the amount of damage done.
+	*/
+	int dmg_variation = 10;		
+	/**
+	* The percentage of extra damage done in aggression attacks.
+	*/
+	float extra_dmg = 20;
 	
 	/**
 	 * Initiates a battle between the given monsters.
@@ -78,20 +87,47 @@ public class Battle {
 		return messages;
 	}
 
-	public void attack(Monster atkMon, Monster defMon){
-		Random rnd = new Random();
-		int rn = rnd.nextInt(50);
-		double chance = atkMon.getAggression() + rnd.nextInt(variation);
-		if(rn <= chance){
-			float dmg = (atkMon.getStrength() - defMon.getDefence() + 1);
-			dmg += rnd.nextInt(variation);
-			float health = defMon.getHealth() - dmg;
+	public void attack(Monster atkMon, Monster defMon) {
+		// Defence chance of evading
+		if (atkSuccess(defMon)) {
+			// Base damage with variation
+			Random rnd = new Random();
+			float dmg = atkMon.getStrength();
+			dmg += rnd.nextInt(dmg_variation);
+
+			// Chance for extra damage
+			float extra_atk = atkMon.getAggression();
+			int more_dmg = 0;
+			for (int i = 0; i < extra_atk; i++) {
+				if (atkSuccess(defMon)) {
+					more_dmg += dmg * (extra_dmg / 100);
+				}
+			}
+
+			// Deal damage, check if defMon is dead
+			float health = defMon.getHealth() - (dmg + more_dmg);
 			defMon.setHealth(health);
 			if (health <= 0) {
 				defeated = defMon;
 				winner = atkMon;
 			}
 		}
+	}
+
+	/**
+	 * A defending monster has a defence chance of evading an attack.
+	 * 
+	 * @param defMon The defending monster
+	 * @return True if the attack connected
+	 */
+	public boolean atkSuccess(Monster defMon) {
+		Random rnd = new Random();
+		int rn = rnd.nextInt(100);
+		float chance = defMon.getDefence();
+		if (rn <= chance) {
+			return true;
+		}
+		return false;
 	}
 
 }
