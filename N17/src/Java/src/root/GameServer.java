@@ -1054,18 +1054,13 @@ public class GameServer extends HttpServlet {
 					for (int i=0; i<querylist.size();i++){
 						db.execute(querylist.get(i));
 					}
+					
+					String query2="DELETE FROM notifications WHERE ID='"+rset.getInt("ID")+"'";
+					db.execute(query2);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		
-		User winner = users.fetchUserFromDatabase(battle.getWinnerID());		
-		String query2="UPDATE user SET Cash='"+Integer.toString((winner.getCash()+100))+"' WHERE UserID='"+battle.getwinnerMonsterID()+"'";			
-		db.execute(query2);
-		
-		query = ("DELETE FROM notifications WHERE ID='" +requestid+ "'");
-		db.execute(query);
-		
 		
 	}
 	private void acceptFriendRequest(HttpServletRequest request, HttpServletResponse response,Request r){
