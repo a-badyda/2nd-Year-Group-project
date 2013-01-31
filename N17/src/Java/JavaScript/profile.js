@@ -20,7 +20,10 @@ $(document).ready(function() {
 	$user_data.done(function() {
 		$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 			var obj = $.parseJSON(response);
-			var outputStr = '<table><tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th><th>Change Name</th></tr>';
+			var outputStr = '<table>';
+			if(obj.Monsters.length != 0) {
+				outputStr += '<tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th><th>Change Name</th></tr>';
+			}
 			outputStr += '<tr>' + outputList(buildProfileHTML, obj.Monsters, true) + '</tr>';
 			outputStr += '</table>';
 			$('.monster_list').append(outputStr);
