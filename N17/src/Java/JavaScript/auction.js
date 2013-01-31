@@ -146,11 +146,11 @@ $(document).ready(function(){
 			//input form for setting selling
 			outputStr += '<tr><td><input id="'+mon.ID+'" type="checkbox" name="select_monster_sell" class="select_monster_sell" value=""></input>';
 			outputStr += '<input id="'+mon.ID+'" type="text" name="sell_cost" class="monster_sell_cost" value="'+mon.cost_buy+'" disabled="true"></input>';
-			outputStr += '<input id="'+mon.ID+'" type="button" name="set_sell_cost" class="set_sell_cost" value="Set Sell Cost" disabled="true"></input></td></tr>';
+			outputStr += '<input id="'+mon.ID+'" type="button" name="set_sell_cost" class="set_sell_cost" value="Set Sell Cost" disabled="true"></input></td></tr><br />';
 
 			//input form for setting breeding
 			outputStr += '<tr><td><input id="'+mon.ID+'" type="checkbox" name="select_monster_breed" class="select_monster_breed" value=""></input>';
-			outputStr += '<input id="'+mon.ID+'" type="text" name="breed_cost" class="monster_breed_cost" value="'+mon.cost_breed+'" disabled="true"></input>';
+			outputStr += '<input id="'+mon.ID+'" type="text" name="breed_cost" class="monster_breed_cost" value="'+mon.cost_breed+'" disabled="true"></input><br />';
 			outputStr += '<input id="'+mon.ID+'" type="button" name="set_breed_cost" class="set_breed_cost" value="Set Breed Cost" disabled="true"></input></td></tr></table></td>';
 
 		//else output this if friend
