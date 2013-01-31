@@ -48,16 +48,16 @@ $(document).ready(function(){
 		$.post(USER_LOGIN, {username: email, password: password,action:'login'}, 
 		function(response) {
 			var obj = $.parseJSON(response);
-			redirect($errorBox, obj.login);
+			redirect($errorBox, obj);
 		});
 	}
 
 	//redirect if logged in.
-	function redirect(errorBox, loggedin) {
-		if (loggedin) {
+	function redirect(errorBox, obj) {
+		if (obj.login) {
 			window.location.replace("index.html?page=profile");
 		} else {
-			errorBox.html("Invalid login details.");
+			errorBox.html(obj.message);
 		}
 	}
 	
