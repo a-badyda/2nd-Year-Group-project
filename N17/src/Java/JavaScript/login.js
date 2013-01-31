@@ -43,6 +43,7 @@ $(document).ready(function(){
 		return false;
 	});
 
+	//Send the user data to the server
 	function postLogin($errorBox,email, password) {
 		$.post(USER_LOGIN, {username: email, password: password,action:'login'}, 
 		function(response) {
@@ -51,6 +52,7 @@ $(document).ready(function(){
 		});
 	}
 
+	//redirect if logged in.
 	function redirect($errorBox, loggedin) {
 		if (loggedin) {
 			window.location.replace("index.html?page=profile");

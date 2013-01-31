@@ -23,6 +23,7 @@ $(document).ready(function() {
 		$(".select_monster").first().attr('checked',true);
 	});
 	
+	//When we have a list of users monsters, get a list of their friends
 	$monsters.done(function() {
 		//get a list of the friends and there monsters
 		$.post(SERVLET_LOCATION, {action: "getFriends"}, function(response) {
@@ -33,13 +34,14 @@ $(document).ready(function() {
 		});
 	});
 
+	//Add event handlers for clicking view monsters
 	function addMonsterViewerEvents() {
+		//shows friends monsters on click
 		$(".view_monster").on("click", function(e){
-			//show monsters click on
 			var friend = getParentId(this, '.friend');
 
 			$.post(SERVLET_LOCATION, {action: "getFriendsMonsters", friend_id: friend}, function(response) {
-				//get an display the friends monsters
+				//display the friends monsters
 				var obj =  $.parseJSON(response);
 				var outputStr = '<form><table>';
 				if(obj.Monsters.length > 0) {
@@ -53,7 +55,7 @@ $(document).ready(function() {
 		});
 	}
 
-	//handle clicking the battle request button
+	//add event handler for clicking the battle request button
 	function addBattleRequestEvents() {
 		$("#friends_list .battle_request").on("click", function() {
 			newMonsterRequest("Battle", this);
@@ -69,10 +71,11 @@ $(document).ready(function() {
 
 		$.post(SERVLET_LOCATION, {action: "new" + type +"Request", userMonsterId: user_mon_id, friendId: friend_id, monsterId: mon_id},
 		function(response) {
-	
+			writeServerResponse(response);
 		});
 	}
 
+	//Output a list of monsters as HTML.
 	function buildMonsterSelectHTML(key, mon, user) {
 		outputStr = '<tr id="monster_row_'+mon.ID+'">';
 		outputStr += buildMonsterHTML(key, mon);

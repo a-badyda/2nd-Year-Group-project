@@ -8,9 +8,10 @@ Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk
 */
 
+//When the document is ready
 $(document).ready(function () {	
 
-	//logout button.
+	//Add logout button event handler
 	$("#logout").click(function() {
 		$.post(SERVLET_LOCATION, {action: "logout"}, function(response) {
 			window.location.replace("login.html");
@@ -27,7 +28,7 @@ $(document).ready(function () {
 
 			//select if it is a valid page.
 			if($.inArray(page, PAGES) >= 0) {
-				//dynamically load the page content
+				//dynamically load the page content and scripts
 				$.get(page + '.html', function (response) {
 					$('#response').html(response);
 				});

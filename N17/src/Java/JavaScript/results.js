@@ -2,11 +2,13 @@
 Results.js
 ----------------
 JavaScript for the results page.
+Loads and displays data from the server about result notifications
 ----------------
 Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk	
 */
 
+//load data when ready
 $(document).ready(function() {
 	//get all notifications on load.
 	$.post(SERVLET_LOCATION, {action: 'getAllResults'}, function(response) {
@@ -16,7 +18,7 @@ $(document).ready(function() {
 		addResponseEvents();
 	});
 
-	//Add event handlers after load.
+	//Add event handlers for clicking ok on the results.
 	function addResponseEvents() {
 		$(".decline").on('click', function() {
 			var results_id = $(this).attr('id');
@@ -27,6 +29,8 @@ $(document).ready(function() {
 	/////////////////////////////////////////
 	// Dynamic HTML writer functions
 	/////////////////////////////////////////
+
+	//write a single result to the DOM
 	function writeResult(key, val) {
 		var current = val;
 		var type = current["Type"];
@@ -40,18 +44,18 @@ $(document).ready(function() {
 			outputStr +=writeBattleResult(key, val);
 		} else if (type == "breed_result") {
 			outputStr += '<div class="breed_results">';
-			outputStr += outputList(writeBaby, obj.babies);
+			outputStr += outputList(writeBaby, val.babies);
 			outputStr += '</div>';
 		} else if (type == "buy_result") {
 			outputStr += writeBuyResult(key, val);
 		}
 		
-
 		outputStr += '<input id="'+current.ID+'" type="button" class="decline" value="OK"></input>';
 		outputStr += '</div>';
 		return outputStr;
 	}
 
+	//write a single battle result to the DOM
 	function writeBattleResult(key, val) {
 		var output = ''; 
 		output += '<div class="battle_results>"';
@@ -63,6 +67,7 @@ $(document).ready(function() {
 		return output;
 	}
 
+	//write a bady to the DOM
 	function writeBaby(key, val) {
 		var output ='';
 		output += '<div class="baby">';
@@ -71,6 +76,7 @@ $(document).ready(function() {
 		return output;
 	}
 
+	//write a buy result to the DOM
 	function writeBuyResult(key, val) {
 		var output = ''; 
 		output += '<div class="buy_results>"';
@@ -81,8 +87,9 @@ $(document).ready(function() {
 		return output;
 	}
 
+	//hide the result when the server has responded deleting it.
 	function writeResponse(response) {
-		//$('#result_' + notification_id).html("<span>"+response+"</span>");
+		$(this).parent('.result').fadeOut();
 	}
 });
 	
