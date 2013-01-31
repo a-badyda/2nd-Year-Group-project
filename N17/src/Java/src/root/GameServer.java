@@ -521,7 +521,6 @@ public class GameServer extends HttpServlet {
 		int Friend = Integer.parseInt(request.getParameter("friendId"));
 		int FriendMonster = Integer.parseInt(request.getParameter("monsterId"));
 		int userMonster = Integer.parseInt(request.getParameter("userMonsterId"));
-		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashBreed()){
 			
 		try {
 			
@@ -548,20 +547,7 @@ public class GameServer extends HttpServlet {
 			}
 			
 		}
-		}else{
-			
-			PrintWriter out;
-			try {
-				out = response.getWriter();
-				out.print("Insufficient funds");
-				out.flush();
-				out.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
+		
 		
 	}
 	private void newBreedRequest(HttpServletRequest request, HttpServletResponse response){
@@ -580,9 +566,9 @@ public class GameServer extends HttpServlet {
 			Monster m2=users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId")));
 					
 			
-			String query="UPDATE user SET Cash='"+(u1.getCash()-m1.getCashBreed())+"' WHERE UserID='"+u1.getId()+"'";
+			String query="UPDATE user SET Cash='"+(u1.getCash()-m2.getCashBreed())+"' WHERE UserID='"+u1.getId()+"'";
 			db.execute(query);
-			query="UPDATE user SET Cash='"+(u2.getCash()+m1.getCashBreed())+"' WHERE UserID='"+u2.getId()+"'";
+			query="UPDATE user SET Cash='"+(u2.getCash()+m2.getCashBreed())+"' WHERE UserID='"+u2.getId()+"'";
 			db.execute(query);
 			
 			ArrayList<String> querylist = breeding.doBreed(u1,u2,m1,m2);
@@ -671,12 +657,11 @@ public class GameServer extends HttpServlet {
 			user.setCash(user.getCash()-monster.getCashSell());
 			query="UPDATE user SET Cash='"+(users.fetchUserFromDatabase(friendID).getCash()+monster.getCashSell())+"' WHERE UserID='"+friendID+"'";
 			db.execute(query);
-			query="UPDATE monsters SET cashSell='0' WHERE monsterID='"+monsterID+"'";
-			db.execute(query);
 			query="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
 					"VALUES('buy_result','"+userID+"','"+friendID+"','"+monsterID+"','"+monsterID+"','"+userID+"','"+monsterID+"','congratulations you just bought a new monster',' ','"+monster.getCashSell()+"',0,0,0,0,0,0,0,0,0,0)";
 			db.execute(query);	
-	
+			query="UPDATE monsters SET cashSell='0' WHERE monsterID='"+monsterID+"'";
+			db.execute(query);
 			query="UPDATE monsters SET ownerID='"+userID+"' WHERE monsterID='"+monsterID+"'";
 			db.execute(query);
 	
@@ -900,7 +885,7 @@ public class GameServer extends HttpServlet {
 					out.print("\"cash\":\""+rset.getInt("cash")+"\",");
 				}else{
 					out.print("\"message\":\""+rset.getString("lostmessage")+"\",");
-					out.print("\"cash\":\""+(0-rset.getInt("cash"))+"\",");
+					out.print("\"cash\":\"0\",");
 				}
 				
 				
