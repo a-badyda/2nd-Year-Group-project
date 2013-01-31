@@ -37,8 +37,10 @@ $(document).ready(function() {
 
 		if (validateEmail(email)) {
 			$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
-				$('.email_response').html(response);
+				$('#server_response').html(response);
 			});
+		} else {
+			$('#server_response').html('Not an email address!');
 		}
 		return false;
 	});

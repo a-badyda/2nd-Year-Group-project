@@ -56,7 +56,7 @@ function is_int(value){
 function buildMonsterHTML(key, mon) {
 	outputStr = '';
 	outputStr += '<div id="monster_'+mon.ID+'" class="monster">';
-	outputStr += '<td id="'+mon.ID+' "class="monster_name">'+mon.monstername+'</td>';
+	outputStr += '<td id="'+mon.ID+'" class="monster_name">'+mon.monstername+'</td>';
 	outputStr += '<div id="stats">';
 	outputStr += '<td class="strength">'+mon.strength+'</td>';
 	outputStr += '<td class="aggression">'+mon.aggression+'</td>';
@@ -71,7 +71,7 @@ function buildMonsterHTML(key, mon) {
 function buildFriendHTML(key, friend){
 	output = '';
 	output += '<div id="friend_'+friend.id+'" class="friend">';
-	output += '<td id="'+friend.id+'"class="friend_name">'+friend.username+'</td>';
+	output += '<td id="'+friend.id+'" class="friend_name">'+friend.username+'</td>';
 	output += '<td><a class="view_monster" href="#">View Monsters</a></td>';
 	output += '<td><div class="monster_list"></div></td>';
 	output += '</div>';
