@@ -59,6 +59,7 @@ $(document).ready(function() {
 	function addBattleRequestEvents() {
 		$("#friends_list .battle_request").on("click", function() {
 			newMonsterRequest("Battle", this);
+			$(this).attr('disabled', true);
 		});
 	}
 	

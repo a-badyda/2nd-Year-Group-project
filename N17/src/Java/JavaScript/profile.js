@@ -12,8 +12,8 @@ $(document).ready(function() {
 	//request user data on page load.
 	var $user_data = $.post(SERVLET_LOCATION, {action: "getUserData"}, function(response) {
 		var obj = $.parseJSON(response);
-		$('#username').html(obj.username);
-		$('#cash').html(obj.cash);
+		$('#username').append(obj.username);
+		$('#cash').append(obj.cash);
 	});
 
 	//once user data is loaded, load users monsters, add them to the DOM
@@ -23,7 +23,7 @@ $(document).ready(function() {
 			var outputStr = '<table><tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th><th>Change Name</th></tr>';
 			outputStr += outputList(buildProfileHTML, obj.Monsters, true);
 			outputStr += '</table>';
-			$('.monster_list').html(outputStr);
+			$('.monster_list').append(outputStr);
 			addChangeNameEvents();
 		});
 	});
