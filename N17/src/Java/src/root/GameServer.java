@@ -553,7 +553,7 @@ public class GameServer extends HttpServlet {
 	private void newBreedRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		
-		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashBreed()){
+		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>=users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashBreed()){
 		
 			try {
 			User user = users.fetchUser((String)session.getAttribute("username"));
@@ -642,7 +642,7 @@ public class GameServer extends HttpServlet {
 	}
 	private void newBuyRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
-		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashSell()){
+		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>=users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashSell()){
 			
 			User user = users.fetchUser((String)session.getAttribute("username"));
 			
@@ -1111,14 +1111,15 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		
-		User freinds[] = new User[user.getFriends().size()];
+		User freinds[] = new User[user.getFriends().size()+1];
+		
 		
 		for(int i=0; i<user.getFriends().size(); i++){
 			freinds[i]=user.getFriends().get(i);
 		}
+		freinds[freinds.length]=user;
 		
-		
-		int n = freinds.length;
+		int n = freinds.length+1;
 		User temp;
        
         for(int i=0; i < n; i++){

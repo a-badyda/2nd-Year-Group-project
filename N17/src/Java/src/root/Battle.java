@@ -43,7 +43,7 @@ public class Battle {
 		fromMon = null;
 		winner = null;
 		defeated = null;
-		messages.clear();
+		messages = new ArrayList<String>();
 		
 		
 	}
