@@ -351,57 +351,66 @@ public class GameServer extends HttpServlet {
 		
 	}
 	private void NewUser(HttpServletRequest request, HttpServletResponse response){
-		
+		 boolean exists= false;
+	    
 		String username = request.getParameter("username");
 	    String password = request.getParameter("password");
 	    
-	    
-	    String query = ("INSERT INTO `user` (`UserName`, `Email`, `Password`, `Cash`) VALUES ('"+username+"', ' ', '"+password+"', '200');");
-		//run the query and store in DB
-	    db.execute(query);
-	    
-	    
-		
-	    
-		Date date = new Date();
-	    SimpleDateFormat ft = 
-	    new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
-	    
-	    LogIn(request,response);
-	    
-		int ID=0;
-		try {
-			query = ("SELECT * FROM user WHERE UserName='" +(String)request.getParameter("username")+ "'");
-			
-			ResultSet rset;
-    		rset = db.createQuery (query);
-			
-			while(rset.next()){
-				ID=rset.getInt("UserID");
-			}
-			
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-	    // give them there first monster
-		
-		users.genereate(ID);
-		
-//		query = "INSERT INTO `monsterdata`.`monsters` (`ownerID`, `name`, `health`, `strength`, `defence`, `aggression`, `fertility`, `breed`, `status`, `cashPrize`, `wins`, `losses`, `birth`) VALUES ('"+ID+"', 'my first monster', '10', '10', '10', '10', '10', 'BEAST', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
-//	    
-//		//run the query and store in DB
-//	    db.execute(query);
-	    
 	    try {
-			PrintWriter out = response.getWriter();
-			out.print("new user created");
-			out.print(ft.format(date));
-			out.flush();
-			out.close();
-			
-		} catch (IOException e) {
-			e.printStackTrace();
+	    	String query ="SELECT * FROM user WHERE UserName='"+request.getParameter("username")+"'";
+	    	ResultSet rset = db.createQuery(query);
+			while(rset.next()){
+				exists=true;
+			}
+		} catch (SQLException e2) {
+			e2.printStackTrace();
 		}
+	    
+	    if(!exists){
+	    
+		    String query = ("INSERT INTO `user` (`UserName`, `Email`, `Password`, `Cash`) VALUES ('"+username+"', ' ', '"+password+"', '200');");
+			//run the query and store in DB
+		    db.execute(query);
+		    
+			Date date = new Date();
+		    SimpleDateFormat ft = 
+		    new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
+		    
+		    LogIn(request,response);
+		    
+			int ID=0;
+			try {
+				query = ("SELECT * FROM user WHERE UserName='" +(String)request.getParameter("username")+ "'");
+				
+	    		ResultSet rset = db.createQuery(query);
+				
+				while(rset.next()){
+					ID=rset.getInt("UserID");
+				}
+				
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		    // give them there first monster
+			
+			users.genereate(ID);
+			
+	//		query = "INSERT INTO `monsterdata`.`monsters` (`ownerID`, `name`, `health`, `strength`, `defence`, `aggression`, `fertility`, `breed`, `status`, `cashPrize`, `wins`, `losses`, `birth`) VALUES ('"+ID+"', 'my first monster', '10', '10', '10', '10', '10', 'BEAST', 'NORMAL', '10', '0', '0', '"+ft.format(date)+"');";
+	//	    
+	//		//run the query and store in DB
+	//	    db.execute(query);
+		    
+		    try {
+				PrintWriter out = response.getWriter();
+				out.print("new user created");
+				out.print(ft.format(date));
+				out.flush();
+				out.close();
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	    }
 	}
 	
 	private void addFriend(HttpServletRequest request, HttpServletResponse response){
@@ -425,7 +434,21 @@ public class GameServer extends HttpServlet {
 			e1.printStackTrace();
 		}
 		
-		if((user.getUsername().equalsIgnoreCase((String)request.getParameter("username")))&&(viable)){
+		try {
+			String query = "SELECT * FROM notifications WHERE UserID2='" +user.getId()+ "' AND UserID1='"+users.fetchUserFromDatabase((String)request.getParameter("username")).getId()+"' AND type='friend_request'";
+			
+			ResultSet rset;
+			rset = db.createQuery(query);
+				while(rset.next()){
+					viable=false;
+				}
+				
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		
+		if((user.getUsername().equalsIgnoreCase((String)request.getParameter("username")))||(!viable)){
 		}else{
 		
 			try {
@@ -471,7 +494,8 @@ public class GameServer extends HttpServlet {
 		int Friend = Integer.parseInt(request.getParameter("friendId"));
 		int FriendMonster = Integer.parseInt(request.getParameter("monsterId"));
 		int userMonster = Integer.parseInt(request.getParameter("userMonsterId"));
-		
+		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashBreed()){
+			
 		try {
 			
 			
@@ -497,77 +521,107 @@ public class GameServer extends HttpServlet {
 			}
 			
 		}
-		
-	}
-	private void newBreedRequest(HttpServletRequest request, HttpServletResponse response){
-		try {
-		HttpSession session = request.getSession(true);
-		User user = users.fetchUser((String)session.getAttribute("username"));
-		
-				//u1 lose cash
-		User u1=users.fetchUserFromDatabase(user.getId());
-		User u2=users.fetchUserFromDatabase(Integer.parseInt(request.getParameter("friendId")));
-		
-		Monster m1=users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("userMonsterId")));
-		Monster m2=users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId")));
-				
-		
-		String query="UPDATE user SET Cash='"+(u1.getCash()-m1.getCashBreed())+"' WHERE UserID='"+u1.getId()+"'";
-		db.execute(query);
-		query="UPDATE user SET Cash='"+(u2.getCash()+m1.getCashBreed())+"' WHERE UserID='"+u2.getId()+"'";
-		db.execute(query);
-		
-		ArrayList<String> querylist = breeding.doBreed(u1,u2,m1,m2);
-		
-			for (int i=0; i<querylist.size();i++){
-				db.execute(querylist.get(i));
-			}
+		}else{
 			
-			String query2 ="SELECT * FROM monsters WHERE breed="+u1.getId()+"";
-			ResultSet rset;
-			rset = db.createQuery(query2);
-			int count =1;
-			int babies[]=new int[10];
-			while ((rset.next())&&(count<10))
-			{ 
-				babies[count-1]=rset.getInt("monsterID");
-				count++;
-			}
-			
-			query ="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
-				"VALUES('breed_result','"+u1.getId()+"','"+u2.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
-		
-			db.execute(query);
-			
-			query ="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
-					"VALUES('breed_result','"+u2.getId()+"','"+u1.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
-			
-			db.execute(query);
-			
-			query ="INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES ('breed_result','"+u2.getId()+"','"+u1.getId()+"','"+m1.getId()+"','"+m2.getId()+"','PENDING','0','')";
-			
-			db.execute(query);
-			
-			
-			
-			PrintWriter out = response.getWriter();
-			out.print("Request sent");
-			out.flush();
-			out.close();
-			
-		} catch (SQLException | IOException e) {
-			e.printStackTrace();
+			PrintWriter out;
 			try {
-				PrintWriter out = response.getWriter();
-				out.print("Request failed to send");
+				out = response.getWriter();
+				out.print("Insufficient funds");
 				out.flush();
 				out.close();
-			} catch (IOException e1) {
-				e1.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			
 		}
 		
+	}
+	private void newBreedRequest(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession(true);
+		
+		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashBreed()){
+		
+			try {
+			User user = users.fetchUser((String)session.getAttribute("username"));
+			
+					//u1 lose cash
+			User u1=users.fetchUserFromDatabase(user.getId());
+			User u2=users.fetchUserFromDatabase(Integer.parseInt(request.getParameter("friendId")));
+			
+			Monster m1=users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("userMonsterId")));
+			Monster m2=users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId")));
+					
+			
+			String query="UPDATE user SET Cash='"+(u1.getCash()-m1.getCashBreed())+"' WHERE UserID='"+u1.getId()+"'";
+			db.execute(query);
+			query="UPDATE user SET Cash='"+(u2.getCash()+m1.getCashBreed())+"' WHERE UserID='"+u2.getId()+"'";
+			db.execute(query);
+			
+			ArrayList<String> querylist = breeding.doBreed(u1,u2,m1,m2);
+			
+				for (int i=0; i<querylist.size();i++){
+					db.execute(querylist.get(i));
+				}
+				
+				String query2 ="SELECT * FROM monsters WHERE breed="+u1.getId()+"";
+				ResultSet rset;
+				rset = db.createQuery(query2);
+				int count =1;
+				int babies[]=new int[10];
+				while ((rset.next())&&(count<10))
+				{ 
+					babies[count-1]=rset.getInt("monsterID");
+					count++;
+				}
+				
+				query ="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
+					"VALUES('breed_result','"+u1.getId()+"','"+u2.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
+			
+				db.execute(query);
+				
+				query ="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
+						"VALUES('breed_result','"+u2.getId()+"','"+u1.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
+				
+				db.execute(query);
+				
+				query ="INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES ('breed_result','"+u2.getId()+"','"+u1.getId()+"','"+m1.getId()+"','"+m2.getId()+"','PENDING','0','')";
+				
+				db.execute(query);
+				
+				
+				
+				PrintWriter out = response.getWriter();
+				out.print("Request sent");
+				out.flush();
+				out.close();
+				
+			} catch (SQLException | IOException e) {
+				e.printStackTrace();
+				try {
+					PrintWriter out = response.getWriter();
+					out.print("Request failed to send");
+					out.flush();
+					out.close();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				
+			}
+		}else{
+			
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.print("Insufficient funds");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 		//responce (monster array babies,stats) amount_paid: 
 		
 	}
