@@ -21,7 +21,7 @@ $(document).ready(function() {
 		$.post(SERVLET_LOCATION, {action: "getMonsters"}, function(response) {
 			var obj = $.parseJSON(response);
 			var outputStr = '<table><tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th><th>Change Name</th></tr>';
-			outputStr += outputList(buildProfileHTML, obj.Monsters, true);
+			outputStr += '<tr>' + outputList(buildProfileHTML, obj.Monsters, true) + '</tr>';
 			outputStr += '</table>';
 			$('.monster_list').append(outputStr);
 			addChangeNameEvents();
