@@ -609,10 +609,10 @@ public class GameServer extends HttpServlet {
 				out.print("\"aggression\":\""+requests.get(i).getAggression()+"\",");
 				out.print("\"breed\":\""+breed+"\"}");
 				
-				
 				if(i<requests.size()-1){
 					out.print(",");
 				}
+				
 			}
 			
 			out.print("]}");
@@ -681,6 +681,9 @@ public class GameServer extends HttpServlet {
 				if(i<requests.size()-1){
 					out.print(",");
 				}
+				
+				
+				
 			}
 			
 			out.print("]}");
