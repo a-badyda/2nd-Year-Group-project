@@ -445,7 +445,7 @@ public class GameServer extends HttpServlet {
 		}
 		
 		try {
-			String query = "SELECT * FROM user WHERE UserID='" +users.fetchUserFromDatabase((String)request.getParameter("username")).getId()+"'";
+			String query = "SELECT * FROM user WHERE UserName='" +users.fetchUserFromDatabase((String)request.getParameter("username")).getId()+"'";
 			
 			ResultSet rset;
 			rset = db.createQuery(query);
