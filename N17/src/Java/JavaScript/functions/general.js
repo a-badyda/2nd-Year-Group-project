@@ -22,6 +22,7 @@ function getGETvars() {
 }
 
 //generic function to cycle through a JSON list from the server.
+//Returns string of HTML output.
 function outputList(func, list, args) {
 	var output = '';
 	if(list.length != 0) {
@@ -50,6 +51,8 @@ function is_int(value){
 //////////////////////////////////////////////////////
 // Generic Dynamic HTML Builder Functions.
 //////////////////////////////////////////////////////
+
+//build data for one monster in a monster list.
 function buildMonsterHTML(key, mon) {
 	outputStr = '';
 	outputStr += '<div id="monster_'+mon.ID+'" class="monster">';
@@ -64,6 +67,7 @@ function buildMonsterHTML(key, mon) {
 	return outputStr;
 }
 
+//build the data for displaying a single friends data
 function buildFriendHTML(key, friend){
 	output = '';
 	output += '<div id="friend_'+friend.id+'" class="friend">';
@@ -78,13 +82,13 @@ function buildFriendHTML(key, friend){
 function verboseType(type) {
 	var out = '';
 	if(type == "friend_accepted") {
-		out = " accepted your friend request.";
+		out = " is now friends with you.";
 	} else if (type == "friend_request") {
 		out = " has requested to be friends with you.";
 	} else if (type == "battle_request") {
 		out = " has requested to battle with you.";
 	} else if (type == "battle_results") {
-		out = " accepted your battle request.";
+		out = " had a battle with you.";
 	} else if (type == "buy_result") {
 		out = " bought your monster.";
 	} else if (type == "breed_result") {
@@ -94,6 +98,7 @@ function verboseType(type) {
 	return out;
 }
 
+//generic function to write out a server response
 function writeServerResponse(response) {
 	$('#server_response').html(response);
 }

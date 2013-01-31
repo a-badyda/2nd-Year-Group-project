@@ -27,6 +27,7 @@ $(document).ready(function(){
 		$(".select_monster").first().attr('checked',true);
 	});
 	
+	//when we have a list of user monsters, get a list of users friends
 	$monsters.done(function() {
 		//get a list of the friends and there monsters
 		$.post(SERVLET_LOCATION, {action: "getFriends"}, function(response) {
@@ -38,7 +39,7 @@ $(document).ready(function(){
 	});
 
 
-	//enable the monster for breeding/selling
+	//add events for selecting to change a monsters breed/buy cost.
 	function checkboxEvent(name) {
 		$('input[type="checkbox"][name="select_monster_'+name+'"]').on('change', function() {
 			var id = $(this).attr('id');
@@ -47,6 +48,7 @@ $(document).ready(function(){
 		});
 	}
 
+	//add event handlers for viewing a list of friends monsters
 	function addMonsterViewerEvents() {
 		$(".view_monster").on("click", function(){
 			//show monsters click on
@@ -62,12 +64,15 @@ $(document).ready(function(){
 		});
 	}
  
+ 	//add event handlers for setting the cost of buy/breeding a monster
 	function addSetCostEvents() {
+		//clicking to set the cost of selling a monster
 		$(".set_sell_cost").on("click", function() {
 			var cost = $(this).siblings('.monster_sell_cost').val();
 			changeCost("Buy", this, cost);
 		});
 
+		//clicking to set the cost of breeding with a monster
 		$(".set_breed_cost").on("click", function() {
 			var cost = $(this).siblings('.monster_breed_cost').val();
 			changeCost("Breed", this, cost);
@@ -83,7 +88,7 @@ $(document).ready(function(){
 		});
 	}
 
-	
+	//Add event handlers for clicking to buy or breed with a friends monster
 	function addAuctionEvents() {
 		//handle clicking the breed request button
 		$("#friends_list .breed_request").on("click", function() {
@@ -119,9 +124,7 @@ $(document).ready(function(){
 		});
 	}
 
-	//////////////////////////////////////////
-	// HTML to show a monster
-	//////////////////////////////////////////
+	//Convert lis of monsters to HTML for outputting
 	function buildMonsterAuctionHTML(key, mon, user) {
 		var outputStr = buildMonsterHTML(key, mon);
 
@@ -142,10 +145,13 @@ $(document).ready(function(){
 
 		//else output this if friend
 		} else {
+			
+			//Show breed button if monster is avalible for breeding
 			if(mon.breed) {
 				outputStr += '<td>Breeding Cost: '+mon.cost_breed+'<input id="'+mon.ID+'" type="button" class="breed_request" value="Breed"></input></td>';
 			}
-			
+
+			//show buy button if monster is avalible for buying
 			if(mon.buy) {
 				outputStr += '<td>Buying Cost: '+mon.cost_buy+'<input id="'+mon.ID+'" type="button" class="buy_request" value="Buy"></input></td>';
 			}

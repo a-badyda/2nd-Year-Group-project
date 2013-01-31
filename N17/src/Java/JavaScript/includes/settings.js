@@ -22,4 +22,5 @@ var SERVLET_LOCATION = SERVLET_FOLDER + "game";
 var MIN_PASSWORD_LENGTH = 8;
 var MAX_PASSWORD_LENGTH = 20;
 
+//list of pages within the system
 var PAGES = ["profile", "battle", "friends", "help", "notification", "auction", "view_results"];

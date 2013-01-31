@@ -8,6 +8,7 @@ Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk	
 */
 
+//when document is ready
 $(document).ready(function() {
 
 	//load a list of all friends
@@ -19,6 +20,7 @@ $(document).ready(function() {
 	 	$('#friends_list').append(output);
 	 });
 
+	//when the list of friends is loaded, load a list of the richest friends
 	 $friend.done(function() {
 	 	$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
 	 		var obj = $.parseJSON(response);
@@ -29,7 +31,7 @@ $(document).ready(function() {
 	 	});
 	 });
 	
-	//add a new friend
+	//event handler to send a friend request.
 	$(".send_request .button_add").click(function() {
 		var email = $(".friend_email").val();
 		$.post(SERVLET_LOCATION, {action: "addFriend", username: email}, function(response) {
@@ -40,6 +42,7 @@ $(document).ready(function() {
 	
 });
 
+//Write the friend list data to a HTML string
 function outputFriendsList(key, val) {
 	var output = '<tr>';
 	output += '<div class="friend">';
@@ -49,6 +52,7 @@ function outputFriendsList(key, val) {
 	return output;
 }
 
+//Write the rich list data to a HTML string
 function outputRichList(key, val) {
 	var output = '<tr>';
 	output += '<div class="friend">';

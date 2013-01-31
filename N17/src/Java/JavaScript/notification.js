@@ -7,6 +7,7 @@ Author:	Samuel Jackson
 Email:	slj11@aber.ac.uk	
 */
 
+//when the document is ready.
 $(document).ready(function() {
 
 	//get all notifications on load.
@@ -17,8 +18,9 @@ $(document).ready(function() {
 		addResponseEvents();
 	});
 	
+	//add events to response to user interaction
 	function addResponseEvents() {
-		//user clicks accept.
+		//user clicks accept request.
 		$(".accept").on('click', function() {
 			var notification_id = getParentId(this, '.notification_request');
 			$.post(SERVLET_LOCATION, {action: "acceptRequest", id: notification_id}, function(response) {
@@ -27,7 +29,7 @@ $(document).ready(function() {
 			return false;
 		});
 		
-		//user clicks decline.
+		//user clicks decline request.
 		$(".decline").on('click', function() {
 			var notification_id = getParentId(this, '.notification_request');
 			$.post(SERVLET_LOCATION, {action: "declineRequest", id: notification_id, result: false}, function(response) {
@@ -44,6 +46,7 @@ $(document).ready(function() {
 		});
 	}
 
+	//Write notification data into HTML.
 	function writeNotification(key, val) {
 		var current = val;
 		var type = current["Type"];
