@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2013.1.29)  29 JAN 2013 13:12
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2013.1.31)  31 JAN 2013 11:01
 entering extended mode
 **projectplan.tex
 
@@ -546,10 +546,10 @@ Non-PDF special ignored!] <incremental.jpg, id=22, 652.68843pt x 481.04718pt>
 File: incremental.jpg Graphic file (type jpg)
 
 <use incremental.jpg>
-Package pdftex.def Info: incremental.jpg used on input line 112.
+Package pdftex.def Info: incremental.jpg used on input line 111.
 (pdftex.def)             Requested size: 326.34341pt x 240.523pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--113
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
  []
 
@@ -582,10 +582,10 @@ docs/Project Plan/incremental.jpg>]
 File: WelcomePageUseCase.jpg Graphic file (type jpg)
 
 <use WelcomePageUseCase.jpg>
-Package pdftex.def Info: WelcomePageUseCase.jpg used on input line 120.
+Package pdftex.def Info: WelcomePageUseCase.jpg used on input line 119.
 (pdftex.def)             Requested size: 164.41551pt x 202.80925pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--131
+Underfull \hbox (badness 10000) in paragraph at lines 119--130
 
  []
 
@@ -608,10 +608,10 @@ docs/Project Plan/WelcomePageUseCase.jpg>]
 File: MainProfilePageUseCase.jpg Graphic file (type jpg)
 
 <use MainProfilePageUseCase.jpg>
-Package pdftex.def Info: MainProfilePageUseCase.jpg used on input line 134.
+Package pdftex.def Info: MainProfilePageUseCase.jpg used on input line 133.
 (pdftex.def)             Requested size: 164.41551pt x 240.75128pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--144
+Underfull \hbox (badness 10000) in paragraph at lines 133--143
 
  []
 
@@ -631,10 +631,10 @@ docs/Project Plan/MainProfilePageUseCase.jpg>]
 File: FriendsPageUseCase.jpg Graphic file (type jpg)
 
 <use FriendsPageUseCase.jpg>
-Package pdftex.def Info: FriendsPageUseCase.jpg used on input line 147.
+Package pdftex.def Info: FriendsPageUseCase.jpg used on input line 146.
 (pdftex.def)             Requested size: 163.9638pt x 194.6788pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--160
+Underfull \hbox (badness 10000) in paragraph at lines 146--159
 
  []
 
@@ -654,10 +654,10 @@ docs/Project Plan/FriendsPageUseCase.jpg>]
 File: AddFriendsPageUseCase.jpg Graphic file (type jpg)
 
 <use AddFriendsPageUseCase.jpg>
-Package pdftex.def Info: AddFriendsPageUseCase.jpg used on input line 163.
+Package pdftex.def Info: AddFriendsPageUseCase.jpg used on input line 162.
 (pdftex.def)             Requested size: 138.66913pt x 206.42278pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--175
+Underfull \hbox (badness 10000) in paragraph at lines 162--174
 
  []
 
@@ -677,10 +677,10 @@ docs/Project Plan/AddFriendsPageUseCase.jpg>]
 File: BreedingPageUseCase.jpg Graphic file (type jpg)
 
 <use BreedingPageUseCase.jpg>
-Package pdftex.def Info: BreedingPageUseCase.jpg used on input line 178.
+Package pdftex.def Info: BreedingPageUseCase.jpg used on input line 177.
 (pdftex.def)             Requested size: 163.9638pt x 204.61601pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--191
+Underfull \hbox (badness 10000) in paragraph at lines 177--190
 
  []
 
@@ -700,11 +700,11 @@ docs/Project Plan/BreedingPageUseCase.jpg>]
 File: BreedingResultsPageUseCase.jpg Graphic file (type jpg)
 
 <use BreedingResultsPageUseCase.jpg>
-Package pdftex.def Info: BreedingResultsPageUseCase.jpg used on input line 194.
+Package pdftex.def Info: BreedingResultsPageUseCase.jpg used on input line 193.
 
 (pdftex.def)             Requested size: 170.28749pt x 201.00247pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--205
+Underfull \hbox (badness 10000) in paragraph at lines 193--204
 
  []
 
@@ -724,10 +724,10 @@ docs/Project Plan/BreedingResultsPageUseCase.jpg>]
 File: BattleScreenUseCase.jpg Graphic file (type jpg)
 
 <use BattleScreenUseCase.jpg>
-Package pdftex.def Info: BattleScreenUseCase.jpg used on input line 208.
+Package pdftex.def Info: BattleScreenUseCase.jpg used on input line 207.
 (pdftex.def)             Requested size: 188.80682pt x 209.1329pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--220
+Underfull \hbox (badness 10000) in paragraph at lines 207--219
 
  []
 
@@ -747,10 +747,10 @@ docs/Project Plan/BattleScreenUseCase.jpg>]
 File: BattleResultsPageUseCase.jpg Graphic file (type jpg)
 
 <use BattleResultsPageUseCase.jpg>
-Package pdftex.def Info: BattleResultsPageUseCase.jpg used on input line 224.
+Package pdftex.def Info: BattleResultsPageUseCase.jpg used on input line 223.
 (pdftex.def)             Requested size: 150.86478pt x 198.29233pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--235
+Underfull \hbox (badness 10000) in paragraph at lines 223--234
 
  []
 
@@ -770,20 +770,20 @@ docs/Project Plan/BattleResultsPageUseCase.jpg>]
 File: HelpPageUseCase.jpg Graphic file (type jpg)
 
 <use HelpPageUseCase.jpg>
-Package pdftex.def Info: HelpPageUseCase.jpg used on input line 238.
+Package pdftex.def Info: HelpPageUseCase.jpg used on input line 237.
 (pdftex.def)             Requested size: 140.02419pt x 207.32616pt.
 
 <NotificationsPageUseCase.jpg, id=64, 254.45062pt x 343.2825pt>
 File: NotificationsPageUseCase.jpg Graphic file (type jpg)
 
 <use NotificationsPageUseCase.jpg>
-Package pdftex.def Info: NotificationsPageUseCase.jpg used on input line 245.
+Package pdftex.def Info: NotificationsPageUseCase.jpg used on input line 244.
 (pdftex.def)             Requested size: 152.67154pt x 205.97107pt.
 
 <loginPage.jpg, id=65, 662.475pt x 414.04688pt>
 File: loginPage.jpg Graphic file (type jpg)
  <use loginPage.jpg>
-Package pdftex.def Info: loginPage.jpg used on input line 255.
+Package pdftex.def Info: loginPage.jpg used on input line 254.
 (pdftex.def)             Requested size: 397.48807pt x 248.43004pt.
 
 
@@ -793,7 +793,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.258 \\
+l.257 \\
         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -806,7 +806,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.259 T
+l.258 T
        his is the basic design of the page the user will first encounter whe...
 
 Your command was ignored.
@@ -828,21 +828,7 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
 docs/Project Plan/HelpPageUseCase.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Grou
-p-project/N17/docs/Project Plan/NotificationsPageUseCase.jpg>]
-<userProfile.jpg, id=69, 659.46375pt x 414.79968pt>
-File: userProfile.jpg Graphic file (type jpg)
- <use userProfile.jpg>
-Package pdftex.def Info: userProfile.jpg used on input line 268.
-(pdftex.def)             Requested size: 329.73106pt x 207.39934pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--284
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16
+p-project/N17/docs/Project Plan/NotificationsPageUseCase.jpg>] [16
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -856,7 +842,18 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/loginPage.jpg>] [17
+docs/Project Plan/loginPage.jpg>]
+<userProfile.jpg, id=72, 659.46375pt x 414.79968pt>
+File: userProfile.jpg Graphic file (type jpg)
+ <use userProfile.jpg>
+Package pdftex.def Info: userProfile.jpg used on input line 268.
+(pdftex.def)             Requested size: 329.73106pt x 207.39934pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--284
+
+ []
+
+[17
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -1164,7 +1161,7 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on projectplan.pdf (27 pages, 1911456 bytes).
+Output written on projectplan.pdf (27 pages, 1911439 bytes).
 PDF statistics:
  131 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
