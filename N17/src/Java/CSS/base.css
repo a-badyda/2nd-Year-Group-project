@@ -172,6 +172,12 @@ input{
   color: #555555;
 }
 
+input[type=submit]{
+ height: auto;
+ width: auto;
+}
+
+
 input[type=submit][type=button][type=email]{
   position: relative;
   margin: 10px;
