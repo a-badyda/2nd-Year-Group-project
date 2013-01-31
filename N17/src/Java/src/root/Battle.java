@@ -15,6 +15,7 @@ public class Battle {
 	private User from, to;
 	private Monster fromMon, toMon, defeated = null, winner;
 	private ArrayList<String> messages;
+	private int winnerID;
 	/**
 	* Variation of the amount of damage done.
 	*/
@@ -37,7 +38,7 @@ public class Battle {
 	}
 	
 	public void clean(){
-		to =null;
+		to = null;
 		from = null;
 		toMon = null;
 		fromMon = null;
@@ -82,23 +83,30 @@ public class Battle {
 		
 		
 		if(winner == toMon){
-			to.setCash(to.getCash()+fromMon.getCashPrize());
-			messages.add("UPDATE user SET Cash='"+(to.getCash()+winner.getCashPrize())+"' WHERE UserID='"+winner.getOwnerId()+"'");
 			messages.add("INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES ('battle_results','"+from.getId()+"','"+to.getId()+"','"+fromMon.getId()+"','"+toMon.getId()+"','pending','"+winner.getCashPrize()+"','you won')");
-			messages.add("INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES ('battle_results','"+to.getId()+"','"+from.getId()+"','"+toMon.getId()+"','"+fromMon.getId()+"','pending','"+winner.getCashPrize()+"','you lost')");
+			messages.add("INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES ('battle_results','"+to.getId()+"','"+from.getId()+"','"+toMon.getId()+"','"+fromMon.getId()+"','pending','0','you lost')");
 			
 		} else {
-			from.setCash(from.getCash()+toMon.getCashPrize());
-			messages.add("UPDATE user SET Cash='"+(from.getCash()+winner.getCashPrize())+"' WHERE UserID='"+winner.getOwnerId()+"'");
 			messages.add("INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES('battle_results','"+from.getId()+"','"+to.getId()+"','"+fromMon.getId()+"','"+toMon.getId()+"','pending','0','you lost')");
 			messages.add("INSERT INTO notifications(type,UserID1,UserID2,MonsterID1,MonsterID2,state,cash,outcome) VALUES ('battle_results','"+to.getId()+"','"+from.getId()+"','"+toMon.getId()+"','"+fromMon.getId()+"','pending','"+winner.getCashPrize()+"','you won')");
 		}
+		
 		messages.add("INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
 				" VALUES ('battle_results','"+to.getId()+"','"+from.getId()+"','"+toMon.getId()+"','"+fromMon.getId()+"','"+winner.getOwnerId()+"','"+winner.getId()+"','congratulations you won the fight','sorry you lost the fight','"+winner.getCashPrize()+"', 0,0,0,0,0,0,0,0,0,0)");
 		messages.add("INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
 				" VALUES ('battle_results','"+from.getId()+"','"+to.getId()+"','"+fromMon.getId()+"','"+toMon.getId()+"','"+winner.getOwnerId()+"','"+winner.getId()+"','congratulations you won the fight','sorry you lost the fight','"+winner.getCashPrize()+"', 0,0,0,0,0,0,0,0,0,0)");
 		
+		winnerID = winner.getOwnerId();
+		
 		return messages;
+	}
+	
+	public int getwinnerMonsterID(){
+		return winner.getId();
+	}
+
+	public int getWinnerID() {
+		return winnerID;
 	}
 
 	public void attack(Monster atkMon, Monster defMon) {
