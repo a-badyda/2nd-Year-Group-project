@@ -13,9 +13,8 @@ $(document).ready(function() {
 	//get all notifications on load.
 	$.post(SERVLET_LOCATION, {action: 'getAllResults'}, function(response) {
 		var obj = $.parseJSON(response);
-		var outputStr = '<table><tr><th>Monster Name</th><th>Strength</th><th>Aggression</th><th>Defense</th><th>Health</th><th>Fertility</th></tr>';
+		var outputStr = '';
 		outputStr += outputList(writeResult, obj.Results);
-		outputStr += '</table>';
 		$('.results_list').append(outputStr);
 		addResponseEvents();
 	});
@@ -60,12 +59,12 @@ $(document).ready(function() {
 	//write a single battle result to the DOM
 	function writeBattleResult(key, val) {
 		var output = ''; 
-		output += '<div class="battle_results>"';
-		output += buildMonsterHTML(key, val.my_monster);
-		output += buildMonsterHTML(key, val.friend_monster); 
-		output += '<p>'+val.message+'</p>';
-		output += '<p>Money Exchanged: '+val.cash+'</p>';
-		output += '</div>';
+		output += '<table class="battle_results>"';
+		output += '<tr>' + buildMonsterHTML(key, val.my_monster) + '</tr>';
+		output += '<tr>' + buildMonsterHTML(key, val.friend_monster) + '</tr>'; 
+		output += '<tr><td>'+val.message+'</td></tr>';
+		output += '</tr><td>Money Exchanged: '+val.cash+'</td></tr>';
+		output += '</table>';
 		return output;
 	}
 
@@ -81,11 +80,11 @@ $(document).ready(function() {
 	//write a buy result to the DOM
 	function writeBuyResult(key, val) {
 		var output = ''; 
-		output += '<div class="buy_results>"';
-		output += buildMonsterHTML(key, val.friend_monster);
-		output += '<p>'+val.message+'</p>';
-		output += '<p>Money Exchanged: '+val.cost+'</p>';
-		output += '</div>';
+		output += '<table class="buy_results>"';
+		output += '<tr>' + buildMonsterHTML(key, val.friend_monster) + '</tr>';
+		output += '<tr><td>'+val.message+'</td></tr>';
+		output += '<tr><td>Money Exchanged: '+val.cost+'</td></tr>';
+		output += '</table>';
 		return output;
 	}
 
