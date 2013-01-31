@@ -178,7 +178,7 @@ public class GameServer extends HttpServlet {
  		            //run the query and stor in DB
  		            db.execute(query);
     				
- 		            out.print("{\"login\":true,\"message\":\"login sucsess\"}");
+ 		            out.print("{\"login\":true,\"message\":\"login success\"}");
     				out.flush();
     				out.close();
  		            
@@ -410,6 +410,17 @@ public class GameServer extends HttpServlet {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+	    }else{
+	    	
+	    	try {
+				PrintWriter out = response.getWriter();
+				out.print("{\"login\":false,\"message\":\"sorry invalid login\"}");
+				out.flush();
+				out.close();
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 	    }
 	}
 	
@@ -627,43 +638,45 @@ public class GameServer extends HttpServlet {
 	}
 	private void newBuyRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
-		
-		User user = users.fetchUser((String)session.getAttribute("username"));
-		
-		int userID = user.getId();
-		int friendID = Integer.parseInt(request.getParameter("friendId"));
-		int monsterID = Integer.parseInt(request.getParameter("monsterId"));
-		
-		Monster monster = users.fetchMonsterFromDatabase(monsterID);
-		
-		String query="UPDATE user SET Cash='"+(user.getCash()-monster.getCashSell())+"' WHERE UserID='"+user.getId()+"'";
-		db.execute(query);
-		query="UPDATE user SET Cash='"+(user.getCash()+monster.getCashSell())+"' WHERE UserID='"+friendID+"'";
-		db.execute(query);
-		query="UPDATE monsters SET cashSell='0' WHERE monsterID='"+monsterID+"'";
-		db.execute(query);
-		query="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
-				"VALUES('buy_result','"+userID+"','"+friendID+"','"+monsterID+"','"+monsterID+"','"+userID+"','"+monsterID+"','congratulations you just bought a new monster',' ','"+monster.getCashSell()+"',0,0,0,0,0,0,0,0,0,0)";
-		db.execute(query);	
-
-		query="UPDATE monsters SET ownerID='"+userID+"' WHERE monsterID='"+monsterID+"'";
-		db.execute(query);
-
-		//notification
-		query="INSERT INTO notifications (type, UserID1, UserID2, MonsterID1, MonsterID2, state) VALUES ('buy_result', '"+friendID+"', '"+userID+"', '"+monsterID+"', '"+monsterID+"', 'PENDING')";
-		db.execute(query);
-		
-		PrintWriter out;
-		try {
-			out = response.getWriter();
-			out.print("Request sent");
-			out.flush();
-			out.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashBreed()){
+			
+			User user = users.fetchUser((String)session.getAttribute("username"));
+			
+			int userID = user.getId();
+			int friendID = Integer.parseInt(request.getParameter("friendId"));
+			int monsterID = Integer.parseInt(request.getParameter("monsterId"));
+			
+			Monster monster = users.fetchMonsterFromDatabase(monsterID);
+			
+			String query="UPDATE user SET Cash='"+(user.getCash()-monster.getCashSell())+"' WHERE UserID='"+user.getId()+"'";
+			db.execute(query);
+			user.setCash(user.getCash()-monster.getCashSell());
+			query="UPDATE user SET Cash='"+(user.getCash()+monster.getCashSell())+"' WHERE UserID='"+friendID+"'";
+			db.execute(query);
+			query="UPDATE monsters SET cashSell='0' WHERE monsterID='"+monsterID+"'";
+			db.execute(query);
+			query="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
+					"VALUES('buy_result','"+userID+"','"+friendID+"','"+monsterID+"','"+monsterID+"','"+userID+"','"+monsterID+"','congratulations you just bought a new monster',' ','"+monster.getCashSell()+"',0,0,0,0,0,0,0,0,0,0)";
+			db.execute(query);	
+	
+			query="UPDATE monsters SET ownerID='"+userID+"' WHERE monsterID='"+monsterID+"'";
+			db.execute(query);
+	
+			//notification
+			query="INSERT INTO notifications (type, UserID1, UserID2, MonsterID1, MonsterID2, state) VALUES ('buy_result', '"+friendID+"', '"+userID+"', '"+monsterID+"', '"+monsterID+"', 'PENDING')";
+			db.execute(query);
+			
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.print("Request sent");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		
 		
 	}
 	
