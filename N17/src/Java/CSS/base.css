@@ -172,7 +172,7 @@ input{
   color: #555555;
 }
 
-input[type=submit]{
+input[type=submit][type=button]{
  height: auto;
  width: auto;
 }
