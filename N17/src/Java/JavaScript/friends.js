@@ -24,7 +24,7 @@ $(document).ready(function() {
 	 $friend.done(function() {
 	 	$.post(SERVLET_LOCATION, {action: 'getRichList'}, function(response) {
 	 		var obj = $.parseJSON(response);
-	 		var output = '<table><tr><th>Name</th><th>Money</th></tr>';
+	 		var output = '<br /><table><tr><th>Name</th><th>Money</th></tr>';
 	 		output += outputList(outputRichList, obj.RichList);
 	 		output += '</table>';
 	 		$('#rich_list').append(output);
