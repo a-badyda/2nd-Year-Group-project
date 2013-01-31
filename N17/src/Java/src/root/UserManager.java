@@ -90,7 +90,7 @@ public class UserManager {
 		
 		
 		String query ="INSERT INTO monsters (ownerID,name,health,strength,defence,aggression,fertility,breed,status,cashSell,wins,losses,birth,cashbreed,cashprize)" +
-				" VALUES ('"+id+"', 'my new monster', '"+m.getHealth()+"', '"+m.getStrength()+"', '"+m.getDefence()+"', '"+m.getAggression()+"', '"+m.getFertility()+"', 'BEAST', 'NORMAL', '0', '0', '0', '"+ft.format(date)+"', '0', '100')";
+				" VALUES ('"+id+"', 'my new monster', '"+m.getHealth()+"', '"+m.getStrength()+"', '"+m.getDefence()+"', '"+m.getAggression()+"', '"+m.getFertility()+"', 'BEAST', 'NORMAL', '0', '0', '0', '"+ft.format(date.getTime())+"', '0', '100')";
 		
 		db.execute(query);
 
