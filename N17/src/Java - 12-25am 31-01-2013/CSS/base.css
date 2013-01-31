@@ -1,0 +1,264 @@
+/* A big file for all the base css classes that can later be called somewhere else: keeps the html cleaner */
+
+#error { display: block; color: red; }
+
+body, select, input, textarea{color:#333}
+
+/*Typography section */
+
+h1,h2,h3,h4,h5,p,li{text-align:left; margin:1em; color: #292421;font-family: Verdana,sans-serif;}
+h1{font-size:40px; text-align: center; font-family: Verdana, sans-serif; color: #66CD00;}
+h2{font-size:20px; margin-bottom:1.2em; text-align: center; font-family: Verdana,sans-serif;}
+h3{font-size:15px; margin-bottom:1.5em; text-indent: 10px; font-family: Verdana,sans-serif;}
+h4{font-size:15px;}
+h5{font-family:italic; margin-bottom:1.5em; text-indent:5px;}
+p{margin-bottom:0.5em;}
+li{font-size:12px;}
+
+td,th{
+  padding: 0.5em;
+  text-align: center;
+  font-family: Verdana,sans-serif;
+  font-size: 12px;
+}
+
+a:link {color: #009900;}
+a:visited {color: #999999;}
+a:hover {color: #333333;}
+a:focus {color: #333333;}
+a:active {color: #009900;}
+
+/*Logo + background */
+html{
+  background-image: url('CSS/image/palmstree.png');
+}
+
+img{
+  margin-left:auto;
+  margin-right: auto;
+  display:block;
+}
+
+/* Footer Time*/
+#foot_logo{
+float: center;
+width: 100%;
+}
+#foot_monster{
+float: right;
+width: 100%;
+}
+
+/*BUTTONS DO NOT WORK AW NAYYY */
+button{
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  padding: 0 20px;
+  text-align: center;
+  color: #515151;
+  background: #d3d3d3;
+}
+
+
+/*Index menu - tabs*/
+
+.menu_options{
+	float: center;
+  margin-top: -5px;
+	padding: 0;
+	list-style: none;
+}
+
+.menu_options li {
+  float: center;
+}
+
+.menu_options a {
+	font-family: Verdana,sans-serif;
+	float: left;
+  position: relative;
+  padding: 0 40px;
+  height: 0; 
+  line-height: 30px;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid #3D3D3D;
+  color: #C1CDCD;
+  opacity: .3;
+	filter: alpha(opacity=30);	
+}
+
+
+/*Help Page*/
+
+.help{
+  float: left;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+	width:100%; 
+	margin: auto; 
+	padding:20px; 
+	background-color: #CDB79E;
+}
+
+
+/*Friends Page*/
+
+#friends {
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+	width:100%;
+  float: left;
+	margin: auto;
+	background: #EED5D2;  /* Make this dependant on the color of the tab -  TBD*/
+}
+
+#friends_list{
+  float:right;
+  width:auto;
+  background: #CDB7B5;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  margin: 5px;
+}
+
+#rich_list{
+  float:left;
+  width: auto;
+  background: #CDB7B5;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  margin: 5px;
+}
+
+
+
+/*Login Page*/
+#login{
+  text-align: center;
+}
+#login_text{
+text-align: center;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+label {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  }
+
+form {
+  margin: 0 0 20px;
+}
+
+input{
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 9px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+}
+
+input[type=submit]{
+  position: relative;
+  margin: 10px;
+  padding: 0 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #515151;
+  background: #d3d3d3;
+  text-shadow: 1px 1px 1px rgba(255,255,255, .22);
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+  transition: all 0.15s ease;
+  }
+
+/*User Profile*/
+.profile {
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  width: 100%;
+  margin: auto;
+  float: left;
+ background: #BFEFFF;
+}
+
+
+/*Battle section + results*/
+.monster_battle {
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  width: 100%;
+  margin: auto;
+  float: left;
+  background: #EED2EE;
+}
+#your_monsters {
+  float:left;
+  width: auto;
+  background: #CDB7B5;
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  margin: 5px;
+}
+
+/*
+#battle_results{
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  width: 80%;
+  margin: auto;
+  float: left;
+  background: #EED2EE;
+} 
+*/
+
+
+/*Notifications Page */
+.notifications_list {
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  width: 100%;
+  margin: auto;
+  float: left;
+  background: #FDF5E6;
+}
+
+
+/*Auction Page+ results*/
+#monster_auction{
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  width: 100%;
+  margin: auto;
+  float: left;
+  background: #BDFCC9;
+}
+/*
+#breeding_results{
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  width: 80%;
+  margin: auto;
+  float: left;
+  background: #BDFCC9;
+} */
+ 
+/*Results for everything i guess?*/
+.results_list{
+  border-bottom-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  width: 100%;
+  margin: auto;
+  float: left;
+  background: #D2B48C;
+}
+
+
