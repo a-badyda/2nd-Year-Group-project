@@ -53,11 +53,11 @@ $(document).ready(function(){
 	}
 
 	//redirect if logged in.
-	function redirect($errorBox, loggedin) {
+	function redirect(errorBox, loggedin) {
 		if (loggedin) {
 			window.location.replace("index.html?page=profile");
 		} else {
-			$errorBox.text("Invalid login details.");
+			errorBox.html("Invalid login details.");
 		}
 	}
 	

@@ -504,7 +504,7 @@ public class GameServer extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
 		
-				
+				//u1 lose cash
 		User u1=users.fetchUserFromDatabase(user.getId());
 		User u2=users.fetchUserFromDatabase(Integer.parseInt(request.getParameter("friendId")));
 		
@@ -512,8 +512,10 @@ public class GameServer extends HttpServlet {
 		Monster m2=users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId")));
 				
 		
-		
-		
+		String query="UPDATE user SET Cash='"+(u1.getCash()-m1.getCashBreed())+"' WHERE UserID='"+u1.getId()+"'";
+		db.execute(query);
+		query="UPDATE user SET Cash='"+(u2.getCash()+m1.getCashBreed())+"' WHERE UserID='"+u2.getId()+"'";
+		db.execute(query);
 		
 		ArrayList<String> querylist = breeding.doBreed(u1,u2,m1,m2);
 		
@@ -532,7 +534,7 @@ public class GameServer extends HttpServlet {
 				count++;
 			}
 			
-			String query ="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
+			query ="INSERT INTO result(type,userID1,userID2,monsterID1,monsterID2,userwon,monsterwon,winmessage,lostmessage,cash,baby1,baby2,baby3,baby4,baby5,baby6,baby7,baby8,baby9,baby10)" +
 				"VALUES('breed_result','"+u1.getId()+"','"+u2.getId()+"','"+m1.getId()+"','"+m2.getId()+"','"+u1.getId()+"','"+u1.getId()+"','congratulations you have baby monsters','some one breeded with your monster','"+m2.getCashBreed()+"',"+babies[0]+","+babies[1]+","+babies[2]+","+babies[3]+","+babies[4]+","+babies[5]+","+babies[6]+","+babies[7]+","+babies[8]+","+babies[9]+")";
 		
 			db.execute(query);

@@ -59,8 +59,8 @@ $(document).ready(function() {
 	function writeBattleResult(key, val) {
 		var output = ''; 
 		output += '<div class="battle_results>"';
-		output += '<p>'buildMonsterHTML(key, val.my_monster);'</p>'
-		output += '<p>'buildMonsterHTML(key, val.friend_monster); '</p>'
+		output += buildMonsterHTML(key, val.my_monster);
+		output += buildMonsterHTML(key, val.friend_monster); 
 		output += '<p>'+val.message+'</p>';
 		output += '<p>Money Exchanged: '+val.cash+'</p>';
 		output += '</div>';
@@ -89,7 +89,7 @@ $(document).ready(function() {
 
 	//hide the result when the server has responded deleting it.
 	function writeResponse(response) {
-		$(this).parent('.result').fadeOut();
+		$(this).closest('.result').fadeOut();
 	}
 });
 	

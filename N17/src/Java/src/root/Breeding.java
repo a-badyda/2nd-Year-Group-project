@@ -50,6 +50,9 @@ public class Breeding {
 			int fretillity = (int)((m1.getFertility()+m2.getFertility())/2)+ (-3 +(int)(Math.random()*((3-(-3))+1)));
 			int health = (int)((m1.getHealth()+m2.getHealth())/2) + (-10 +(int)(Math.random()*((10-(-10))+1)));
 			
+			if(fretillity<0){fretillity=0;}
+			if(agretion<0){agretion=0;}
+			
 			//query 
 			String child = "INSERT INTO `monsters` " +
 					"(`ownerID`, `name`, `health`, `strength`, `defence`, `aggression`, `fertility`, `breed`, `status`, `cashPrize`, `wins`, `losses`, `birth`) " +
