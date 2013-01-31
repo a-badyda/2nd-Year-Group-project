@@ -3,6 +3,7 @@ package root;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class UserManager {
@@ -51,6 +52,50 @@ public class UserManager {
 		return null;
 	}
 	
+	public void cheakForUsersMonsterss(int id){
+		
+		boolean hasMonsters=false;
+		String query = "SELECT * FROM monsters WHERE ownerID='" +id+ "'";
+		try {
+			
+			ResultSet rset;
+			rset = db.createQuery(query);
+			while (rset.next ()){
+				hasMonsters=true;
+				break;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		if(hasMonsters){
+			
+		}else{
+			///generate monster
+			genereate(id);
+		}
+	
+		
+	}
+	
+	public void genereate(int id){
+		
+		Calendar date = Calendar.getInstance();
+		SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
+		
+		
+		Monster m = new Monster();
+		m.generateStats(date);
+		
+		
+		
+		String query ="INSERT INTO monsters (ownerID,name,health,strength,defence,aggression,fertility,breed,status,cashSell,wins,losses,birth,cashbreed,cashprize)" +
+				" VALUES ('"+id+"', 'my new monster', '"+m.getHealth()+"', '"+m.getStrength()+"', '"+m.getDefence()+"', '"+m.getAggression()+"', '"+m.getFertility()+"', 'BEAST', 'NORMAL', '0', '0', '0', '"+ft.format(date)+"', '0', '100')";
+		
+		db.execute(query);
+
+	}
+	
 	public Monster fetchMonsterFromDatabase(int id){
 		String query = "SELECT * FROM monsters WHERE monsterID='" +id+ "'";
 		try {
@@ -78,8 +123,7 @@ public class UserManager {
 		}
 		return null;
 	}
-	
-	
+		
 	public ArrayList<Monster> fetchFriendsMonstersFromDatabase(int id){
 		
 		ArrayList<Monster> monsters = new ArrayList<Monster>();
