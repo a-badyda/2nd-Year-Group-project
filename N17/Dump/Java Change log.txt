@@ -1,0 +1,16 @@
+
+Change log:
+
+Initial design + diagram (MonsterMashClasses.jpg)
+
+1. Added UserManager.java to communicate between the server and the java.
+2. Added Battle.java and Breeding.java
+3. Game.java was split into Database.java and GameServer.java to separate database functions from the server ones.
+4. Monster was split into Monster.java and MonsterStats.java, stats got spilt into genetic and base values.
+5. Added aging functions into MonsterStats.java.
+6. Monster.java and MonsterStats.java got merged, stats got merged into a single value for easier implementation.
+7. Added database functions to user manager to make it easier to update the database.
+8. Implemented battle logic into Battle.java.
+9. Implemented breed logic into Breeding.java.
+10. Changed battle logic in Battle.java to reflect the design choices better. (Dodging attacks and attacking multiple times.)
+11. Added separate cash values for selling and breeding.
