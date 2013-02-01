@@ -1153,7 +1153,8 @@ public class GameServer extends HttpServlet {
 		
 	}
 	/**
-	 * @method acceptFriendRequest works the same way the battle request.
+	 * @method acceptFriendRequest First, the notification is deleted, then the id of both users are exchanged and put into their lists of 'friends', 
+	 * it the method fails, the exception is redirected to be handled by  printStackTrace method
 	 * @param request the request from the client-side;
 	 * @param response the response from the server; 
 	 */
