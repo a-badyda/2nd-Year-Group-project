@@ -5,12 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import Java.src.root.RequestType;
-
-import Java.src.root.Request;
-
-import Java.src.root.User;
-import Java.src.root.UserManager;
+import Java.src.root.*;
 
 public class UserManagerTest {
 	
@@ -39,7 +34,7 @@ public class UserManagerTest {
 	
 
 	@Test
-	public void testRemovehUser(){
+	public void testRemoveUser(){
 		User user = new User();
 		user.setUsername("Bad");
 		man.addUser(user);
