@@ -173,8 +173,9 @@ input{
 }
 
 input[type=submit][type=button]{
- height: auto;
- width: auto;
+  height: auto;
+  width: auto;
+  padding: 3px;
 }
 
 

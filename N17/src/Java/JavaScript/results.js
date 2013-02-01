@@ -23,7 +23,7 @@ $(document).ready(function() {
 	function addResponseEvents() {
 		$(".decline").on('click', function() {
 			var results_id = $(this).attr('id');
-			$.post(SERVLET_LOCATION, {action: "declineRequest", id: results_id, result: true}, function(response) {
+			$.post(SERVLET_LOCATION, {action: "declineRequest", id: results_id, result: true}, function() {
 				$(this).parents('div[class="result"]').fadeOut();
 			});
 		});
@@ -40,11 +40,11 @@ $(document).ready(function() {
 		var vtype = verboseType(type);
 		var description = current.From + vtype;
 		
-		var outputStr = '<div id="result_'+current.ID+'" class="result"><p>'+description+'</p>';
+		var outputStr = '<div id="result_'+current.ID+'" class="result" ><p>'+description+'</p>';
 		outputStr += '<input type="hidden" id="' + current.ID + '"class="id" value="'+current.ID+'"></input>';
 
 		if (type == "battle_results") {
-			outputStr +=writeBattleResult(key, val);
+			outputStr += writeBattleResult(key, val);
 		} else if (type == "breed_result") {
 			outputStr += '<div class="breed_results">';
 			outputStr += outputList(writeBaby, val.babies);
