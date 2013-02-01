@@ -3,7 +3,6 @@ import java.util.Date;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Random;
 import java.io.*;
 
@@ -172,9 +171,6 @@ public class GameServer extends HttpServlet {
 	    	
 	    }
 	    
-	    
-		int ID;
-		int cash;
 		
 		String query = ("SELECT * FROM user WHERE UserName='" +username+ "'");
     	
@@ -851,8 +847,6 @@ public class GameServer extends HttpServlet {
 	 */
 	private void getFriendsMonsters(HttpServletRequest request, HttpServletResponse response){
 		reloadfreinds(request,response);
-		HttpSession session = request.getSession(true);
-		User user = users.fetchUser((String)session.getAttribute("username"));
 		
 		ArrayList<Monster> requests = users.fetchFriendsMonstersFromDatabase(Integer.parseInt(request.getParameter("friend_id")));
 		
@@ -1112,6 +1106,8 @@ public class GameServer extends HttpServlet {
 			
 			case friend_request:acceptFriendRequest(request,response,r);
 			break;
+			
+			default: break;
 		}
 	}
 	

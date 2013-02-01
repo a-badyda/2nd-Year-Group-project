@@ -1,6 +1,5 @@
 package root;
 
-import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -21,7 +20,6 @@ public class UserManager {
 		users = new LinkedList<User>();
 		db = new Database();
 	}
-	
 	/**
 	 * Fetches a user with the given id number from the database.
 	 * @param id Id of the user to search for
@@ -44,7 +42,6 @@ public class UserManager {
 		}
 		return null;
 	}
-	
 	/**
 	 * Fetches a user with the given username from the database.
 	 * @param name Name of the user to search for
@@ -93,7 +90,7 @@ public class UserManager {
 	
 		
 	}
-	
+
 	/**
 	 * Generates a new monster with the given id and cash prize of 100.
 	 * @param id is of the monster
@@ -115,7 +112,6 @@ public class UserManager {
 		db.execute(query);
 
 	}
-	
 	/**
 	 * Fetches a monster from the database with the given id number.
 	 * @param id the id of the monster
@@ -148,7 +144,6 @@ public class UserManager {
 		}
 		return null;
 	}
-		
 	/**
 	 * Fetches the monster list of a friend with the given id.
 	 * @param id id of the friend
@@ -185,7 +180,6 @@ public class UserManager {
 		}
 		return monsters;
 	}
-	
 	/**
 	 * Fetches a user with the given id number from the user list.
 	 * @param id Id of the user to search for
@@ -199,7 +193,6 @@ public class UserManager {
 		}
 		return null;
 	}
-	
 	/**
 	 * Fetches a user with the given username from the user list.
 	 * @param name Name of the user to search for
@@ -221,7 +214,6 @@ public class UserManager {
 	public void removeUser(User user){
 		this.users.remove(user);
 	}
-	
 	/**
 	 * Creates a new user with the given data.
 	 * @param id id number of the user
@@ -232,7 +224,6 @@ public class UserManager {
 		User newbie = new User(username, password);
 		newbie.setId(id);
 	}
-	
 	/**
 	 * Creates a new request with the given data.
 	 * @param u1id user 1

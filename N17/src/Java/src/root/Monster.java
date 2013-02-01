@@ -10,14 +10,13 @@ import java.util.Random;
  *
  */
 public class Monster {
-
-	//The owner, its records and cash values of the monster
+	
 	private Integer id, ownerId;
 	private String name;
 	private Breed breed;	//extra
 	private Status status;	//extra
 	private int cashPrize = 500, cashSell = 0, cashBreed = 0, wins = 0, losses = 0;
-	//Monster stat related variables
+	
 	private Calendar birth;
 	private float health, strength, defence, aggression, fertility;
 	private float max_health_bonus = 20;
@@ -25,7 +24,6 @@ public class Monster {
 	private float max_fertAggr_bonus = 4;
 	
 	public Monster(){}
-	
 	/**
 	 * Creates a new monster with the given owner and name, stats are generated automatically.
 	 * @param owner the owner's id number
@@ -104,19 +102,17 @@ public class Monster {
 	public float getHealth(){
 		return health;
 	}
-	
 	/**
 	 * Modifies the monster's health and strength based on its age. It reaches a high point before
 	 * steadily decreasing over time.
 	 */
-	public void ageHealthAndStrength(){
+	public void ageHealth(){
 		Calendar current = Calendar.getInstance();
 		int age = (int) calculateAge(current, birth);
 		float hp = health;
 		hp = (float) (hp * ((10+2.7*age)*Math.exp(age*(-0.09))));
 		setHealth(hp);
 	}
-	
 	/**
 	 * Calculates the number of days between the current time and the monster's birth date.
 	 * @param current the current date of the system
@@ -132,7 +128,6 @@ public class Monster {
 		}
 		return days;
 	}
-
 
 	public void setHealth(float health) {
 		this.health = health;

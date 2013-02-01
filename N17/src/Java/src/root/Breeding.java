@@ -12,27 +12,26 @@ import java.util.Date;
 
 public class Breeding {
 
-	public Breeding(){}
+	
 	
 	/**
-	 * Initiates a breeding session between two monsters.
+	 * Initiates a breeding session between two monters.
 	 * @param u1 The owner of monster 1.
 	 * @param u2 The owner of monster 2.
 	 * @param m1 The monster that was put up for breeding.
 	 * @param m2 The monster that was accepted for breeding.
-	 */	
+	 */
+
+	public Breeding(){}
+	
 	public ArrayList<String> doBreed(User u1, User u2, Monster m1, Monster m2){
-		User from, to;
-		Monster fromMon, toMon;
+
 		
 		Date date = new Date();
 	    SimpleDateFormat ft = 
 	    new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
 		
-		from = u1;
-		fromMon = m1;
-		to = u2;
-		toMon = m2;
+
 		ArrayList<String> children = new ArrayList<String>();
 		
 		
