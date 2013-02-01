@@ -1,7 +1,7 @@
 
 The Second Year Group Project 2012-2013  : Monster Mash
 
-The website is accessible through www.monstermash.co.uk\
+The website is accessible through www.monstermashgame.co.uk
 
 The Structure of the project: 
 
