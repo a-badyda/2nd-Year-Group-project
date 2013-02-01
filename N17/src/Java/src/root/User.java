@@ -1,7 +1,6 @@
 package root;
 
 import java.util.ArrayList;
-
 /**
  * This class describes a user in the server, it stores their credentials and their list
  * of monsters, friends and requests.
@@ -11,8 +10,7 @@ import java.util.ArrayList;
 public class User{
 	
 	private Integer id, cash = 0;
-	//serverAdd is for storing addresses on another server
-	private String key, username, password, serverAdd; 
+	private String key, username, password, serverAdd;
 	private ArrayList<Monster> monsters;
 	private ArrayList<User> friends;
 	private ArrayList<Request> requests;
@@ -79,7 +77,6 @@ public class User{
 	public void addMonster(Monster monster) {
 		this.monsters.add(monster);
 	}
-	
 	/**
 	 * Return a monster with the given owner.
 	 * @param ownerId owner of the monster

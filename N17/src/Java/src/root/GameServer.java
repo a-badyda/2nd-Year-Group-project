@@ -3,7 +3,6 @@ import java.util.Date;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Random;
 import java.io.*;
 
@@ -52,6 +51,8 @@ public class GameServer extends HttpServlet {
 	}
 	/**
 	 * @method IsLoggedIn checks wether user is logged in and prints the output for later use
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	
 	private void IsLoggedIn(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -72,7 +73,9 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method GetUserData requests the user's name and key id to then output the username and cash values  
+	 * @method GetUserData requests the user's name and key id to then output the username and cash values 
+	 * @param request the request from the client-side;
+	 * @param response the response from the server; 
 	 */
 	
 	private void GetUserData(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -102,6 +105,8 @@ public class GameServer extends HttpServlet {
 	/**
 	 * @method doPost recives all the requests from the client side 
 	 * - the major function that everything is put through. Responsible for passing the data from one place to another
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -136,6 +141,8 @@ public class GameServer extends HttpServlet {
 	 * loads in all of the monsters, friends, and friends' monsters on lists
 	 * and all the notifications - plus redirecting it all around where needed. 
 	 * if the user has no monsters, a new one is generated for him, stored in a query and added to the database
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 * 
 	 */
 	private void LogIn(HttpServletRequest request, HttpServletResponse response){
@@ -164,9 +171,6 @@ public class GameServer extends HttpServlet {
 	    	
 	    }
 	    
-	    
-		int ID;
-		int cash;
 		
 		String query = ("SELECT * FROM user WHERE UserName='" +username+ "'");
     	
@@ -356,6 +360,11 @@ public class GameServer extends HttpServlet {
 		
 
 	}
+	/**
+	 * @method LogOut removes the user from the current server session
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
+	 */
 	
 	private void LogOut(HttpServletRequest request, HttpServletResponse response){
 		
@@ -378,6 +387,12 @@ public class GameServer extends HttpServlet {
 		//redirect
 		
 	}
+	
+	/**
+	 * @method NewUser creates a new user and a monster for them, inserting it into the database
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
+	 */
 	
 	private void NewUser(HttpServletRequest request, HttpServletResponse response){
 		 boolean exists= false;
@@ -457,6 +472,8 @@ public class GameServer extends HttpServlet {
 	 * @method addFriend a method tries to find the matching string in database and if it is found, the match is sent a friend request
 	 * if the friend is not found, an error message is returned
 	 * when friend request is accepted/declined by the user, the method either creates the link between players or not. 
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void addFriend(HttpServletRequest request, HttpServletResponse response){
 		
@@ -557,6 +574,8 @@ public class GameServer extends HttpServlet {
 	/**
 	 * @method newBattleRequest Sends out the request to marked user with a marked user's monster that is required for battle
 	 * if failed or passed and appropriate response is printed out. 
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void newBattleRequest(HttpServletRequest request, HttpServletResponse response){
 		
@@ -598,7 +617,9 @@ public class GameServer extends HttpServlet {
 	}
 	/**
 	 * @method the request is sent out, the user who accepted is first looses cash, then babies are generated and added into his monster list 
-	 * Lastly, money is added to the user who set out his monster out for breeding
+	 * Lastly, money is added to the user who set out his monster out for breeding - a notification is created and sent out to notifications.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server; 
 	 */
 	private void newBreedRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
@@ -691,7 +712,10 @@ public class GameServer extends HttpServlet {
 		
 	}
 	/**
-	 * @method 
+	 * @method newBuyRequest gets the id of the selling/buying users and the sold monster,set the buying user's cash to current ammount - price
+	 * set the selling user's cash to current ammount + price; pass the result specific to each user (monster sold to selling user and bought monster to buying user).
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void newBuyRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
@@ -737,7 +761,10 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method getMonsters Prints all monsters 1 at a time with all their stats in a set order
+	 * @method getMonsters Outputs all monsters one at a time with all their stats in a set order:
+	 * name, ID, is it available to buy or breed, buy cost, cost to breed, strength, health, fertility, defence, aggression, breed.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void getMonsters(HttpServletRequest request, HttpServletResponse response){
 		reloadmonsters(request,response);
@@ -782,7 +809,9 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method getFriends  prints the list of user's friends + the cash values for friends 
+	 * @method getFriends  prints the list of user's friends with their username, id, server address.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server; 
 	 */
 	private void getFriends(HttpServletRequest request, HttpServletResponse response){
 		reloadfreinds(request,response);
@@ -811,12 +840,13 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method getFriendsMonsters prints monsters of friends - adds button to allow selling//buying a monster if it was activated via breedRequest method
+	 * @method getFriendsMonsters prints friends' monsters in the following format: 
+	 *name, ID, is it available to buy or breed, buy cost, cost to breed, strength, health, fertility, defence, aggression, breed.
+	 *@param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void getFriendsMonsters(HttpServletRequest request, HttpServletResponse response){
 		reloadfreinds(request,response);
-		HttpSession session = request.getSession(true);
-		User user = users.fetchUser((String)session.getAttribute("username"));
 		
 		ArrayList<Monster> requests = users.fetchFriendsMonstersFromDatabase(Integer.parseInt(request.getParameter("friend_id")));
 		
@@ -865,7 +895,7 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method changeName allows user to change the name of their monsters
+	 * @method changeName updates the name field with a new value for the chosen monster_id 
 	 */
 	private void changeName(HttpServletRequest request, HttpServletResponse response) {
 		int id = Integer.parseInt(request.getParameter("monster_id"));
@@ -876,7 +906,11 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method getAllResults prints the results of breeding/battle in a set form
+	 * @method getAllResults gets the user's username and id from the database;  gets type of request;
+	 * depending on request prints the various monster stats (battle monster stats for battles - baby stats for breeding),
+	 * along with appropriate comments to the notification.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void getAllResults(HttpServletRequest request, HttpServletResponse response){
 	
@@ -1005,7 +1039,9 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method getAllRequest prints all current requests aka notifications for the user that are avaliable/new
+	 * @method getAllRequest prints all current notifications for the user that have not been accepted/rejected/viewed.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void getAllRequest(HttpServletRequest request, HttpServletResponse response){
 		reloadnotifications(request,response);
@@ -1046,8 +1082,9 @@ public class GameServer extends HttpServlet {
 	
 	}
 	/**
-	 * @method acceptRequest This method is long and I don't want to do it now. 
-	 * I'm just looking at it and thinking 'how do i computer'
+	 * @method acceptRequest marks the request as 'accepted'.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void acceptRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
@@ -1069,11 +1106,16 @@ public class GameServer extends HttpServlet {
 			
 			case friend_request:acceptFriendRequest(request,response,r);
 			break;
+			
+			default: break;
 		}
 	}
 	
 	/**
-	 * @method acceptBattleRequest confirms the request sent from one user to another asking for battle (gasp! how unexpected!)
+	 * @method acceptBattleRequest confirms the request sent from one user to another asking for battle
+	 * and deletes it from the notification lists for both users.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void acceptBattleRequest(HttpServletRequest request, HttpServletResponse response,Request r){
 		int requestid = r.getId();
@@ -1107,7 +1149,10 @@ public class GameServer extends HttpServlet {
 		
 	}
 	/**
-	 * @method acceptFriendRequest self-explanatory
+	 * @method acceptFriendRequest First, the notification is deleted, then the id of both users are exchanged and put into their lists of 'friends', 
+	 * it the method fails, the exception is redirected to be handled by  printStackTrace method
+	 * @param request the request from the client-side;
+	 * @param response the response from the server; 
 	 */
 	private void acceptFriendRequest(HttpServletRequest request, HttpServletResponse response,Request r){
 		HttpSession session = request.getSession(true);
@@ -1141,7 +1186,9 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method declineRequest allows the user to reject and 'drop/fail' the requests sent to him, deleting them completly
+	 * @method declineRequest allows the user to reject and 'drop/fail' the requests sent to him, and then deletes it from the notification list.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void declineRequest(HttpServletRequest request, HttpServletResponse response){
 		int ID;
@@ -1194,7 +1241,9 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method getRichList generates a list of all the users' friends (+user) and sorts them from lowest to highiest cash value
+	 * @method getRichList generates a list of all the users' friends (+user) and sorts them from lowest to highiest cash value.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void getRichList(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
@@ -1261,7 +1310,9 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method reloadFriends method allowing you to update the friend list it seems
+	 * @method reloadFriends method allowing you to update the friend list it seems.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void reloadfreinds(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
@@ -1339,7 +1390,9 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method reloadmonsters allows monsters to be updated during one session without shutting the server down and turning it on again
+	 * @method reloadmonsters allows monsters to be updated during one session without shutting the server down and turning it on again.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void reloadmonsters(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
@@ -1387,7 +1440,9 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	/**
-	 * @method reloadnotifications same case like other reloads
+	 * @method reloadnotifications same case like other reloads.
+	 * @param request the request from the client-side;
+	 * @param response the response from the server;
 	 */
 	private void reloadnotifications(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);

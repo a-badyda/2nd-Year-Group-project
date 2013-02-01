@@ -1,15 +1,12 @@
 package root;
 
 import java.sql.*;
-import java.util.ArrayList;
-
-	/**
-	 * This class handles communication between the server and the database, sending
-	 * and executing the queries.
-	 * @author Csoma Silhab
-	 *
-	 */
-
+/**
+ * This class handles communication between the server and the database, sending
+ * and executing the queries.
+ * @author Csoma Silhab
+ *
+ */
 public class Database {
 	
 	private static Connection conn;
@@ -17,7 +14,6 @@ public class Database {
 	Database(){
 		
 	}
-	
 	/**
 	 * Opens a connection with the SQL Database.
 	 */
@@ -39,7 +35,6 @@ public class Database {
 				e.printStackTrace();
 			}
 	}
-	
 	/**
 	 * Takes a string as a query to the database and executes it.
 	 * @param q creates a new query
@@ -55,7 +50,6 @@ public class Database {
 		}
 		return null;
 	}
-	
 	/**
 	 * Executes a statement written in data manipulation language.
 	 * @param q the query to be executed
@@ -75,6 +69,6 @@ public class Database {
 	}
 
 	public void setConn(Connection conn) {
-		this.conn = conn;
+		Database.conn = conn;
 	}
 }

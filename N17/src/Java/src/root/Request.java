@@ -6,6 +6,7 @@ package root;
  * @author Csoma Silhab
  *
  */
+
 public class Request {
 	
 	private Integer id, from, to, fromMon, toMon;
@@ -41,14 +42,13 @@ public class Request {
 		this.setToMon(m2id);
 		this.setType(type);
 	}
-	
 	/**
 	 * Creates a new friend request between 2 users.
 	 * @param u1id requesting user
 	 * @param u2id target user
 	 * @param type request type
 	 */
-	public Request(Integer u1id, Integer u2id, RequestType type){//for request type friend
+	public Request(Integer u1id, Integer u2id, RequestType type){//for request type freind
 		this.setFrom(u1id);
 		this.setTo(u2id);
 		this.setType(type);
