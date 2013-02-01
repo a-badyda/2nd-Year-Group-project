@@ -11,6 +11,9 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
+/**
+ * A class responsible fo handling all the requests and responses to the database and the server. 
+ */
 
 @WebServlet(name = "game", urlPatterns = {"/game"})
 public class GameServer extends HttpServlet {
@@ -48,7 +51,7 @@ public class GameServer extends HttpServlet {
 		
 	}
 	/**
-	 * @method IsLoggedIn checks wether user is logged in
+	 * @method IsLoggedIn checks wether user is logged in and prints the output for later use
 	 */
 	
 	private void IsLoggedIn(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -69,7 +72,7 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method GetUserData requests  the username and cash attribute
+	 * @method GetUserData requests the user's name and key id to then output the username and cash values  
 	 */
 	
 	private void GetUserData(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -98,7 +101,7 @@ public class GameServer extends HttpServlet {
 	
 	/**
 	 * @method doPost recives all the requests from the client side 
-	 * - the major function that everything is put through.
+	 * - the major function that everything is put through. Responsible for passing the data from one place to another
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -129,7 +132,11 @@ public class GameServer extends HttpServlet {
 	}
 	
 	/**
-	 * @method LogIn  loads in the user into the server and creates a new session
+	 * @method LogIn  loads in the user into the server and validates all of it- 
+	 * loads in all of the monsters, friends, and friends' monsters on lists
+	 * and all the notifications - plus redirecting it all around where needed. 
+	 * if the user has no monsters, a new one is generated for him, stored in a query and added to the database
+	 * 
 	 */
 	private void LogIn(HttpServletRequest request, HttpServletResponse response){
 		
@@ -549,6 +556,7 @@ public class GameServer extends HttpServlet {
 	}
 	/**
 	 * @method newBattleRequest Sends out the request to marked user with a marked user's monster that is required for battle
+	 * if failed or passed and appropriate response is printed out. 
 	 */
 	private void newBattleRequest(HttpServletRequest request, HttpServletResponse response){
 		
@@ -589,8 +597,8 @@ public class GameServer extends HttpServlet {
 		
 	}
 	/**
-	 * @method newBreedRequest forms an 'open' request - to put the monster out to breed - with that specific monster 
-	 * that can be accessed by all of users' friends and chosen by friends to breed with.
+	 * @method the request is sent out, the user who accepted is first looses cash, then babies are generated and added into his monster list 
+	 * Lastly, money is added to the user who set out his monster out for breeding
 	 */
 	private void newBreedRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
@@ -683,7 +691,7 @@ public class GameServer extends HttpServlet {
 		
 	}
 	/**
-	 * @method works pretty much the same way as breed request;
+	 * @method 
 	 */
 	private void newBuyRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
