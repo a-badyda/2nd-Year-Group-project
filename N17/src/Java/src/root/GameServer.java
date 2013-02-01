@@ -548,7 +548,7 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	/**
-	 * @method newBattleRequest Sends out the request to marked user
+	 * @method newBattleRequest Sends out the request to marked user with a marked user's monster that is required for battle
 	 */
 	private void newBattleRequest(HttpServletRequest request, HttpServletResponse response){
 		
@@ -588,6 +588,10 @@ public class GameServer extends HttpServlet {
 		
 		
 	}
+	/**
+	 * @method newBreedRequest forms an 'open' request - to put the monster out to breed - with that specific monster 
+	 * that can be accessed by all of users' friends and chosen by friends to breed with.
+	 */
 	private void newBreedRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		
@@ -678,6 +682,9 @@ public class GameServer extends HttpServlet {
 		//responce (monster array babies,stats) amount_paid: 
 		
 	}
+	/**
+	 * @method works pretty much the same way as breed request;
+	 */
 	private void newBuyRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		if(users.fetchUserFromDatabase((String)session.getAttribute("username")).getCash()>=users.fetchMonsterFromDatabase(Integer.parseInt(request.getParameter("monsterId"))).getCashSell()){
@@ -721,6 +728,9 @@ public class GameServer extends HttpServlet {
 		
 	}
 	
+	/**
+	 * @method getMonsters Prints all monsters 1 at a time with all their stats in a set order
+	 */
 	private void getMonsters(HttpServletRequest request, HttpServletResponse response){
 		reloadmonsters(request,response);
 		HttpSession session = request.getSession(true);
@@ -762,6 +772,10 @@ public class GameServer extends HttpServlet {
 		} catch (IOException ex) {
 		}
 	}
+	
+	/**
+	 * @method getFriends  prints the list of user's friends + the cash values for friends 
+	 */
 	private void getFriends(HttpServletRequest request, HttpServletResponse response){
 		reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
@@ -787,6 +801,10 @@ public class GameServer extends HttpServlet {
 		} catch (IOException ex) {
 		}
 	}
+	
+	/**
+	 * @method getFriendsMonsters prints monsters of friends - adds button to allow selling//buying a monster if it was activated via breedRequest method
+	 */
 	private void getFriendsMonsters(HttpServletRequest request, HttpServletResponse response){
 		reloadfreinds(request,response);
 		HttpSession session = request.getSession(true);
@@ -838,6 +856,9 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	
+	/**
+	 * @method changeName allows user to change the name of their monsters
+	 */
 	private void changeName(HttpServletRequest request, HttpServletResponse response) {
 		int id = Integer.parseInt(request.getParameter("monster_id"));
 		String name = request.getParameter("new_name");
@@ -846,6 +867,9 @@ public class GameServer extends HttpServlet {
 		db.execute(query);
 	}
 	
+	/**
+	 * @method getAllResults prints the results of breeding/battle in a set form
+	 */
 	private void getAllResults(HttpServletRequest request, HttpServletResponse response){
 	
 		try{
@@ -971,6 +995,10 @@ public class GameServer extends HttpServlet {
 		
 		
 	}
+	
+	/**
+	 * @method getAllRequest prints all current requests aka notifications for the user that are avaliable/new
+	 */
 	private void getAllRequest(HttpServletRequest request, HttpServletResponse response){
 		reloadnotifications(request,response);
 		HttpSession session = request.getSession(true);
@@ -1009,7 +1037,10 @@ public class GameServer extends HttpServlet {
 		}
 	
 	}
-	
+	/**
+	 * @method acceptRequest This method is long and I don't want to do it now. 
+	 * I'm just looking at it and thinking 'how do i computer'
+	 */
 	private void acceptRequest(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
@@ -1032,6 +1063,10 @@ public class GameServer extends HttpServlet {
 			break;
 		}
 	}
+	
+	/**
+	 * @method acceptBattleRequest confirms the request sent from one user to another asking for battle (gasp! how unexpected!)
+	 */
 	private void acceptBattleRequest(HttpServletRequest request, HttpServletResponse response,Request r){
 		int requestid = r.getId();
 		battle = new Battle();
@@ -1063,6 +1098,9 @@ public class GameServer extends HttpServlet {
 			}
 		
 	}
+	/**
+	 * @method acceptFriendRequest self-explanatory
+	 */
 	private void acceptFriendRequest(HttpServletRequest request, HttpServletResponse response,Request r){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
@@ -1093,6 +1131,10 @@ public class GameServer extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * @method declineRequest allows the user to reject and 'drop/fail' the requests sent to him, deleting them completly
+	 */
 	private void declineRequest(HttpServletRequest request, HttpServletResponse response){
 		int ID;
 		ID =  Integer.parseInt(request.getParameter("id"));
@@ -1129,18 +1171,23 @@ public class GameServer extends HttpServlet {
 		
 	}
 	
+	
 	private void setBreedCost(HttpServletRequest request, HttpServletResponse response){
 		
 		String query="UPDATE monsters SET cashbreed='"+Integer.parseInt(request.getParameter("cost"))+"' WHERE monsterID='"+Integer.parseInt(request.getParameter("id"))+"'";
 		db.execute(query);
 		
 	}
+	
 	private void setBuyCost(HttpServletRequest request, HttpServletResponse response){
 		
 		String query="UPDATE monsters SET cashSell='"+Integer.parseInt(request.getParameter("cost"))+"' WHERE monsterID='"+Integer.parseInt(request.getParameter("id"))+"'";
 		db.execute(query);
 	}
 	
+	/**
+	 * @method getRichList generates a list of all the users' friends (+user) and sorts them from lowest to highiest cash value
+	 */
 	private void getRichList(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
@@ -1205,6 +1252,9 @@ public class GameServer extends HttpServlet {
 		}
 	}
 	
+	/**
+	 * @method reloadFriends method allowing you to update the friend list it seems
+	 */
 	private void reloadfreinds(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
@@ -1279,6 +1329,10 @@ public class GameServer extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * @method reloadmonsters allows monsters to be updated during one session without shutting the server down and turning it on again
+	 */
 	private void reloadmonsters(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
@@ -1324,6 +1378,9 @@ public class GameServer extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * @method reloadnotifications same case like other reloads
+	 */
 	private void reloadnotifications(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession(true);
 		User user = users.fetchUser((String)session.getAttribute("username"));
