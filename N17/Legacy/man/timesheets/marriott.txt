@@ -17,7 +17,8 @@
 05/12/12 - Updated git with timesheet, reorganised docs and started design spec draft 3hr------------------------update today
 07/12/12 - Group meeting 1hr 
 07/12/12 - Work on pdf 2hrs
-28/01/13 - Large work system wide 8hrs ----update
-
+28/01/13 - Large work system wide 10hrs
+29/01/13 - Task assignment and support 7hrs
+30/01/13 - Task assignment&feedback and support css, docs slight debugging 11hrs 
 
 
