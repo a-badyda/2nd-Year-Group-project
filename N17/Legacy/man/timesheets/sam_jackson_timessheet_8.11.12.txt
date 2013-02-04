@@ -1,3 +1,11 @@
+4/2/13 -- Hours Worked: 3
+Updating sequence diagrams ready for final documentation.
+
+28/1/13 - 1/2/13 -- Hours Worked: 66.5
+Group Project Coding week.
+Built the majority of the front end of the project.
+Had almost no sleep.
+
 27/11/12 -- Hours Worked: 4
 Added JavaScript request for most of the pages within the system.
 Liased with Alex about what HTML structure need to be implmeneted.
