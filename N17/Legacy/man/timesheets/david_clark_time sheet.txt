@@ -20,5 +20,17 @@ proof checking design spec doc: 30mins (day before hand in)
 
 06/12/12 description of relational database diagram: 30mins
 
+28/01/12 writing/modifying documents: 6hrs
+
+29/01/12 writing/modifying documents: 4hrs	
+
+30/01/12 writing/modifying documents: 7hrs
+
+31/01/12 writing/modifying documents/testing system: 13hrs
+
+01/01/12 testing system/presenting system: 4hrs
+
+04/01/12 writing up minutes: 30mins
+
 
 Plus meetings
