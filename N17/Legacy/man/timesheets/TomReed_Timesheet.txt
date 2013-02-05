@@ -8,4 +8,8 @@ Week Commencing	Hours Worked	Summary Of What time was spent doing
 19th November	3	
 26th November	6	Informal meeting and other things
 3rd December	7	Review feedback given for test plan and design plan, sequence diagrams and descriptions
-Total	42	
+10th December  5       Review feedback given and plan changes 
+17th December  5       Review feedback given and plan changes and testing for coding week
+28th January   24      Testing, making changes to documentation
+4th February   6       Finalising documentation
+Total	82	
