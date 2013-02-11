@@ -36,4 +36,6 @@ proof checking design spec doc: 30mins (day before hand in)
 
 07/01/12 test & control forms: 1hr
 
+08/02/12 reviewing functionality: 1.5hrs
+
 Plus meetings
