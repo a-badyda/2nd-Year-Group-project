@@ -1,19 +1,21 @@
-\contentsline {section}{\numberline {1}Management Summary}{21}{section.1}
-\contentsline {section}{\numberline {2}Historical account of project}{22}{section.2}
-\contentsline {section}{\numberline {3}Final State of project}{22}{section.3}
-\contentsline {section}{\numberline {4}Performance of each team member}{23}{section.4}
-\contentsline {subsection}{\numberline {4.1}Tom Reed}{23}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Chris 'Tux' Lloyd}{23}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Samuel Jackson}{23}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Silhab Csoma}{23}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Alexsandra Badya}{23}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Dave Clark}{24}{subsection.4.6}
-\contentsline {subsection}{\numberline {4.7}Mike Steel}{24}{subsection.4.7}
-\contentsline {subsection}{\numberline {4.8}Matt Whitmore}{24}{subsection.4.8}
-\contentsline {subsection}{\numberline {4.9}Christopher Marriott}{24}{subsection.4.9}
-\contentsline {section}{\numberline {5}Critical evaluation of the team and project}{24}{section.5}
-\contentsline {subsection}{\numberline {5.1}Team performance}{24}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Improvements}{25}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Lessons learnt}{25}{subsection.5.3}
-\contentsline {section}{REFERENCES}{26}{subsection.5.3}
-\contentsline {section}{DOCUMENT HISTORY}{27}{section*.2}
+\contentsline {section}{0 \ Design Section}{2}{section*.1}
+\contentsline {section}{0 \ Design Section}{21}{section*.1}
+\contentsline {section}{\numberline {1}Management Summary}{40}{section.1}
+\contentsline {section}{\numberline {2}Historical account of project}{41}{section.2}
+\contentsline {section}{\numberline {3}Final State of project}{41}{section.3}
+\contentsline {section}{\numberline {4}Performance of each team member}{42}{section.4}
+\contentsline {subsection}{\numberline {4.1}Tom Reed}{42}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Chris 'Tux' Lloyd}{42}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Samuel Jackson}{42}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Silhab Csoma}{42}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Alexsandra Badya}{43}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Dave Clark}{43}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Mike Steel}{43}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Matt Whitmore}{43}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}Christopher Marriott}{43}{subsection.4.9}
+\contentsline {section}{\numberline {5}Critical evaluation of the team and project}{44}{section.5}
+\contentsline {subsection}{\numberline {5.1}Team performance}{44}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Improvements}{44}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Lessons learnt}{44}{subsection.5.3}
+\contentsline {section}{REFERENCES}{45}{subsection.5.3}
+\contentsline {section}{DOCUMENT HISTORY}{46}{section*.2}
