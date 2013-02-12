@@ -1,8 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2013.1.31)  31 JAN 2013 11:01
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.12)  12 FEB 2013 12:36
 entering extended mode
-**projectplan.tex
+**D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project*Plan/projec
+tplan.tex
 
-("D:\dac26\Documents\GitHub\2nd-Year-Group-project\N17\docs\Project Plan\projec
+("D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/projec
 tplan.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
@@ -54,7 +55,7 @@ Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -66,7 +67,7 @@ Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
 Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
 Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
@@ -103,19 +104,6 @@ File: pd1enc.def 2011/12/04 v6.82m Hyperref: PDFDocEncoding definition (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-
-! Package hyperref Error: Wrong driver option `pdftex',
-(hyperref)                because pdfTeX in PDF mode is not detected.
-
-See the hyperref package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3925 \ProcessKeyvalOptions{Hyp}
-                                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 Package hyperref Info: Hyper figures OFF on input line 4046.
 Package hyperref Info: Link nesting OFF on input line 4051.
 Package hyperref Info: Hyper index ON on input line 4054.
@@ -124,6 +112,7 @@ Package hyperref Info: Backreferencing OFF on input line 4066.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4284.
 \c@Hy@tempcnt=\count90
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
@@ -146,17 +135,10 @@ LaTeX Info: Redefining \pageref on input line 5831.
 \c@Hfootnote=\count94
 )
 
-Package hyperref Message: Driver (default): hdvips.
+Package hyperref Message: Driver: hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hdvips.def"
-File: hdvips.def 2011/12/04 v6.82m Hyperref driver for dvips
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pdfmark.def"
-File: pdfmark.def 2011/12/04 v6.82m Hyperref definitions for pdfmark specials
-\pdf@docset=\toks15
-\pdf@box=\box26
-\pdf@toks=\toks16
-\pdf@defaulttoks=\toks17
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2011/12/04 v6.82m Hyperref driver for pdfTeX
 \Fld@listcount=\count95
 \c@bookmark@seq@number=\count96
 
@@ -166,7 +148,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip43
-))
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -183,27 +165,12 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-
-! Package pdftex.def Error: PDF mode expected, but DVI mode detected!
-(pdftex.def)                If you are using `latex', then call `pdflatex'.
-(pdftex.def)                Otherwise check and correct the driver options.
-(pdftex.def)                Error recovery by switching to PDF mode.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.433   }\@ehc
-              
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 \Gread@gobject=\count97
 ))
 \Gin@req@height=\dimen106
 \Gin@req@width=\dimen107
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
 Package: pdfpages 2011/03/10 v0.4n Insert pages of external PDF documents (AM)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
@@ -245,10 +212,10 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
 File: pppdftex.def 2011/03/10 v0.4n Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box27
-\AM@toc@title=\toks18
+\AM@pagebox=\box26
+\AM@toc@title=\toks15
 \c@AM@survey=\count101
-\AM@templatesizebox=\box28
+\AM@templatesizebox=\box27
 )
 Package hyperref Info: Option `colorlinks' set `false' on input line 5.
 
@@ -268,7 +235,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
-\AtBeginShipoutBox=\box29
+\AtBeginShipoutBox=\box28
 Package hyperref Info: Link coloring OFF on input line 6.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -291,15 +258,15 @@ tplan.out")
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count103
 \scratchdimen=\dimen110
-\scratchbox=\box30
+\scratchbox=\box29
 \nofMPsegments=\count104
 \nofMParguments=\count105
-\everyMPshowfont=\toks19
+\everyMPshowfont=\toks16
 \MPscratchCnt=\count106
 \MPscratchDim=\dimen111
 \MPnumerator=\count107
 \makeMPintoPDFobject=\count108
-\everyMPtoPDFconversion=\toks20
+\everyMPtoPDFconversion=\toks17
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 16.
@@ -314,238 +281,16 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
  [0
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
 
 
-
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 ("D:\dac26\Documents\GitHub\2nd-Year-Group-project\N17\docs\Project Plan\projec
 tplan.toc")
 \tf@toc=\write4
- [1
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] [2
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] [3
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] [4
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] <incremental.jpg, id=22, 652.68843pt x 481.04718pt>
+ [1] [2] [3] [4]
+<incremental.jpg, id=214, 652.68843pt x 481.04718pt>
 File: incremental.jpg Graphic file (type jpg)
-
-<use incremental.jpg>
+ <use incremental.jpg>
 Package pdftex.def Info: incremental.jpg used on input line 111.
 (pdftex.def)             Requested size: 326.34341pt x 240.523pt.
 
@@ -556,29 +301,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
 Underfull \vbox (badness 2980) has occurred while \output is active []
 
- [5
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] [6
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/incremental.jpg>]
-<WelcomePageUseCase.jpg, id=30, 274.02374pt x 338.01282pt>
+ [5]
+[6 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/incr
+emental.jpg>] <WelcomePageUseCase.jpg, id=226, 274.02374pt x 338.01282pt>
 File: WelcomePageUseCase.jpg Graphic file (type jpg)
 
 <use WelcomePageUseCase.jpg>
@@ -589,22 +314,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 119--130
 
  []
 
-[7
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/WelcomePageUseCase.jpg>]
-<MainProfilePageUseCase.jpg, id=34, 274.02374pt x 401.24907pt>
+[7 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/Welc
+omePageUseCase.jpg>]
+<MainProfilePageUseCase.jpg, id=232, 274.02374pt x 401.24907pt>
 File: MainProfilePageUseCase.jpg Graphic file (type jpg)
 
 <use MainProfilePageUseCase.jpg>
@@ -615,19 +327,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--143
 
  []
 
-[8
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/MainProfilePageUseCase.jpg>]
-<FriendsPageUseCase.jpg, id=38, 273.27094pt x 324.46219pt>
+[8 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/Main
+ProfilePageUseCase.jpg>]
+<FriendsPageUseCase.jpg, id=238, 273.27094pt x 324.46219pt>
 File: FriendsPageUseCase.jpg Graphic file (type jpg)
 
 <use FriendsPageUseCase.jpg>
@@ -638,19 +340,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 146--159
 
  []
 
-[9
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/FriendsPageUseCase.jpg>]
-<AddFriendsPageUseCase.jpg, id=42, 231.11343pt x 344.03531pt>
+[9 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/Frie
+ndsPageUseCase.jpg>]
+<AddFriendsPageUseCase.jpg, id=244, 231.11343pt x 344.03531pt>
 File: AddFriendsPageUseCase.jpg Graphic file (type jpg)
 
 <use AddFriendsPageUseCase.jpg>
@@ -661,19 +353,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--174
 
  []
 
-[10
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/AddFriendsPageUseCase.jpg>]
-<BreedingPageUseCase.jpg, id=46, 273.27094pt x 341.02406pt>
+[10 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/Add
+FriendsPageUseCase.jpg>]
+<BreedingPageUseCase.jpg, id=250, 273.27094pt x 341.02406pt>
 File: BreedingPageUseCase.jpg Graphic file (type jpg)
 
 <use BreedingPageUseCase.jpg>
@@ -684,19 +366,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--190
 
  []
 
-[11
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/BreedingPageUseCase.jpg>]
-<BreedingResultsPageUseCase.jpg, id=50, 283.81032pt x 335.00156pt>
+[11 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/Bre
+edingPageUseCase.jpg>]
+<BreedingResultsPageUseCase.jpg, id=256, 283.81032pt x 335.00156pt>
 File: BreedingResultsPageUseCase.jpg Graphic file (type jpg)
 
 <use BreedingResultsPageUseCase.jpg>
@@ -708,19 +380,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--204
 
  []
 
-[12
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/BreedingResultsPageUseCase.jpg>]
-<BattleScreenUseCase.jpg, id=55, 314.67563pt x 348.55219pt>
+[12 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/Bre
+edingResultsPageUseCase.jpg>]
+<BattleScreenUseCase.jpg, id=263, 314.67563pt x 348.55219pt>
 File: BattleScreenUseCase.jpg Graphic file (type jpg)
 
 <use BattleScreenUseCase.jpg>
@@ -731,19 +393,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--219
 
  []
 
-[13
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/BattleScreenUseCase.jpg>]
-<BattleResultsPageUseCase.jpg, id=59, 251.43938pt x 330.48468pt>
+[13 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/Bat
+tleScreenUseCase.jpg>]
+<BattleResultsPageUseCase.jpg, id=269, 251.43938pt x 330.48468pt>
 File: BattleResultsPageUseCase.jpg Graphic file (type jpg)
 
 <use BattleResultsPageUseCase.jpg>
@@ -754,33 +406,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 223--234
 
  []
 
-[14
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/BattleResultsPageUseCase.jpg>]
-<HelpPageUseCase.jpg, id=63, 233.37187pt x 345.54094pt>
+[14 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/Bat
+tleResultsPageUseCase.jpg>]
+<HelpPageUseCase.jpg, id=275, 233.37187pt x 345.54094pt>
 File: HelpPageUseCase.jpg Graphic file (type jpg)
 
 <use HelpPageUseCase.jpg>
 Package pdftex.def Info: HelpPageUseCase.jpg used on input line 237.
 (pdftex.def)             Requested size: 140.02419pt x 207.32616pt.
 
-<NotificationsPageUseCase.jpg, id=64, 254.45062pt x 343.2825pt>
+<NotificationsPageUseCase.jpg, id=276, 254.45062pt x 343.2825pt>
 File: NotificationsPageUseCase.jpg Graphic file (type jpg)
 
 <use NotificationsPageUseCase.jpg>
 Package pdftex.def Info: NotificationsPageUseCase.jpg used on input line 244.
 (pdftex.def)             Requested size: 152.67154pt x 205.97107pt.
 
-<loginPage.jpg, id=65, 662.475pt x 414.04688pt>
+<loginPage.jpg, id=277, 662.475pt x 414.04688pt>
 File: loginPage.jpg Graphic file (type jpg)
  <use loginPage.jpg>
 Package pdftex.def Info: loginPage.jpg used on input line 254.
@@ -813,37 +455,11 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[15
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/HelpPageUseCase.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Grou
-p-project/N17/docs/Project Plan/NotificationsPageUseCase.jpg>] [16
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/loginPage.jpg>]
-<userProfile.jpg, id=72, 659.46375pt x 414.79968pt>
+[15 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/Hel
+pPageUseCase.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Pr
+oject Plan/NotificationsPageUseCase.jpg>] [16 <D:/dac26/Documents/GitHub/2nd-Ye
+ar-Group-project/N17/docs/Project Plan/loginPage.jpg>]
+<userProfile.jpg, id=288, 659.46375pt x 414.79968pt>
 File: userProfile.jpg Graphic file (type jpg)
  <use userProfile.jpg>
 Package pdftex.def Info: userProfile.jpg used on input line 268.
@@ -853,21 +469,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 268--284
 
  []
 
-[17
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/userProfile.jpg>]
-<breedingPage.jpg, id=76, 666.23906pt x 416.30531pt>
+[17 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/use
+rProfile.jpg>] <breedingPage.jpg, id=294, 666.23906pt x 416.30531pt>
 File: breedingPage.jpg Graphic file (type jpg)
- <use breedingPage.jpg>
+
+<use breedingPage.jpg>
 Package pdftex.def Info: breedingPage.jpg used on input line 288.
 (pdftex.def)             Requested size: 333.11871pt x 208.15215pt.
 
@@ -898,19 +504,8 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[18
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/breedingPage.jpg>]
-<battleSelection.jpg, id=81, 666.99188pt x 421.575pt>
+[18 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/bre
+edingPage.jpg>] <battleSelection.jpg, id=301, 666.99188pt x 421.575pt>
 File: battleSelection.jpg Graphic file (type jpg)
 
 <use battleSelection.jpg>
@@ -944,7 +539,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<battle.jpg, id=82, 678.28406pt x 421.575pt>
+<battle.jpg, id=302, 678.28406pt x 421.575pt>
 File: battle.jpg Graphic file (type jpg)
  <use battle.jpg>
 Package pdftex.def Info: battle.jpg used on input line 319.
@@ -954,25 +549,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 319--335
 
  []
 
-[19
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/battleSelection.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Grou
-p-project/N17/docs/Project Plan/battle.jpg>]
-<help.jpg, id=86, 673.01437pt x 420.82219pt>
+[19 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/bat
+tleSelection.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Pr
+oject Plan/battle.jpg>] <help.jpg, id=308, 673.01437pt x 420.82219pt>
 File: help.jpg Graphic file (type jpg)
- <use help.jpg>
+
+<use help.jpg>
 Package pdftex.def Info: help.jpg used on input line 337.
 (pdftex.def)             Requested size: 336.50636pt x 210.41057pt.
 
@@ -980,7 +562,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 337--343
 
  []
 
-<manageFriends.jpg, id=87, 672.26157pt x 420.82219pt>
+<manageFriends.jpg, id=309, 672.26157pt x 420.82219pt>
 File: manageFriends.jpg Graphic file (type jpg)
  <use manageFriends.jpg>
 Package pdftex.def Info: manageFriends.jpg used on input line 345.
@@ -993,177 +575,120 @@ Underfull \hbox (badness 10000) in paragraph at lines 345--357
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/help.jpg>] <risk1.jpg, id=91, 792.71156pt x 475.7775pt>
-File: risk1.jpg Graphic file (type jpg)
+ [20 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/he
+lp.jpg>]
+<gantt.png, id=315, 2569.6pt x 1027.84pt>
+File: gantt.png Graphic file (type png)
+ <use gantt.png>
+Package pdftex.def Info: gantt.png used on input line 358.
+(pdftex.def)             Requested size: 2569.59377pt x 1027.8375pt.
 
-<use risk1.jpg>
-Package pdftex.def Info: risk1.jpg used on input line 364.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/ma
+nageFriends.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Overfull \vbox (211.02924pt too high) has occurred while \output is active []
+
+
+[23 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/gan
+tt.png>] <risk1.jpg, id=331, 792.71156pt x 475.7775pt>
+File: risk1.jpg Graphic file (type jpg)
+ <use risk1.jpg>
+Package pdftex.def Info: risk1.jpg used on input line 365.
 (pdftex.def)             Requested size: 475.6306pt x 285.46869pt.
- <risk2.jpg, id=92, 791.95876pt x 488.57532pt>
+
+<risk2.jpg, id=332, 791.95876pt x 488.57532pt>
 File: risk2.jpg Graphic file (type jpg)
  <use risk2.jpg>
-Package pdftex.def Info: risk2.jpg used on input line 365.
+Package pdftex.def Info: risk2.jpg used on input line 366.
 (pdftex.def)             Requested size: 475.17892pt x 293.14745pt.
 
-<risk3.jpg, id=93, 794.2172pt x 474.27188pt>
+<risk3.jpg, id=333, 794.2172pt x 474.27188pt>
 File: risk3.jpg Graphic file (type jpg)
  <use risk3.jpg>
-Package pdftex.def Info: risk3.jpg used on input line 366.
+Package pdftex.def Info: risk3.jpg used on input line 367.
 (pdftex.def)             Requested size: 476.534pt x 284.56532pt.
 
-<risk4.jpg, id=94, 792.71156pt x 402.75468pt>
+<risk4.jpg, id=334, 792.71156pt x 402.75468pt>
 File: risk4.jpg Graphic file (type jpg)
  <use risk4.jpg>
-Package pdftex.def Info: risk4.jpg used on input line 367.
+Package pdftex.def Info: risk4.jpg used on input line 368.
 (pdftex.def)             Requested size: 475.6306pt x 241.65466pt.
 
-Overfull \hbox (78.14561pt too wide) in paragraph at lines 364--368
+Overfull \hbox (78.14561pt too wide) in paragraph at lines 365--369
 [] 
  []
 
 
-Overfull \hbox (77.69394pt too wide) in paragraph at lines 364--368
+Overfull \hbox (77.69394pt too wide) in paragraph at lines 365--369
 [] 
  []
 
 
-Overfull \hbox (79.04901pt too wide) in paragraph at lines 364--368
+Overfull \hbox (79.04901pt too wide) in paragraph at lines 365--369
 [] 
  []
 
 
-Overfull \hbox (78.14561pt too wide) in paragraph at lines 364--368
+Overfull \hbox (78.14561pt too wide) in paragraph at lines 365--369
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--368
+Underfull \hbox (badness 10000) in paragraph at lines 365--369
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/manageFriends.jpg>]
+ [24 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/ri
+sk1.jpg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!]
-Overfull \vbox (12.6594pt too high) has occurred while \output is active []
+ [25 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Plan/ri
+sk2.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Project Pla
+n/risk3.jpg>] [26 <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/docs/Pr
+oject Plan/risk4.jpg>] [27
 
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 391.
 
-[23
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/risk1.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Group-project/
-N17/docs/Project Plan/risk2.jpg>] [24
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored! <D:/dac26/Documents/GitHub/2nd-Year-Group-project/N17/
-docs/Project Plan/risk3.jpg> <D:/dac26/Documents/GitHub/2nd-Year-Group-project/
-N17/docs/Project Plan/risk4.jpg>] [25
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-
-
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 390.
-
-Overfull \hbox (75.63466pt too wide) in paragraph at lines 376--390
+Overfull \hbox (75.63466pt too wide) in paragraph at lines 377--391
 []
  []
 
-[26
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
+[28
 
-
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 390.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 391.
 
 ("D:\dac26\Documents\GitHub\2nd-Year-Group-project\N17\docs\Project Plan\projec
 tplan.aux")
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 390.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 390.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 391.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 391.
 Package rerunfilecheck Info: File `projectplan.out' has not changed.
 (rerunfilecheck)             Checksum: 510E6A0D14668B556F718406B838497E;2218.
  ) 
 Here is how much of TeX's memory you used:
- 6131 strings out of 494046
- 90699 string characters out of 3148410
- 188876 words of memory out of 3000000
- 9370 multiletter control sequences out of 15000+200000
+ 6156 strings out of 494045
+ 90774 string characters out of 3148387
+ 179524 words of memory out of 3000000
+ 9328 multiletter control sequences out of 15000+200000
  8243 words of font info for 29 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 37i,13n,39p,260b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,13n,39p,331b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on projectplan.pdf (27 pages, 1911439 bytes).
+Output written on projectplan.pdf (29 pages, 2082957 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 396 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
+ 404 words of extra memory for PDF output out of 10000 (max. 10000000)
 
