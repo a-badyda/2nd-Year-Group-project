@@ -30,7 +30,7 @@
 \contentsline {subsection}{\numberline {6.5}Battle Page(fig 6)}{19}{subsection.6.5}
 \contentsline {subsection}{\numberline {6.6}The Help Page(fig 7)}{20}{subsection.6.6}
 \contentsline {subsection}{\numberline {6.7}Friend Management Page(fig 8)}{21}{subsection.6.7}
-\contentsline {section}{\numberline {7}Gantt chart}{21}{section.7}
-\contentsline {section}{\numberline {8}Risk Assessment}{23}{section.8}
-\contentsline {section}{REFERENCES}{25}{section.8}
-\contentsline {section}{DOCUMENT HISTORY}{26}{section*.2}
+\contentsline {section}{\numberline {7}Gantt chart}{23}{section.7}
+\contentsline {section}{\numberline {8}Risk Assessment}{24}{section.8}
+\contentsline {section}{REFERENCES}{27}{section.8}
+\contentsline {section}{DOCUMENT HISTORY}{28}{section*.2}
