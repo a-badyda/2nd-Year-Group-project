@@ -18,8 +18,8 @@
 \maketitle
 \tableofcontents
 \newpage
-\section{Introduction}
-\subsection{Purpose of this Document}
+\section{Design Plan}
+\subsection{Purpose of this Section}
 This should provide everything designers, programmers and testers need to know to use the facilities
 provided by a module. It should include an outline for all parts of the system. The information provide should be enough to get a basic understanding of the system.
 
@@ -189,50 +189,39 @@ Array Lists will also be used, but only, as far as designed, in private instance
 
 \section{Sequence Diagrams}
 \subsection{Accept Battle}
-This sequence diagram shows a user accepting a battle request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the "doPost" method. The request then runs through the relevant classes in order to gain the information required.
+This sequence diagram shows a user accepting a battle request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the “doPost” method. The request then runs through the relevant classes in order to gain the information required.
 \begin{center}
-\includegraphics[scale=0.40]{sequence_diagrams/SD_accept_battle.png}
+\includegraphics[scale=0.40]{SD_accept_battle.png}
 \end{center}
 
 \subsection{Accept Breed}
-This sequence diagram shows a user accepting a breed request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the "doPost" method. The request then runs through the relevant classes in order to gain the information required.
+This sequence diagram shows a user accepting a breed request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the “doPost” method. The request then runs through the relevant classes in order to gain the information required.
 \begin{center}
-\includegraphics[scale=0.40]{sequence_diagrams/SD_accept_breed.png}
-\end{center}
-
-\subsection{Accept Friend}
-This sequence diagram shows a user adding a friend. The users request is sent to the server using the "doPost" method. The request then runs through the relevant classes in order to gain the information required. A request is then sent to the corresponding user using the "addRequest" method and "User class".
-\begin{center}
-\includegraphics[scale=0.40]{sequence_diagrams/SD_accept_friend.png}
+\includegraphics[scale=0.40]{SD_accept_breed.png}
 \end{center}
 
 \subsection{Add Friend}
-info
+This sequence diagram shows a user adding a friend. The users request is sent to the server using the “doPost” method. The request then runs through the relevant classes in order to gain the information required. A request is then sent to the corresponding user using the “addRequest” method and “User class”.
 \begin{center}
-\includegraphics[scale=0.40]{sequence_diagrams/SD_add_friend.png}
+\includegraphics[scale=0.40]{SD_accept_friend.png}
 \end{center}
 
 \subsection{Register User}
-This sequence diagram shows a user submitting their password and username to create a monstermash account. The diagram shows the users password and username being sent to the server using the "doPost" method. The request then runs through the relevant classes in order to process the users details and create the new account.
+This sequence diagram shows a user submitting their password and username to create a monstermash account. The diagram shows the users password and username being sent to the server using the “doPost” method. The request then runs through the relevant classes in order to process the users details and create the new account.
 \begin{center}
-\includegraphics[scale=0.40]{sequence_diagrams/SD_register_user.png}
+\includegraphics[scale=0.40]{SD_register_user.png}
 \end{center}
 
-\subsection{Send battle/breed request}
-This sequence diagram shows a user sending a breed or battle request to a friend. The diagram shows the users request being sent to the server using the "doPost" method. A request is then sent to the corresponding user using the "addRequest" method and "User class".
+\subsection{Send Battle/Breed Request}
+This sequence diagram shows a user sending a breed or battle request to a friend. The diagram shows the users request being sent to the server using the “doPost” method. A request is then sent to the corresponding user using the “addRequest” method and “User class”.
 \begin{center}
-\includegraphics[scale=0.40]{sequence_diagrams/SD_request_battle.png}
+\includegraphics[scale=0.40]{SD_send_battle_breed_request.png}
 \end{center}
 
 \subsection{User Log In}
-This sequence diagram shows a user logging in to monstermash. The user submits their login information and it is posted to the server using the "doPost" method. The request then runs the the relevant classes, checking the login details. A response is generated if the login details are invalid or the user is logged in if they details are valid.
+This sequence diagram shows a user logging in to monstermash. The user submits their login information and it is posted to the server using the “doPost” method. The request then runs the the relevant classes, checking the login details. A response is generated if the login details are invalid or the user is logged in if they details are valid.
 \begin{center}
-\includegraphics[scale=0.40]{sequence_diagrams/SD_user_login.png}
-\end{center}
-
-\section{Activity Diagram}
-\begin{center}
-\includegraphics[scale=0.50]{activitydiagram.png}
+\includegraphics[scale=0.40]{SD_user_login.png}
 \end{center}
 
 \section{State Diagram}
