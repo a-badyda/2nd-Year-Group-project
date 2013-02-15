@@ -86,7 +86,7 @@ JSON (also known as JavaScript Object Notation) is a form of data interchange th
 \end{figure}
 
 \section{Class Diagram}
-\includegraphics[scale=0.40]{MonsterMashClassesv1_1.jpg}
+\includegraphics[scale=0.40]{MonsterMashClasses_v2.jpg}
 
 \section{Significant Data Classes}
 \subsection{Java Data Classes}
@@ -136,6 +136,8 @@ public Monster getToMon() - This will return a toMon which is of type Monster. p
 public RequestType getType() - This will return type which is of type request. public void setType(RequestType type) - This will set type and take RequestType type as a parameter. These will be used to determine whether it is pending, accepted and declined.
 public RequestState getState() - This will return state which is of type RequestState. public void setState(RequestState state) - This will set state which is of type RequestState and takes RequestState state as a parameter.
 
+\section{UserManager}
+The User-Manager class handles many different tasks related to how each of the User profiles are created and organised. This class has creates the ability to add and remove a user from a database, this can be seen in the "addUser" and "removeUser" methods located within the class. This class can also perform other tasks that are important to the functionality of the system, such as the ability to fetch particular User data, which can either be the Users ID, or the Users name (as depicted by a String).  Without this class, it would be impossible to create a usable log in page, as the system would not be able to get (fetch) the data that is stored in the database to validate their log in. This class would be absolutely necessary for a functioning registration form for the new users, as without it, no Users could be added to the system.
 \subsection{Public Methods}
 public UserManager() - 
 public User fetchUser(Integer id)
