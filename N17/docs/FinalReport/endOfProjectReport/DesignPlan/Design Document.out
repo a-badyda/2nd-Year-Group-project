@@ -23,39 +23,32 @@
 \BOOKMARK [2][-]{subsection.8.1}{Public Methods}{section.8}% 23
 \BOOKMARK [1][-]{section.9}{MySQLDatabase Class}{}% 24
 \BOOKMARK [2][-]{subsection.9.1}{Public Methods}{section.9}% 25
-\BOOKMARK [1][-]{section.10}{Request}{}% 26
+\BOOKMARK [1][-]{section.10}{UserManager}{}% 26
 \BOOKMARK [2][-]{subsection.10.1}{Public Methods}{section.10}% 27
-\BOOKMARK [1][-]{section.11}{Request state}{}% 28
-\BOOKMARK [2][-]{subsection.11.1}{Public Methods}{section.11}% 29
-\BOOKMARK [1][-]{section.12}{UserManager}{}% 30
-\BOOKMARK [2][-]{subsection.12.1}{Public Methods}{section.12}% 31
-\BOOKMARK [1][-]{section.13}{User}{}% 32
-\BOOKMARK [2][-]{subsection.13.1}{Public Methods}{section.13}% 33
-\BOOKMARK [1][-]{section.14}{Status class}{}% 34
-\BOOKMARK [2][-]{subsection.14.1}{Public methods}{section.14}% 35
-\BOOKMARK [1][-]{section.15}{RequestType class}{}% 36
-\BOOKMARK [2][-]{subsection.15.1}{Public methods}{section.15}% 37
-\BOOKMARK [1][-]{section.16}{Data Storage}{}% 38
-\BOOKMARK [1][-]{section.17}{Sequence Diagrams}{}% 39
-\BOOKMARK [2][-]{subsection.17.1}{Accept Battle}{section.17}% 40
-\BOOKMARK [2][-]{subsection.17.2}{Accept Breed}{section.17}% 41
-\BOOKMARK [2][-]{subsection.17.3}{Accept Friend}{section.17}% 42
-\BOOKMARK [2][-]{subsection.17.4}{Add Friend}{section.17}% 43
-\BOOKMARK [2][-]{subsection.17.5}{Register User}{section.17}% 44
-\BOOKMARK [2][-]{subsection.17.6}{Send battle/breed request}{section.17}% 45
-\BOOKMARK [2][-]{subsection.17.7}{User Log In}{section.17}% 46
-\BOOKMARK [1][-]{section.18}{Activity Diagram}{}% 47
-\BOOKMARK [1][-]{section.19}{State Diagram}{}% 48
-\BOOKMARK [2][-]{subsection.19.1}{State Diagram Description}{section.19}% 49
-\BOOKMARK [3][-]{subsubsection.19.1.1}{Login Page to Profile Page}{subsection.19.1}% 50
-\BOOKMARK [3][-]{subsubsection.19.1.2}{Profile page to Various pages}{subsection.19.1}% 51
-\BOOKMARK [3][-]{subsubsection.19.1.3}{Profile page to Help page}{subsection.19.1}% 52
-\BOOKMARK [3][-]{subsubsection.19.1.4}{Profile page to Battle page}{subsection.19.1}% 53
-\BOOKMARK [3][-]{subsubsection.19.1.5}{Battle page to Battle results page}{subsection.19.1}% 54
-\BOOKMARK [3][-]{subsubsection.19.1.6}{Friends page to Various pages}{subsection.19.1}% 55
-\BOOKMARK [3][-]{subsubsection.19.1.7}{Friends page to Battle/Breeding page}{subsection.19.1}% 56
-\BOOKMARK [3][-]{subsubsection.19.1.8}{Friends page to Add Friend page}{subsection.19.1}% 57
-\BOOKMARK [3][-]{subsubsection.19.1.9}{Profile page to Breeding Results page}{subsection.19.1}% 58
-\BOOKMARK [3][-]{subsubsection.19.1.10}{Profile page to Logout}{subsection.19.1}% 59
-\BOOKMARK [1][-]{subsubsection.19.1.10}{REFERENCES}{}% 60
-\BOOKMARK [1][-]{section*.2}{DOCUMENT HISTORY}{}% 61
+\BOOKMARK [2][-]{subsection.10.2}{Public Methods}{section.10}% 28
+\BOOKMARK [1][-]{section.11}{RequestType class}{}% 29
+\BOOKMARK [2][-]{subsection.11.1}{Public methods}{section.11}% 30
+\BOOKMARK [1][-]{section.12}{Data Storage}{}% 31
+\BOOKMARK [1][-]{section.13}{Sequence Diagrams}{}% 32
+\BOOKMARK [2][-]{subsection.13.1}{Accept Battle}{section.13}% 33
+\BOOKMARK [2][-]{subsection.13.2}{Accept Breed}{section.13}% 34
+\BOOKMARK [2][-]{subsection.13.3}{Accept Friend}{section.13}% 35
+\BOOKMARK [2][-]{subsection.13.4}{Add Friend}{section.13}% 36
+\BOOKMARK [2][-]{subsection.13.5}{Register User}{section.13}% 37
+\BOOKMARK [2][-]{subsection.13.6}{Send battle/breed request}{section.13}% 38
+\BOOKMARK [2][-]{subsection.13.7}{User Log In}{section.13}% 39
+\BOOKMARK [1][-]{section.14}{Activity Diagram}{}% 40
+\BOOKMARK [1][-]{section.15}{State Diagram}{}% 41
+\BOOKMARK [2][-]{subsection.15.1}{State Diagram Description}{section.15}% 42
+\BOOKMARK [3][-]{subsubsection.15.1.1}{Login Page to Profile Page}{subsection.15.1}% 43
+\BOOKMARK [3][-]{subsubsection.15.1.2}{Profile page to Various pages}{subsection.15.1}% 44
+\BOOKMARK [3][-]{subsubsection.15.1.3}{Profile page to Help page}{subsection.15.1}% 45
+\BOOKMARK [3][-]{subsubsection.15.1.4}{Profile page to Battle page}{subsection.15.1}% 46
+\BOOKMARK [3][-]{subsubsection.15.1.5}{Battle page to Battle results page}{subsection.15.1}% 47
+\BOOKMARK [3][-]{subsubsection.15.1.6}{Friends page to Various pages}{subsection.15.1}% 48
+\BOOKMARK [3][-]{subsubsection.15.1.7}{Friends page to Battle/Breeding page}{subsection.15.1}% 49
+\BOOKMARK [3][-]{subsubsection.15.1.8}{Friends page to Add Friend page}{subsection.15.1}% 50
+\BOOKMARK [3][-]{subsubsection.15.1.9}{Profile page to Breeding Results page}{subsection.15.1}% 51
+\BOOKMARK [3][-]{subsubsection.15.1.10}{Profile page to Logout}{subsection.15.1}% 52
+\BOOKMARK [1][-]{subsubsection.15.1.10}{REFERENCES}{}% 53
+\BOOKMARK [1][-]{section*.2}{DOCUMENT HISTORY}{}% 54
