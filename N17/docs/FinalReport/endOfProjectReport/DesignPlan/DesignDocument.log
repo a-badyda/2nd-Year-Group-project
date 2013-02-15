@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.2.5)  11 FEB 2013 14:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.2.5)  15 FEB 2013 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,7 +337,7 @@ Missing character: There is no ’ in font cmr10!
 Missing character: There is no ‘ in font cmr10!
 Missing character: There is no ’ in font cmr10!
 
-<relationshipDiagram.jpg, id=321, 395.076pt x 296.307pt>
+<relationshipDiagram.jpg, id=291, 395.076pt x 296.307pt>
 File: relationshipDiagram.jpg Graphic file (type jpg)
 
 <use relationshipDiagram.jpg>
@@ -618,7 +618,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--82
 
 LaTeX Warning: Float too large for page by 59.17647pt on input line 82.
 
-<MonsterMashClassesv1_1.jpg, id=328, 1050.92625pt x 1348.03625pt>
+<MonsterMashClassesv1_1.jpg, id=297, 1050.92625pt x 1348.03625pt>
 File: MonsterMashClassesv1_1.jpg Graphic file (type jpg)
 
 <use MonsterMashClassesv1_1.jpg>
@@ -635,17 +635,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./MonsterMashClassesv1_1.jpg>] [8] [9] [10] [11]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 168.
+ [7 <./MonsterMashClassesv1_1.jpg>] [8] [9] [10]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 156.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 168.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 156.
 
-Overfull \hbox (43.94257pt too wide) in paragraph at lines 161--171
+Overfull \hbox (43.94257pt too wide) in paragraph at lines 149--159
 \OT1/cmr/m/n/10.95 and takes Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 
 User\OML/cmm/m/it/10.95 >\OT1/cmr/m/n/10.95 friends as a pa-ram-e-ter. pub-lic 
 Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Request\OML/cmm/m/it/10.95 >\
@@ -653,126 +653,112 @@ OT1/cmr/m/n/10.95 getRequests()
  []
 
 
-Overfull \hbox (76.92433pt too wide) in paragraph at lines 161--171
+Overfull \hbox (76.92433pt too wide) in paragraph at lines 149--159
 \OT1/cmr/m/n/10.95 quests(ArrayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Requ
 est\OML/cmm/m/it/10.95 >\OT1/cmr/m/n/10.95 requests) - This will set re-quests 
 and takes Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Request\OML/cmm/m/i
 t/10.95 >\OT1/cmr/m/n/10.95 requests
  []
 
-[12] [13]
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
- <SD_accept_battle.png, id=384, 1131.22626pt x 782.925pt>
-File: SD_accept_battle.png Graphic file (type png)
+[11]
+<sequence_diagrams/SD_accept_battle.png, id=343, 1313.90875pt x 733.74126pt>
+File: sequence_diagrams/SD_accept_battle.png Graphic file (type png)
 
-<use SD_accept_battle.png>
-Package pdftex.def Info: SD_accept_battle.png used on input line 194.
-(pdftex.def)             Requested size: 452.48248pt x 313.16446pt.
+<use sequence_diagrams/SD_accept_battle.png>
+Package pdftex.def Info: sequence_diagrams/SD_accept_battle.png used on input l
+ine 176.
+(pdftex.def)             Requested size: 525.5542pt x 293.4913pt.
 
-Overfull \hbox (54.9975pt too wide) in paragraph at lines 194--195
+Overfull \hbox (128.06921pt too wide) in paragraph at lines 176--177
  [] 
  []
 
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-[14 <./SD_accept_battle.png>]
-<SD_accept_breed.png, id=390, 1131.22626pt x 782.925pt>
-File: SD_accept_breed.png Graphic file (type png)
+[12] <sequence_diagrams/SD_accept_breed.png, id=350, 768.8725pt x 733.74126pt>
+File: sequence_diagrams/SD_accept_breed.png Graphic file (type png)
 
-<use SD_accept_breed.png>
-Package pdftex.def Info: SD_accept_breed.png used on input line 200.
-(pdftex.def)             Requested size: 452.48248pt x 313.16446pt.
-
-Overfull \hbox (54.9975pt too wide) in paragraph at lines 200--201
- [] 
- []
-
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-<SD_accept_friend.png, id=391, 882.29625pt x 623.32875pt>
-File: SD_accept_friend.png Graphic file (type png)
-
-<use SD_accept_friend.png>
-Package pdftex.def Info: SD_accept_friend.png used on input line 206.
-(pdftex.def)             Requested size: 352.91225pt x 249.32707pt.
+<use sequence_diagrams/SD_accept_breed.png>
+Package pdftex.def Info: sequence_diagrams/SD_accept_breed.png used on input li
+ne 182.
+(pdftex.def)             Requested size: 307.54355pt x 293.4913pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./SD_accept_breed.png>]
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
- <SD_register_user.png, id=397, 696.6025pt x 521.95pt>
-File: SD_register_user.png Graphic file (type png)
+ [13 <./sequence_diagrams/SD_accept_battle.png>]
+<sequence_diagrams/SD_accept_friend.png, id=356, 676.5275pt x 522.95375pt>
+File: sequence_diagrams/SD_accept_friend.png Graphic file (type png)
 
-<use SD_register_user.png>
-Package pdftex.def Info: SD_register_user.png used on input line 212.
-(pdftex.def)             Requested size: 278.63606pt x 208.77629pt.
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
- [16 <./SD_accept_friend.png> <./SD_register_user.png>] <SD_send_battle_breed_r
-equest.png, id=403, 900.36375pt x 531.9875pt>
-File: SD_send_battle_breed_request.png Graphic file (type png)
-
-<use SD_send_battle_breed_request.png>
-Package pdftex.def Info: SD_send_battle_breed_request.png used on input line 21
-8.
-(pdftex.def)             Requested size: 360.13911pt x 212.79123pt.
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-
-<SD_user_login.png, id=404, 713.66624pt x 543.02875pt>
-File: SD_user_login.png Graphic file (type png)
- <use SD_user_login.png>
-Package pdftex.def Info: SD_user_login.png used on input line 224.
-(pdftex.def)             Requested size: 285.46143pt x 217.20764pt.
+<use sequence_diagrams/SD_accept_friend.png>
+Package pdftex.def Info: sequence_diagrams/SD_accept_friend.png used on input l
+ine 188.
+(pdftex.def)             Requested size: 270.6062pt x 209.1778pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17 <./SD_send_battle_breed_request.png>]
-<state_diagram.png, id=410, 871.255pt x 485.815pt>
+ [14 <./sequence_diagrams/SD_accept_breed.png>]
+<sequence_diagrams/SD_add_friend.png, id=362, 836.12375pt x 409.53pt>
+File: sequence_diagrams/SD_add_friend.png Graphic file (type png)
+
+<use sequence_diagrams/SD_add_friend.png>
+Package pdftex.def Info: sequence_diagrams/SD_add_friend.png used on input line
+ 194.
+(pdftex.def)             Requested size: 334.44357pt x 163.80908pt.
+
+<sequence_diagrams/SD_register_user.png, id=363, 616.3025pt x 411.5375pt>
+File: sequence_diagrams/SD_register_user.png Graphic file (type png)
+
+<use sequence_diagrams/SD_register_user.png>
+Package pdftex.def Info: sequence_diagrams/SD_register_user.png used on input l
+ine 200.
+(pdftex.def)             Requested size: 246.51663pt x 164.61208pt.
+
+Underfull \vbox (badness 1005) has occurred while \output is active []
+
+ [15 <./sequence_diagrams/SD_accept_friend.png> <./sequence_diagrams/SD_add_fri
+end.png>]
+<sequence_diagrams/SD_request_battle.png, id=369, 850.17625pt x 769.87625pt>
+File: sequence_diagrams/SD_request_battle.png Graphic file (type png)
+
+<use sequence_diagrams/SD_request_battle.png>
+Package pdftex.def Info: sequence_diagrams/SD_request_battle.png used on input 
+line 206.
+(pdftex.def)             Requested size: 340.06447pt x 307.94504pt.
+ [16 <./sequence_diagrams/SD_register_user.png> <./sequence_diagrams/SD_request
+_battle.png>]
+<sequence_diagrams/SD_user_login.png, id=375, 733.74126pt x 543.02875pt>
+File: sequence_diagrams/SD_user_login.png Graphic file (type png)
+
+<use sequence_diagrams/SD_user_login.png>
+Package pdftex.def Info: sequence_diagrams/SD_user_login.png used on input line
+ 212.
+(pdftex.def)             Requested size: 293.4913pt x 217.20764pt.
+
+<activitydiagram.png, id=376, 395.22656pt x 528.47438pt>
+File: activitydiagram.png Graphic file (type png)
+
+<use activitydiagram.png>
+Package pdftex.def Info: activitydiagram.png used on input line 217.
+(pdftex.def)             Requested size: 197.6128pt x 264.23654pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./sequence_diagrams/SD_user_login.png>]
+<state_diagram.png, id=382, 871.255pt x 485.815pt>
 File: state_diagram.png Graphic file (type png)
  <use state_diagram.png>
-Package pdftex.def Info: state_diagram.png used on input line 229.
+Package pdftex.def Info: state_diagram.png used on input line 222.
 (pdftex.def)             Requested size: 435.62643pt x 242.9069pt.
 
-Overfull \hbox (38.14145pt too wide) in paragraph at lines 229--230
+Overfull \hbox (38.14145pt too wide) in paragraph at lines 222--223
  [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18 <./SD_user_login.png> <./state_diagram.png>]
+ [18 <./activitydiagram.png>]
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no ’ in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
- [19]
-Missing character: There is no “ in font cmr10!
-Missing character: There is no ” in font cmr10!
-Missing character: There is no ’ in font cmr10!
+ [19 <./state_diagram.png>]
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
 Missing character: There is no “ in font cmr10!
@@ -790,6 +776,7 @@ Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
+Missing character: There is no ’ in font cmr10!
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
 Missing character: There is no “ in font cmr10!
@@ -798,6 +785,11 @@ Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no ” in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no ” in font cmr10!
+Missing character: There is no ’ in font cmr10!
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
 Missing character: There is no “ in font cmr10!
@@ -807,31 +799,47 @@ Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no ” in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no ” in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no ” in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no ” in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no ” in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no ” in font cmr10!
  [21] [22
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 302.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 295.
 
-Overfull \hbox (75.63466pt too wide) in paragraph at lines 286--302
+Overfull \hbox (75.63466pt too wide) in paragraph at lines 279--295
 []
  []
 
 [23
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 302.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 295.
  (./DesignDocument.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 302.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 302.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 295.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 295.
 Package rerunfilecheck Info: File `DesignDocument.out' has not changed.
-(rerunfilecheck)             Checksum: E6A64A994CE237D5805BBC51321D3829;3850.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 302.
+(rerunfilecheck)             Checksum: 329000638557A9FAFDA4D93B7FDE10A7;3536.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 295.
  ) 
 Here is how much of TeX's memory you used:
- 6391 strings out of 495059
- 93651 string characters out of 3182031
- 201935 words of memory out of 3000000
- 9430 multiletter control sequences out of 15000+200000
+ 6390 strings out of 495059
+ 94180 string characters out of 3182031
+ 201920 words of memory out of 3000000
+ 9432 multiletter control sequences out of 15000+200000
  9155 words of font info for 32 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,13n,39p,979b,408s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -842,10 +850,10 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti10.pfb>
-Output written on DesignDocument.pdf (24 pages, 600523 bytes).
+Output written on DesignDocument.pdf (24 pages, 642305 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 87 named destinations out of 1000 (max. 500000)
- 518 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 461 PDF objects out of 1000 (max. 8388607)
+ 412 compressed objects within 5 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 480 words of extra memory for PDF output out of 10000 (max. 10000000)
 

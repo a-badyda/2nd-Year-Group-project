@@ -18,8 +18,8 @@
 \maketitle
 \tableofcontents
 \newpage
-\section{Design Plan}
-\subsection{Purpose of this Section}
+\section{Introduction}
+\subsection{Purpose of this Document}
 This should provide everything designers, programmers and testers need to know to use the facilities
 provided by a module. It should include an outline for all parts of the system. The information provide should be enough to get a basic understanding of the system.
 
@@ -126,11 +126,8 @@ This class contains getter and setters for monster attributes. The getters and s
 
 \section{MySQLDatabase Class}
 The MySQLDatabase class is called MySQLDatabase.class and is a public class. The MySQLDatabase doesn't contain any public methods. The MySQLDatabase class's goal is to manage the data in our relational database system. This class will store all the information that is important to each particular User. This includes the Username and Password of each of the Users, the monsters they own, and what friends they are with. Without this class the game would simply break, as there would be nowhere to store and retrieve the relevant information for the User.
-\subsection{Public Methods}
 
 
-\section{Request}
-The Request class is called Request.class and is a public class.
 \subsection{Public Methods}
 public User getFrom() - This will return from which is of type User. public void setFrom(User from) - This will set the User from and take User from as a parameter.
 public User getTo() - This will return to which is of type User. public void setTo(User to) - This will set the User to value and take User to as a parameter.
@@ -139,13 +136,6 @@ public Monster getToMon() - This will return a toMon which is of type Monster. p
 public RequestType getType() - This will return type which is of type request. public void setType(RequestType type) - This will set type and take RequestType type as a parameter. These will be used to determine whether it is pending, accepted and declined.
 public RequestState getState() - This will return state which is of type RequestState. public void setState(RequestState state) - This will set state which is of type RequestState and takes RequestState state as a parameter.
 
-\section{Request state}
-The request state class is called RequestState.class and is a public ENUM class.
-\subsection{Public Methods}
-The only method in this class is enum RequestState. This is used to allow 3 states to be identified of which are ACCEPTED, PENDING and DECLINED. These will be used for requests such as battle and breed.
-
-\section{UserManager}
-The User-Manager class handles many different tasks related to how each of the User profiles are created and organised. This class has creates the ability to add and remove a user from a database, this can be seen in the "addUser" and "removeUser" methods located within the class. This class can also perform other tasks that are important to the functionality of the system, such as the ability to fetch particular User data, which can either be the Users ID, or the Users name (as depicted by a String).  Without this class, it would be impossible to create a usable log in page, as the system would not be able to get (fetch) the data that is stored in the database to validate their log in. This class would be absolutely necessary for a functioning registration form for the new users, as without it, no Users could be added to the system.
 \subsection{Public Methods}
 public UserManager() - 
 public User fetchUser(Integer id)
@@ -155,8 +145,6 @@ public void removeUser(User user)
 public void createUser(Integer id, String username, String email, String password)
 
 
-\section{User}
-The User class handles the more specific information appropriate each user that is registered to the system. This includes information such as the Username and password of each of the registered Users. But this is not all this class holds. The User Class also holds details that are necessary for the management of the user within the game. This includes a method to get how many monsters the User owns, and another method which calculates how much cash the User owns. This class also contains information on which Server the User is registered to, without this method within this class, the game would simply not work, as the online features, such as the battling, mating and friend requests would not know where to look for the other users also wanting to play Monster Mash.
 \subsection{Public Methods}
 public Integer getId() - This will return id which is of type Integer. public void setId(Integer id) - This will set id and takes Integer id as a parameter.
 public String getUsername() - This will return username which is of type String. public void setUsername(String username) - This will set username and takes String username as a parameter.
@@ -168,12 +156,6 @@ public String getServerAdd() - This will return serverAdd and is of type String.
 public ArrayList\textless Monster\textgreater  getMonsters() - This will return a list of monsters of type ArrayList\textless Monster\textgreater. public void setMonsters(ArrayList\textless Monster\textgreater  monsters) - This sets monsters and takes ArrayList\textless Monsters\textgreater  monsters as a parameter.
 public ArrayList\textless User\textgreater  getFriends() - This will return a list of friends of type ArrayList\textless User\textgreater. public void setFriends(ArrayList\textless User\textgreater  friends) - This sets friends and takes ArrayList\textless User\textgreater  friends as a parameter.
 public ArrayList\textless Request\textgreater  getRequests() - This will get a list of requests of type ArrayList\textless Request\textgreater. public void setRequests(ArrayList\textless Request\textgreater  requests) - This will set requests and takes ArrayList\textless Request\textgreater  requests as a parameter.
-
-
-\section{Status class}
-The Status class is called Status.java and is a public enum class.
-\subsection{Public methods}
-This class is an ENUM class and defines a set of 4 statuses that monsters can have. NORMAL, SICK, DEAD and HAPPY.
 
 
 \section{RequestType class}
@@ -189,39 +171,50 @@ Array Lists will also be used, but only, as far as designed, in private instance
 
 \section{Sequence Diagrams}
 \subsection{Accept Battle}
-This sequence diagram shows a user accepting a battle request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the “doPost” method. The request then runs through the relevant classes in order to gain the information required.
+This sequence diagram shows a user accepting a battle request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the "doPost" method. The request then runs through the relevant classes in order to gain the information required.
 \begin{center}
-\includegraphics[scale=0.40]{SD_accept_battle.png}
+\includegraphics[scale=0.40]{sequence_diagrams/SD_accept_battle.png}
 \end{center}
 
 \subsection{Accept Breed}
-This sequence diagram shows a user accepting a breed request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the “doPost” method. The request then runs through the relevant classes in order to gain the information required.
+This sequence diagram shows a user accepting a breed request that has been sent to them by a friend. The diagram shows the users response being sent to the server using the "doPost" method. The request then runs through the relevant classes in order to gain the information required.
 \begin{center}
-\includegraphics[scale=0.40]{SD_accept_breed.png}
+\includegraphics[scale=0.40]{sequence_diagrams/SD_accept_breed.png}
+\end{center}
+
+\subsection{Accept Friend}
+This sequence diagram shows a user adding a friend. The users request is sent to the server using the "doPost" method. The request then runs through the relevant classes in order to gain the information required. A request is then sent to the corresponding user using the "addRequest" method and "User class".
+\begin{center}
+\includegraphics[scale=0.40]{sequence_diagrams/SD_accept_friend.png}
 \end{center}
 
 \subsection{Add Friend}
-This sequence diagram shows a user adding a friend. The users request is sent to the server using the “doPost” method. The request then runs through the relevant classes in order to gain the information required. A request is then sent to the corresponding user using the “addRequest” method and “User class”.
+info
 \begin{center}
-\includegraphics[scale=0.40]{SD_accept_friend.png}
+\includegraphics[scale=0.40]{sequence_diagrams/SD_add_friend.png}
 \end{center}
 
 \subsection{Register User}
-This sequence diagram shows a user submitting their password and username to create a monstermash account. The diagram shows the users password and username being sent to the server using the “doPost” method. The request then runs through the relevant classes in order to process the users details and create the new account.
+This sequence diagram shows a user submitting their password and username to create a monstermash account. The diagram shows the users password and username being sent to the server using the "doPost" method. The request then runs through the relevant classes in order to process the users details and create the new account.
 \begin{center}
-\includegraphics[scale=0.40]{SD_register_user.png}
+\includegraphics[scale=0.40]{sequence_diagrams/SD_register_user.png}
 \end{center}
 
-\subsection{Send Battle/Breed Request}
-This sequence diagram shows a user sending a breed or battle request to a friend. The diagram shows the users request being sent to the server using the “doPost” method. A request is then sent to the corresponding user using the “addRequest” method and “User class”.
+\subsection{Send battle/breed request}
+This sequence diagram shows a user sending a breed or battle request to a friend. The diagram shows the users request being sent to the server using the "doPost" method. A request is then sent to the corresponding user using the "addRequest" method and "User class".
 \begin{center}
-\includegraphics[scale=0.40]{SD_send_battle_breed_request.png}
+\includegraphics[scale=0.40]{sequence_diagrams/SD_request_battle.png}
 \end{center}
 
 \subsection{User Log In}
-This sequence diagram shows a user logging in to monstermash. The user submits their login information and it is posted to the server using the “doPost” method. The request then runs the the relevant classes, checking the login details. A response is generated if the login details are invalid or the user is logged in if they details are valid.
+This sequence diagram shows a user logging in to monstermash. The user submits their login information and it is posted to the server using the "doPost" method. The request then runs the the relevant classes, checking the login details. A response is generated if the login details are invalid or the user is logged in if they details are valid.
 \begin{center}
-\includegraphics[scale=0.40]{SD_user_login.png}
+\includegraphics[scale=0.40]{sequence_diagrams/SD_user_login.png}
+\end{center}
+
+\section{Activity Diagram}
+\begin{center}
+\includegraphics[scale=0.50]{activitydiagram.png}
 \end{center}
 
 \section{State Diagram}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.2.5)  15 FEB 2013 14:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.2.5)  15 FEB 2013 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -338,7 +338,7 @@ Missing character: There is no ’ in font cmr10!
 Missing character: There is no ‘ in font cmr10!
 Missing character: There is no ’ in font cmr10!
 
-<relationshipDiagram.jpg, id=296, 395.076pt x 296.307pt>
+<relationshipDiagram.jpg, id=291, 395.076pt x 296.307pt>
 File: relationshipDiagram.jpg Graphic file (type jpg)
 
 <use relationshipDiagram.jpg>
@@ -619,7 +619,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--82
 
 LaTeX Warning: Float too large for page by 59.17647pt on input line 82.
 
-<MonsterMashClassesv1_1.jpg, id=302, 1050.92625pt x 1348.03625pt>
+<MonsterMashClassesv1_1.jpg, id=297, 1050.92625pt x 1348.03625pt>
 File: MonsterMashClassesv1_1.jpg Graphic file (type jpg)
 
 <use MonsterMashClassesv1_1.jpg>
@@ -637,16 +637,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7 <./MonsterMashClassesv1_1.jpg>] [8] [9] [10]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 158.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 156.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 158.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 156.
 
-Overfull \hbox (43.94257pt too wide) in paragraph at lines 151--161
+Overfull \hbox (43.94257pt too wide) in paragraph at lines 149--159
 \OT1/cmr/m/n/10.95 and takes Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 
 User\OML/cmm/m/it/10.95 >\OT1/cmr/m/n/10.95 friends as a pa-ram-e-ter. pub-lic 
 Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Request\OML/cmm/m/it/10.95 >\
@@ -654,100 +654,102 @@ OT1/cmr/m/n/10.95 getRequests()
  []
 
 
-Overfull \hbox (76.92433pt too wide) in paragraph at lines 151--161
+Overfull \hbox (76.92433pt too wide) in paragraph at lines 149--159
 \OT1/cmr/m/n/10.95 quests(ArrayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Requ
 est\OML/cmm/m/it/10.95 >\OT1/cmr/m/n/10.95 requests) - This will set re-quests 
 and takes Ar-rayList\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10.95 Request\OML/cmm/m/i
 t/10.95 >\OT1/cmr/m/n/10.95 requests
  []
 
-[11] [12]
-<sequence_diagrams/SD_accept_battle.png, id=354, 1313.90875pt x 733.74126pt>
+[11]
+<sequence_diagrams/SD_accept_battle.png, id=343, 1313.90875pt x 733.74126pt>
 File: sequence_diagrams/SD_accept_battle.png Graphic file (type png)
 
 <use sequence_diagrams/SD_accept_battle.png>
 Package pdftex.def Info: sequence_diagrams/SD_accept_battle.png used on input l
-ine 178.
+ine 176.
 (pdftex.def)             Requested size: 525.5542pt x 293.4913pt.
 
-Overfull \hbox (128.06921pt too wide) in paragraph at lines 178--179
+Overfull \hbox (128.06921pt too wide) in paragraph at lines 176--177
  [] 
  []
 
-[13 <./sequence_diagrams/SD_accept_battle.png>]
-<sequence_diagrams/SD_accept_breed.png, id=360, 768.8725pt x 733.74126pt>
+[12] <sequence_diagrams/SD_accept_breed.png, id=350, 768.8725pt x 733.74126pt>
 File: sequence_diagrams/SD_accept_breed.png Graphic file (type png)
 
 <use sequence_diagrams/SD_accept_breed.png>
 Package pdftex.def Info: sequence_diagrams/SD_accept_breed.png used on input li
-ne 184.
+ne 182.
 (pdftex.def)             Requested size: 307.54355pt x 293.4913pt.
 
-<sequence_diagrams/SD_accept_friend.png, id=361, 676.5275pt x 522.95375pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./sequence_diagrams/SD_accept_battle.png>]
+<sequence_diagrams/SD_accept_friend.png, id=356, 676.5275pt x 522.95375pt>
 File: sequence_diagrams/SD_accept_friend.png Graphic file (type png)
 
 <use sequence_diagrams/SD_accept_friend.png>
 Package pdftex.def Info: sequence_diagrams/SD_accept_friend.png used on input l
-ine 190.
+ine 188.
 (pdftex.def)             Requested size: 270.6062pt x 209.1778pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14 <./sequence_diagrams/SD_accept_breed.png>]
-<sequence_diagrams/SD_add_friend.png, id=367, 836.12375pt x 409.53pt>
+<sequence_diagrams/SD_add_friend.png, id=362, 836.12375pt x 409.53pt>
 File: sequence_diagrams/SD_add_friend.png Graphic file (type png)
 
 <use sequence_diagrams/SD_add_friend.png>
 Package pdftex.def Info: sequence_diagrams/SD_add_friend.png used on input line
- 196.
+ 194.
 (pdftex.def)             Requested size: 334.44357pt x 163.80908pt.
 
-<sequence_diagrams/SD_register_user.png, id=368, 616.3025pt x 411.5375pt>
+<sequence_diagrams/SD_register_user.png, id=363, 616.3025pt x 411.5375pt>
 File: sequence_diagrams/SD_register_user.png Graphic file (type png)
 
 <use sequence_diagrams/SD_register_user.png>
 Package pdftex.def Info: sequence_diagrams/SD_register_user.png used on input l
-ine 202.
+ine 200.
 (pdftex.def)             Requested size: 246.51663pt x 164.61208pt.
 
 Underfull \vbox (badness 1005) has occurred while \output is active []
 
  [15 <./sequence_diagrams/SD_accept_friend.png> <./sequence_diagrams/SD_add_fri
 end.png>]
-<sequence_diagrams/SD_request_battle.png, id=374, 850.17625pt x 769.87625pt>
+<sequence_diagrams/SD_request_battle.png, id=369, 850.17625pt x 769.87625pt>
 File: sequence_diagrams/SD_request_battle.png Graphic file (type png)
 
 <use sequence_diagrams/SD_request_battle.png>
 Package pdftex.def Info: sequence_diagrams/SD_request_battle.png used on input 
-line 208.
+line 206.
 (pdftex.def)             Requested size: 340.06447pt x 307.94504pt.
  [16 <./sequence_diagrams/SD_register_user.png> <./sequence_diagrams/SD_request
 _battle.png>]
-<sequence_diagrams/SD_user_login.png, id=380, 733.74126pt x 543.02875pt>
+<sequence_diagrams/SD_user_login.png, id=375, 733.74126pt x 543.02875pt>
 File: sequence_diagrams/SD_user_login.png Graphic file (type png)
 
 <use sequence_diagrams/SD_user_login.png>
 Package pdftex.def Info: sequence_diagrams/SD_user_login.png used on input line
- 214.
+ 212.
 (pdftex.def)             Requested size: 293.4913pt x 217.20764pt.
 
-<activitydiagram.png, id=381, 395.22656pt x 528.47438pt>
+<activitydiagram.png, id=376, 395.22656pt x 528.47438pt>
 File: activitydiagram.png Graphic file (type png)
 
 <use activitydiagram.png>
-Package pdftex.def Info: activitydiagram.png used on input line 219.
+Package pdftex.def Info: activitydiagram.png used on input line 217.
 (pdftex.def)             Requested size: 197.6128pt x 264.23654pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17 <./sequence_diagrams/SD_user_login.png>]
-<state_diagram.png, id=387, 871.255pt x 485.815pt>
+<state_diagram.png, id=382, 871.255pt x 485.815pt>
 File: state_diagram.png Graphic file (type png)
  <use state_diagram.png>
-Package pdftex.def Info: state_diagram.png used on input line 224.
+Package pdftex.def Info: state_diagram.png used on input line 222.
 (pdftex.def)             Requested size: 435.62643pt x 242.9069pt.
 
-Overfull \hbox (38.14145pt too wide) in paragraph at lines 224--225
+Overfull \hbox (38.14145pt too wide) in paragraph at lines 222--223
  [] 
  []
 
@@ -813,28 +815,28 @@ Missing character: There is no ” in font cmr10!
  [21] [22
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 297.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 295.
 
-Overfull \hbox (75.63466pt too wide) in paragraph at lines 281--297
+Overfull \hbox (75.63466pt too wide) in paragraph at lines 279--295
 []
  []
 
 [23
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 297.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 295.
  (./Design Document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 297.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 297.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 295.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 295.
 Package rerunfilecheck Info: File `"Design Document".out' has not changed.
-(rerunfilecheck)             Checksum: 6DA1EDDCCA4D79DD49BD1F3B9215CA66;3588.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 297.
+(rerunfilecheck)             Checksum: 329000638557A9FAFDA4D93B7FDE10A7;3536.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 295.
  ) 
 Here is how much of TeX's memory you used:
- 6392 strings out of 495059
- 94223 string characters out of 3182031
- 201935 words of memory out of 3000000
- 9433 multiletter control sequences out of 15000+200000
+ 6390 strings out of 495059
+ 94197 string characters out of 3182031
+ 201932 words of memory out of 3000000
+ 9432 multiletter control sequences out of 15000+200000
  9155 words of font info for 32 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,13n,39p,982b,408s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -845,10 +847,10 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Design Document.pdf" (24 pages, 643134 bytes).
+Output written on "Design Document.pdf" (24 pages, 642307 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
- 417 compressed objects within 5 object streams
- 82 named destinations out of 1000 (max. 500000)
- 488 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 461 PDF objects out of 1000 (max. 8388607)
+ 412 compressed objects within 5 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 480 words of extra memory for PDF output out of 10000 (max. 10000000)
 
