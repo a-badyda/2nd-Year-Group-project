@@ -47,8 +47,12 @@ Tidyed up JavaScript repo folder.
 
 26/10/12 -- Hours Worked: 1.5
 Made a small start on some of the JavaScript. Awaiting HTML for further development.
+<<<<<<< HEAD
 Added Client side folder structure.
 
 
 28/01/13 -- Hours Worked 15
 Rewrote current code
+=======
+Added Client side folder structure.
+>>>>>>> 6ab5312630e42178f91674f5251b6fc9a2a00069
