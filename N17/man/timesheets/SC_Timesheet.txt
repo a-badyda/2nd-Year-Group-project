@@ -1,0 +1,51 @@
+
+Group Project Timesheet
+Silhab Csoma 
+
+(Note: I included all the random time spend drawing notes and scribbles on my project book.)
+
+Week Oct 8-14, 5 hours:
+8 Monday 	(1 hour) 	project design specification. 
+11 Thursday 	(2 hours) 	group meeting about roles/design. 
+13 Saturday 	(1 hour) 	java class design
+14 Sunday 	(1 hour) 	java class design.
+
+Week Oct 15-21, 3 hours:
+17 Wednesday 	(1 hour) 	serverside java research.
+18 Thursday 	(2 hours) 	group meeting about design requirements.
+
+Week Oct 22-28, 3 hours:
+24 Wednesday 	(1 hour) 	database design.
+25 Thursday 	(2 hours) 	group meeting about documentation requirements.
+
+Week Oct 29-Nov 4, 5 hours:
+29 Monday 	(1 hour) 	database creation.
+31 Wednesday 	(1 hour) 	serverside java research.
+1 Thursday 	(2 hours) 	group meeting about testing requirements.
+4 Sunday 	(1 hour) 	test specification.
+
+Week Nov 5-11, 4 hours 
+6 Tuesday 	(1 hours) 	class Diagram.
+8 Wednesday 	(2 hours) 	JUnit test table designs.
+11 Sunday 	(1 hour) 	GitHub practice.
+
+Week Nov 12-18, 11 hours 
+12 Monday	(1 hour)	creating java classes based on diagram
+13 Tuesday	(1 hour)	more java code + class diagram
+14 Wednesday	(6 hours)	coding meeting involving our Java, JavaScript and serverside progress
+14 Wednesday	(1 hour)	uploading work to Github
+15 Thursday	(1 hour)	group meeting about design specification
+18 Sunday	(2 hours)	merging Tux's serverside and my java + diagram
+
+Week Nov 19-25, 3 hours
+22 Thursday	(2 hours)	serverside protocol discussion
+24 Saturday	(1 hour)	revising java code and design requirements
+
+Week Nov 26-Dec 2, 6 hours
+26 Monday	(1 hour)	cleaning up old code from GitHub and some changes to Tux's code
+28 Wedneday	(1 hour)	added some changes to Tux's serverside code
+29 Thursday	(1 hour)	design meeting, serverside rehaul
+29 Thursday	(3 hours)	commented java code, commited changes to serverside and added some
+				classes that deal with battles and breeding
+
+Total: 40 hours.

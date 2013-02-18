@@ -1,0 +1,87 @@
+PROJECT MONSTER MASH
+Minutes from meeting in C55, Friday, 19/10/12 (author:alb31)
+
+Meeting:
+
+Meeting Purpouse: 
+Discuss what was done during previous meetings with Group Coordinator,
+Review introduced changes.
+
+Present: All aprart from Tux(illness) and Matt(unknown)
+
+Circulation: All
+
+Minutes Produced 19/10/12
+
+version 1.0
+
+Matters Arising:
+
+1.Test issues resolved - everyone tests their own code 
+	Java - JUnit;
+	HTML/CSS - W3C;
+	servlets and others - TBA;
+
+2.Chris stated he will work on Gantz charts as well as Planning and other small issues.
+
+2.Glassfish vs. Tomcat - conflict between the two, as they do not work well together.
+  This is the reason why Silhab could not run it properly. 
+  Not yet officially settled for using either, but will most likely use Tomcat 
+  Reason: Tux knows how to handle it well.
+
+3.Mike's dad knows how to produce Risk Assesment - will help Tom with it.
+
+5.Discussed progress since previous official meeting by covering previous minutes.
+
+6.Silhab produced some design and class diagrams for the project.
+  Did not get a chance to cover that, will do on Monday.
+
+7. Lokked at examples of documentation made by the other groups in previous years.
+
+New Buisness:
+
+1.Mimic SVN build in Git repo.
+ACTION: Alex
+
+2.Check if all documents need a formal review, and if so, do just that.
+ACTION:Tom
+
+3.Get Started on the Risk Assesment and deliver first version by MONDAY 19/10.
+ACTION:Mike and Tom
+
+4.Read what is to be delivered on the first deadline.
+ACTION: !EVERYONE!
+
+5.Email Matt and ask him why he did not attend the meeting.
+ACTION:Lynda and/or Chris
+
+6.Email everyone that has the group project and settle for some standards meeting. 
+ACTION:Chris and Lynda
+
+7.Produce a 'Test Standards' Document
+ACTION:Tom
+
+
+AOB:
+PRIORITY GOAL:
+ To deliver full drafts of documents/code a week before they are due.
+Reason:
+	To be able to correct/discuss them before turning it in.
+
+Monday meeting is to discuss everything and devliver a full draft on Friday.
+Lynda will not be present on Friday, we might have someone else step in or just
+have a meeting by ourselves. 
+
+IIAM:
+Freshers can be our UML Diagrams test mokeys (Because Slave Labour is Good for Your Education).
+Santa can't go down chimneys (neither can umbrellas, or smoke according to some).
+
+Chris asked not to mention his ideas about blackmailing people in the minutes(Oh, the irony).
+
+Llynda did not like the layout or the color clash between blue and yellow.
+
+You can't get a driving license in Poland if you're colorblind - claims Alex
+
+Voted/Decided to  have Trivia in minutes:
+RANDOM FACT#1: 
+Ink jet ink costs $5000 per gallon.

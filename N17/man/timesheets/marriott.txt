@@ -1,0 +1,29 @@
+28/10/12 - looked at documents, worked on simple webpage for documents, 3hours
+30/10/12 - 1/11-12 worked on project plan put together, 2 hours a day (tot 6hrs)
+1/11/12 - group meeting 1 hour
+06/11/12 - test specification, 1hr
+08/11/12 - group meeting, 1hr
+12/11/12 - design meeting, 1hr
+14/11/11 - coders meet, 11-2, 3hrs 
+15/11/12 - group meeting 1hr
+17/11/12 - Look at crc cards and made editable ccf forms 1hr
+20/11/12 - Wrote up java classes 1hrs?
+21/11/12 - Continued java classes 2hrs?
+22/11/12 - Group meeting 1hr
+24/11/12 - Merged mikes java doc with own 2hr
+28/11/12 - Java class description 2hr
+29/11/12 - Group meeting 1hr
+02/12/12 - updated timesheet and looked at updated docs 1hr
+05/12/12 - Updated git with timesheet, reorganised docs and started design spec draft 3hr------------------------update today
+07/12/12 - Group meeting 1hr 
+07/12/12 - Work on pdf 2hrs
+28/01/13 - Large work system wide 10hrs
+29/01/13 - Task assignment and support 7hrs
+30/01/13 - Task assignment&feedback and support css, docs slight debugging 11hrs 
+05/02/13 - Started work on final report 2hrs
+07/02/13 - group meeting to assign final set of tasks 1hr
+10/02/13 - worked on final plan 3hrs
+11/02/13 - finished first draft of final plan 5hr
+14/02/13 - fixed mistakes with final plan 2hr
+15/02/13 - completed and bound project plan 3hrs
+

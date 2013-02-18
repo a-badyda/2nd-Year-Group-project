@@ -1,0 +1,15 @@
+Week Commencing	Hours Worked	Summary Of What time was spent doing
+8th October		2	Informal meeting, assigned risk assessment, reviewed risk assessment
+15th October	3	Informal meeting and other things
+22nd October	7	Informal meeting, discussion about design of website, assigned use case,began use case diagrams
+29th October	5	Completed use case diagrams
+5th November	3	Informal meeting, discussion of test plan, completion of draft test plan
+12th November	6	Informal meeting, changes made to test plan, completion of test plan
+19th November	3	
+26th November	6	Informal meeting and other things
+3rd December	7	Review feedback given for test plan and design plan, sequence diagrams and descriptions
+10th December  5       Review feedback given and plan changes 
+17th December  5       Review feedback given and plan changes and testing for coding week
+28th January   24      Testing, making changes to documentation
+4th February   6       Finalising documentation
+Total	82	

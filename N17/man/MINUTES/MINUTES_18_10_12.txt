@@ -1,0 +1,55 @@
+PROJECT MONSTER MASH
+Minutes from meeting HO, Thursday, 28/10/12 (Author: alb31)
+Meeting:
+
+Meeting Purpouse:
+DIscuss the Software Specification Document & Assign more task-specific roles
+
+Present: all (Tux was late 15 minutes due to recovering from illness)
+
+Circulation: All
+ 
+Minutes Produced 19/10/12 11:40
+
+Version 1.0
+
+Matters Arrising:
+1.Silhab said she spent some time coding/looking at Java.
+  Had problems with the code that Tux generated - it wouldn't run on her machine. 
+2.Chris introduced the software spec. document to the group.
+3.Task-specific roles were assigned: 
+	Dave-Documentation for Tux's code;
+	Mike-Documentation for Java;
+	Matt-Documentation for HTML/CSS;
+	Tom-Q&A;
+	Chris-Project Management;
+	Silhab-Straight Java;
+	Tux-Servlets;
+	Sam-JavaScript;
+	Alex- HTML and CSS;
+	? - Testing;
+
+New Buisness:
+1.Risk Analisys needs to be written up quickly
+ACTION: Tom and Chris
+2.There will be a major design meeting on Monday(21/10/12), 9 am in TBA - Chris will bring coffee.
+ACTION:Chris 
+3.There is a problem with handling the database updates now and in the future
+ACTION: Tux
+4.Chris wants to know how to discuss code via GitHub and point out stuff that is wrong with it.
+ACTION:alex
+
+AOB:
+1.Alex turned out to be able to writie fast and was voted to take minutes/help Chris
+	(and nearly avoided being made manager due to her bossy nature)
+
+
+
+IIAM(Irrelevant Information About the Meeting [that is nonetheless quite amusing]):
+
+Tux was late by over 10 minutes due to sickness and his ride delivering him late.
+Alex bribed people with 'magic stars' to encourage showing up on time. 
+Chris wore a suit(!).
+Silhab managed to avoid working on HTML.
+Someone was assigned to Testing but alex forgot to note down who it was.
+

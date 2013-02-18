@@ -1,0 +1,47 @@
+PROJECT MONSTER MASH
+Minutes from meeting, Thursday, 1/11/12 (Author: alb31)
+Meeting:
+
+Meeting Purpose:
+
+
+Present: Tux was missing
+Circulation: All
+ 
+Minutes Produced 2/11/12
+
+Version 1.0
+
+Matters Arising:
+1.Decided to add a new 'notifications page' to the design
+2.Basic HTML pages are still under construction – only once they are produced can the server/Javascript work begin
+3.Silhab & Tux have uploaded a user database
+
+New Business:
+1.Swap the fallback roles of Chris and Sam
+ACTION:Mike
+2.Move all documentation to respective GitHub folders
+ACTION: ALL
+3.Remove copyrighted images of monsters from the Page Design Document
+ACTION:Matt
+4.Put together and Finalize the Design specifications document
+ACTION: Chris
+5.Book room C63 for a few hours during work week
+ACTION:Chris
+6.Email Tux about his attendance on Today's meeting
+ACTION:Chris
+7.New Use Case Images
+ACTION:Tom
+
+AOB:
+1.We will most likely meet for a few days of non-stop coding during work week (Monday/Tuesday)
+
+IIAM:
+1.Alex is slacking with her HTML.
+2.Alex brought more candy for everyone to apologize for slacking.
+3.Rooms can, on occasion be obnoxious (e.g B23)
+4.Sam and Tom may be the same person/twins
+
+Document Version Log:
+1.0 
+

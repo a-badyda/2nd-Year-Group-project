@@ -1,0 +1,54 @@
+4/2/13 -- Hours Worked: 3
+Updating sequence diagrams ready for final documentation.
+
+28/1/13 - 1/2/13 -- Hours Worked: 66.5
+Group Project Coding week.
+Built the majority of the front end of the project.
+Had almost no sleep.
+
+27/11/12 -- Hours Worked: 4
+Added JavaScript request for most of the pages within the system.
+Liased with Alex about what HTML structure need to be implmeneted.
+Formalised a high level state diagram for the system.
+Produced a document with the write up of the JSON objects being passed
+between client and server.
+
+22/11/12 -- Hours Worked: 1
+Attended group project meeting.
+
+15/11/12 -- Hours Worked: 1
+Attended group project meeting.
+
+14/11/12 -- Hours Worked: 5
+Attended coders meeting to help organise a design.
+Organised my machine for easier development
+setup account on Tux's server.
+outlined the JSON objects needed to be passed to the server.
+
+8/11/12 -- Hours Worked: 1
+Attended group project meeting.
+
+6/11/12 -- Hours Worked: 5.5
+Completed first draft of testing table.
+Began working on test table for test specification document.
+Tidying up JavaScript for user login. Ready for servlet implementation.
+Refactored login.js to cut down on code repetition.
+Updated login/register page with working JavaScript.
+
+2/11/12 -- Hours Worked: 0.5
+Modifying JavaScript to seperate it from the HTML.
+
+1/11/12 -- Hours Worked: 1
+Attended group project meeting.
+
+30/10/12 -- Hours Worked: 1.5
+Started building some of the JavaScript for the login page.
+Tidyed up JavaScript repo folder.
+
+26/10/12 -- Hours Worked: 1.5
+Made a small start on some of the JavaScript. Awaiting HTML for further development.
+Added Client side folder structure.
+
+
+28/01/13 -- Hours Worked 15
+Rewrote current code

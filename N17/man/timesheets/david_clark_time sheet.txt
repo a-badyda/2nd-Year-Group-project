@@ -1,0 +1,41 @@
+24/10/12 use case diagrams: 1h
+
+28/10/12 methodology: 1h
+
+29/10/12 group project server documentation: 30mins
+
+proof checking design spec doc: 30mins (day before hand in)
+
+2/11/12	writing up minutes: 30mins	
+
+8/11/12	writing up minutes: 30mins	
+
+14/11/12 more server documentation(general functionality): 30mins
+
+01/12/12 writing up minutes: 30mins
+
+02/12/12 relational database Diagram: 1hr
+
+06/12/12 writing up minutes: 30mins
+
+06/12/12 description of relational database diagram: 30mins
+
+28/01/12 writing/modifying documents: 6hrs
+
+29/01/12 writing/modifying documents: 4hrs	
+
+30/01/12 writing/modifying documents: 7hrs
+
+31/01/12 writing/modifying documents/testing system: 13hrs
+
+01/01/12 testing system/presenting system: 4hrs
+
+04/01/12 writing up minutes: 30mins
+
+06/01/12 personal report:  2hrs
+
+07/01/12 test & control forms: 1hr
+
+08/02/12 reviewing functionality: 1.5hrs
+
+Plus meetings
