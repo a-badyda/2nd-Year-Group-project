@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Purpose of this Document}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{System Details for Maintenance}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Program Description}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Program Structure}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Java}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.2}{HTML and CSS}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Javascript}{subsection.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{Algorithms}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Registering a New User}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Logging In}{subsection.2.3}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Add Friend}{subsection.2.3}% 12
+\BOOKMARK [3][-]{subsubsection.2.3.4}{Sending a Battle/Breed Request}{subsection.2.3}% 13
+\BOOKMARK [3][-]{subsubsection.2.3.5}{Accept Breeding}{subsection.2.3}% 14
+\BOOKMARK [3][-]{subsubsection.2.3.6}{Accept Battling}{subsection.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.4}{Main Data Areas}{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.5}{Files}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.6}{Interfaces}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.7}{Suggested Improvements}{section.2}% 19
+\BOOKMARK [3][-]{subsubsection.2.7.1}{Unimplemented Functionality}{subsection.2.7}% 20
+\BOOKMARK [3][-]{subsubsection.2.7.2}{Added Functionality}{subsection.2.7}% 21
+\BOOKMARK [3][-]{subsubsection.2.7.3}{Security and Usability}{subsection.2.7}% 22
+\BOOKMARK [3][-]{subsubsection.2.7.4}{Design Additions}{subsection.2.7}% 23
+\BOOKMARK [2][-]{subsection.2.8}{Possible Effects Caused by Change}{section.2}% 24
+\BOOKMARK [2][-]{subsection.2.9}{Program Limitations}{section.2}% 25
+\BOOKMARK [2][-]{subsection.2.10}{Rebuilding and Testing}{section.2}% 26
+\BOOKMARK [1][-]{subsection.2.10}{DOCUMENT HISTORY}{}% 27

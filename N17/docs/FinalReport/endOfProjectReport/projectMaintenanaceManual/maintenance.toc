@@ -1,0 +1,53 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Purpose of this Document}{2}{subsection.1.1}
+\contentsline {section}{\numberline {2}System Details for Maintenance}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Program Description}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Program Structure}{2}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Java}{2}{subsubsection.2.2.1}
+\contentsline {paragraph}{\numberline {2.2.1.1}Battle.java}{2}{paragraph.2.2.1.1}
+\contentsline {paragraph}{\numberline {2.2.1.2}Breed.java}{3}{paragraph.2.2.1.2}
+\contentsline {paragraph}{\numberline {2.2.1.3}Breeding.java}{3}{paragraph.2.2.1.3}
+\contentsline {paragraph}{\numberline {2.2.1.4}Database.java}{3}{paragraph.2.2.1.4}
+\contentsline {paragraph}{\numberline {2.2.1.5}GameServer.java}{4}{paragraph.2.2.1.5}
+\contentsline {paragraph}{\numberline {2.2.1.6}Monster.java}{5}{paragraph.2.2.1.6}
+\contentsline {paragraph}{\numberline {2.2.1.7}MonsterStats.java}{5}{paragraph.2.2.1.7}
+\contentsline {paragraph}{\numberline {2.2.1.8}Request.java}{6}{paragraph.2.2.1.8}
+\contentsline {paragraph}{\numberline {2.2.1.9}RequestState.java}{6}{paragraph.2.2.1.9}
+\contentsline {paragraph}{\numberline {2.2.1.10}RequestType.java}{6}{paragraph.2.2.1.10}
+\contentsline {paragraph}{\numberline {2.2.1.11}Status.java}{6}{paragraph.2.2.1.11}
+\contentsline {paragraph}{\numberline {2.2.1.12}User.java}{6}{paragraph.2.2.1.12}
+\contentsline {paragraph}{\numberline {2.2.1.13}UserManager.java}{6}{paragraph.2.2.1.13}
+\contentsline {subsubsection}{\numberline {2.2.2}HTML and CSS}{7}{subsubsection.2.2.2}
+\contentsline {paragraph}{\numberline {2.2.2.1}index.html}{7}{paragraph.2.2.2.1}
+\contentsline {paragraph}{\numberline {2.2.2.2}base.css}{7}{paragraph.2.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Javascript}{7}{subsubsection.2.2.3}
+\contentsline {paragraph}{\numberline {2.2.3.1}auction.js}{7}{paragraph.2.2.3.1}
+\contentsline {paragraph}{\numberline {2.2.3.2}base.js}{8}{paragraph.2.2.3.2}
+\contentsline {paragraph}{\numberline {2.2.3.3}battle.js}{8}{paragraph.2.2.3.3}
+\contentsline {paragraph}{\numberline {2.2.3.4}friends.js}{8}{paragraph.2.2.3.4}
+\contentsline {paragraph}{\numberline {2.2.3.5}login.js}{8}{paragraph.2.2.3.5}
+\contentsline {paragraph}{\numberline {2.2.3.6}menu.js}{8}{paragraph.2.2.3.6}
+\contentsline {paragraph}{\numberline {2.2.3.7}notification.js}{8}{paragraph.2.2.3.7}
+\contentsline {paragraph}{\numberline {2.2.3.8}profile.js}{9}{paragraph.2.2.3.8}
+\contentsline {paragraph}{\numberline {2.2.3.9}results.js}{9}{paragraph.2.2.3.9}
+\contentsline {paragraph}{\numberline {2.2.3.10}general.js}{9}{paragraph.2.2.3.10}
+\contentsline {paragraph}{\numberline {2.2.3.11}validate.js}{9}{paragraph.2.2.3.11}
+\contentsline {subsection}{\numberline {2.3}Algorithms}{10}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Registering a New User}{10}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Logging In}{11}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Add Friend}{12}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Sending a Battle/Breed Request}{13}{subsubsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}Accept Breeding}{14}{subsubsection.2.3.5}
+\contentsline {subsubsection}{\numberline {2.3.6}Accept Battling}{15}{subsubsection.2.3.6}
+\contentsline {subsection}{\numberline {2.4}Main Data Areas}{16}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Files}{16}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Interfaces}{16}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Suggested Improvements}{17}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}Unimplemented Functionality}{17}{subsubsection.2.7.1}
+\contentsline {subsubsection}{\numberline {2.7.2}Added Functionality}{17}{subsubsection.2.7.2}
+\contentsline {subsubsection}{\numberline {2.7.3}Security and Usability}{17}{subsubsection.2.7.3}
+\contentsline {subsubsection}{\numberline {2.7.4}Design Additions}{18}{subsubsection.2.7.4}
+\contentsline {subsection}{\numberline {2.8}Possible Effects Caused by Change}{18}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Program Limitations}{18}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}Rebuilding and Testing}{19}{subsection.2.10}
+\contentsline {section}{DOCUMENT HISTORY}{19}{subsection.2.10}
